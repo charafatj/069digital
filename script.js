@@ -124,22 +124,49 @@ if (track) {
   });
 }
 
-// ── CONTACT FORM ─────────────────────────────
+// ── CONTACT FORM (Formspree AJAX) ────────────
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
-  contactForm.addEventListener('submit', (e) => {
+  contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const btn = contactForm.querySelector('button[type="submit"]');
-    btn.textContent     = 'Nachricht gesendet ✓';
-    btn.style.background = '#22c55e';
-    btn.disabled        = true;
+    btn.textContent = 'Wird gesendet…';
+    btn.disabled    = true;
 
-    setTimeout(() => {
-      btn.textContent     = 'Nachricht senden';
-      btn.style.background = '';
-      btn.disabled        = false;
-      contactForm.reset();
-    }, 4000);
+    try {
+      const res = await fetch(contactForm.action, {
+        method:  'POST',
+        body:    new FormData(contactForm),
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (res.ok) {
+        btn.textContent      = 'Nachricht gesendet ✓';
+        btn.style.background = '#22c55e';
+        contactForm.reset();
+        setTimeout(() => {
+          btn.textContent      = 'Nachricht senden';
+          btn.style.background = '';
+          btn.disabled         = false;
+        }, 4000);
+      } else {
+        btn.textContent      = 'Fehler – bitte erneut versuchen';
+        btn.style.background = '#ef4444';
+        btn.disabled         = false;
+        setTimeout(() => {
+          btn.textContent      = 'Nachricht senden';
+          btn.style.background = '';
+        }, 4000);
+      }
+    } catch {
+      btn.textContent      = 'Fehler – bitte erneut versuchen';
+      btn.style.background = '#ef4444';
+      btn.disabled         = false;
+      setTimeout(() => {
+        btn.textContent      = 'Nachricht senden';
+        btn.style.background = '';
+      }, 4000);
+    }
   });
 }
 
