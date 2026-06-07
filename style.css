@@ -1309,6 +1309,7 @@ select option { background: var(--dark-2); }
 /* ── CAROUSEL ───────────────────────────────── */
 .portfolio-carousel__track {
   display: flex;
+  align-items: flex-start;
   gap: 1rem;
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
