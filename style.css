@@ -1299,9 +1299,9 @@ select option { background: var(--dark-2); }
   .service-card        { padding: 1.5rem; }
   .service-card ul     { display: none; }
   .process__step       { padding: 1rem 0.5rem; }
-  .about__card-inner   { flex-direction: row; flex-wrap: wrap; gap: 1rem; }
-  .about__metric       { flex: 1; min-width: 80px; }
-  .about__metric-num   { font-size: 1.8rem; }
+  .about__card-inner   { flex-direction: column; gap: 1.5rem; }
+  .about__metric       { flex: none; width: 100%; flex-direction: row; align-items: center; gap: 1rem; }
+  .about__metric-num   { font-size: 2rem; }
   .btn                 { padding: 0.9rem 1.5rem; font-size: 0.85rem; }
   .carousel-slide      { flex: 0 0 88vw; }
 }
