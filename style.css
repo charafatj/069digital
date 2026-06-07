@@ -796,9 +796,9 @@ a { text-decoration: none; color: inherit; }
   inset: 0;
   background: linear-gradient(
     to top,
-    rgba(5, 5, 5, 0.92) 0%,
-    rgba(5, 5, 5, 0.55) 50%,
-    rgba(5, 5, 5, 0.15) 100%
+    rgba(5, 5, 5, 0.55) 0%,
+    rgba(5, 5, 5, 0.12) 50%,
+    transparent 100%
   );
   display: flex;
   flex-direction: column;
