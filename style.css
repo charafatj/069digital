@@ -633,54 +633,19 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* Pro Hilfe GbR */
-@keyframes slowZoomPan {
-  0%   { transform: scale(1.08) translate(0%, 0%); }
-  33%  { transform: scale(1.13) translate(-2%, -1%); }
-  66%  { transform: scale(1.1)  translate(2%, 1%); }
-  100% { transform: scale(1.08) translate(0%, 0%); }
-}
-
 .portfolio-item__img--prohilfe {
-  background: #060a06;
   background-size: cover !important;
   background-position: center !important;
   position: relative;
   overflow: hidden;
 }
 
-/* pseudo-element carries the animated image */
-.portfolio-item__img--prohilfe::before {
-  content: '';
-  position: absolute;
-  inset: -8%;
-  background-image: inherit;
-  background-size: cover;
-  background-position: center;
-  animation: slowZoomPan 12s ease-in-out infinite;
-  filter: brightness(0.92) contrast(1.02);
-  z-index: 0;
-}
-
-.portfolio-item__img--prohilfe::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(2, 8, 2, 0.75) 0%, rgba(2, 8, 2, 0.1) 50%, transparent 100%);
-  z-index: 1;
-  pointer-events: none;
-}
-
 .portfolio-item__img--prohilfe .portfolio-item__overlay {
-  background: transparent;
+  background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.1) 60%, transparent 100%);
   opacity: 1;
-  z-index: 2;
-}
-
-.portfolio-item__img--prohilfe:hover::before {
-  filter: grayscale(30%) brightness(0.25) contrast(1.15);
 }
 .portfolio-item__img--prohilfe:hover .portfolio-item__overlay {
-  background: transparent;
+  background: rgba(0,0,0,0.6);
   opacity: 1;
 }
 
