@@ -1440,6 +1440,7 @@ select option { background: var(--dark-2); }
   justify-content: center;
   overflow: hidden;
   position: relative;
+  min-height: 520px;
 }
 
 /* Animated grid background */
