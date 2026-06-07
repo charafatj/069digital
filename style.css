@@ -633,20 +633,38 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* Pro Hilfe GbR */
+@keyframes panLeftRight {
+  0%   { background-position: 20% center; }
+  50%  { background-position: 80% center; }
+  100% { background-position: 20% center; }
+}
+
 .portfolio-item__img--prohilfe {
-  background-size: cover !important;
-  background-position: center !important;
+  background-size: 110% auto !important;
+  animation: panLeftRight 10s ease-in-out infinite;
   position: relative;
   overflow: hidden;
+  filter: brightness(0.96);
+}
+
+.portfolio-item__img--prohilfe::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(180, 185, 190, 0.12);
+  z-index: 1;
+  pointer-events: none;
 }
 
 .portfolio-item__img--prohilfe .portfolio-item__overlay {
   background: transparent;
   opacity: 0;
+  z-index: 2;
 }
 .portfolio-item__img--prohilfe:hover .portfolio-item__overlay {
-  background: rgba(0,0,0,0.75);
+  background: rgba(10, 10, 10, 0.78);
   opacity: 1;
+  z-index: 2;
 }
 
 /* Pro Bau GmbH */
