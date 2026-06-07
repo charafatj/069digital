@@ -1201,6 +1201,9 @@ select option { background: var(--dark-2); }
 .process__steps .reveal:nth-child(4)  { transition-delay: 0.3s; }
 .process__steps .reveal:nth-child(6)  { transition-delay: 0.45s; }
 
+/* Carousel hidden on desktop, shown on mobile via media query */
+.portfolio-carousel { display: none; }
+
 /* ── RESPONSIVE ─────────────────────────────── */
 @media (max-width: 1024px) {
   .services__grid      { grid-template-columns: repeat(2, 1fr); }
@@ -1296,9 +1299,7 @@ select option { background: var(--dark-2); }
   .carousel-slide      { flex: 0 0 88vw; }
 }
 
-/* ── CAROUSEL (mobile only, hidden on desktop) ── */
-.portfolio-carousel { display: none; }
-
+/* ── CAROUSEL ───────────────────────────────── */
 .portfolio-carousel__track {
   display: flex;
   gap: 1rem;
