@@ -1253,48 +1253,62 @@ select option { background: var(--dark-2); }
 
   /* ── PORTFOLIO MOBILE ── */
   .hide-mobile              { display: none !important; }
-  .portfolio__grid          { grid-template-columns: 1fr; grid-template-rows: auto; gap: 0; background: none; border: none; border-radius: 0; }
-  .portfolio-item           { border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border); background: var(--dark-2); margin-bottom: 1rem; }
+  .portfolio__grid          { grid-template-columns: 1fr; grid-template-rows: auto; gap: 1rem; background: none; border: none; border-radius: 0; }
+  .portfolio-item           { border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 0; position: relative; }
   .portfolio-item--wide     { grid-column: span 1; }
 
-  /* Image: no overlay on mobile — clean photo */
-  .portfolio-item__img      { height: 220px; border-radius: 0; }
-  .portfolio-item__video    { height: 220px; object-position: top center; }
+  /* Full visible image — tall card */
+  .portfolio-item__img      { height: 320px; border-radius: var(--radius-lg); }
+  .portfolio-item__video    { height: 320px; object-position: top center; }
+
+  /* Hide the full overlay — replace with slim bottom strip */
   .portfolio-item__overlay  { display: none !important; }
   .portfolio-item__img--prohilfe .portfolio-item__overlay { display: none !important; }
   .portfolio-item__img--smartmarket .portfolio-item__screenshot-overlay { display: none; }
 
-  /* Mobile info block below image */
+  /* Slim bottom gradient + info strip */
   .portfolio-item__mobile-info {
     display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 2.5rem 1.25rem 1.1rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.88) 0%, transparent 100%);
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  }
+  .portfolio-item__mobile-info-left {
+    display: flex;
     flex-direction: column;
-    gap: 0.4rem;
-    padding: 1.25rem 1.25rem 1.5rem;
+    gap: 0.2rem;
   }
   .portfolio-item__mobile-info .portfolio-item__tag {
-    font-size: 0.65rem;
+    font-size: 0.6rem;
     color: var(--accent);
     letter-spacing: 0.15em;
     text-transform: uppercase;
     font-weight: 600;
   }
   .portfolio-item__mobile-info h3 {
-    font-size: 1.15rem;
+    font-size: 1rem;
     color: var(--white);
     letter-spacing: -0.02em;
     margin: 0;
+    font-weight: 600;
   }
   .portfolio-item__mobile-info .portfolio-item__link {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     color: var(--accent);
     font-weight: 600;
-    margin-top: 0.4rem;
-    letter-spacing: 0.03em;
+    white-space: nowrap;
+    flex-shrink: 0;
   }
 
   /* Pro Bau mobile */
-  .portfolio-item__img--probau { height: 220px; }
-  .portfolio-item__probau-logo { width: 140px; }
+  .portfolio-item__img--probau { height: 320px; }
+  .portfolio-item__probau-logo { width: 150px; }
 
   /* ── TESTIMONIALS ── */
   .testimonials__grid  { grid-template-columns: 1fr; gap: 1rem; }
