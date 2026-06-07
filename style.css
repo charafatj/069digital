@@ -24,8 +24,8 @@
   --accent-dim: rgba(0, 212, 255, 0.08);
   --accent-glow:rgba(0, 212, 255, 0.15);
 
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-head: 'Syne', sans-serif;
+  --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-head: 'Space Grotesk', -apple-system, sans-serif;
 
   --radius:    8px;
   --radius-lg: 16px;
@@ -51,16 +51,16 @@ body {
 h1, h2, h3, h4 {
   font-family: var(--font-head);
   color: var(--white);
-  line-height: 1.15;
+  line-height: 1.12;
   font-weight: 700;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
 }
 
-h1 { font-size: clamp(2.8rem, 6vw, 5.5rem); font-weight: 800; }
-h2 { font-size: clamp(2rem, 3.5vw, 3rem); }
-h3 { font-size: 1.25rem; font-weight: 600; }
+h1 { font-size: clamp(3rem, 6.5vw, 6rem); font-weight: 700; }
+h2 { font-size: clamp(2rem, 3.5vw, 3.2rem); letter-spacing: -0.04em; }
+h3 { font-size: 1.15rem; font-weight: 600; letter-spacing: -0.02em; }
 
-p { color: var(--light-gray); line-height: 1.75; }
+p { color: var(--light-gray); line-height: 1.75; font-weight: 400; }
 
 a { text-decoration: none; color: inherit; }
 
@@ -74,9 +74,10 @@ a { text-decoration: none; color: inherit; }
 
 .label {
   display: inline-block;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.15em;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--accent);
   margin-bottom: 1rem;
@@ -106,9 +107,9 @@ a { text-decoration: none; color: inherit; }
   padding: 0.85rem 2rem;
   border-radius: var(--radius);
   font-family: var(--font-body);
-  font-size: 0.9rem;
-  font-weight: 600;
-  letter-spacing: 0.01em;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
   cursor: pointer;
   border: none;
   transition: var(--transition);
@@ -168,10 +169,10 @@ a { text-decoration: none; color: inherit; }
 
 .nav__logo {
   font-family: var(--font-head);
-  font-size: 1.4rem;
-  font-weight: 800;
+  font-size: 1.3rem;
+  font-weight: 700;
   color: var(--white);
-  letter-spacing: -0.03em;
+  letter-spacing: -0.04em;
 }
 .nav__logo span { color: var(--accent); }
 
@@ -183,9 +184,10 @@ a { text-decoration: none; color: inherit; }
 }
 
 .nav__links a {
-  font-size: 0.875rem;
-  font-weight: 500;
+  font-size: 0.85rem;
+  font-weight: 400;
   color: var(--gray);
+  letter-spacing: 0.01em;
   transition: color var(--transition);
 }
 .nav__links a:hover { color: var(--white); }
@@ -244,8 +246,9 @@ a { text-decoration: none; color: inherit; }
 .mobile-menu ul li a {
   font-family: var(--font-head);
   font-size: 2rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--white);
+  letter-spacing: -0.03em;
   transition: color var(--transition);
 }
 .mobile-menu ul li a:hover { color: var(--accent); }
@@ -314,11 +317,12 @@ a { text-decoration: none; color: inherit; }
 }
 
 .hero__sub {
-  font-size: 1.15rem;
-  max-width: 600px;
+  font-size: 1.1rem;
+  max-width: 580px;
   color: var(--gray);
   margin-bottom: 2.5rem;
-  line-height: 1.8;
+  line-height: 1.85;
+  font-weight: 300;
 }
 
 .hero__actions {
@@ -367,20 +371,23 @@ a { text-decoration: none; color: inherit; }
 .stat__number {
   font-family: var(--font-head);
   font-size: clamp(2.5rem, 4vw, 3.5rem);
-  font-weight: 800;
+  font-weight: 700;
   color: var(--white);
+  letter-spacing: -0.04em;
 }
 .stat__plus {
   font-family: var(--font-head);
   font-size: 2rem;
-  font-weight: 800;
+  font-weight: 700;
   color: var(--accent);
+  letter-spacing: -0.02em;
 }
 .stat p {
-  font-size: 0.875rem;
+  font-size: 0.8rem;
   color: var(--muted);
   margin-top: 0.4rem;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 /* ── SERVICES ───────────────────────────────── */
@@ -482,11 +489,12 @@ a { text-decoration: none; color: inherit; }
 .process__num {
   font-family: var(--font-head);
   font-size: 3.5rem;
-  font-weight: 800;
-  color: var(--dark-3);
+  font-weight: 700;
+  color: transparent;
   line-height: 1;
   margin-bottom: 1rem;
   -webkit-text-stroke: 1px var(--border);
+  letter-spacing: -0.04em;
 }
 
 .process__step:hover .process__num { color: var(--accent); -webkit-text-stroke: 0; transition: var(--transition); }
