@@ -636,14 +636,24 @@ a { text-decoration: none; color: inherit; }
   padding: 0.6rem 1.1rem;
 }
 .portfolio-item__logo-badge img {
-  height: 32px;
+  height: 36px;
   width: auto;
   object-fit: contain;
-  filter: brightness(0) invert(1);
+  filter: brightness(0) invert(1) drop-shadow(0 0 4px rgba(41,171,255,0.4));
 }
 
 .portfolio-item__bg-logo img {
   filter: brightness(0) invert(1);
+}
+
+/* Screenshot card: tighter overlay so photo shows through */
+.portfolio-item__screenshot-overlay {
+  background: linear-gradient(
+    160deg,
+    rgba(0, 8, 30, 0.35) 0%,
+    rgba(0, 15, 50, 0.25) 40%,
+    rgba(0, 8, 30, 0.65) 100%
+  ) !important;
 }
 
 .portfolio-item__img:hover .portfolio-item__overlay { opacity: 1; }

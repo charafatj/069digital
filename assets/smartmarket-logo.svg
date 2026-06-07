@@ -1,23 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 80" fill="none">
-  <!-- Bucket/Basket Icon -->
-  <g transform="translate(0, 8)">
-    <!-- WiFi waves on top of bucket -->
-    <path d="M28 18 Q36 10 44 18" stroke="#29ABFF" stroke-width="3" stroke-linecap="round" fill="none"/>
-    <path d="M23 13 Q36 2 49 13" stroke="#29ABFF" stroke-width="3" stroke-linecap="round" fill="none"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 72" fill="none">
+  <!-- Shopping basket icon -->
+  <g transform="translate(4, 4)">
+    <!-- WiFi arcs above basket -->
+    <path d="M22 20 Q32 11 42 20" stroke="#29ABFF" stroke-width="2.8" stroke-linecap="round" fill="none"/>
+    <path d="M17 15 Q32 3 47 15" stroke="#29ABFF" stroke-width="2.8" stroke-linecap="round" fill="none"/>
     <!-- Center dot -->
-    <circle cx="36" cy="22" r="2.5" fill="#29ABFF"/>
-    <!-- Bucket body -->
-    <path d="M18 28 L20 58 Q20 62 24 62 L48 62 Q52 62 52 58 L54 28 Z" fill="#29ABFF"/>
-    <!-- Bucket top rim -->
-    <rect x="15" y="25" width="42" height="6" rx="3" fill="#1A8FE0"/>
-    <!-- Bucket handle -->
-    <path d="M24 25 Q36 14 48 25" stroke="#1A8FE0" stroke-width="3.5" stroke-linecap="round" fill="none"/>
-    <!-- Bucket shine -->
-    <path d="M24 35 L22 55" stroke="rgba(255,255,255,0.25)" stroke-width="2.5" stroke-linecap="round"/>
+    <circle cx="32" cy="24" r="2.5" fill="#29ABFF"/>
+    <!-- Basket body (trapezoid) -->
+    <path d="M12 32 L15 56 Q15.5 60 20 60 L44 60 Q48.5 60 49 56 L52 32 Z" fill="#29ABFF"/>
+    <!-- Basket top rim -->
+    <rect x="9" y="28" width="46" height="6" rx="3" fill="#1A8FE0"/>
+    <!-- Basket handle arc -->
+    <path d="M20 28 Q32 16 44 28" stroke="#1A8FE0" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+    <!-- Basket vertical lines for texture -->
+    <line x1="24" y1="36" x2="22" y2="58" stroke="rgba(255,255,255,0.3)" stroke-width="2" stroke-linecap="round"/>
+    <line x1="32" y1="36" x2="32" y2="58" stroke="rgba(255,255,255,0.2)" stroke-width="2" stroke-linecap="round"/>
   </g>
-
-  <!-- Text: smart -->
-  <text x="76" y="38" font-family="'Space Grotesk', 'DM Sans', Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="-0.5" fill="#0D2352">smart</text>
-  <!-- Text: market -->
-  <text x="76" y="66" font-family="'Space Grotesk', 'DM Sans', Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="-0.5" fill="#0D2352">market</text>
+  <!-- Text -->
+  <text x="72" y="34" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="800" letter-spacing="-0.5" fill="#0D2352">smart</text>
+  <text x="72" y="60" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="800" letter-spacing="-0.5" fill="#0D2352">market</text>
 </svg>
