@@ -641,11 +641,11 @@ a { text-decoration: none; color: inherit; }
 }
 
 .portfolio-item__img--prohilfe .portfolio-item__overlay {
-  background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.1) 60%, transparent 100%);
-  opacity: 1;
+  background: transparent;
+  opacity: 0;
 }
 .portfolio-item__img--prohilfe:hover .portfolio-item__overlay {
-  background: rgba(0,0,0,0.6);
+  background: rgba(0,0,0,0.75);
   opacity: 1;
 }
 
