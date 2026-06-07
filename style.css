@@ -1283,35 +1283,18 @@ select option { background: var(--dark-2); }
 }
 
 @media (max-width: 480px) {
-  /* ── EXTRA SMALL ── */
   .stats__grid         { grid-template-columns: repeat(2, 1fr); }
   .footer__nav         { grid-template-columns: 1fr; }
   .hero__badge         { display: none; }
-
-  /* Portfolio taller on small phones */
-  .portfolio-item__img  { height: 260px; }
-  .portfolio-item__video { height: 260px; }
-  .portfolio-item__img--probau { height: 260px; }
-
-  /* Tighter service cards */
   .service-card        { padding: 1.5rem; }
   .service-card ul     { display: none; }
-
-  /* Process steps minimal */
   .process__step       { padding: 1rem 0.5rem; }
-
-  /* Smaller about metrics */
   .about__card-inner   { flex-direction: row; flex-wrap: wrap; gap: 1rem; }
   .about__metric       { flex: 1; min-width: 80px; }
   .about__metric-num   { font-size: 1.8rem; }
-
-  /* Full width buttons everywhere */
-  .btn { padding: 0.9rem 1.5rem; font-size: 0.85rem; }
+  .btn                 { padding: 0.9rem 1.5rem; font-size: 0.85rem; }
+  .carousel-slide      { flex: 0 0 88vw; }
 }
-
-/* ── MOBILE PORTFOLIO CARDS ─────────────────── */
-.portfolio-item__mobile-info { display: none; }
-.hide-mobile { display: block; }
 
 /* ── CAROUSEL (mobile only, hidden on desktop) ── */
 .portfolio-carousel { display: none; }
@@ -1350,6 +1333,15 @@ select option { background: var(--dark-2); }
   height: 220px;
   position: relative;
   overflow: hidden;
+  background: var(--dark-3);
+}
+
+/* Pro Hilfe carousel slide */
+.carousel-slide__img--prohilfe {
+  background-image: url('assets/prohilfe-mockup.jpg.png');
+  background-size: cover;
+  background-position: center;
+  animation: panLeftRight 10s ease-in-out infinite;
 }
 .carousel-slide__img .portfolio-item__video {
   position: absolute;
@@ -1430,15 +1422,3 @@ select option { background: var(--dark-2); }
   border-radius: 3px;
 }
 
-/* ── TOUCH DEVICES: always show overlays ── */
-@media (hover: none) {
-  .portfolio-item__overlay { opacity: 1 !important; }
-  .portfolio-item__img--prohilfe .portfolio-item__overlay {
-    opacity: 1 !important;
-    background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 70%) !important;
-  }
-  .portfolio-item__img--probau:hover .portfolio-item__probau-logo { opacity: 0.9; }
-  .portfolio-item__img--probau:hover .portfolio-item__overlay { background: rgba(0,0,0,0.75); }
-  .testimonial:hover { transform: none; }
-  .service-card:hover { background: var(--dark); }
-}
