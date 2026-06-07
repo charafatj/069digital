@@ -546,6 +546,84 @@ a { text-decoration: none; color: inherit; }
   transition: var(--transition);
 }
 
+.portfolio-item__img--smartmarket {
+  background: linear-gradient(135deg, #001f5b 0%, #003399 40%, #0055cc 100%);
+}
+
+.portfolio-item__bg-logo {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.12;
+  transition: opacity var(--transition);
+  pointer-events: none;
+}
+.portfolio-item__bg-logo img {
+  width: 55%;
+  max-width: 340px;
+  filter: brightness(0) invert(1);
+  object-fit: contain;
+}
+.portfolio-item__img--smartmarket:hover .portfolio-item__bg-logo {
+  opacity: 0.06;
+}
+
+.portfolio-item__overlay--visible {
+  opacity: 0 !important;
+  background: linear-gradient(
+    to top,
+    rgba(0, 20, 80, 0.97) 0%,
+    rgba(0, 40, 120, 0.88) 50%,
+    rgba(0, 60, 160, 0.6) 100%
+  ) !important;
+}
+.portfolio-item__img--smartmarket:hover .portfolio-item__overlay--visible {
+  opacity: 1 !important;
+}
+
+/* Smart Market — always show bottom info strip */
+.portfolio-item__img--smartmarket::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 120px;
+  background: linear-gradient(to top, rgba(0,15,60,0.9), transparent);
+  pointer-events: none;
+}
+.portfolio-item__img--smartmarket .portfolio-item__tag,
+.portfolio-item__img--smartmarket h3 {
+  position: relative;
+  z-index: 2;
+}
+
+/* Logo badge always visible */
+.portfolio-item__logo-badge {
+  position: absolute;
+  top: 2rem;
+  left: 2.5rem;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--radius);
+  padding: 0.6rem 1.1rem;
+}
+.portfolio-item__logo-badge img {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+.portfolio-item__bg-logo img {
+  filter: brightness(0) invert(1);
+}
+
 .portfolio-item__img:hover .portfolio-item__overlay { opacity: 1; }
 .portfolio-item__img:hover { transform: scale(1.01); }
 
