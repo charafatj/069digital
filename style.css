@@ -684,6 +684,53 @@ a { text-decoration: none; color: inherit; }
   opacity: 1;
 }
 
+/* Pro Bau GmbH */
+@keyframes slowPulse {
+  0%, 100% { transform: scale(1.0) rotate(-1deg); }
+  50%       { transform: scale(1.06) rotate(1deg); }
+}
+
+.portfolio-item__img--probau {
+  background: linear-gradient(135deg, #1a0e00 0%, #2d1800 45%, #3d2200 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-item__img--probau::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 60% 40%, rgba(230, 130, 0, 0.12) 0%, transparent 65%),
+    linear-gradient(to top, rgba(10,5,0,0.9) 0%, rgba(10,5,0,0.3) 55%, transparent 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.portfolio-item__probau-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -58%);
+  z-index: 2;
+  width: 55%;
+  max-width: 200px;
+  animation: slowPulse 8s ease-in-out infinite;
+  opacity: 0.9;
+  transition: opacity var(--transition);
+}
+.portfolio-item__probau-logo img {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 8px 30px rgba(230, 130, 0, 0.4));
+}
+.portfolio-item__img--probau:hover .portfolio-item__probau-logo {
+  opacity: 0.15;
+}
+.portfolio-item__img--probau .portfolio-item__overlay {
+  z-index: 3;
+}
+
 /* Smart Market — always show bottom info strip */
 .portfolio-item__img--smartmarket::after {
   content: '';
