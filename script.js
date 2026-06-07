@@ -179,39 +179,6 @@ if (progressBar) {
   }, { passive: true });
 }
 
-// ── CUSTOM CURSOR (desktop only) ─────────────
-const cursor     = document.getElementById('cursor');
-const cursorRing = document.getElementById('cursorRing');
-if (cursor && cursorRing && !isMobile) {
-  let cx = 0, cy = 0, rx = 0, ry = 0;
-
-  window.addEventListener('mousemove', e => {
-    cx = e.clientX; cy = e.clientY;
-    cursor.style.left = cx + 'px';
-    cursor.style.top  = cy + 'px';
-  }, { passive: true });
-
-  // Ring follows with lag
-  (function animateRing() {
-    rx += (cx - rx) * 0.12;
-    ry += (cy - ry) * 0.12;
-    cursorRing.style.left = rx + 'px';
-    cursorRing.style.top  = ry + 'px';
-    requestAnimationFrame(animateRing);
-  })();
-
-  // Hover state on interactive elements
-  document.querySelectorAll('a, button, .carousel-slide, .service-card, .portfolio-item').forEach(el => {
-    el.addEventListener('mouseenter', () => {
-      cursor.classList.add('cursor--hover');
-      cursorRing.classList.add('cursor-ring--hover');
-    });
-    el.addEventListener('mouseleave', () => {
-      cursor.classList.remove('cursor--hover');
-      cursorRing.classList.remove('cursor-ring--hover');
-    });
-  });
-}
 
 // ── STICKY MOBILE CTA ────────────────────────
 const stickyCta = document.getElementById('stickyCta');
