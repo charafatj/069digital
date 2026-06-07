@@ -1346,7 +1346,7 @@ select option { background: var(--dark-2); }
 
 /* Pro Hilfe carousel slide */
 .carousel-slide__img--prohilfe {
-  background-image: url('assets/prohilfe-mockup.jpg.png');
+  background-image: url('assets/prohilfe-mockup-opt.jpg');
   background-size: cover;
   background-position: center;
   animation: panLeftRight 10s ease-in-out infinite;
