@@ -676,7 +676,7 @@ a { text-decoration: none; color: inherit; }
 
 @keyframes zoomIn {
   0%   { transform: scale(1.0); }
-  100% { transform: scale(1.18); }
+  100% { transform: scale(1.5); }
 }
 
 .portfolio-item__img--probau {
@@ -702,7 +702,7 @@ a { text-decoration: none; color: inherit; }
 .portfolio-item__probau-logo {
   position: relative;
   z-index: 2;
-  width: 180px;
+  width: 240px;
   animation: slowPulse 8s ease-in-out infinite;
   opacity: 0.9;
   transition: opacity var(--transition), transform 0.6s cubic-bezier(0.4,0,0.2,1);
