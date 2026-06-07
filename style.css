@@ -1423,3 +1423,54 @@ select option { background: var(--dark-2); }
   border-radius: 3px;
 }
 
+/* ── CAROUSEL CTA SLIDE ─────────────────────── */
+.carousel-slide--cta {
+  background: linear-gradient(135deg, var(--dark-2) 0%, var(--dark-3) 100%);
+  border-color: rgba(0,212,255,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 380px;
+}
+
+.carousel-slide__cta-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  gap: 0.75rem;
+}
+
+.carousel-slide__cta-num {
+  font-family: var(--font-head);
+  font-size: 5rem;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+.carousel-slide__cta-num sup {
+  font-size: 2.5rem;
+  color: var(--accent);
+  vertical-align: super;
+}
+
+.carousel-slide__cta-label {
+  font-family: var(--font-head);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--gray);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.carousel-slide__cta-inner p {
+  font-size: 0.85rem;
+  color: var(--muted);
+  max-width: 220px;
+  line-height: 1.6;
+  margin: 0.25rem 0 0.75rem;
+}
+
