@@ -548,6 +548,28 @@ a { text-decoration: none; color: inherit; }
 
 .portfolio-item__img--smartmarket {
   background: linear-gradient(135deg, #001f5b 0%, #003399 40%, #0055cc 100%);
+  background-size: cover !important;
+  background-position: top center !important;
+}
+
+.portfolio-item__screenshot-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    160deg,
+    rgba(0, 15, 60, 0.55) 0%,
+    rgba(0, 25, 80, 0.4) 50%,
+    rgba(0, 10, 40, 0.75) 100%
+  );
+  z-index: 1;
+  transition: background var(--transition);
+}
+.portfolio-item__img--smartmarket:hover .portfolio-item__screenshot-overlay {
+  background: rgba(0, 10, 50, 0.82);
+}
+.portfolio-item__logo-badge,
+.portfolio-item__overlay {
+  z-index: 2;
 }
 
 .portfolio-item__bg-logo {
