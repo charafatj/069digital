@@ -526,7 +526,7 @@ a { text-decoration: none; color: inherit; }
 .portfolio__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 360px 320px;
+  grid-template-rows: 520px 320px;
   gap: 1px;
   background: var(--border);
   border: 1px solid var(--border);
