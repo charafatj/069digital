@@ -657,7 +657,7 @@ a { text-decoration: none; color: inherit; }
   background-size: cover;
   background-position: center;
   animation: slowZoomPan 12s ease-in-out infinite;
-  filter: grayscale(60%) brightness(0.35) contrast(1.1);
+  filter: grayscale(20%) brightness(0.55) contrast(1.05);
   z-index: 0;
 }
 
