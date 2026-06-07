@@ -1314,7 +1314,7 @@ select option { background: var(--dark-2); }
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
-  padding: 0 1.25rem 1.5rem;
+  padding: 1rem 1.25rem 1.5rem;
   cursor: grab;
 }
 .portfolio-carousel__track::-webkit-scrollbar { display: none; }
