@@ -1586,7 +1586,8 @@ body {
 }
 .service-card:hover::after { transform: scaleX(1); }
 
-/* ── 6. TESTIMONIAL AUTO-SCROLL (mobile) ── */
+/* ── 6. TESTIMONIAL CAROUSEL (mobile) ──── */
+.testimonial-dots { display: none; margin-top: 1.25rem; }
 @media (max-width: 768px) {
   .testimonials__grid {
     display: flex;
@@ -1595,7 +1596,7 @@ body {
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     gap: 1rem;
-    padding-bottom: 1rem;
+    padding-bottom: 0.5rem;
   }
   .testimonials__grid::-webkit-scrollbar { display: none; }
   .testimonials__grid .testimonial {
@@ -1603,6 +1604,7 @@ body {
     max-width: 340px;
     scroll-snap-align: center;
   }
+  .testimonial-dots { display: flex; }
 }
 
 /* ── 8. STICKY MOBILE CTA ────────────────── */

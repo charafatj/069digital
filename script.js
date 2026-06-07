@@ -180,6 +180,29 @@ if (progressBar) {
 }
 
 
+// ── TESTIMONIAL DOTS (mobile) ────────────────
+const testimonialsGrid = document.getElementById('testimonialsGrid');
+const testimonialDots  = document.querySelectorAll('#testimonialDots .carousel-dot');
+if (testimonialsGrid && testimonialDots.length) {
+  const cards = testimonialsGrid.querySelectorAll('.testimonial');
+  const updateDots = () => {
+    const center = testimonialsGrid.scrollLeft + testimonialsGrid.offsetWidth / 2;
+    let closest = 0, minDist = Infinity;
+    cards.forEach((c, i) => {
+      const dist = Math.abs(c.offsetLeft + c.offsetWidth / 2 - center);
+      if (dist < minDist) { minDist = dist; closest = i; }
+    });
+    testimonialDots.forEach((d, i) => d.classList.toggle('active', i === closest));
+  };
+  testimonialsGrid.addEventListener('scroll', updateDots, { passive: true });
+  testimonialDots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      const i = parseInt(dot.dataset.index);
+      cards[i].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    });
+  });
+}
+
 // ── STICKY MOBILE CTA ────────────────────────
 const stickyCta = document.getElementById('stickyCta');
 if (stickyCta && isMobile) {
