@@ -1251,17 +1251,50 @@ select option { background: var(--dark-2); }
   .process__step       { flex: 0 0 100%; padding: 1.5rem 1rem; text-align: left; }
   .process__num        { font-size: 2.5rem; }
 
-  /* ── PORTFOLIO ── */
-  .portfolio__grid          { grid-template-columns: 1fr; grid-template-rows: auto; gap: 2px; }
+  /* ── PORTFOLIO MOBILE ── */
+  .hide-mobile              { display: none !important; }
+  .portfolio__grid          { grid-template-columns: 1fr; grid-template-rows: auto; gap: 0; background: none; border: none; border-radius: 0; }
+  .portfolio-item           { border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border); background: var(--dark-2); margin-bottom: 1rem; }
   .portfolio-item--wide     { grid-column: span 1; }
-  .portfolio-item__img      { height: 300px; }
-  .portfolio-item__video    { height: 300px; object-position: top center; }
-  .portfolio-item__overlay  { opacity: 1 !important; background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 60%, transparent 100%) !important; }
-  .portfolio-item__img--prohilfe .portfolio-item__overlay { opacity: 1 !important; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 60%, transparent 100%) !important; }
 
-  /* Pro Bau mobile — logo always visible, smaller */
-  .portfolio-item__img--probau { height: 300px; }
-  .portfolio-item__probau-logo { width: 160px; }
+  /* Image: no overlay on mobile — clean photo */
+  .portfolio-item__img      { height: 220px; border-radius: 0; }
+  .portfolio-item__video    { height: 220px; object-position: top center; }
+  .portfolio-item__overlay  { display: none !important; }
+  .portfolio-item__img--prohilfe .portfolio-item__overlay { display: none !important; }
+  .portfolio-item__img--smartmarket .portfolio-item__screenshot-overlay { display: none; }
+
+  /* Mobile info block below image */
+  .portfolio-item__mobile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding: 1.25rem 1.25rem 1.5rem;
+  }
+  .portfolio-item__mobile-info .portfolio-item__tag {
+    font-size: 0.65rem;
+    color: var(--accent);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .portfolio-item__mobile-info h3 {
+    font-size: 1.15rem;
+    color: var(--white);
+    letter-spacing: -0.02em;
+    margin: 0;
+  }
+  .portfolio-item__mobile-info .portfolio-item__link {
+    font-size: 0.8rem;
+    color: var(--accent);
+    font-weight: 600;
+    margin-top: 0.4rem;
+    letter-spacing: 0.03em;
+  }
+
+  /* Pro Bau mobile */
+  .portfolio-item__img--probau { height: 220px; }
+  .portfolio-item__probau-logo { width: 140px; }
 
   /* ── TESTIMONIALS ── */
   .testimonials__grid  { grid-template-columns: 1fr; gap: 1rem; }
@@ -1316,6 +1349,10 @@ select option { background: var(--dark-2); }
   /* Full width buttons everywhere */
   .btn { padding: 0.9rem 1.5rem; font-size: 0.85rem; }
 }
+
+/* ── MOBILE PORTFOLIO CARDS ─────────────────── */
+.portfolio-item__mobile-info { display: none; }
+.hide-mobile { display: block; }
 
 /* ── TOUCH DEVICES: always show overlays ── */
 @media (hover: none) {
