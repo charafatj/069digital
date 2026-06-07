@@ -657,7 +657,7 @@ a { text-decoration: none; color: inherit; }
   background-size: cover;
   background-position: center;
   animation: slowZoomPan 12s ease-in-out infinite;
-  filter: grayscale(20%) brightness(0.55) contrast(1.05);
+  filter: brightness(0.92) contrast(1.02);
   z-index: 0;
 }
 
@@ -665,9 +665,7 @@ a { text-decoration: none; color: inherit; }
   content: '';
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(to top, rgba(2, 8, 2, 0.97) 0%, rgba(2, 8, 2, 0.5) 55%, rgba(2, 8, 2, 0.15) 100%),
-    linear-gradient(135deg, rgba(0,180,80,0.06) 0%, transparent 60%);
+  background: linear-gradient(to top, rgba(2, 8, 2, 0.75) 0%, rgba(2, 8, 2, 0.1) 50%, transparent 100%);
   z-index: 1;
   pointer-events: none;
 }
