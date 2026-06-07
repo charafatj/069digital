@@ -640,7 +640,8 @@ a { text-decoration: none; color: inherit; }
 }
 
 .portfolio-item__img--prohilfe {
-  background-size: 110% auto !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
   animation: panLeftRight 10s ease-in-out infinite;
   position: relative;
   overflow: hidden;
