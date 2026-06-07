@@ -635,35 +635,23 @@ a { text-decoration: none; color: inherit; }
 /* Pro Hilfe GbR */
 .portfolio-item__img--prohilfe {
   background: linear-gradient(135deg, #0a1a0f 0%, #1a3a20 45%, #0f2d15 100%);
+  background-size: cover !important;
+  background-position: center !important;
   position: relative;
   overflow: hidden;
 }
-.portfolio-item__img--prohilfe::before {
-  content: 'PRO\AHILFE';
-  white-space: pre;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-family: var(--font-head);
-  font-size: 3.5rem;
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  color: rgba(255,255,255,0.04);
-  text-align: center;
-  pointer-events: none;
-  line-height: 1.1;
+.portfolio-item__img--prohilfe .portfolio-item__overlay {
+  background: linear-gradient(
+    to top,
+    rgba(5, 15, 8, 0.95) 0%,
+    rgba(5, 15, 8, 0.6) 50%,
+    rgba(5, 15, 8, 0.25) 100%
+  );
+  opacity: 1;
 }
-.portfolio-item__img--prohilfe::after {
-  content: '';
-  position: absolute;
-  bottom: -60px;
-  right: -60px;
-  width: 220px;
-  height: 220px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(34,197,94,0.12) 0%, transparent 70%);
-  pointer-events: none;
+.portfolio-item__img--prohilfe:hover .portfolio-item__overlay {
+  background: rgba(5, 15, 8, 0.88);
+  opacity: 1;
 }
 
 /* Smart Market — always show bottom info strip */
