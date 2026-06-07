@@ -79,14 +79,48 @@ function animateCounter(el) {
   requestAnimationFrame(step);
 }
 
-// ── TOUCH: Portfolio tap to show overlay ─────
-if ('ontouchstart' in window) {
-  document.querySelectorAll('.portfolio-item__img').forEach(item => {
-    item.addEventListener('touchstart', () => {
-      // remove active from all others
-      document.querySelectorAll('.portfolio-item__img').forEach(i => i.classList.remove('touch-active'));
-      item.classList.add('touch-active');
-    }, { passive: true });
+// ── PORTFOLIO CAROUSEL (mobile) ──────────────
+const track = document.getElementById('carouselTrack');
+const dots  = document.querySelectorAll('.carousel-dot');
+
+if (track) {
+  // Update active dot + slide on scroll
+  const slides = track.querySelectorAll('.carousel-slide');
+  const updateCarousel = () => {
+    const center = track.scrollLeft + track.offsetWidth / 2;
+    let closest = 0, minDist = Infinity;
+    slides.forEach((slide, i) => {
+      const dist = Math.abs(slide.offsetLeft + slide.offsetWidth / 2 - center);
+      if (dist < minDist) { minDist = dist; closest = i; }
+    });
+    slides.forEach((s, i) => s.classList.toggle('active-slide', i === closest));
+    dots.forEach((d, i) => d.classList.toggle('active', i === closest));
+  };
+
+  track.addEventListener('scroll', updateCarousel, { passive: true });
+  updateCarousel();
+
+  // Dot click → scroll to slide
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      const i = parseInt(dot.dataset.index);
+      slides[i].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    });
+  });
+
+  // Mouse drag support
+  let isDragging = false, startX = 0, scrollStart = 0;
+  track.addEventListener('mousedown', e => {
+    isDragging = true; startX = e.pageX; scrollStart = track.scrollLeft;
+    track.classList.add('grabbing');
+  });
+  window.addEventListener('mousemove', e => {
+    if (!isDragging) return;
+    track.scrollLeft = scrollStart - (e.pageX - startX);
+  });
+  window.addEventListener('mouseup', () => {
+    isDragging = false;
+    track.classList.remove('grabbing');
   });
 }
 
