@@ -229,29 +229,39 @@ a { text-decoration: none; color: inherit; }
   position: fixed;
   inset: 0;
   z-index: 999;
-  background: var(--black);
+  background: rgba(6, 6, 6, 0.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   flex-direction: column;
   align-items: center;
   justify-content: center;
   opacity: 0;
   pointer-events: none;
-  transition: opacity var(--transition);
+  transition: opacity 0.35s ease;
 }
 .mobile-menu.open {
   opacity: 1;
   pointer-events: all;
 }
 .mobile-menu ul { list-style: none; text-align: center; }
-.mobile-menu ul li { margin: 1.5rem 0; }
+.mobile-menu ul li {
+  margin: 0;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+  padding: 1.25rem 3rem;
+}
+.mobile-menu ul li:first-child { border-top: 1px solid var(--border); }
 .mobile-menu ul li a {
   font-family: var(--font-head);
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 7vw, 2.2rem);
   font-weight: 600;
   color: var(--white);
   letter-spacing: -0.03em;
   transition: color var(--transition);
+  display: block;
 }
-.mobile-menu ul li a:hover { color: var(--accent); }
+.mobile-menu ul li a:hover,
+.mobile-menu ul li a:active { color: var(--accent); }
 
 /* ── HERO ───────────────────────────────────── */
 .hero {
@@ -1204,29 +1214,118 @@ select option { background: var(--dark-2); }
 }
 
 @media (max-width: 768px) {
+  /* ── NAV ── */
   .nav__links          { display: none; }
   .nav__burger         { display: flex; }
   .mobile-menu         { display: flex; }
+  .nav__inner          { padding: 0 1.25rem; }
 
-  .stats__grid         { grid-template-columns: repeat(2, 1fr); }
+  /* ── TYPOGRAPHY ── */
+  h1 { font-size: clamp(2.2rem, 9vw, 3rem); }
+  h2 { font-size: clamp(1.7rem, 6vw, 2.2rem); }
+  h3 { font-size: 1.05rem; }
+  p  { font-size: 0.95rem; }
+
+  /* ── HERO ── */
+  .hero__content       { padding-top: 7rem; padding-bottom: 4rem; }
+  .hero__badge         { font-size: 0.65rem; }
+  .hero__sub           { font-size: 1rem; }
+  .hero__actions       { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+  .hero__actions .btn  { width: 100%; justify-content: center; }
+
+  /* ── STATS ── */
+  .stats               { padding: 2.5rem 0; }
+  .stats__grid         { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+  .stat__number        { font-size: 2.2rem; }
+
+  /* ── SECTION SPACING ── */
+  .services, .process, .portfolio, .testimonials, .about, .contact { padding: 5rem 0; }
+  .section-header      { margin-bottom: 3rem; }
+  .container           { padding: 0 1.25rem; }
+
+  /* ── SERVICES ── */
   .services__grid      { grid-template-columns: 1fr; }
-  .portfolio__grid      { grid-template-columns: 1fr; grid-template-rows: auto; }
-  .portfolio-item--wide { grid-column: span 1; }
-  .portfolio-item__img  { height: 280px; }
-  .portfolio-item__overlay { opacity: 1; }
-  .portfolio-item__video { object-position: top left; height: 280px; }
-  .testimonials__grid  { grid-template-columns: 1fr; }
-  .process__step       { flex: 0 0 100%; }
-  .footer__nav         { grid-template-columns: 1fr 1fr; }
+  .service-card        { padding: 1.75rem; }
+
+  /* ── PROCESS ── */
+  .process__step       { flex: 0 0 100%; padding: 1.5rem 1rem; text-align: left; }
+  .process__num        { font-size: 2.5rem; }
+
+  /* ── PORTFOLIO ── */
+  .portfolio__grid          { grid-template-columns: 1fr; grid-template-rows: auto; gap: 2px; }
+  .portfolio-item--wide     { grid-column: span 1; }
+  .portfolio-item__img      { height: 300px; }
+  .portfolio-item__video    { height: 300px; object-position: top center; }
+  .portfolio-item__overlay  { opacity: 1 !important; background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 60%, transparent 100%) !important; }
+  .portfolio-item__img--prohilfe .portfolio-item__overlay { opacity: 1 !important; background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 60%, transparent 100%) !important; }
+
+  /* Pro Bau mobile — logo always visible, smaller */
+  .portfolio-item__img--probau { height: 300px; }
+  .portfolio-item__probau-logo { width: 160px; }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials__grid  { grid-template-columns: 1fr; gap: 1rem; }
+  .testimonial         { padding: 1.5rem; }
+
+  /* ── ABOUT ── */
+  .about__inner        { grid-template-columns: 1fr; gap: 2.5rem; }
+  .about__card         { padding: 2rem; }
+  .about__card-inner   { gap: 1.5rem; }
+  .about__metric-num   { font-size: 2.2rem; }
+  .about__values       { gap: 0.75rem; }
+
+  /* ── CTA BAND ── */
+  .cta-band            { padding: 4rem 0; }
+  .cta-band__inner .btn { width: 100%; justify-content: center; }
+
+  /* ── CONTACT ── */
+  .contact__inner      { grid-template-columns: 1fr; gap: 2.5rem; }
   .contact__form       { grid-template-columns: 1fr; }
   .form-group--full    { grid-column: 1; }
-  .hero__actions       { flex-direction: column; align-items: flex-start; }
+  .contact__details    { gap: 1rem; }
 
-  h1 { font-size: 2.6rem; }
-  h2 { font-size: 1.9rem; }
+  /* ── FOOTER ── */
+  .footer__inner       { gap: 2.5rem; padding: 3rem 1.25rem 2.5rem; }
+  .footer__nav         { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .footer__bottom      { padding: 1.25rem 1.25rem; text-align: center; }
 }
 
 @media (max-width: 480px) {
-  .stats__grid  { grid-template-columns: 1fr; }
-  .footer__nav  { grid-template-columns: 1fr; }
+  /* ── EXTRA SMALL ── */
+  .stats__grid         { grid-template-columns: repeat(2, 1fr); }
+  .footer__nav         { grid-template-columns: 1fr; }
+  .hero__badge         { display: none; }
+
+  /* Portfolio taller on small phones */
+  .portfolio-item__img  { height: 260px; }
+  .portfolio-item__video { height: 260px; }
+  .portfolio-item__img--probau { height: 260px; }
+
+  /* Tighter service cards */
+  .service-card        { padding: 1.5rem; }
+  .service-card ul     { display: none; }
+
+  /* Process steps minimal */
+  .process__step       { padding: 1rem 0.5rem; }
+
+  /* Smaller about metrics */
+  .about__card-inner   { flex-direction: row; flex-wrap: wrap; gap: 1rem; }
+  .about__metric       { flex: 1; min-width: 80px; }
+  .about__metric-num   { font-size: 1.8rem; }
+
+  /* Full width buttons everywhere */
+  .btn { padding: 0.9rem 1.5rem; font-size: 0.85rem; }
+}
+
+/* ── TOUCH DEVICES: always show overlays ── */
+@media (hover: none) {
+  .portfolio-item__overlay { opacity: 1 !important; }
+  .portfolio-item__img--prohilfe .portfolio-item__overlay {
+    opacity: 1 !important;
+    background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 70%) !important;
+  }
+  .portfolio-item__img--probau:hover .portfolio-item__probau-logo { opacity: 0.9; }
+  .portfolio-item__img--probau:hover .portfolio-item__overlay { background: rgba(0,0,0,0.75); }
+  .testimonial:hover { transform: none; }
+  .service-card:hover { background: var(--dark); }
 }
