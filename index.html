@@ -27,7 +27,10 @@
         <li><a href="#kontakt" class="nav__cta" data-i18n="nav-cta">Projekt starten</a></li>
       </ul>
       <div class="nav__right">
-        <button class="lang-toggle" id="langToggle" aria-label="Switch language">EN</button>
+        <div class="lang-flags" id="langFlags">
+          <button class="lang-flag active" data-lang="de" aria-label="Deutsch">🇩🇪</button>
+          <button class="lang-flag" data-lang="en" aria-label="English">🇬🇧</button>
+        </div>
         <button class="nav__burger" id="burger" aria-label="Menü">
           <span></span><span></span><span></span>
         </button>
@@ -43,7 +46,10 @@
       <li><a href="#ueber-uns" class="mobile-link" data-i18n="nav-about">Über uns</a></li>
       <li><a href="#kontakt" class="mobile-link" data-i18n="nav-cta">Projekt starten</a></li>
     </ul>
-    <button class="lang-toggle lang-toggle--mobile" id="langToggleMobile">EN</button>
+    <div class="lang-flags lang-flags--mobile" id="langFlagsMobile">
+      <button class="lang-flag active" data-lang="de" aria-label="Deutsch">🇩🇪</button>
+      <button class="lang-flag" data-lang="en" aria-label="English">🇬🇧</button>
+    </div>
   </div>
 
   <!-- HERO -->
