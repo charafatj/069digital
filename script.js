@@ -131,17 +131,21 @@ function applyLang(lang) {
     if (t[key] !== undefined) el.placeholder = t[key];
   });
 
-  document.querySelectorAll('.lang-flag').forEach(btn => {
-    btn.classList.toggle('active', btn.dataset.lang === lang);
+  const toggleLabel = lang === 'de' ? 'EN' : 'DE';
+  document.querySelectorAll('#langToggle, #langToggleMobile').forEach(btn => {
+    if (btn) btn.textContent = toggleLabel;
   });
 
   localStorage.setItem('lang', lang);
   currentLang = lang;
 }
 
-document.querySelectorAll('.lang-flag').forEach(btn => {
-  btn.addEventListener('click', () => applyLang(btn.dataset.lang));
-});
+function toggleLang() {
+  applyLang(currentLang === 'de' ? 'en' : 'de');
+}
+
+document.getElementById('langToggle')?.addEventListener('click', toggleLang);
+document.getElementById('langToggleMobile')?.addEventListener('click', toggleLang);
 
 applyLang(currentLang);
 
