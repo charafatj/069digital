@@ -21,25 +21,29 @@
     <div class="nav__inner">
       <a href="#" class="nav__logo">069<span>Digital</span></a>
       <ul class="nav__links">
-        <li><a href="#leistungen">Leistungen</a></li>
-        <li><a href="#arbeiten">Arbeiten</a></li>
-        <li><a href="#ueber-uns">Über uns</a></li>
-        <li><a href="#kontakt" class="nav__cta">Projekt starten</a></li>
+        <li><a href="#leistungen" data-i18n="nav-services">Leistungen</a></li>
+        <li><a href="#arbeiten" data-i18n="nav-work">Arbeiten</a></li>
+        <li><a href="#ueber-uns" data-i18n="nav-about">Über uns</a></li>
+        <li><a href="#kontakt" class="nav__cta" data-i18n="nav-cta">Projekt starten</a></li>
       </ul>
-      <button class="nav__burger" id="burger" aria-label="Menü">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="nav__right">
+        <button class="lang-toggle" id="langToggle" aria-label="Switch language">EN</button>
+        <button class="nav__burger" id="burger" aria-label="Menü">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </nav>
 
   <!-- MOBILE MENU -->
   <div class="mobile-menu" id="mobileMenu">
     <ul>
-      <li><a href="#leistungen" class="mobile-link">Leistungen</a></li>
-      <li><a href="#arbeiten" class="mobile-link">Arbeiten</a></li>
-      <li><a href="#ueber-uns" class="mobile-link">Über uns</a></li>
-      <li><a href="#kontakt" class="mobile-link">Projekt starten</a></li>
+      <li><a href="#leistungen" class="mobile-link" data-i18n="nav-services">Leistungen</a></li>
+      <li><a href="#arbeiten" class="mobile-link" data-i18n="nav-work">Arbeiten</a></li>
+      <li><a href="#ueber-uns" class="mobile-link" data-i18n="nav-about">Über uns</a></li>
+      <li><a href="#kontakt" class="mobile-link" data-i18n="nav-cta">Projekt starten</a></li>
     </ul>
+    <button class="lang-toggle lang-toggle--mobile" id="langToggleMobile">EN</button>
   </div>
 
   <!-- HERO -->
@@ -50,18 +54,18 @@
     </div>
     <div class="container hero__content">
       <div class="hero__badge reveal">Build · Brand · Grow</div>
-      <h1 class="hero__headline reveal">
+      <h1 class="hero__headline reveal" data-i18n-html="hero-headline">
         Wir erwecken Ihre<br />
         <span class="gradient-text">Ideen</span><br />
         zum Leben.
       </h1>
-      <p class="hero__sub reveal">
+      <p class="hero__sub reveal" data-i18n-html="hero-sub">
         069Digital ist deine Agentur für Webdesign, Branding &amp; Performance.<br />
         Wir verbinden Strategie, Design und Technologie — präzise, modern, wirkungsvoll.
       </p>
       <div class="hero__actions reveal">
-        <a href="#kontakt" class="btn btn--primary">Projekt starten</a>
-        <a href="#arbeiten" class="btn btn--ghost">Unsere Arbeiten</a>
+        <a href="#kontakt" class="btn btn--primary" data-i18n="hero-btn-primary">Projekt starten</a>
+        <a href="#arbeiten" class="btn btn--ghost" data-i18n="hero-btn-ghost">Unsere Arbeiten</a>
       </div>
     </div>
     <div class="hero__scroll">
@@ -74,19 +78,19 @@
     <div class="container stats__grid">
       <div class="stat reveal">
         <span class="stat__number" data-target="120">0</span><span class="stat__plus">+</span>
-        <p>Projekte abgeschlossen</p>
+        <p data-i18n="stat-1">Projekte abgeschlossen</p>
       </div>
       <div class="stat reveal">
         <span class="stat__number" data-target="98">0</span><span class="stat__plus">%</span>
-        <p>Zufriedene Kunden</p>
+        <p data-i18n="stat-2">Zufriedene Kunden</p>
       </div>
       <div class="stat reveal">
         <span class="stat__number" data-target="8">0</span><span class="stat__plus"></span>
-        <p>Jahre Erfahrung</p>
+        <p data-i18n="stat-3">Jahre Erfahrung</p>
       </div>
       <div class="stat reveal">
         <span class="stat__number" data-target="4">0</span><span class="stat__plus">x</span>
-        <p>Ø ROI unserer Kunden</p>
+        <p data-i18n="stat-4">Ø ROI unserer Kunden</p>
       </div>
     </div>
   </section>
@@ -95,9 +99,9 @@
   <section class="services" id="leistungen">
     <div class="container">
       <div class="section-header reveal">
-        <span class="label">Was wir tun</span>
-        <h2>Unsere Leistungen</h2>
-        <p>Von der ersten Idee bis zum fertigen Produkt — wir begleiten dich auf dem gesamten digitalen Weg.</p>
+        <span class="label" data-i18n="svc-label">Was wir tun</span>
+        <h2 data-i18n="svc-title">Unsere Leistungen</h2>
+        <p data-i18n="svc-desc">Von der ersten Idee bis zum fertigen Produkt — wir begleiten dich auf dem gesamten digitalen Weg.</p>
       </div>
       <div class="services__grid">
 
@@ -105,13 +109,13 @@
           <div class="service-card__icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
           </div>
-          <h3>Webdesign & Entwicklung</h3>
-          <p>Maßgeschneiderte Websites und Web-Applikationen mit höchstem Anspruch an Design, Performance und Nutzererfahrung.</p>
+          <h3 data-i18n="s1-title">Webdesign & Entwicklung</h3>
+          <p data-i18n="s1-desc">Maßgeschneiderte Websites und Web-Applikationen mit höchstem Anspruch an Design, Performance und Nutzererfahrung.</p>
           <ul>
-            <li>Corporate Websites</li>
-            <li>Landing Pages</li>
-            <li>E-Commerce</li>
-            <li>Web-Applikationen</li>
+            <li data-i18n="s1-li1">Corporate Websites</li>
+            <li data-i18n="s1-li2">Landing Pages</li>
+            <li data-i18n="s1-li3">E-Commerce</li>
+            <li data-i18n="s1-li4">Web-Applikationen</li>
           </ul>
         </div>
 
@@ -119,13 +123,13 @@
           <div class="service-card__icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg>
           </div>
-          <h3>Branding & Corporate Design</h3>
-          <p>Wir entwickeln starke Markenidentitäten — von Logo und Farbwelt bis zum vollständigen Corporate Design System.</p>
+          <h3 data-i18n="s2-title">Branding & Corporate Design</h3>
+          <p data-i18n="s2-desc">Wir entwickeln starke Markenidentitäten — von Logo und Farbwelt bis zum vollständigen Corporate Design System.</p>
           <ul>
-            <li>Logo Design</li>
-            <li>Brand Strategy</li>
-            <li>Design System</li>
-            <li>Brand Guidelines</li>
+            <li data-i18n="s2-li1">Logo Design</li>
+            <li data-i18n="s2-li2">Brand Strategy</li>
+            <li data-i18n="s2-li3">Design System</li>
+            <li data-i18n="s2-li4">Brand Guidelines</li>
           </ul>
         </div>
 
@@ -133,13 +137,13 @@
           <div class="service-card__icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
           </div>
-          <h3>SEO & Performance</h3>
-          <p>Organische Sichtbarkeit, technische Optimierung und messbare Ergebnisse — wir sorgen dafür, dass du gefunden wirst.</p>
+          <h3 data-i18n="s3-title">SEO & Performance</h3>
+          <p data-i18n="s3-desc">Organische Sichtbarkeit, technische Optimierung und messbare Ergebnisse — wir sorgen dafür, dass du gefunden wirst.</p>
           <ul>
-            <li>Technisches SEO</li>
-            <li>Content-Strategie</li>
-            <li>Core Web Vitals</li>
-            <li>SEO-Audits</li>
+            <li data-i18n="s3-li1">Technisches SEO</li>
+            <li data-i18n="s3-li2">Content-Strategie</li>
+            <li data-i18n="s3-li3">Core Web Vitals</li>
+            <li data-i18n="s3-li4">SEO-Audits</li>
           </ul>
         </div>
 
@@ -147,13 +151,13 @@
           <div class="service-card__icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
           </div>
-          <h3>Performance Marketing</h3>
-          <p>Datengetriebene Kampagnen auf Google, Meta & Co. — mit klarem Fokus auf ROAS, Conversions und Wachstum.</p>
+          <h3 data-i18n="s4-title">Performance Marketing</h3>
+          <p data-i18n="s4-desc">Datengetriebene Kampagnen auf Google, Meta & Co. — mit klarem Fokus auf ROAS, Conversions und Wachstum.</p>
           <ul>
-            <li>Google Ads</li>
-            <li>Meta Ads</li>
-            <li>Conversion-Optimierung</li>
-            <li>Kampagnen-Analyse</li>
+            <li data-i18n="s4-li1">Google Ads</li>
+            <li data-i18n="s4-li2">Meta Ads</li>
+            <li data-i18n="s4-li3">Conversion-Optimierung</li>
+            <li data-i18n="s4-li4">Kampagnen-Analyse</li>
           </ul>
         </div>
 
@@ -161,13 +165,13 @@
           <div class="service-card__icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           </div>
-          <h3>Social Media & Content</h3>
-          <p>Authentischer, strategischer Content — der deine Marke auf den richtigen Kanälen sichtbar macht.</p>
+          <h3 data-i18n="s5-title">Social Media & Content</h3>
+          <p data-i18n="s5-desc">Authentischer, strategischer Content — der deine Marke auf den richtigen Kanälen sichtbar macht.</p>
           <ul>
-            <li>Social Media Strategie</li>
-            <li>Content Creation</li>
-            <li>Community Management</li>
-            <li>Influencer Marketing</li>
+            <li data-i18n="s5-li1">Social Media Strategie</li>
+            <li data-i18n="s5-li2">Content Creation</li>
+            <li data-i18n="s5-li3">Community Management</li>
+            <li data-i18n="s5-li4">Influencer Marketing</li>
           </ul>
         </div>
 
@@ -175,13 +179,13 @@
           <div class="service-card__icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
-          <h3>Strategie & Beratung</h3>
-          <p>Digitale Strategie, Marktanalyse und Transformation — wir denken mit dir langfristig und liefern echten Business-Impact.</p>
+          <h3 data-i18n="s6-title">Strategie & Beratung</h3>
+          <p data-i18n="s6-desc">Digitale Strategie, Marktanalyse und Transformation — wir denken mit dir langfristig und liefern echten Business-Impact.</p>
           <ul>
-            <li>Digitalstrategie</li>
-            <li>Marktanalyse</li>
-            <li>UX-Beratung</li>
-            <li>Growth Hacking</li>
+            <li data-i18n="s6-li1">Digitalstrategie</li>
+            <li data-i18n="s6-li2">Marktanalyse</li>
+            <li data-i18n="s6-li3">UX-Beratung</li>
+            <li data-i18n="s6-li4">Growth Hacking</li>
           </ul>
         </div>
 
@@ -193,33 +197,33 @@
   <section class="process">
     <div class="container">
       <div class="section-header reveal">
-        <span class="label">Wie wir arbeiten</span>
-        <h2>Unser Prozess</h2>
-        <p>Klar strukturiert. Transparent. Ergebnisorientiert.</p>
+        <span class="label" data-i18n="proc-label">Wie wir arbeiten</span>
+        <h2 data-i18n="proc-title">Unser Prozess</h2>
+        <p data-i18n="proc-desc">Klar strukturiert. Transparent. Ergebnisorientiert.</p>
       </div>
       <div class="process__steps">
         <div class="process__step reveal">
           <div class="process__num">01</div>
-          <h3>Discovery</h3>
-          <p>Wir analysieren dein Unternehmen, deine Ziele und den Markt — bevor wir auch nur eine Zeile Code schreiben.</p>
+          <h3 data-i18n="proc-1-title">Discovery</h3>
+          <p data-i18n="proc-1-desc">Wir analysieren dein Unternehmen, deine Ziele und den Markt — bevor wir auch nur eine Zeile Code schreiben.</p>
         </div>
         <div class="process__connector"></div>
         <div class="process__step reveal">
           <div class="process__num">02</div>
-          <h3>Strategie</h3>
-          <p>Auf Basis der Analyse entwickeln wir eine maßgeschneiderte digitale Strategie mit klaren Meilensteinen.</p>
+          <h3 data-i18n="proc-2-title">Strategie</h3>
+          <p data-i18n="proc-2-desc">Auf Basis der Analyse entwickeln wir eine maßgeschneiderte digitale Strategie mit klaren Meilensteinen.</p>
         </div>
         <div class="process__connector"></div>
         <div class="process__step reveal">
           <div class="process__num">03</div>
-          <h3>Design</h3>
-          <p>Wir gestalten intuitive, ästhetische Interfaces — mit Fokus auf Brand, UX und Konversionsrate.</p>
+          <h3 data-i18n="proc-3-title">Design</h3>
+          <p data-i18n="proc-3-desc">Wir gestalten intuitive, ästhetische Interfaces — mit Fokus auf Brand, UX und Konversionsrate.</p>
         </div>
         <div class="process__connector"></div>
         <div class="process__step reveal">
           <div class="process__num">04</div>
-          <h3>Launch & Wachstum</h3>
-          <p>Sauber implementiert, live gebracht und kontinuierlich optimiert — für nachhaltige Ergebnisse.</p>
+          <h3 data-i18n="proc-4-title">Launch & Wachstum</h3>
+          <p data-i18n="proc-4-desc">Sauber implementiert, live gebracht und kontinuierlich optimiert — für nachhaltige Ergebnisse.</p>
         </div>
       </div>
     </div>
@@ -229,9 +233,9 @@
   <section class="portfolio" id="arbeiten">
     <div class="container">
       <div class="section-header reveal">
-        <span class="label">Ausgewählte Projekte</span>
-        <h2>Unsere Arbeiten</h2>
-        <p>Projekte, auf die wir stolz sind — und Kunden, die noch stolzer sind.</p>
+        <span class="label" data-i18n="port-label">Ausgewählte Projekte</span>
+        <h2 data-i18n="port-title">Unsere Arbeiten</h2>
+        <p data-i18n="port-desc">Projekte, auf die wir stolz sind — und Kunden, die noch stolzer sind.</p>
       </div>
 
       <!-- DESKTOP GRID -->
@@ -244,8 +248,8 @@
             <div class="portfolio-item__overlay portfolio-item__overlay--visible">
               <span class="portfolio-item__tag">E-Commerce</span>
               <h3>Smart Market</h3>
-              <p>Von der Plattform bis zur Community — wir haben Smart Market digital aufgebaut und skaliert.</p>
-              <a href="https://smartmarket.ma/" target="_blank" rel="noopener" class="portfolio-item__link">Projekt ansehen →</a>
+              <p data-i18n="port-sm-desc">Von der Plattform bis zur Community — wir haben Smart Market digital aufgebaut und skaliert.</p>
+              <a href="https://smartmarket.ma/" target="_blank" rel="noopener" class="portfolio-item__link" data-i18n="port-link">Projekt ansehen →</a>
             </div>
           </div>
         </div>
@@ -255,8 +259,8 @@
             <div class="portfolio-item__overlay">
               <span class="portfolio-item__tag">Visual Identity</span>
               <h3>Pro Hilfe GbR</h3>
-              <p>Wenn Auftreten alles ist. Wir haben sichergestellt, dass Pro Hilfe auf dem Parkett gesehen — und nicht vergessen wird.</p>
-              <a href="https://pro-hilfe.de/" target="_blank" rel="noopener" class="portfolio-item__link">Projekt ansehen →</a>
+              <p data-i18n="port-ph-desc">Wenn Auftreten alles ist. Wir haben sichergestellt, dass Pro Hilfe auf dem Parkett gesehen — und nicht vergessen wird.</p>
+              <a href="https://pro-hilfe.de/" target="_blank" rel="noopener" class="portfolio-item__link" data-i18n="port-link">Projekt ansehen →</a>
             </div>
           </div>
         </div>
@@ -269,8 +273,8 @@
             <div class="portfolio-item__overlay">
               <span class="portfolio-item__tag">SEO · Local Search</span>
               <h3>Pro Bau GmbH</h3>
-              <p>Von Seite 4 auf Position 1 — lokales SEO-Projekt mit messbarem Wachstum für ein Frankfurter Bauunternehmen seit 1994.</p>
-              <a href="#" class="portfolio-item__link">Projekt ansehen →</a>
+              <p data-i18n="port-pb-desc">Von Seite 4 auf Position 1 — lokales SEO-Projekt mit messbarem Wachstum für ein Frankfurter Bauunternehmen seit 1994.</p>
+              <a href="#" class="portfolio-item__link" data-i18n="port-link">Projekt ansehen →</a>
             </div>
           </div>
         </div>
@@ -280,8 +284,8 @@
             <div class="portfolio-item__overlay">
               <span class="portfolio-item__tag">Web-App · UX/UI</span>
               <h3>MedConnect Platform</h3>
-              <p>End-to-End Design und Entwicklung einer B2B-SaaS-Plattform für den Gesundheitssektor.</p>
-              <a href="#" class="portfolio-item__link">Projekt ansehen →</a>
+              <p data-i18n="port-mc-desc">End-to-End Design und Entwicklung einer B2B-SaaS-Plattform für den Gesundheitssektor.</p>
+              <a href="#" class="portfolio-item__link" data-i18n="port-link">Projekt ansehen →</a>
             </div>
           </div>
         </div>
@@ -300,8 +304,8 @@
             <div class="carousel-slide__info">
               <span class="carousel-slide__tag">E-Commerce</span>
               <h3>Smart Market</h3>
-              <p>Von der Plattform bis zur Community — wir haben Smart Market digital aufgebaut und skaliert.</p>
-              <a href="https://smartmarket.ma/" target="_blank" rel="noopener" class="carousel-slide__link">Projekt ansehen →</a>
+              <p data-i18n="port-sm-desc">Von der Plattform bis zur Community — wir haben Smart Market digital aufgebaut und skaliert.</p>
+              <a href="https://smartmarket.ma/" target="_blank" rel="noopener" class="carousel-slide__link" data-i18n="port-link">Projekt ansehen →</a>
             </div>
           </div>
 
@@ -310,8 +314,8 @@
             <div class="carousel-slide__info">
               <span class="carousel-slide__tag">Visual Identity</span>
               <h3>Pro Hilfe GbR</h3>
-              <p>Wenn Auftreten alles ist. Wir haben sichergestellt, dass Pro Hilfe auf dem Parkett gesehen — und nicht vergessen wird.</p>
-              <a href="https://pro-hilfe.de/" target="_blank" rel="noopener" class="carousel-slide__link">Projekt ansehen →</a>
+              <p data-i18n="port-ph-desc">Wenn Auftreten alles ist. Wir haben sichergestellt, dass Pro Hilfe auf dem Parkett gesehen — und nicht vergessen wird.</p>
+              <a href="https://pro-hilfe.de/" target="_blank" rel="noopener" class="carousel-slide__link" data-i18n="port-link">Projekt ansehen →</a>
             </div>
           </div>
 
@@ -322,17 +326,17 @@
             <div class="carousel-slide__info">
               <span class="carousel-slide__tag">SEO · Local Search</span>
               <h3>Pro Bau GmbH</h3>
-              <p>Von Seite 4 auf Position 1 — lokales SEO-Projekt mit messbarem Wachstum für ein Frankfurter Bauunternehmen seit 1994.</p>
-              <a href="#" class="carousel-slide__link">Projekt ansehen →</a>
+              <p data-i18n="port-pb-desc">Von Seite 4 auf Position 1 — lokales SEO-Projekt mit messbarem Wachstum für ein Frankfurter Bauunternehmen seit 1994.</p>
+              <a href="#" class="carousel-slide__link" data-i18n="port-link">Projekt ansehen →</a>
             </div>
           </div>
 
           <div class="carousel-slide carousel-slide--cta">
             <div class="carousel-slide__cta-inner">
               <span class="carousel-slide__cta-num">120<sup>+</sup></span>
-              <span class="carousel-slide__cta-label">Projekte</span>
-              <p>Jedes davon einzigartig. Keines dem Zufall überlassen.</p>
-              <a href="#kontakt" class="btn btn--primary">Starte jetzt.</a>
+              <span class="carousel-slide__cta-label" data-i18n="port-cta-label">Projekte</span>
+              <p data-i18n="port-cta-desc">Jedes davon einzigartig. Keines dem Zufall überlassen.</p>
+              <a href="#kontakt" class="btn btn--primary" data-i18n="port-cta-btn">Starte jetzt.</a>
             </div>
           </div>
 
@@ -354,43 +358,43 @@
   <section class="testimonials">
     <div class="container">
       <div class="section-header reveal">
-        <span class="label">Kundenstimmen</span>
-        <h2>Was unsere Kunden sagen</h2>
+        <span class="label" data-i18n="test-label">Kundenstimmen</span>
+        <h2 data-i18n="test-title">Was unsere Kunden sagen</h2>
       </div>
       <div class="testimonials__grid" id="testimonialsGrid">
 
         <div class="testimonial reveal">
           <div class="testimonial__stars">★★★★★</div>
-          <p>"069Digital hat Smart Market auf ein neues Level gebracht. Von der ersten Idee bis zur Umsetzung — das Team denkt mit, liefert pünktlich und übertrifft jedes Mal die Erwartungen. Wer echte Ergebnisse will, ist hier genau richtig."</p>
+          <p data-i18n="test-1">"069Digital hat Smart Market auf ein neues Level gebracht. Von der ersten Idee bis zur Umsetzung — das Team denkt mit, liefert pünktlich und übertrifft jedes Mal die Erwartungen. Wer echte Ergebnisse will, ist hier genau richtig."</p>
           <div class="testimonial__author">
             <div class="testimonial__avatar">A</div>
             <div>
               <strong>Attaaouij</strong>
-              <span>Gründer & CEO, Smart Market</span>
+              <span data-i18n="test-1-role">Gründer & CEO, Smart Market</span>
             </div>
           </div>
         </div>
 
         <div class="testimonial reveal">
           <div class="testimonial__stars">★★★★★</div>
-          <p>"Professionell, zuverlässig und kreativ. Das Team von 069Digital hat unser Branding von Grund auf neu gedacht — mit einem Ergebnis, das unsere Kunden begeistert."</p>
+          <p data-i18n="test-2">"Professionell, zuverlässig und kreativ. Das Team von 069Digital hat unser Branding von Grund auf neu gedacht — mit einem Ergebnis, das unsere Kunden begeistert."</p>
           <div class="testimonial__author">
             <div class="testimonial__avatar">SB</div>
             <div>
               <strong>Sandra Bauer</strong>
-              <span>Gründerin, Nexus Finance</span>
+              <span data-i18n="test-2-role">Gründerin, Nexus Finance</span>
             </div>
           </div>
         </div>
 
         <div class="testimonial reveal">
           <div class="testimonial__stars">★★★★★</div>
-          <p>"Dank 069Digital sind wir jetzt die Nr. 1 in Frankfurt für unsere Nische. Das SEO-Projekt war eine der besten Investitionen, die wir je gemacht haben."</p>
+          <p data-i18n="test-3">"Dank 069Digital sind wir jetzt die Nr. 1 in Frankfurt für unsere Nische. Das SEO-Projekt war eine der besten Investitionen, die wir je gemacht haben."</p>
           <div class="testimonial__author">
             <div class="testimonial__avatar">TW</div>
             <div>
               <strong>Thomas Weber</strong>
-              <span>Geschäftsführer, ProBau GmbH</span>
+              <span data-i18n="test-3-role">Geschäftsführer, ProBau GmbH</span>
             </div>
           </div>
         </div>
@@ -409,23 +413,23 @@
   <section class="about" id="ueber-uns">
     <div class="container about__inner">
       <div class="about__text reveal">
-        <span class="label">Über uns</span>
-        <h2>Wir sind 069Digital</h2>
-        <p>Gegründet in Frankfurt am Main, arbeiten wir mit Unternehmen zusammen, die digitales Wachstum nicht dem Zufall überlassen wollen.</p>
-        <p>Unser Team aus Designern, Entwicklern und Strategisten bringt jahrelange Erfahrung aus Agenturen, Startups und internationalen Konzernen mit.</p>
-        <p>Wir glauben: <strong>Jedes Unternehmen verdient einen starken digitalen Auftritt.</strong></p>
+        <span class="label" data-i18n="about-label">Über uns</span>
+        <h2 data-i18n="about-title">Wir sind 069Digital</h2>
+        <p data-i18n="about-p1">Gegründet in Frankfurt am Main, arbeiten wir mit Unternehmen zusammen, die digitales Wachstum nicht dem Zufall überlassen wollen.</p>
+        <p data-i18n="about-p2">Unser Team aus Designern, Entwicklern und Strategisten bringt jahrelange Erfahrung aus Agenturen, Startups und internationalen Konzernen mit.</p>
+        <p data-i18n-html="about-p3">Wir glauben: <strong>Jedes Unternehmen verdient einen starken digitalen Auftritt.</strong></p>
         <div class="about__values">
           <div class="about__value">
-            <span>Qualität</span>
-            <p>Kein Kompromiss bei Details.</p>
+            <span data-i18n="about-v1-title">Qualität</span>
+            <p data-i18n="about-v1-desc">Kein Kompromiss bei Details.</p>
           </div>
           <div class="about__value">
-            <span>Transparenz</span>
-            <p>Klare Kommunikation, jederzeit.</p>
+            <span data-i18n="about-v2-title">Transparenz</span>
+            <p data-i18n="about-v2-desc">Klare Kommunikation, jederzeit.</p>
           </div>
           <div class="about__value">
-            <span>Wirkung</span>
-            <p>Ergebnisse, die messbar sind.</p>
+            <span data-i18n="about-v3-title">Wirkung</span>
+            <p data-i18n="about-v3-desc">Ergebnisse, die messbar sind.</p>
           </div>
         </div>
       </div>
@@ -434,18 +438,18 @@
           <div class="about__card-inner">
             <div class="about__metric">
               <span class="about__metric-num">120<sup>+</sup></span>
-              <span>Projekte</span>
+              <span data-i18n="about-m1">Projekte</span>
             </div>
             <div class="about__metric">
               <span class="about__metric-num">8</span>
-              <span>Jahre</span>
+              <span data-i18n="about-m2">Jahre</span>
             </div>
             <div class="about__metric">
               <span class="about__metric-num">∞</span>
-              <span>Ideen</span>
+              <span data-i18n="about-m3">Ideen</span>
             </div>
           </div>
-          <p class="about__card-label">Ihr Wachstum ist unser Auftrag.</p>
+          <p class="about__card-label" data-i18n="about-card-label">Ihr Wachstum ist unser Auftrag.</p>
         </div>
       </div>
     </div>
@@ -454,9 +458,9 @@
   <!-- CTA BAND -->
   <section class="cta-band">
     <div class="container cta-band__inner reveal">
-      <h2>Bereit für das nächste Level?</h2>
-      <p>Lass uns gemeinsam dein nächstes digitales Projekt angehen.</p>
-      <a href="#kontakt" class="btn btn--primary btn--large">Jetzt Gespräch vereinbaren</a>
+      <h2 data-i18n="cta-title">Bereit für das nächste Level?</h2>
+      <p data-i18n="cta-desc">Lass uns gemeinsam dein nächstes digitales Projekt angehen.</p>
+      <a href="#kontakt" class="btn btn--primary btn--large" data-i18n="cta-btn">Jetzt Gespräch vereinbaren</a>
     </div>
   </section>
 
@@ -464,9 +468,9 @@
   <section class="contact" id="kontakt">
     <div class="container contact__inner">
       <div class="contact__info reveal">
-        <span class="label">Kontakt</span>
-        <h2>Lass uns reden.</h2>
-        <p>Schildere uns dein Projekt — wir melden uns innerhalb von 24 Stunden mit einer ersten Einschätzung.</p>
+        <span class="label" data-i18n="contact-label">Kontakt</span>
+        <h2 data-i18n="contact-title">Lass uns reden.</h2>
+        <p data-i18n="contact-desc">Schildere uns dein Projekt — wir melden uns innerhalb von 24 Stunden mit einer ersten Einschätzung.</p>
         <div class="contact__details">
           <div class="contact__detail">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -484,35 +488,35 @@
       </div>
       <form class="contact__form reveal" id="contactForm" action="https://formspree.io/f/xaqzowab" method="POST">
         <div class="form-group">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" placeholder="Max Mustermann" required />
+          <label for="name" data-i18n="form-name-label">Name</label>
+          <input type="text" id="name" name="name" data-i18n-ph="form-name-ph" placeholder="Max Mustermann" required />
         </div>
         <div class="form-group">
-          <label for="email">E-Mail</label>
-          <input type="email" id="email" name="email" placeholder="max@firma.de" required />
+          <label for="email" data-i18n="form-email-label">E-Mail</label>
+          <input type="email" id="email" name="email" data-i18n-ph="form-email-ph" placeholder="max@firma.de" required />
         </div>
         <div class="form-group">
-          <label for="company">Unternehmen</label>
-          <input type="text" id="company" name="company" placeholder="Muster GmbH" />
+          <label for="company" data-i18n="form-company-label">Unternehmen</label>
+          <input type="text" id="company" name="company" data-i18n-ph="form-company-ph" placeholder="Muster GmbH" />
         </div>
         <div class="form-group">
-          <label for="service">Leistung</label>
+          <label for="service" data-i18n="form-service-label">Leistung</label>
           <select id="service" name="service">
-            <option value="">Bitte auswählen</option>
-            <option>Webdesign & Entwicklung</option>
-            <option>Branding & Corporate Design</option>
-            <option>SEO & Performance</option>
-            <option>Performance Marketing</option>
-            <option>Social Media & Content</option>
-            <option>Strategie & Beratung</option>
+            <option value="" data-i18n="form-service-ph">Bitte auswählen</option>
+            <option data-i18n="s1-title">Webdesign & Entwicklung</option>
+            <option data-i18n="s2-title">Branding & Corporate Design</option>
+            <option data-i18n="s3-title">SEO & Performance</option>
+            <option data-i18n="s4-title">Performance Marketing</option>
+            <option data-i18n="s5-title">Social Media & Content</option>
+            <option data-i18n="s6-title">Strategie & Beratung</option>
           </select>
         </div>
         <div class="form-group form-group--full">
-          <label for="message">Nachricht</label>
-          <textarea id="message" name="message" rows="5" placeholder="Beschreibe kurz dein Projekt und deine Ziele…" required></textarea>
+          <label for="message" data-i18n="form-msg-label">Nachricht</label>
+          <textarea id="message" name="message" rows="5" data-i18n-ph="form-msg-ph" placeholder="Beschreibe kurz dein Projekt und deine Ziele…" required></textarea>
         </div>
-        <button type="submit" class="btn btn--primary btn--full">Nachricht senden</button>
-        <p class="form-note">Wir antworten innerhalb von 24 Stunden.</p>
+        <button type="submit" class="btn btn--primary btn--full" data-i18n="form-submit">Nachricht senden</button>
+        <p class="form-note" data-i18n="form-note">Wir antworten innerhalb von 24 Stunden.</p>
       </form>
     </div>
   </section>
@@ -522,7 +526,7 @@
     <div class="container footer__inner">
       <div class="footer__brand">
         <a href="#" class="nav__logo">069<span>Digital</span></a>
-        <p>Premium Digitalagentur<br />Frankfurt am Main</p>
+        <p data-i18n-html="footer-desc">Premium Digitalagentur<br />Frankfurt am Main</p>
         <div class="footer__social">
           <a href="#" aria-label="LinkedIn">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
@@ -537,30 +541,30 @@
       </div>
       <div class="footer__nav">
         <div class="footer__col">
-          <h4>Leistungen</h4>
+          <h4 data-i18n="footer-col1">Leistungen</h4>
           <ul>
-            <li><a href="#leistungen">Webdesign & Entwicklung</a></li>
-            <li><a href="#leistungen">Branding & Corporate Design</a></li>
-            <li><a href="#leistungen">SEO & Performance</a></li>
-            <li><a href="#leistungen">Performance Marketing</a></li>
-            <li><a href="#leistungen">Social Media & Content</a></li>
+            <li><a href="#leistungen" data-i18n="s1-title">Webdesign & Entwicklung</a></li>
+            <li><a href="#leistungen" data-i18n="s2-title">Branding & Corporate Design</a></li>
+            <li><a href="#leistungen" data-i18n="s3-title">SEO & Performance</a></li>
+            <li><a href="#leistungen" data-i18n="s4-title">Performance Marketing</a></li>
+            <li><a href="#leistungen" data-i18n="s5-title">Social Media & Content</a></li>
           </ul>
         </div>
         <div class="footer__col">
-          <h4>Agentur</h4>
+          <h4 data-i18n="footer-col2">Agentur</h4>
           <ul>
-            <li><a href="#ueber-uns">Über uns</a></li>
-            <li><a href="#arbeiten">Projekte</a></li>
-            <li><a href="#kontakt">Kontakt</a></li>
-            <li><a href="#">Karriere</a></li>
+            <li><a href="#ueber-uns" data-i18n="footer-col2-about">Über uns</a></li>
+            <li><a href="#arbeiten" data-i18n="footer-col2-projects">Projekte</a></li>
+            <li><a href="#kontakt" data-i18n="footer-col2-contact">Kontakt</a></li>
+            <li><a href="#" data-i18n="footer-col2-career">Karriere</a></li>
           </ul>
         </div>
         <div class="footer__col">
-          <h4>Rechtliches</h4>
+          <h4 data-i18n="footer-col3">Rechtliches</h4>
           <ul>
-            <li><a href="#">Impressum</a></li>
-            <li><a href="#">Datenschutz</a></li>
-            <li><a href="#">AGB</a></li>
+            <li><a href="#" data-i18n="footer-col3-imprint">Impressum</a></li>
+            <li><a href="#" data-i18n="footer-col3-privacy">Datenschutz</a></li>
+            <li><a href="#" data-i18n="footer-col3-terms">AGB</a></li>
           </ul>
         </div>
       </div>
