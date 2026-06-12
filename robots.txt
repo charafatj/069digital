@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://charafatj.github.io/069digital/sitemap.xml
