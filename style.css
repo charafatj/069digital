@@ -675,7 +675,6 @@ a { text-decoration: none; color: inherit; }
   opacity: 1 !important;
 }
 
-/* Pro Hilfe GbR */
 @keyframes panLeftRight {
   0%   { background-position: 20% center; }
   50%  { background-position: 80% center; }
@@ -711,7 +710,6 @@ a { text-decoration: none; color: inherit; }
   z-index: 2;
 }
 
-/* Pro Bau GmbH */
 @keyframes slowPulse {
   0%, 100% { transform: scale(1.0) rotate(-1deg); }
   50%       { transform: scale(1.06) rotate(1deg); }
@@ -768,7 +766,6 @@ a { text-decoration: none; color: inherit; }
   z-index: 3;
 }
 
-/* Smart Market — always show bottom info strip */
 .portfolio-item__img--smartmarket::after {
   content: '';
   position: absolute;
@@ -783,7 +780,6 @@ a { text-decoration: none; color: inherit; }
   z-index: 2;
 }
 
-/* Logo badge always visible */
 .portfolio-item__logo-badge {
   position: absolute;
   top: 2rem;
@@ -809,7 +805,6 @@ a { text-decoration: none; color: inherit; }
   filter: brightness(0) invert(1);
 }
 
-/* Screenshot card: tighter overlay so photo shows through */
 .portfolio-item__screenshot-overlay {
   background: linear-gradient(
     160deg,
@@ -1224,7 +1219,6 @@ select option { background: var(--dark-2); }
   transform: translateY(0);
 }
 
-/* stagger siblings */
 .services__grid .reveal:nth-child(2) { transition-delay: 0.1s; }
 .services__grid .reveal:nth-child(3) { transition-delay: 0.2s; }
 .services__grid .reveal:nth-child(4) { transition-delay: 0.1s; }
@@ -1239,7 +1233,6 @@ select option { background: var(--dark-2); }
 .process__steps .reveal:nth-child(4)  { transition-delay: 0.3s; }
 .process__steps .reveal:nth-child(6)  { transition-delay: 0.45s; }
 
-/* Carousel hidden on desktop, shown on mobile via media query */
 .portfolio-carousel { display: none; }
 
 /* ── RESPONSIVE ─────────────────────────────── */
@@ -1255,69 +1248,44 @@ select option { background: var(--dark-2); }
 }
 
 @media (max-width: 768px) {
-  /* ── NAV ── */
   .nav__links          { display: none; }
   .nav__burger         { display: flex; }
   .mobile-menu         { display: flex; }
   .nav__inner          { padding: 0 1.25rem; }
-
-  /* ── TYPOGRAPHY ── */
   h1 { font-size: clamp(2.2rem, 9vw, 3rem); }
   h2 { font-size: clamp(1.7rem, 6vw, 2.2rem); }
   h3 { font-size: 1.05rem; }
   p  { font-size: 0.95rem; }
-
-  /* ── HERO ── */
   .hero__content       { padding-top: 7rem; padding-bottom: 4rem; }
   .hero__badge         { font-size: 0.65rem; }
   .hero__sub           { font-size: 1rem; }
   .hero__actions       { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
   .hero__actions .btn  { width: 100%; justify-content: center; }
-
-  /* ── STATS ── */
   .stats               { padding: 2.5rem 0; }
   .stats__grid         { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
   .stat__number        { font-size: 2.2rem; }
-
-  /* ── SECTION SPACING ── */
   .services, .process, .portfolio, .testimonials, .about, .contact { padding: 5rem 0; }
   .section-header      { margin-bottom: 3rem; }
   .container           { padding: 0 1.25rem; }
-
-  /* ── SERVICES ── */
   .services__grid      { grid-template-columns: 1fr; }
   .service-card        { padding: 1.75rem; }
-
-  /* ── PROCESS ── */
   .process__step       { flex: 0 0 100%; padding: 1.5rem 1rem; text-align: left; }
   .process__num        { font-size: 2.5rem; }
-
-  /* ── PORTFOLIO MOBILE — Carousel ── */
   .portfolio__grid    { display: none; }
   .portfolio-carousel { display: block; margin: 0 -1.25rem; }
-
-  /* ── TESTIMONIALS ── */
   .testimonials__grid  { grid-template-columns: 1fr; gap: 1rem; }
   .testimonial         { padding: 1.5rem; }
-
-  /* ── ABOUT ── */
   .about__inner        { grid-template-columns: 1fr; gap: 2.5rem; }
   .about__card         { padding: 2rem; }
   .about__card-inner   { gap: 1.5rem; }
   .about__metric-num   { font-size: 2.2rem; }
   .about__values       { gap: 0.75rem; }
-
-  /* ── CTA BAND ── */
   .cta-band            { padding: 4rem 0; }
   .cta-band__inner .btn { width: 100%; justify-content: center; }
-
-  /* ── CONTACT ── */
   .contact__inner      { grid-template-columns: 1fr; gap: 2.5rem; }
   .contact__form       { grid-template-columns: 1fr; }
   .form-group--full    { grid-column: 1; }
   .contact__details    { gap: 1rem; }
-
-  /* ── FOOTER ── */
   .footer__inner       { gap: 2.5rem; padding: 3rem 1.25rem 2.5rem; }
   .footer__nav         { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
   .footer__bottom      { padding: 1.25rem 1.25rem; text-align: center; }
@@ -1379,7 +1347,6 @@ select option { background: var(--dark-2); }
   background: var(--dark-3);
 }
 
-/* Pro Hilfe carousel slide */
 .carousel-slide__img--prohilfe {
   background-image: url('assets/prohilfe-mockup-opt.jpg');
   background-size: cover;
@@ -1443,7 +1410,6 @@ select option { background: var(--dark-2); }
 }
 .carousel-slide__link:hover { gap: 0.6rem; }
 
-/* Dots */
 .carousel-dots {
   display: flex;
   justify-content: center;
@@ -1466,7 +1432,6 @@ select option { background: var(--dark-2); }
   border-radius: 3px;
 }
 
-/* ── CAROUSEL CTA SLIDE ─────────────────────── */
 .carousel-slide--cta {
   background: var(--black);
   border: 1px solid rgba(0,212,255,0.15);
@@ -1478,7 +1443,6 @@ select option { background: var(--dark-2); }
   align-self: stretch;
 }
 
-/* Animated grid background */
 .carousel-slide--cta::before {
   content: '';
   position: absolute;
@@ -1490,7 +1454,6 @@ select option { background: var(--dark-2); }
   mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
 }
 
-/* Glow orb */
 .carousel-slide--cta::after {
   content: '';
   position: absolute;
@@ -1552,11 +1515,7 @@ select option { background: var(--dark-2); }
   margin: 0 0 1.25rem;
 }
 
-/* ══════════════════════════════════════════════
-   ── PREMIUM EFFECTS
-   ══════════════════════════════════════════════ */
-
-/* ── 1. PAGE LOAD FADE-IN ─────────────────── */
+/* ── PREMIUM EFFECTS ────────────────────────── */
 .hero__content {
   animation: pageFadeIn 0.7s ease both;
 }
@@ -1565,7 +1524,6 @@ select option { background: var(--dark-2); }
   to   { opacity: 1; }
 }
 
-/* ── 2. SCROLL PROGRESS BAR ──────────────── */
 .scroll-progress {
   position: fixed;
   top: 0; left: 0;
@@ -1577,8 +1535,6 @@ select option { background: var(--dark-2); }
   pointer-events: none;
 }
 
-
-/* ── 4. GRAIN OVERLAY ────────────────────── */
 .grain {
   position: fixed;
   inset: 0;
@@ -1598,13 +1554,11 @@ select option { background: var(--dark-2); }
   100%{ background-position: 0 0; }
 }
 
-/* ── 4b. HERO STAGGER ───────────────────── */
 .hero__badge   { transition-delay: 0.1s !important; }
 .hero__headline{ transition-delay: 0.25s !important; }
 .hero__sub     { transition-delay: 0.4s !important; }
 .hero__actions { transition-delay: 0.55s !important; }
 
-/* ── 5. SERVICE CARD — border slide up ──── */
 .service-card::after {
   content: '';
   position: absolute;
@@ -1617,7 +1571,6 @@ select option { background: var(--dark-2); }
 }
 .service-card:hover::after { transform: scaleX(1); }
 
-/* ── 6. TESTIMONIAL CAROUSEL (mobile) ──── */
 .testimonial-dots { display: none; margin-top: 1.25rem; }
 @media (max-width: 768px) {
   .testimonials__grid {
@@ -1638,7 +1591,6 @@ select option { background: var(--dark-2); }
   .testimonial-dots { display: flex; }
 }
 
-/* ── 8. STICKY MOBILE CTA ────────────────── */
 .sticky-cta {
   display: none;
   position: fixed;
@@ -1668,7 +1620,6 @@ select option { background: var(--dark-2); }
 @media (max-width: 768px) {
   .sticky-cta { display: block; }
 }
-
 
 /* ── WHATSAPP FOOTER BANNER ─────────────────── */
 .footer__whatsapp {
@@ -1773,3 +1724,41 @@ select option { background: var(--dark-2); }
 
 @media (max-width: 900px) { .pf-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 600px) { .pf-grid { grid-template-columns: 1fr; } }
+
+/* ── WHATSAPP FLOATING BUTTON ────────────────── */
+.wa-fab {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.75rem;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: #25d366;
+  color: #fff;
+  border-radius: 100px;
+  padding: 0.75rem 1.25rem 0.75rem 1rem;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  overflow: hidden;
+  max-width: 200px;
+}
+.wa-fab:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(37,211,102,0.55);
+}
+.wa-fab__label {
+  white-space: nowrap;
+}
+@media (max-width: 600px) {
+  .wa-fab {
+    padding: 0.85rem;
+    border-radius: 50%;
+    max-width: none;
+  }
+  .wa-fab__label { display: none; }
+}
