@@ -185,17 +185,26 @@ mobileLinks.forEach(link => {
 // ── VIDEO AUTOPLAY (mobile fix) ──────────────
 document.querySelectorAll('video').forEach(video => {
   video.muted = true;
-  video.playsInline = true;
+  video.setAttribute('muted', '');
+  video.setAttribute('playsinline', '');
+  video.setAttribute('webkit-playsinline', '');
+
+  // Try to play immediately
+  const tryPlay = () => video.play().catch(() => {});
+  tryPlay();
+
+  // Re-play when visible (handles iOS pause-on-scroll)
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        video.play().catch(() => {});
-      } else {
-        video.pause();
-      }
+      if (entry.isIntersecting) tryPlay();
+      else video.pause();
     });
   }, { threshold: 0.1 });
   observer.observe(video);
+
+  // Also play on first user gesture (iOS fallback)
+  document.addEventListener('touchstart', tryPlay, { once: true });
+  document.addEventListener('touchend', tryPlay, { once: true });
 });
 
 // ── SCROLL REVEAL ────────────────────────────
