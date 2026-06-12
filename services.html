@@ -3,17 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Leistungen — Webdesign, SEO & Marketing | 069Digital Frankfurt</title>
-  <meta name="description" content="069Digital bietet Webdesign, Branding, SEO, Performance Marketing und Web-Entwicklung aus Frankfurt. Maßgeschneiderte digitale Lösungen für Ihr Unternehmen." />
+  <title>Leistungen — KI-Agentur, Webdesign, SEO & Cinema AI Video Ads | 069Digital Frankfurt</title>
+  <meta name="description" content="069Digital: Cinema AI Video Ads, UGC AI Content, Webdesign, Branding, SEO & Business-Automatisierung aus Frankfurt. KI-gestützte Agentur für skalierende Unternehmen." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://charafatj.github.io/069digital/services.html" />
-
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://charafatj.github.io/069digital/services.html" />
-  <meta property="og:title" content="Leistungen — Webdesign, SEO & Marketing | 069Digital Frankfurt" />
-  <meta property="og:description" content="Webdesign, Branding, SEO & Performance Marketing aus Frankfurt. Wir bringen Ihre Marke auf das nächste Level." />
+  <meta property="og:title" content="Leistungen — KI-Agentur, Webdesign & Cinema AI Video Ads | 069Digital Frankfurt" />
+  <meta property="og:description" content="Cinema AI Video Ads, UGC Content, Webdesign, Branding, SEO & Automatisierung aus Frankfurt. KI trifft Premium-Design." />
   <meta property="og:image" content="https://charafatj.github.io/069digital/assets/smartmarket-screenshot.jpg" />
 
   <script type="application/ld+json">
@@ -21,7 +20,7 @@
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "069Digital",
-    "description": "Premium Digitalagentur für Webdesign, Branding, SEO und Performance Marketing aus Frankfurt",
+    "description": "KI-gestützte Premium Digitalagentur für Cinema AI Video Ads, UGC Content, Webdesign, Branding, SEO, Performance Marketing und Business-Automatisierung aus Frankfurt",
     "url": "https://charafatj.github.io/069digital/services.html",
     "telephone": "+491556609900",
     "email": "info@069digital.de",
@@ -33,14 +32,16 @@
     },
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
-      "name": "Digitale Dienstleistungen",
+      "name": "Digitale KI-Dienstleistungen",
       "itemListElement": [
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Webdesign & Entwicklung" } },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Branding & Corporate Design" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO & Performance" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO & Local SEO" } },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Performance Marketing" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Social Media & Content" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Strategie & Beratung" } }
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cinema AI Video Ads" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "UGC & AI Content" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Automatisierung & KI-Systeme" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Business Scaling" } }
       ]
     }
   }
@@ -48,416 +49,958 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+
   <style>
-    .page-hero {
+    /* ── Services Page Specific ── */
+    .svc-hero {
       padding: 10rem 0 5rem;
       text-align: center;
-      position: relative;
     }
-    .page-hero::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(0,212,255,0.08) 0%, transparent 70%);
-      pointer-events: none;
+    .svc-hero__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: rgba(0,212,255,0.08);
+      border: 1px solid rgba(0,212,255,0.2);
+      border-radius: 100px;
+      padding: 0.4rem 1rem;
+      margin-bottom: 1.5rem;
     }
-    .page-hero .label { margin-bottom: 1rem; }
-    .page-hero h1 { font-size: clamp(2.4rem, 6vw, 4rem); margin-bottom: 1.25rem; }
-    .page-hero h1 span { color: var(--accent); }
-    .page-hero > .container > p { color: var(--gray); font-size: 1.1rem; max-width: 580px; margin: 0 auto 2.5rem; line-height: 1.7; }
-
-    .svc-detail { padding: 4rem 0 6rem; }
-    .svc-item {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 5rem;
-      align-items: center; padding: 5rem 0;
+    .svc-hero h1 {
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 1.25rem;
+    }
+    .svc-hero p {
+      font-size: 1.1rem;
+      color: var(--text-muted, #8a8f98);
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+    }
+    .svc-hero__tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      justify-content: center;
+    }
+    .hero-tag {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #8a8f98;
+      background: var(--dark-2);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 0.4rem 1rem;
+    }
+    .hero-tag--ai {
+      color: var(--accent);
+      background: rgba(0,212,255,0.06);
+      border-color: rgba(0,212,255,0.25);
+    }
+    /* ── Category Divider ── */
+    .category-divider {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      margin: 4rem 0 2.5rem;
+    }
+    .category-divider__line {
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+    .category-divider__label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #8a8f98;
+      white-space: nowrap;
+    }
+    .category-divider--ai .category-divider__label {
+      color: var(--accent);
+    }
+    .category-divider--ai .category-divider__line {
+      background: rgba(0,212,255,0.2);
+    }
+    /* ── Service Block Layout ── */
+    .svc-grid {
+      padding-bottom: 5rem;
+    }
+    .svc-block {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      padding: 4rem 0;
       border-bottom: 1px solid var(--border);
     }
-    .svc-item:last-child { border-bottom: none; }
-    .svc-item:nth-child(even) .svc-item__visual { order: -1; }
-    .svc-item__label {
-      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
-      color: var(--accent); margin-bottom: 1rem;
+    .svc-block:last-of-type { border-bottom: none; }
+    .svc-block--reverse .svc-block__visual { order: -1; }
+    .svc-block__content {}
+    .svc-block__tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #8a8f98;
+      margin-bottom: 1rem;
     }
-    .svc-item__title { font-size: clamp(1.8rem, 3.5vw, 2.4rem); margin-bottom: 1.25rem; line-height: 1.2; }
-    .svc-item__desc { color: var(--gray); line-height: 1.8; margin-bottom: 2rem; font-size: 1rem; }
-    .svc-item__list { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2rem; }
-    .svc-item__list li {
-      display: flex; align-items: center; gap: 0.75rem;
-      font-size: 0.9rem; color: var(--light-gray);
+    .svc-block__tag--ai { color: var(--accent); }
+    .svc-block__title {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 1rem;
     }
-    .svc-item__list li::before {
-      content: ''; width: 6px; height: 6px; border-radius: 50%;
-      background: var(--accent); flex-shrink: 0;
+    .svc-block__desc {
+      color: #8a8f98;
+      line-height: 1.75;
+      margin-bottom: 1.75rem;
     }
-    .svc-item__result {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      background: rgba(0,212,255,0.08); border: 1px solid rgba(0,212,255,0.2);
-      border-radius: 100px; padding: 0.5rem 1.2rem;
-      font-size: 0.8rem; font-weight: 600; color: var(--accent);
+    .svc-block__list {
+      list-style: none;
+      margin-bottom: 2rem;
     }
-    .svc-item__visual {
-      background: var(--dark-2); border: 1px solid var(--border);
-      border-radius: var(--radius-lg); padding: 2.5rem;
-      display: flex; flex-direction: column; gap: 1rem;
+    .svc-block__list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      color: #c8cdd6;
+      margin-bottom: 0.6rem;
+      font-size: 0.9rem;
     }
-    .svc-stat {
-      background: var(--dark-3); border-radius: var(--radius);
-      padding: 1.25rem 1.5rem; display: flex; justify-content: space-between; align-items: center;
+    .svc-block__list li::before {
+      content: "→";
+      color: var(--accent);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 0.05rem;
     }
-    .svc-stat__label { font-size: 0.82rem; color: var(--gray); }
-    .svc-stat__value { font-family: var(--font-head); font-size: 1.5rem; font-weight: 700; color: var(--white); }
-    .svc-stat__value span { color: var(--accent); }
-
-    .pricing { padding: 4rem 0 6rem; background: rgba(255,255,255,0.01); border-top: 1px solid var(--border); }
-    .pricing-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-top: 3rem; }
-    .pricing-card {
-      background: var(--dark-2); border: 1px solid var(--border);
-      border-radius: var(--radius-lg); padding: 2.5rem;
-      display: flex; flex-direction: column; transition: border-color 0.3s ease;
+    .svc-block__stats {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+    .stat-pill {
+      text-align: center;
+    }
+    .stat-pill__value {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--accent);
+      display: block;
+      line-height: 1;
+    }
+    .stat-pill__label {
+      font-size: 0.7rem;
+      color: #8a8f98;
+      margin-top: 0.2rem;
+    }
+    .svc-block__visual {
       position: relative;
     }
-    .pricing-card:hover { border-color: rgba(0,212,255,0.3); }
+    .svc-visual-card {
+      background: var(--dark-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg, 16px);
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .svc-visual-card--ai {
+      background: linear-gradient(160deg, rgba(0,212,255,0.06) 0%, var(--dark-2) 60%);
+      border-color: rgba(0,212,255,0.2);
+    }
+    .svc-visual-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: -100%;
+      width: 300%; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(0,212,255,0.3), transparent);
+    }
+    .svc-visual-card__icon {
+      width: 56px; height: 56px;
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+    .svc-visual-card__title {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+    .svc-visual-card__sub {
+      font-size: 0.8rem;
+      color: #8a8f98;
+      margin-bottom: 1.5rem;
+    }
+    .svc-visual-progress {
+      margin-bottom: 0.75rem;
+    }
+    .svc-visual-progress__label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.72rem;
+      color: #8a8f98;
+      margin-bottom: 0.3rem;
+    }
+    .svc-visual-progress__bar {
+      height: 4px;
+      background: var(--border);
+      border-radius: 100px;
+      overflow: hidden;
+    }
+    .svc-visual-progress__fill {
+      height: 100%;
+      border-radius: 100px;
+      background: linear-gradient(90deg, var(--accent), #0099cc);
+    }
+    .svc-visual-badge {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      background: rgba(0,212,255,0.1);
+      border: 1px solid rgba(0,212,255,0.25);
+      border-radius: 100px;
+      padding: 0.2rem 0.65rem;
+      margin-top: 0.5rem;
+    }
+    /* ── Pricing ── */
+    .pricing-section {
+      padding: 5rem 0;
+      border-top: 1px solid var(--border);
+    }
+    .pricing-section h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 0.75rem;
+    }
+    .pricing-section > p {
+      text-align: center;
+      color: #8a8f98;
+      margin-bottom: 3rem;
+    }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .pricing-card {
+      background: var(--dark-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg, 16px);
+      padding: 2rem;
+      position: relative;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+    .pricing-card:hover { transform: translateY(-6px); }
     .pricing-card--featured {
-      border-color: var(--accent);
-      background: linear-gradient(180deg, rgba(0,212,255,0.05) 0%, var(--dark-2) 100%);
+      border-color: rgba(0,212,255,0.4);
+      background: linear-gradient(160deg, rgba(0,212,255,0.05), var(--dark-2));
     }
-    .pricing-card--featured::before {
-      content: 'Beliebt'; position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
-      background: var(--accent); color: var(--black);
-      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em;
-      padding: 0.3rem 1rem; border-radius: 100px;
+    .pricing-card__badge {
+      position: absolute;
+      top: -12px; left: 50%; transform: translateX(-50%);
+      font-size: 0.62rem; font-weight: 700; letter-spacing: 0.1em;
+      color: var(--dark); background: var(--accent);
+      border-radius: 100px; padding: 0.25rem 0.85rem;
+      white-space: nowrap;
     }
-    .pricing-card__name { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray); margin-bottom: 0.75rem; }
-    .pricing-card__price { font-family: var(--font-head); font-size: 2.5rem; font-weight: 700; color: var(--white); margin-bottom: 0.25rem; }
-    .pricing-card__price span { font-size: 1rem; color: var(--gray); }
-    .pricing-card__note { font-size: 0.8rem; color: var(--muted); margin-bottom: 2rem; }
-    .pricing-card__features { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; flex: 1; margin-bottom: 2rem; }
-    .pricing-card__features li { font-size: 0.875rem; color: var(--gray); display: flex; gap: 0.6rem; align-items: flex-start; }
-    .pricing-card__features li::before { content: '✓'; color: var(--accent); font-weight: 700; flex-shrink: 0; }
-    .pricing-card__features li.dim::before { color: var(--muted); content: '—'; }
-    .pricing-card__features li.dim { color: var(--muted); }
-
-    .faq { padding: 4rem 0 6rem; }
-    .faq-list { max-width: 760px; margin: 3rem auto 0; }
-    .faq-item { border-bottom: 1px solid var(--border); }
-    .faq-q {
-      width: 100%; text-align: left; background: none; border: none;
-      padding: 1.5rem 0; display: flex; justify-content: space-between; align-items: center;
-      font-family: var(--font-head); font-size: 1rem; font-weight: 600; color: var(--white);
-      cursor: pointer; gap: 1rem;
+    .pricing-card__name {
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em;
+      text-transform: uppercase; color: #8a8f98;
+      margin-bottom: 0.5rem;
     }
-    .faq-q svg { flex-shrink: 0; transition: transform 0.3s ease; color: var(--accent); }
-    .faq-item.open .faq-q svg { transform: rotate(45deg); }
-    .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
-    .faq-a p { padding-bottom: 1.5rem; color: var(--gray); line-height: 1.8; font-size: 0.95rem; }
-
-    @media (max-width: 900px) {
-      .svc-item { grid-template-columns: 1fr; gap: 2.5rem; }
-      .svc-item:nth-child(even) .svc-item__visual { order: 0; }
-      .pricing-grid { grid-template-columns: 1fr; max-width: 420px; margin-left: auto; margin-right: auto; }
+    .pricing-card__price {
+      font-size: 2.2rem; font-weight: 800; margin-bottom: 0.2rem;
+    }
+    .pricing-card__price span {
+      font-size: 0.85rem; font-weight: 400; color: #8a8f98;
+    }
+    .pricing-card__desc {
+      font-size: 0.82rem; color: #8a8f98; margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+    .pricing-card__list {
+      list-style: none; margin-bottom: 1.75rem;
+    }
+    .pricing-card__list li {
+      display: flex; align-items: flex-start; gap: 0.5rem;
+      font-size: 0.83rem; color: #c8cdd6; margin-bottom: 0.55rem;
+    }
+    .pricing-card__list li::before {
+      content: "✓"; color: var(--accent); font-weight: 700;
+      flex-shrink: 0;
+    }
+    /* ── FAQ ── */
+    .faq-section {
+      padding: 5rem 0;
+      border-top: 1px solid var(--border);
+    }
+    .faq-section h2 {
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .faq-item {
+      background: var(--dark-2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      cursor: pointer;
+      transition: border-color 0.2s;
+    }
+    .faq-item:hover { border-color: rgba(0,212,255,0.3); }
+    .faq-item__q {
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-bottom: 0.75rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+    .faq-item__a {
+      font-size: 0.84rem;
+      color: #8a8f98;
+      line-height: 1.65;
+    }
+    /* ── CTA ── */
+    .svc-cta {
+      padding: 5rem 0;
+      text-align: center;
+      border-top: 1px solid var(--border);
+    }
+    .svc-cta h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+    .svc-cta p { color: #8a8f98; margin-bottom: 2rem; }
+    .svc-cta__actions {
+      display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+    }
+    @media (max-width: 768px) {
+      .svc-block {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 2.5rem 0;
+      }
+      .svc-block--reverse .svc-block__visual { order: 0; }
+      .pricing-grid { grid-template-columns: 1fr; }
+      .faq-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
-  <div class="scroll-progress" id="scrollProgress"></div>
-  <div class="grain"></div>
-
-  <nav class="nav scrolled" id="nav" style="position:sticky; backdrop-filter:blur(20px);">
-    <div class="nav__inner">
-      <a href="index.html" class="nav__logo">069<span>Digital</span></a>
-      <ul class="nav__links">
-        <li><a href="services.html" style="color:var(--accent);">Leistungen</a></li>
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="index.html" class="nav__logo">
+        <span class="logo-icon">069</span>Digital
+      </a>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html" class="active">Leistungen</a></li>
         <li><a href="blog.html">Blog</a></li>
-        <li><a href="index.html#arbeiten">Arbeiten</a></li>
-        <li><a href="index.html#kontakt" class="nav__cta">Projekt starten</a></li>
+        <li><a href="index.html#portfolio">Portfolio</a></li>
+        <li><a href="index.html#kontakt">Kontakt</a></li>
       </ul>
-      <div class="nav__right">
-        <button class="nav__burger" id="burger" aria-label="Menü">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
+      <a href="index.html#kontakt" class="btn btn--primary nav__cta">Projekt starten</a>
+      <button class="nav__burger" id="navBurger" aria-label="Menü">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
 
-  <div class="mobile-menu" id="mobileMenu">
-    <ul>
-      <li><a href="services.html" class="mobile-link">Leistungen</a></li>
-      <li><a href="blog.html" class="mobile-link">Blog</a></li>
-      <li><a href="index.html#arbeiten" class="mobile-link">Arbeiten</a></li>
-      <li><a href="index.html#kontakt" class="mobile-link">Projekt starten</a></li>
-    </ul>
-  </div>
-
-  <section class="page-hero">
+  <!-- HERO -->
+  <section class="svc-hero">
     <div class="container">
-      <span class="label">Was wir tun</span>
-      <h1>Digitale Leistungen,<br /><span>die wachsen lassen.</span></h1>
-      <p>Von der ersten Strategie bis zur laufenden Optimierung — wir begleiten Ihr Unternehmen auf dem gesamten digitalen Weg. Präzise. Messbar. Wirkungsvoll.</p>
-      <a href="index.html#kontakt" class="btn btn--primary">Kostenloses Erstgespräch</a>
+      <div class="svc-hero__badge reveal">
+        <span style="width:6px;height:6px;border-radius:50%;background:var(--accent);display:inline-block;animation:pulse-dot 2s ease-in-out infinite;"></span>
+        Unsere Leistungen · Frankfurt
+      </div>
+      <h1 class="reveal">Klassisch trifft<br /><span class="gradient-text">Künstliche Intelligenz.</span></h1>
+      <p class="reveal">Von Premium-Webdesign bis zu Cinema AI Video Ads — wir kombinieren bewährtes Marketing-Know-how mit den neuesten KI-Technologien für messbare Ergebnisse.</p>
+      <div class="svc-hero__tags reveal">
+        <span class="hero-tag">Webdesign</span>
+        <span class="hero-tag">Branding</span>
+        <span class="hero-tag">SEO</span>
+        <span class="hero-tag">Performance Marketing</span>
+        <span class="hero-tag hero-tag--ai">⚡ Cinema AI Video Ads</span>
+        <span class="hero-tag hero-tag--ai">⚡ UGC & AI Content</span>
+        <span class="hero-tag hero-tag--ai">⚡ Automatisierung</span>
+        <span class="hero-tag hero-tag--ai">⚡ Business Scaling</span>
+      </div>
     </div>
   </section>
 
-  <section class="svc-detail">
+  <!-- SERVICES -->
+  <main class="svc-grid">
     <div class="container">
 
-      <div class="svc-item reveal">
-        <div class="svc-item__content">
-          <p class="svc-item__label">01 — Webdesign & Entwicklung</p>
-          <h2 class="svc-item__title">Websites, die<br />konvertieren.</h2>
-          <p class="svc-item__desc">Wir entwickeln maßgeschneiderte Websites und Web-Applikationen — optimiert für Performance, Mobile und Conversion. Kein Template, kein Standard, sondern echte Maßarbeit.</p>
-          <ul class="svc-item__list">
-            <li>Corporate Websites & Landing Pages</li>
-            <li>E-Commerce & Online-Shops</li>
-            <li>Web-Applikationen & Dashboards</li>
-            <li>Technische SEO-Integration ab Tag 1</li>
-            <li>Core Web Vitals & PageSpeed-Optimierung</li>
+      <!-- KLASSISCHE LEISTUNGEN -->
+      <div class="category-divider reveal">
+        <div class="category-divider__line"></div>
+        <span class="category-divider__label">Klassische Leistungen</span>
+        <div class="category-divider__line"></div>
+      </div>
+
+      <!-- 1. Webdesign -->
+      <div class="svc-block reveal">
+        <div class="svc-block__content">
+          <div class="svc-block__tag">01 · Webdesign & Entwicklung</div>
+          <h2 class="svc-block__title">Websites, die konvertieren.<br />Nicht nur aussehen.</h2>
+          <p class="svc-block__desc">Wir bauen maßgeschneiderte Websites, die Besucher in Kunden verwandeln. Jedes Pixel ist auf Performance, Vertrauen und Conversion optimiert — kein Template, kein Kompromiss.</p>
+          <ul class="svc-block__list">
+            <li>Custom Design ohne Templates oder Page-Builder</li>
+            <li>Mobile-first, Core Web Vitals optimiert</li>
+            <li>Conversion-optimierte Landingpages & Sales Pages</li>
+            <li>CMS-Integration (WordPress, Webflow, Custom)</li>
+            <li>DSGVO-konform & SEO-technisch sauber</li>
           </ul>
-          <span class="svc-item__result">⌀ +240% mehr Conversions</span>
+          <a href="index.html#kontakt" class="btn btn--primary">Website anfragen</a>
         </div>
-        <div class="svc-item__visual">
-          <div class="svc-stat"><span class="svc-stat__label">PageSpeed Score</span><span class="svc-stat__value"><span>98</span>/100</span></div>
-          <div class="svc-stat"><span class="svc-stat__label">Ø Ladezeit</span><span class="svc-stat__value"><span>&lt;1.2</span>s</span></div>
-          <div class="svc-stat"><span class="svc-stat__label">Mobile-First</span><span class="svc-stat__value"><span>100</span>%</span></div>
-          <div class="svc-stat"><span class="svc-stat__label">Projekte umgesetzt</span><span class="svc-stat__value"><span>60</span>+</span></div>
+        <div class="svc-block__visual">
+          <div class="svc-visual-card">
+            <div class="svc-visual-card__icon" style="background:rgba(0,212,255,0.1);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8m-4-4v4"/></svg>
+            </div>
+            <div class="svc-visual-card__title">SmartMarket Relaunch</div>
+            <div class="svc-visual-card__sub">E-Commerce · Frankfurt</div>
+            <div class="svc-visual-progress">
+              <div class="svc-visual-progress__label"><span>Conversion Rate</span><span>+187%</span></div>
+              <div class="svc-visual-progress__bar"><div class="svc-visual-progress__fill" style="width:87%"></div></div>
+            </div>
+            <div class="svc-visual-progress">
+              <div class="svc-visual-progress__label"><span>Page Speed Score</span><span>98/100</span></div>
+              <div class="svc-visual-progress__bar"><div class="svc-visual-progress__fill" style="width:98%"></div></div>
+            </div>
+            <div class="svc-visual-progress">
+              <div class="svc-visual-progress__label"><span>Mobile Experience</span><span>Perfekt</span></div>
+              <div class="svc-visual-progress__bar"><div class="svc-visual-progress__fill" style="width:100%"></div></div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="svc-item reveal">
-        <div class="svc-item__content">
-          <p class="svc-item__label">02 — Branding & Corporate Design</p>
-          <h2 class="svc-item__title">Marken, die<br />im Gedächtnis bleiben.</h2>
-          <p class="svc-item__desc">Wir entwickeln starke Markenidentitäten — von Logo und Farbwelt bis zum vollständigen Design-System. Eine starke Marke ist der wertvollste Asset Ihres Unternehmens.</p>
-          <ul class="svc-item__list">
-            <li>Logo Design & Wortbildmarke</li>
-            <li>Brand Strategy & Positionierung</li>
-            <li>Corporate Design System</li>
-            <li>Brand Guidelines & Styleguide</li>
-            <li>Geschäftsausstattung & Print</li>
+      <!-- 2. Branding -->
+      <div class="svc-block svc-block--reverse reveal">
+        <div class="svc-block__content">
+          <div class="svc-block__tag">02 · Branding & Corporate Design</div>
+          <h2 class="svc-block__title">Marken, die man<br />nicht vergisst.</h2>
+          <p class="svc-block__desc">Ihr Logo ist Ihr erster Eindruck — und der zählt. Wir entwickeln komplette Markenidentitäten, die Professionalität ausstrahlen, Vertrauen aufbauen und sich von der Konkurrenz abheben.</p>
+          <ul class="svc-block__list">
+            <li>Logo & visuelles Identitätssystem</li>
+            <li>Corporate Design & Styleguide</li>
+            <li>Geschäftsausstattung (Visitenkarten, Briefpapier)</li>
+            <li>Pitch Decks & Präsentationsvorlagen</li>
+            <li>Social Media Templates & Brand Voice</li>
           </ul>
-          <span class="svc-item__result">Vollständige CI ab Woche 3</span>
+          <a href="index.html#kontakt" class="btn btn--primary">Branding anfragen</a>
         </div>
-        <div class="svc-item__visual">
-          <div class="svc-stat"><span class="svc-stat__label">Branding-Projekte</span><span class="svc-stat__value"><span>35</span>+</span></div>
-          <div class="svc-stat"><span class="svc-stat__label">Branchen</span><span class="svc-stat__value"><span>12</span>+</span></div>
-          <div class="svc-stat"><span class="svc-stat__label">Kundenzufriedenheit</span><span class="svc-stat__value"><span>98</span>%</span></div>
-          <div class="svc-stat"><span class="svc-stat__label">Ø Projekt-Laufzeit</span><span class="svc-stat__value"><span>4</span> Wochen</span></div>
+        <div class="svc-block__visual">
+          <div class="svc-visual-card">
+            <div class="svc-visual-card__icon" style="background:rgba(168,85,247,0.12);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <div class="svc-visual-card__title">VitaBalance Rebranding</div>
+            <div class="svc-visual-card__sub">Health Brand · Frankfurt</div>
+            <div class="svc-visual-progress">
+              <div class="svc-visual-progress__label"><span>Brand Recognition</span><span>+340%</span></div>
+              <div class="svc-visual-progress__bar"><div class="svc-visual-progress__fill" style="width:92%;background:linear-gradient(90deg,#a855f7,#7c3aed)"></div></div>
+            </div>
+            <div class="svc-visual-progress">
+              <div class="svc-visual-progress__label"><span>Kundentreue</span><span>+95%</span></div>
+              <div class="svc-visual-progress__bar"><div class="svc-visual-progress__fill" style="width:95%;background:linear-gradient(90deg,#a855f7,#7c3aed)"></div></div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="svc-item reveal">
-        <div class="svc-item__content">
-          <p class="svc-item__label">03 — SEO & Organische Sichtbarkeit</p>
-          <h2 class="svc-item__title">Von Seite 4 auf<br />Position 1.</h2>
-          <p class="svc-item__desc">Organische Sichtbarkeit ist langfristig der günstigste Marketingkanal. Wir sorgen dafür, dass Ihre Kunden Sie bei Google finden — bevor sie zur Konkurrenz gehen.</p>
-          <ul class="svc-item__list">
-            <li>Technisches SEO-Audit & Umsetzung</li>
+      <!-- 3. SEO -->
+      <div class="svc-block reveal">
+        <div class="svc-block__content">
+          <div class="svc-block__tag">03 · SEO & Local SEO</div>
+          <h2 class="svc-block__title">Seite 1 bei Google.<br />Dauerhaft sichtbar.</h2>
+          <p class="svc-block__desc">SEO ist kein Sprint — es ist die profitabelste langfristige Investition Ihres Unternehmens. Wir bringen Sie auf die ersten Plätze bei Google, wo Ihre Kunden aktiv suchen.</p>
+          <ul class="svc-block__list">
+            <li>Technisches SEO & Core Web Vitals</li>
             <li>Keyword-Recherche & Content-Strategie</li>
-            <li>Local SEO & Google Business Profile</li>
-            <li>Linkbuilding & Off-Page SEO</li>
-            <li>Monatliches Reporting & Optimierung</li>
+            <li>Local SEO & Google Business Profile Optimierung</li>
+            <li>Linkbuilding & Authority Building</li>
+            <li>Monatliches Reporting & Analyse</li>
           </ul>
-          <span class="svc-item__result">Ø +180% organischer Traffic in 6 Monaten</span>
+          <a href="index.html#kontakt" class="btn btn--primary">SEO-Analyse anfragen</a>
         </div>
-        <div class="svc-item__visual">
-          <div class="svc-stat"><span class="svc-stat__label">Pro Bau GmbH — Ranking</span><span class="svc-stat__value">Seite <span>4</span> → <span style="color:#00d4ff">Pos. 1</span></span></div>
-          <div class="svc-stat"><span class="svc-stat__label">Ø Rankingverbesserung</span><span class="svc-stat__value"><span>+180</span>%</span></div>
-          <div class="svc-stat"><span class="svc-stat__label">Bearbeitete Keywords</span><span class="svc-stat__value"><span>500</span>+</span></div>
-          <div class="svc-stat"><span class="svc-stat__label">SEO-Kunden</span><span class="svc-stat__value"><span>25</span>+</span></div>
+        <div class="svc-block__visual">
+          <div class="svc-visual-card">
+            <div class="svc-visual-card__icon" style="background:rgba(34,197,94,0.12);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+            </div>
+            <div class="svc-visual-card__title">TechHaus GmbH</div>
+            <div class="svc-visual-card__sub">B2B Software · Frankfurt</div>
+            <div class="svc-visual-progress">
+              <div class="svc-visual-progress__label"><span>Google Rankings Top 3</span><span>40 Keywords</span></div>
+              <div class="svc-visual-progress__bar"><div class="svc-visual-progress__fill" style="width:90%;background:linear-gradient(90deg,#22c55e,#16a34a)"></div></div>
+            </div>
+            <div class="svc-visual-progress">
+              <div class="svc-visual-progress__label"><span>Organischer Traffic</span><span>+312%</span></div>
+              <div class="svc-visual-progress__bar"><div class="svc-visual-progress__fill" style="width:85%;background:linear-gradient(90deg,#22c55e,#16a34a)"></div></div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="svc-item reveal">
-        <div class="svc-item__content">
-          <p class="svc-item__label">04 — Performance Marketing</p>
-          <h2 class="svc-item__title">Jeden Euro zweimal<br />arbeiten lassen.</h2>
-          <p class="svc-item__desc">Datengetriebene Kampagnen auf Google, Meta & Co. — mit klarem Fokus auf ROAS, Leads und messbares Wachstum. Wir schalten keine Werbung, wir bauen Systeme.</p>
-          <ul class="svc-item__list">
-            <li>Google Ads & Shopping-Kampagnen</li>
+      <!-- 4. Performance Marketing -->
+      <div class="svc-block svc-block--reverse reveal">
+        <div class="svc-block__content">
+          <div class="svc-block__tag">04 · Performance Marketing</div>
+          <h2 class="svc-block__title">Jeder Euro.<br />Messbar investiert.</h2>
+          <p class="svc-block__desc">Google Ads, Meta Ads, TikTok Ads — wir schalten Werbung, die konvertiert. Kein Rätselraten, keine verschwendeten Budgets. Nur datengetriebene Kampagnen mit klarem ROI.</p>
+          <ul class="svc-block__list">
+            <li>Google Ads (Search, Shopping, Display, YouTube)</li>
             <li>Meta Ads (Facebook & Instagram)</li>
-            <li>Retargeting & Funnel-Aufbau</li>
-            <li>Conversion-Rate-Optimierung (CRO)</li>
-            <li>Wöchentliches Performance-Reporting</li>
+            <li>TikTok Ads & Short-Form Video Advertising</li>
+            <li>Conversion Tracking & Attribution</li>
+            <li>A/B-Testing & kontinuierliche Optimierung</li>
           </ul>
-          <span class="svc-item__result">Ø 4x ROAS über alle Kunden</span>
+          <a href="index.html#kontakt" class="btn btn--primary">Kampagne starten</a>
         </div>
-        <div class="svc-item__visual">
-          <div class="svc-stat"><span class="svc-stat__label">Ø ROAS</span><span class="svc-stat__value"><span>4</span>x</span></div>
-          <div class="svc-stat"><span class="svc-stat__label">Verwaltetes Ad-Budget</span><span class="svc-stat__value"><span>500k</span>€+</span></div>
-          <div class="svc-stat"><span class="svc-stat__label">Smart Market Wachstum</span><span class="svc-stat__value"><span>+300</span>%</span></div>
-          <div class="svc-stat"><span class="svc-stat__label">Aktive Kampagnen</span><span class="svc-stat__value"><span>20</span>+</span></div>
+        <div class="svc-block__visual">
+          <div class="svc-visual-card">
+            <div class="svc-visual-card__icon" style="background:rgba(249,115,22,0.12);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2"><polyline points="22,7 13.5,15.5 8.5,10.5 2,17"/><polyline points="16,7 22,7 22,13"/></svg>
+            </div>
+            <div class="svc-visual-card__title">FitBase Frankfurt</div>
+            <div class="svc-visual-card__sub">Fitness Studio · Meta Ads</div>
+            <div class="svc-visual-progress">
+              <div class="svc-visual-progress__label"><span>ROAS</span><span>3.2x</span></div>
+              <div class="svc-visual-progress__bar"><div class="svc-visual-progress__fill" style="width:80%;background:linear-gradient(90deg,#f97316,#ea580c)"></div></div>
+            </div>
+            <div class="svc-visual-progress">
+              <div class="svc-visual-progress__label"><span>Cost per Lead</span><span>-64%</span></div>
+              <div class="svc-visual-progress__bar"><div class="svc-visual-progress__fill" style="width:88%;background:linear-gradient(90deg,#f97316,#ea580c)"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- KI LEISTUNGEN -->
+      <div class="category-divider category-divider--ai reveal">
+        <div class="category-divider__line"></div>
+        <span class="category-divider__label">⚡ KI-Leistungen · Next Level</span>
+        <div class="category-divider__line"></div>
+      </div>
+
+      <!-- 5. Cinema AI Video Ads -->
+      <div class="svc-block reveal">
+        <div class="svc-block__content">
+          <div class="svc-block__tag svc-block__tag--ai">05 · NEU · KI ⚡ Cinema AI Video Ads</div>
+          <h2 class="svc-block__title">Hollywood-Qualität.<br /><span class="gradient-text">KI-Geschwindigkeit.</span></h2>
+          <p class="svc-block__desc">Vergessen Sie teure Filmproduktionen. Mit unserer Cinema AI Technologie erstellen wir professionelle Video-Ads in Kinoqualität — in 24–48 Stunden, zu einem Bruchteil der herkömmlichen Kosten.</p>
+          <div class="svc-block__stats">
+            <div class="stat-pill">
+              <span class="stat-pill__value">24h</span>
+              <div class="stat-pill__label">Produktion</div>
+            </div>
+            <div class="stat-pill">
+              <span class="stat-pill__value">-80%</span>
+              <div class="stat-pill__label">Produktionskosten</div>
+            </div>
+            <div class="stat-pill">
+              <span class="stat-pill__value">+3.4x</span>
+              <div class="stat-pill__label">CTR vs. statisch</div>
+            </div>
+          </div>
+          <ul class="svc-block__list">
+            <li>Cinematic AI Video Ads für Meta, TikTok & YouTube</li>
+            <li>Produktvideos mit AI-generierten Szenen</li>
+            <li>Multiple Formate: 9:16, 1:1, 16:9 in einer Produktion</li>
+            <li>A/B-ready: 3–5 Varianten pro Kampagne</li>
+            <li>Voice-Over, Musik & Untertitel inklusive</li>
+          </ul>
+          <a href="index.html#kontakt" class="btn btn--primary">Cinema AI Demo anfragen</a>
+        </div>
+        <div class="svc-block__visual">
+          <div class="svc-visual-card svc-visual-card--ai">
+            <span class="svc-visual-badge">NEU · KI ⚡</span>
+            <div style="margin-top:1.25rem;">
+              <div class="svc-visual-card__icon" style="background:rgba(0,212,255,0.12);">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="2"><polygon points="23,7 16,12 23,17"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+              </div>
+            </div>
+            <div class="svc-visual-card__title">Casa Azul Restaurant</div>
+            <div class="svc-visual-card__sub">Cinema AI Video Ad · Frankfurt</div>
+            <div class="svc-visual-progress">
+              <div class="svc-visual-progress__label"><span>CTR vs. vorher</span><span>+340%</span></div>
+              <div class="svc-visual-progress__bar"><div class="svc-visual-progress__fill" style="width:94%"></div></div>
+            </div>
+            <div class="svc-visual-progress">
+              <div class="svc-visual-progress__label"><span>Reservierungen online</span><span>+220%</span></div>
+              <div class="svc-visual-progress__bar"><div class="svc-visual-progress__fill" style="width:88%"></div></div>
+            </div>
+            <div class="svc-visual-progress">
+              <div class="svc-visual-progress__label"><span>Produktionszeit</span><span>36 Std.</span></div>
+              <div class="svc-visual-progress__bar"><div class="svc-visual-progress__fill" style="width:20%"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. UGC & AI Content -->
+      <div class="svc-block svc-block--reverse reveal">
+        <div class="svc-block__content">
+          <div class="svc-block__tag svc-block__tag--ai">06 · NEU · KI ⚡ UGC & AI Content</div>
+          <h2 class="svc-block__title">10x mehr Content.<br /><span class="gradient-text">10x schneller.</span></h2>
+          <p class="svc-block__desc">User-Generated Content ist der vertrauenswürdigste Content-Typ — und mit KI skalieren wir ihn ins Unendliche. Authentisch wirkende Testimonials, Produktreviews und Social Posts auf Knopfdruck.</p>
+          <div class="svc-block__stats">
+            <div class="stat-pill">
+              <span class="stat-pill__value">10x</span>
+              <div class="stat-pill__label">mehr Content</div>
+            </div>
+            <div class="stat-pill">
+              <span class="stat-pill__value">+240%</span>
+              <div class="stat-pill__label">Engagement</div>
+            </div>
+            <div class="stat-pill">
+              <span class="stat-pill__value">-70%</span>
+              <div class="stat-pill__label">Content-Kosten</div>
+            </div>
+          </div>
+          <ul class="svc-block__list">
+            <li>KI-generierte UGC-Videos & Testimonials</li>
+            <li>Social Media Content auf Autopilot (30 Posts/Monat)</li>
+            <li>AI Avatar Creators für authentisches Storytelling</li>
+            <li>Multi-Plattform: TikTok, Instagram, YouTube Shorts</li>
+            <li>Trend-Research & virale Hook-Optimierung</li>
+          </ul>
+          <a href="index.html#kontakt" class="btn btn--primary">Content-Strategie anfragen</a>
+        </div>
+        <div class="svc-block__visual">
+          <div class="svc-visual-card svc-visual-card--ai">
+            <span class="svc-visual-badge">NEU · KI ⚡</span>
+            <div style="margin-top:1.25rem;">
+              <div class="svc-visual-card__icon" style="background:rgba(0,212,255,0.12);">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+            </div>
+            <div class="svc-visual-card__title">FitBase Content Scaling</div>
+            <div class="svc-visual-card__sub">UGC AI · Instagram & TikTok</div>
+            <div class="svc-visual-progress">
+              <div class="svc-visual-progress__label"><span>Posts/Monat</span><span>30 → 300</span></div>
+              <div class="svc-visual-progress__bar"><div class="svc-visual-progress__fill" style="width:96%"></div></div>
+            </div>
+            <div class="svc-visual-progress">
+              <div class="svc-visual-progress__label"><span>TikTok Follower</span><span>+8.400</span></div>
+              <div class="svc-visual-progress__bar"><div class="svc-visual-progress__fill" style="width:78%"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. Automatisierung -->
+      <div class="svc-block reveal">
+        <div class="svc-block__content">
+          <div class="svc-block__tag svc-block__tag--ai">07 · NEU · KI ⚡ Automatisierung & KI-Systeme</div>
+          <h2 class="svc-block__title">Ihr Business läuft.<br /><span class="gradient-text">Auch ohne Sie.</span></h2>
+          <p class="svc-block__desc">Repetitive Aufgaben fressen Ihre wertvolle Zeit. Wir implementieren KI-gestützte Automatisierungen, die Ihr Unternehmen auf Autopilot schalten — von der Lead-Qualifizierung bis zur Rechnungsstellung.</p>
+          <div class="svc-block__stats">
+            <div class="stat-pill">
+              <span class="stat-pill__value">20h</span>
+              <div class="stat-pill__label">gespart/Woche</div>
+            </div>
+            <div class="stat-pill">
+              <span class="stat-pill__value">-60%</span>
+              <div class="stat-pill__label">operative Kosten</div>
+            </div>
+            <div class="stat-pill">
+              <span class="stat-pill__value">24/7</span>
+              <div class="stat-pill__label">automatisiert</div>
+            </div>
+          </div>
+          <ul class="svc-block__list">
+            <li>CRM-Automatisierung & Lead-Nurturing Flows</li>
+            <li>KI-Chatbots & automatisierter Kundensupport</li>
+            <li>Angebots- & Rechnungsautomatisierung</li>
+            <li>Social Media & E-Mail auf Autopilot</li>
+            <li>Zapier, Make, n8n & Custom API-Integrationen</li>
+          </ul>
+          <a href="index.html#kontakt" class="btn btn--primary">Automatisierung anfragen</a>
+        </div>
+        <div class="svc-block__visual">
+          <div class="svc-visual-card svc-visual-card--ai">
+            <span class="svc-visual-badge">NEU · KI ⚡</span>
+            <div style="margin-top:1.25rem;">
+              <div class="svc-visual-card__icon" style="background:rgba(0,212,255,0.12);">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8m-4-4v4"/><path d="M7 8h10M7 12h6"/></svg>
+              </div>
+            </div>
+            <div class="svc-visual-card__title">LexFrank Kanzlei</div>
+            <div class="svc-visual-card__sub">Legal Automation · Frankfurt</div>
+            <div class="svc-visual-progress">
+              <div class="svc-visual-progress__label"><span>Admin-Aufwand</span><span>-72%</span></div>
+              <div class="svc-visual-progress__bar"><div class="svc-visual-progress__fill" style="width:72%"></div></div>
+            </div>
+            <div class="svc-visual-progress">
+              <div class="svc-visual-progress__label"><span>Mandanten-Anfragen</span><span>+180%</span></div>
+              <div class="svc-visual-progress__bar"><div class="svc-visual-progress__fill" style="width:90%"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8. Business Scaling -->
+      <div class="svc-block svc-block--reverse reveal">
+        <div class="svc-block__content">
+          <div class="svc-block__tag svc-block__tag--ai">08 · NEU · KI ⚡ Business Scaling</div>
+          <h2 class="svc-block__title">Von 6 zu 7 Stellig.<br /><span class="gradient-text">Systematisch.</span></h2>
+          <p class="svc-block__desc">Skalierung ist kein Zufall — es ist ein System. Wir entwickeln maßgeschneiderte Wachstumsstrategien, implementieren die richtigen KI-Tools und begleiten Sie auf dem Weg zum nächsten Level.</p>
+          <div class="svc-block__stats">
+            <div class="stat-pill">
+              <span class="stat-pill__value">+300%</span>
+              <div class="stat-pill__label">Ø Wachstum</div>
+            </div>
+            <div class="stat-pill">
+              <span class="stat-pill__value">90</span>
+              <div class="stat-pill__label">Tage Kickstart</div>
+            </div>
+            <div class="stat-pill">
+              <span class="stat-pill__value">1:1</span>
+              <div class="stat-pill__label">Mentoring</div>
+            </div>
+          </div>
+          <ul class="svc-block__list">
+            <li>Ganzheitliche Wachstumsstrategie & Roadmap</li>
+            <li>KI-Stack Aufbau & Implementierung</li>
+            <li>Team-Training & KI-Upskilling</li>
+            <li>Performance-Dashboard & KPI-Tracking</li>
+            <li>Monatliches Strategy-Call & Sparring</li>
+          </ul>
+          <a href="index.html#kontakt" class="btn btn--primary">Scaling-Call buchen</a>
+        </div>
+        <div class="svc-block__visual">
+          <div class="svc-visual-card svc-visual-card--ai">
+            <span class="svc-visual-badge">NEU · KI ⚡</span>
+            <div style="margin-top:1.25rem;">
+              <div class="svc-visual-card__icon" style="background:rgba(0,212,255,0.12);">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="2"><polyline points="22,7 13.5,15.5 8.5,10.5 2,17"/><polyline points="16,7 22,7 22,13"/></svg>
+              </div>
+            </div>
+            <div class="svc-visual-card__title">Goldschmiede Müller</div>
+            <div class="svc-visual-card__sub">Business Scaling · 12 Monate</div>
+            <div class="svc-visual-progress">
+              <div class="svc-visual-progress__label"><span>Umsatzwachstum</span><span>+290%</span></div>
+              <div class="svc-visual-progress__bar"><div class="svc-visual-progress__fill" style="width:92%"></div></div>
+            </div>
+            <div class="svc-visual-progress">
+              <div class="svc-visual-progress__label"><span>Neue Märkte erschlossen</span><span>3</span></div>
+              <div class="svc-visual-progress__bar"><div class="svc-visual-progress__fill" style="width:75%"></div></div>
+            </div>
+          </div>
         </div>
       </div>
 
     </div>
-  </section>
+  </main>
 
-  <section class="pricing">
+  <!-- PRICING -->
+  <section class="pricing-section">
     <div class="container">
-      <div class="section-header reveal">
-        <span class="label">Pakete & Preise</span>
-        <h2>Transparent. Fair. Skalierbar.</h2>
-        <p>Kein Kleingedrucktes — klare Pakete oder individuelle Angebote für Ihr Projekt.</p>
-      </div>
+      <h2 class="reveal">Transparent.<br /><span class="gradient-text">Kein Kleingedrucktes.</span></h2>
+      <p class="reveal">Faire Pakete für jedes Wachstumsziel — oder wir schnüren Ihr individuelles Paket.</p>
       <div class="pricing-grid reveal">
         <div class="pricing-card">
-          <p class="pricing-card__name">Starter</p>
-          <p class="pricing-card__price">ab 1.500 <span>€</span></p>
-          <p class="pricing-card__note">Einmalig, projektbasiert</p>
-          <ul class="pricing-card__features">
-            <li>1-seitige Website oder Landing Page</li>
-            <li>Mobile-optimiertes Design</li>
-            <li>Basis-SEO Setup</li>
-            <li>Kontaktformular</li>
-            <li class="dim">Branding-Paket</li>
-            <li class="dim">Performance Marketing</li>
+          <div class="pricing-card__name">Starter</div>
+          <div class="pricing-card__price">ab 1.500 € <span>einmalig</span></div>
+          <div class="pricing-card__desc">Ideal für Selbstständige & kleine Unternehmen, die professionell auftreten wollen.</div>
+          <ul class="pricing-card__list">
+            <li>Website bis 5 Seiten</li>
+            <li>Responsive & DSGVO-konform</li>
+            <li>Basic SEO-Optimierung</li>
+            <li>Logo & Farbpalette</li>
+            <li>Kontaktformular & Google Maps</li>
+            <li>2 Revisionsrunden</li>
           </ul>
-          <a href="index.html#kontakt" class="btn btn--ghost" style="text-align:center;">Anfragen</a>
+          <a href="index.html#kontakt" class="btn btn--ghost" style="width:100%;text-align:center;">Starter anfragen</a>
         </div>
         <div class="pricing-card pricing-card--featured">
-          <p class="pricing-card__name">Professional</p>
-          <p class="pricing-card__price">ab 4.500 <span>€</span></p>
-          <p class="pricing-card__note">Einmalig + optionales Retainer</p>
-          <ul class="pricing-card__features">
-            <li>Mehrseitige Website (bis 10 Seiten)</li>
-            <li>Corporate Design System</li>
-            <li>Technisches SEO komplett</li>
-            <li>CMS-Integration</li>
-            <li>Performance-Optimierung</li>
+          <div class="pricing-card__badge">Beliebteste Wahl</div>
+          <div class="pricing-card__name">Professional</div>
+          <div class="pricing-card__price">ab 4.500 € <span>einmalig</span></div>
+          <div class="pricing-card__desc">Für wachsende Unternehmen, die digital dominieren und KI-Content nutzen wollen.</div>
+          <ul class="pricing-card__list">
+            <li>Custom Website bis 15 Seiten</li>
+            <li>Full SEO-Strategie & Umsetzung</li>
+            <li>Corporate Branding komplett</li>
+            <li>3 Cinema AI Video Ads</li>
+            <li>Google & Meta Ads Setup</li>
+            <li>CRM-Integration & Lead-Flow</li>
             <li>3 Monate Support inklusive</li>
           </ul>
-          <a href="index.html#kontakt" class="btn btn--primary" style="text-align:center;">Anfragen</a>
+          <a href="index.html#kontakt" class="btn btn--primary" style="width:100%;text-align:center;">Professional anfragen</a>
         </div>
         <div class="pricing-card">
-          <p class="pricing-card__name">Enterprise</p>
-          <p class="pricing-card__price">Individuell</p>
-          <p class="pricing-card__note">Maßgeschneidert für Ihr Unternehmen</p>
-          <ul class="pricing-card__features">
-            <li>Web-App / E-Commerce / SaaS</li>
-            <li>Vollständiges Branding</li>
-            <li>SEO + Performance Marketing</li>
-            <li>Dedizierter Ansprechpartner</li>
-            <li>Monatliches Reporting</li>
-            <li>Laufende Betreuung & Optimierung</li>
+          <div class="pricing-card__name">Enterprise / Scale</div>
+          <div class="pricing-card__price">Individuell</div>
+          <div class="pricing-card__desc">Vollständige KI-Transformation Ihres Business — von Branding bis zur Automatisierung.</div>
+          <ul class="pricing-card__list">
+            <li>Alles aus Professional</li>
+            <li>Unbegrenzte AI Video Ads</li>
+            <li>Business-Automatisierung komplett</li>
+            <li>KI-Chatbot & Lead-Qualifizierung</li>
+            <li>Monatliches Strategy-Sparring</li>
+            <li>Dedizierter Account Manager</li>
+            <li>SLA & Priority Support</li>
           </ul>
-          <a href="index.html#kontakt" class="btn btn--ghost" style="text-align:center;">Angebot anfragen</a>
+          <a href="index.html#kontakt" class="btn btn--ghost" style="width:100%;text-align:center;">Angebot anfragen</a>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="faq">
+  <!-- FAQ -->
+  <section class="faq-section">
     <div class="container">
-      <div class="section-header reveal">
-        <span class="label">FAQ</span>
-        <h2>Häufige Fragen</h2>
-      </div>
-      <div class="faq-list reveal">
+      <h2 class="reveal">Häufige <span class="gradient-text">Fragen</span></h2>
+      <div class="faq-grid reveal">
         <div class="faq-item">
-          <button class="faq-q">Wie lange dauert ein Website-Projekt?<svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button>
-          <div class="faq-a"><p>Eine einfache Website dauert 2–3 Wochen, ein komplexes Corporate-Projekt 4–8 Wochen. Wir definieren gemeinsam Meilensteine und kommunizieren transparent über den Fortschritt.</p></div>
+          <div class="faq-item__q">Was genau sind Cinema AI Video Ads?</div>
+          <div class="faq-item__a">Cinema AI Video Ads sind hochwertige Videoanzeigen, die mit KI-Technologie in Kinoqualität produziert werden — in 24–48 Stunden statt 4–6 Wochen. Das Ergebnis: professionelle Videos zu 80% geringeren Kosten als klassische Filmproduktionen.</div>
         </div>
         <div class="faq-item">
-          <button class="faq-q">Arbeitet ihr auch mit Unternehmen außerhalb von Frankfurt?<svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button>
-          <div class="faq-a"><p>Ja, wir arbeiten deutschlandweit und international. Wir haben Kunden in Deutschland, Österreich, der Schweiz und Marokko. Die Zusammenarbeit funktioniert vollständig remote.</p></div>
+          <div class="faq-item__q">Wie läuft eine Automatisierung bei uns ab?</div>
+          <div class="faq-item__a">Wir starten mit einem Prozess-Audit, identifizieren die zeitintensivsten Aufgaben und bauen dann automatisierte Workflows mit Tools wie Make, n8n oder Custom APIs. Durchschnittlich sparen unsere Kunden 20+ Stunden pro Woche.</div>
         </div>
         <div class="faq-item">
-          <button class="faq-q">Wann sehe ich erste SEO-Ergebnisse?<svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button>
-          <div class="faq-a"><p>Technische Verbesserungen wirken sofort, Ranking-Verbesserungen zeigen sich nach 4–12 Wochen. Organisches SEO ist eine langfristige Investition — erste messbare Erfolge sehen unsere Kunden im Durchschnitt nach 6 Wochen.</p></div>
+          <div class="faq-item__q">Wie lange dauert ein Webdesign-Projekt?</div>
+          <div class="faq-item__a">Ein Starter-Projekt dauert 2–3 Wochen. Professional-Websites mit Branding und Integrationen 4–8 Wochen. Für Enterprise-Projekte planen wir individuell. Wir halten immer Fristen ein — das ist unser Versprechen.</div>
         </div>
         <div class="faq-item">
-          <button class="faq-q">Gibt es einen Ansprechpartner, der immer erreichbar ist?<svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button>
-          <div class="faq-a"><p>Ja. Jeder Kunde hat einen festen Ansprechpartner. Wir antworten auf Anfragen in der Regel innerhalb von 24 Stunden — bei dringenden Anliegen auch per WhatsApp.</p></div>
+          <div class="faq-item__q">Arbeitet ihr auch mit kleinen Unternehmen?</div>
+          <div class="faq-item__a">Absolut. Einige unserer besten Projekte waren für Solo-Selbstständige oder kleine Teams. Was zählt, ist der Wille zu wachsen — nicht die aktuelle Unternehmensgröße.</div>
         </div>
         <div class="faq-item">
-          <button class="faq-q">Kann ich meine Website nach dem Launch selbst bearbeiten?<svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button>
-          <div class="faq-a"><p>Ja. Wir integrieren auf Wunsch ein CMS (z.B. WordPress, Webflow oder ein Headless CMS), sodass Sie Texte und Bilder selbst anpassen können — ganz ohne Programmierkenntnisse.</p></div>
+          <div class="faq-item__q">Wie schnell sind die ersten Ergebnisse sichtbar?</div>
+          <div class="faq-item__a">Bei Cinema AI Video Ads und bezahlter Werbung: sofort nach Launch. Bei SEO: erste Verbesserungen nach 4–8 Wochen, nachhaltige Ergebnisse ab Monat 3–6. Bei Automatisierungen: ab Tag 1 nach Implementierung.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-item__q">Gibt es eine Mindestvertragslaufzeit?</div>
+          <div class="faq-item__a">Für Einzelprojekte (Website, Branding, Video Ads) nicht. Für laufende Services wie SEO und Performance Marketing empfehlen wir 6 Monate für nachhaltige Ergebnisse — monatlich kündbar danach.</div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="cta-band">
-    <div class="container cta-band__inner">
-      <div>
-        <h2>Bereit loszulegen?</h2>
-        <p>Kostenloses Erstgespräch — wir hören zu, analysieren, und machen ein konkretes Angebot.</p>
+  <!-- CTA -->
+  <section class="svc-cta">
+    <div class="container">
+      <h2 class="reveal">Bereit für das<br /><span class="gradient-text">nächste Level?</span></h2>
+      <p class="reveal">Kostenloses Erstgespräch · Kein Verkaufsdruck · Ehrliche Einschätzung</p>
+      <div class="svc-cta__actions reveal">
+        <a href="index.html#kontakt" class="btn btn--primary">Kostenlos beraten lassen</a>
+        <a href="index.html#portfolio" class="btn btn--ghost">Projekte ansehen</a>
       </div>
-      <a href="index.html#kontakt" class="btn btn--primary">Jetzt Gespräch vereinbaren</a>
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer class="footer">
-    <div class="container footer__grid">
-      <div class="footer__brand">
-        <a href="index.html" class="nav__logo">069<span>Digital</span></a>
-        <p>Premium Digitalagentur<br />Frankfurt am Main</p>
-        <div class="footer__social">
-          <a href="#" aria-label="Instagram"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
-          <a href="#" aria-label="LinkedIn"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="index.html" class="nav__logo footer__logo">
+            <span class="logo-icon">069</span>Digital
+          </a>
+          <p>KI-gestützte Digitalagentur aus Frankfurt. Wir bauen digitale Erlebnisse, die wachsen.</p>
+          <div class="footer__social">
+            <a href="#" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="#" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="3"/><path d="M8 11v5M8 8v.01M12 16v-5m0 0c0-1.1.9-2 2-2s2 .9 2 2v5"/></svg>
+            </a>
+            <a href="#" aria-label="TikTok">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer__col">
+          <h4>Leistungen</h4>
+          <ul>
+            <li><a href="services.html">Webdesign</a></li>
+            <li><a href="services.html">Branding</a></li>
+            <li><a href="services.html">SEO</a></li>
+            <li><a href="services.html">Performance Marketing</a></li>
+            <li><a href="services.html">Cinema AI Video Ads</a></li>
+            <li><a href="services.html">Automatisierung</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Agentur</h4>
+          <ul>
+            <li><a href="index.html#portfolio">Portfolio</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="index.html#kontakt">Kontakt</a></li>
+            <li><a href="#">Impressum</a></li>
+            <li><a href="#">Datenschutz</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Kontakt</h4>
+          <ul>
+            <li><a href="tel:+491556609900">+49 155 660 99 00</a></li>
+            <li><a href="mailto:info@069digital.de">info@069digital.de</a></li>
+            <li style="color:#8a8f98;cursor:default;">Frankfurt am Main</li>
+          </ul>
         </div>
       </div>
-      <div>
-        <h4>Leistungen</h4>
-        <ul>
-          <li><a href="services.html">Webdesign</a></li>
-          <li><a href="services.html">Branding</a></li>
-          <li><a href="services.html">SEO</a></li>
-          <li><a href="services.html">Performance Marketing</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Agentur</h4>
-        <ul>
-          <li><a href="index.html#ueber-uns">Über uns</a></li>
-          <li><a href="index.html#arbeiten">Projekte</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="index.html#kontakt">Kontakt</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Rechtliches</h4>
-        <ul>
-          <li><a href="impressum.html">Impressum</a></li>
-          <li><a href="datenschutz.html">Datenschutz</a></li>
-        </ul>
+      <div class="footer__bottom">
+        <p>© 2025 069Digital. Alle Rechte vorbehalten.</p>
+        <p>Made with ♥ in Frankfurt</p>
       </div>
     </div>
-    <div class="footer__bottom"><p>© 2025 069Digital</p></div>
   </footer>
 
-  <a href="https://wa.me/491556609900" target="_blank" rel="noopener" class="wa-fab" aria-label="WhatsApp">
-    <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.999 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2.05 21.95l4.896-1.374A9.956 9.956 0 0011.999 22c5.523 0 10-4.477 10-10S17.522 2 11.999 2zm0 18.181a8.17 8.17 0 01-4.169-1.142l-.299-.177-3.094.868.875-3.002-.194-.308A8.178 8.178 0 013.818 12c0-4.518 3.665-8.181 8.181-8.181 4.518 0 8.182 3.663 8.182 8.181 0 4.518-3.664 8.181-8.182 8.181z"/></svg>
-    <span class="wa-fab__label">WhatsApp</span>
+  <!-- WhatsApp FAB -->
+  <a href="https://wa.me/491556609900" class="wa-fab" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
   </a>
 
+  <script src="script.js"></script>
   <script>
-    window.addEventListener('scroll', () => {
-      const el = document.getElementById('scrollProgress');
-      if (el) {
-        const p = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
-        el.style.width = (p * 100) + '%';
-      }
-    });
-    const burger = document.getElementById('burger');
-    const menu = document.getElementById('mobileMenu');
-    if (burger && menu) {
-      burger.addEventListener('click', () => { burger.classList.toggle('active'); menu.classList.toggle('active'); });
-      menu.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click', () => { burger.classList.remove('active'); menu.classList.remove('active'); }));
-    }
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('revealed'); observer.unobserve(e.target); } });
+    // Reveal on scroll
+    const revealEls = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
     }, { threshold: 0.12 });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-    document.querySelectorAll('.faq-q').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const item = btn.parentElement;
-        const isOpen = item.classList.contains('open');
-        document.querySelectorAll('.faq-item').forEach(i => { i.classList.remove('open'); i.querySelector('.faq-a').style.maxHeight = '0'; });
-        if (!isOpen) { item.classList.add('open'); const a = item.querySelector('.faq-a'); a.style.maxHeight = a.scrollHeight + 'px'; }
-      });
-    });
+    revealEls.forEach(el => io.observe(el));
   </script>
 </body>
 </html>

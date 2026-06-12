@@ -1669,3 +1669,36 @@ select option { background: var(--dark-2); }
   box-shadow: 0 10px 36px rgba(37,211,102,0.6);
 }
 .wa-fab__label { display: none; }
+
+/* ── AI SERVICE CARDS ────────────────────────── */
+.service-card--ai {
+  background: linear-gradient(160deg, rgba(0,212,255,0.04) 0%, var(--dark) 60%);
+  border-top: 1px solid rgba(0,212,255,0.15);
+  position: relative;
+}
+.service-card--ai::before {
+  background: linear-gradient(90deg, transparent, rgba(0,212,255,0.4), transparent);
+}
+.service-card--ai:hover {
+  background: linear-gradient(160deg, rgba(0,212,255,0.08) 0%, var(--dark-2) 60%);
+  box-shadow: 0 0 40px rgba(0,212,255,0.06);
+}
+.service-card__ai-badge {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  background: rgba(0,212,255,0.08);
+  border: 1px solid rgba(0,212,255,0.25);
+  border-radius: 100px;
+  padding: 0.25rem 0.65rem;
+}
+
+/* ── HERO PULSE DOT ──────────────────────────── */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.7); }
+}
