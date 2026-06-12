@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog — Digitales Marketing, SEO & Webdesign Tipps | 069Digital Frankfurt</title>
+  <meta name="description" content="Praxistipps und Insights zu Webdesign, SEO, Branding und Performance Marketing vom Team der 069Digital Agentur Frankfurt." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://charafatj.github.io/069digital/blog.html" />
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://charafatj.github.io/069digital/blog.html" />
+  <meta property="og:title" content="Blog — Digitales Marketing, SEO & Webdesign | 069Digital" />
+  <meta property="og:description" content="Praxistipps zu Webdesign, SEO und digitalem Marketing vom Team der 069Digital Agentur Frankfurt." />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "069Digital Blog",
+    "description": "Digitales Marketing, SEO, Webdesign und Branding — Insights vom Team der 069Digital Agentur Frankfurt",
+    "url": "https://charafatj.github.io/069digital/blog.html",
+    "publisher": {
+      "@type": "Organization",
+      "name": "069Digital",
+      "url": "https://charafatj.github.io/069digital/",
+      "logo": { "@type": "ImageObject", "url": "https://charafatj.github.io/069digital/favicon.svg" }
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .page-hero {
+      padding: 10rem 0 5rem;
+      text-align: center;
+      position: relative;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(0,212,255,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .page-hero .label { margin-bottom: 1rem; }
+    .page-hero h1 { font-size: clamp(2.4rem, 6vw, 4rem); margin-bottom: 1.25rem; }
+    .page-hero h1 span { color: var(--accent); }
+    .page-hero > .container > p { color: var(--gray); font-size: 1.05rem; max-width: 540px; margin: 0 auto; }
+
+    .blog-section { padding: 4rem 0 6rem; }
+    .blog-cats {
+      display: flex; justify-content: center; gap: 0.5rem; flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+    .blog-cat {
+      background: transparent; border: 1px solid var(--border); color: var(--gray);
+      font-family: var(--font-body); font-size: 0.82rem; font-weight: 500;
+      padding: 0.45rem 1.2rem; border-radius: 100px; cursor: pointer;
+      transition: var(--transition);
+    }
+    .blog-cat:hover { color: var(--white); border-color: var(--gray); }
+    .blog-cat.active { background: var(--accent); color: var(--black); border-color: var(--accent); font-weight: 600; }
+
+    .blog-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
+    }
+    .blog-card {
+      background: var(--dark-2); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); overflow: hidden;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+      display: flex; flex-direction: column;
+    }
+    .blog-card:hover { transform: translateY(-5px); border-color: rgba(0,212,255,0.25); }
+    .blog-card--featured { grid-column: span 2; }
+    .blog-card__thumb {
+      height: 200px; background: var(--dark-3);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-head); font-size: 3rem; font-weight: 700;
+      color: rgba(255,255,255,0.1); letter-spacing: -0.05em;
+      position: relative; overflow: hidden;
+    }
+    .blog-card--featured .blog-card__thumb { height: 280px; }
+    .blog-card__thumb-bg {
+      position: absolute; inset: 0;
+      transition: transform 0.5s ease;
+    }
+    .blog-card:hover .blog-card__thumb-bg { transform: scale(1.04); }
+    .blog-card__cat {
+      position: absolute; top: 1rem; left: 1rem;
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+      background: rgba(0,212,255,0.12); color: var(--accent);
+      border: 1px solid rgba(0,212,255,0.25); border-radius: 100px;
+      padding: 0.3rem 0.8rem;
+    }
+    .blog-card__body { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
+    .blog-card__meta {
+      display: flex; gap: 1rem; align-items: center;
+      font-size: 0.75rem; color: var(--muted); margin-bottom: 0.75rem;
+    }
+    .blog-card__title {
+      font-family: var(--font-head); font-size: 1.15rem; font-weight: 700;
+      color: var(--white); line-height: 1.3; margin-bottom: 0.75rem;
+      transition: color 0.2s ease;
+    }
+    .blog-card:hover .blog-card__title { color: var(--accent); }
+    .blog-card--featured .blog-card__title { font-size: 1.4rem; }
+    .blog-card__excerpt { font-size: 0.875rem; color: var(--gray); line-height: 1.7; margin-bottom: 1.25rem; flex: 1; }
+    .blog-card__link {
+      font-size: 0.8rem; font-weight: 600; color: var(--accent);
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      transition: gap 0.2s ease;
+    }
+    .blog-card:hover .blog-card__link { gap: 0.7rem; }
+
+    .newsletter {
+      margin: 2rem 0 0;
+      background: linear-gradient(135deg, rgba(0,212,255,0.06) 0%, transparent 60%);
+      border: 1px solid rgba(0,212,255,0.15); border-radius: var(--radius-lg);
+      padding: 3.5rem; text-align: center;
+    }
+    .newsletter h3 { font-size: 1.6rem; margin-bottom: 0.5rem; }
+    .newsletter h3 span { color: var(--accent); }
+    .newsletter p { color: var(--gray); margin-bottom: 1.75rem; }
+    .newsletter-form { display: flex; gap: 0.75rem; max-width: 440px; margin: 0 auto; }
+    .newsletter-form input {
+      flex: 1; background: var(--dark-3); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 0.85rem 1.2rem;
+      color: var(--white); font-family: var(--font-body); font-size: 0.9rem;
+      outline: none; transition: border-color 0.2s ease;
+    }
+    .newsletter-form input:focus { border-color: var(--accent); }
+    .newsletter-form input::placeholder { color: var(--muted); }
+
+    @media (max-width: 900px) {
+      .blog-grid { grid-template-columns: 1fr; }
+      .blog-card--featured { grid-column: span 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <div class="grain"></div>
+
+  <nav class="nav scrolled" id="nav" style="position:sticky; backdrop-filter:blur(20px);">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">069<span>Digital</span></a>
+      <ul class="nav__links">
+        <li><a href="services.html">Leistungen</a></li>
+        <li><a href="blog.html" style="color:var(--accent);">Blog</a></li>
+        <li><a href="index.html#arbeiten">Arbeiten</a></li>
+        <li><a href="index.html#kontakt" class="nav__cta">Projekt starten</a></li>
+      </ul>
+      <div class="nav__right">
+        <button class="nav__burger" id="burger" aria-label="Menü">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="services.html" class="mobile-link">Leistungen</a></li>
+      <li><a href="blog.html" class="mobile-link">Blog</a></li>
+      <li><a href="index.html#arbeiten" class="mobile-link">Arbeiten</a></li>
+      <li><a href="index.html#kontakt" class="mobile-link">Projekt starten</a></li>
+    </ul>
+  </div>
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="label">Insights & Tipps</span>
+      <h1>Der <span>069Digital</span> Blog</h1>
+      <p>Praxiswissen zu Webdesign, SEO, Branding und digitalem Marketing — direkt vom Team.</p>
+    </div>
+  </section>
+
+  <section class="blog-section">
+    <div class="container">
+
+      <div class="blog-cats">
+        <button class="blog-cat active" data-cat="all">Alle</button>
+        <button class="blog-cat" data-cat="seo">SEO</button>
+        <button class="blog-cat" data-cat="webdesign">Webdesign</button>
+        <button class="blog-cat" data-cat="marketing">Marketing</button>
+        <button class="blog-cat" data-cat="branding">Branding</button>
+      </div>
+
+      <div class="blog-grid" id="blogGrid">
+
+        <article class="blog-card blog-card--featured reveal" data-cat="seo">
+          <a href="blog/lokales-seo-frankfurt.html">
+            <div class="blog-card__thumb">
+              <div class="blog-card__thumb-bg" style="background: linear-gradient(135deg, #0a1a0f 0%, #0d2e20 50%, #1a3d2b 100%);"></div>
+              <span style="position:relative; z-index:1; color:rgba(0,212,255,0.6); font-size:5rem;">📍</span>
+              <span class="blog-card__cat">SEO</span>
+            </div>
+          </a>
+          <div class="blog-card__body">
+            <div class="blog-card__meta">
+              <span>📅 12. Juni 2025</span>
+              <span>⏱ 7 Min. Lesezeit</span>
+            </div>
+            <a href="blog/lokales-seo-frankfurt.html">
+              <h2 class="blog-card__title">Lokales SEO in Frankfurt: Wie Sie 2025 auf Position 1 bei Google kommen</h2>
+            </a>
+            <p class="blog-card__excerpt">Google Business Profile, Local Pack und standortbezogene Keywords — wir zeigen, welche Maßnahmen für Frankfurter Unternehmen den größten Unterschied machen. Mit konkreten Beispielen aus unserer Agenturpraxis.</p>
+            <a href="blog/lokales-seo-frankfurt.html" class="blog-card__link">Artikel lesen →</a>
+          </div>
+        </article>
+
+        <article class="blog-card reveal" data-cat="webdesign">
+          <a href="blog/website-2025-must-haves.html">
+            <div class="blog-card__thumb">
+              <div class="blog-card__thumb-bg" style="background: linear-gradient(135deg, #0a0f1a 0%, #0d1e35 100%);"></div>
+              <span style="position:relative; z-index:1; color:rgba(0,212,255,0.5); font-size:4rem;">⚡</span>
+              <span class="blog-card__cat">Webdesign</span>
+            </div>
+          </a>
+          <div class="blog-card__body">
+            <div class="blog-card__meta">
+              <span>📅 5. Juni 2025</span>
+              <span>⏱ 5 Min. Lesezeit</span>
+            </div>
+            <a href="blog/website-2025-must-haves.html">
+              <h2 class="blog-card__title">7 Must-Haves für eine moderne Website 2025</h2>
+            </a>
+            <p class="blog-card__excerpt">Core Web Vitals, Mobile-First und Conversion-Optimierung — das sind die Design- und Technik-Standards, die Ihre Website 2025 erfüllen muss.</p>
+            <a href="blog/website-2025-must-haves.html" class="blog-card__link">Artikel lesen →</a>
+          </div>
+        </article>
+
+        <article class="blog-card reveal" data-cat="marketing">
+          <a href="blog/google-ads-roas-optimieren.html">
+            <div class="blog-card__thumb">
+              <div class="blog-card__thumb-bg" style="background: linear-gradient(135deg, #1a0a0f 0%, #2d1020 100%);"></div>
+              <span style="position:relative; z-index:1; color:rgba(0,212,255,0.5); font-size:4rem;">📈</span>
+              <span class="blog-card__cat">Marketing</span>
+            </div>
+          </a>
+          <div class="blog-card__body">
+            <div class="blog-card__meta">
+              <span>📅 28. Mai 2025</span>
+              <span>⏱ 6 Min. Lesezeit</span>
+            </div>
+            <a href="blog/google-ads-roas-optimieren.html">
+              <h2 class="blog-card__title">Google Ads 2025: So verdoppeln Sie Ihren ROAS in 90 Tagen</h2>
+            </a>
+            <p class="blog-card__excerpt">Smart Bidding, Audience Signals und Kampagnenstruktur — die drei Hebel, mit denen unsere Kunden im Durchschnitt einen 4x ROAS erreichen.</p>
+            <a href="blog/google-ads-roas-optimieren.html" class="blog-card__link">Artikel lesen →</a>
+          </div>
+        </article>
+
+        <article class="blog-card reveal" data-cat="branding">
+          <a href="blog/starkes-branding-aufbauen.html">
+            <div class="blog-card__thumb">
+              <div class="blog-card__thumb-bg" style="background: linear-gradient(135deg, #150a1a 0%, #2a1535 100%);"></div>
+              <span style="position:relative; z-index:1; color:rgba(0,212,255,0.5); font-size:4rem;">🎨</span>
+              <span class="blog-card__cat">Branding</span>
+            </div>
+          </a>
+          <div class="blog-card__body">
+            <div class="blog-card__meta">
+              <span>📅 20. Mai 2025</span>
+              <span>⏱ 5 Min. Lesezeit</span>
+            </div>
+            <a href="blog/starkes-branding-aufbauen.html">
+              <h2 class="blog-card__title">Starkes Branding aufbauen: Was kleine Unternehmen von Apple lernen können</h2>
+            </a>
+            <p class="blog-card__excerpt">Konsistenz, Emotionen und ein klares Warum — was wirklich eine Marke ausmacht, die Kunden lieben und weiterempfehlen.</p>
+            <a href="blog/starkes-branding-aufbauen.html" class="blog-card__link">Artikel lesen →</a>
+          </div>
+        </article>
+
+        <article class="blog-card reveal" data-cat="seo">
+          <a href="blog/core-web-vitals-erklaert.html">
+            <div class="blog-card__thumb">
+              <div class="blog-card__thumb-bg" style="background: linear-gradient(135deg, #0a1218 0%, #0d2230 100%);"></div>
+              <span style="position:relative; z-index:1; color:rgba(0,212,255,0.5); font-size:4rem;">🔍</span>
+              <span class="blog-card__cat">SEO</span>
+            </div>
+          </a>
+          <div class="blog-card__body">
+            <div class="blog-card__meta">
+              <span>📅 12. Mai 2025</span>
+              <span>⏱ 4 Min. Lesezeit</span>
+            </div>
+            <a href="blog/core-web-vitals-erklaert.html">
+              <h2 class="blog-card__title">Core Web Vitals einfach erklärt — und warum sie 2025 wichtiger denn je sind</h2>
+            </a>
+            <p class="blog-card__excerpt">LCP, FID, CLS — was diese Metriken bedeuten, wie man sie misst und welche konkreten Maßnahmen Ihr Ranking verbessern.</p>
+            <a href="blog/core-web-vitals-erklaert.html" class="blog-card__link">Artikel lesen →</a>
+          </div>
+        </article>
+
+        <article class="blog-card reveal" data-cat="marketing webdesign">
+          <a href="blog/landing-page-conversion-optimieren.html">
+            <div class="blog-card__thumb">
+              <div class="blog-card__thumb-bg" style="background: linear-gradient(135deg, #0f1208 0%, #1e2810 100%);"></div>
+              <span style="position:relative; z-index:1; color:rgba(0,212,255,0.5); font-size:4rem;">🎯</span>
+              <span class="blog-card__cat">Webdesign · Marketing</span>
+            </div>
+          </a>
+          <div class="blog-card__body">
+            <div class="blog-card__meta">
+              <span>📅 2. Mai 2025</span>
+              <span>⏱ 6 Min. Lesezeit</span>
+            </div>
+            <a href="blog/landing-page-conversion-optimieren.html">
+              <h2 class="blog-card__title">Landing Page Conversion optimieren: 9 Hebel für mehr Anfragen</h2>
+            </a>
+            <p class="blog-card__excerpt">Headline, Hero, CTA, Social Proof — welche Elemente einer Landing Page den größten Einfluss auf die Conversion Rate haben und wie man sie richtig einsetzt.</p>
+            <a href="blog/landing-page-conversion-optimieren.html" class="blog-card__link">Artikel lesen →</a>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="newsletter reveal">
+        <h3>Kein Artikel <span>verpassen.</span></h3>
+        <p>Neue Beiträge, Agentur-Insights und SEO-Tipps direkt in Ihr Postfach — kein Spam, monatlich.</p>
+        <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+          <input type="email" placeholder="Ihre E-Mail-Adresse" required />
+          <button type="submit" class="btn btn--primary">Anmelden</button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="nav__logo">069<span>Digital</span></a>
+        <p>Premium Digitalagentur<br />Frankfurt am Main</p>
+        <div class="footer__social">
+          <a href="#" aria-label="Instagram">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h4>Leistungen</h4>
+        <ul>
+          <li><a href="services.html">Webdesign</a></li>
+          <li><a href="services.html">Branding</a></li>
+          <li><a href="services.html">SEO</a></li>
+          <li><a href="services.html">Performance Marketing</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Agentur</h4>
+        <ul>
+          <li><a href="index.html#ueber-uns">Über uns</a></li>
+          <li><a href="index.html#arbeiten">Projekte</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="index.html#kontakt">Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Rechtliches</h4>
+        <ul>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© 2025 069Digital</p>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', () => {
+      const el = document.getElementById('scrollProgress');
+      if (el) {
+        const p = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+        el.style.width = (p * 100) + '%';
+      }
+    });
+
+    const burger = document.getElementById('burger');
+    const menu = document.getElementById('mobileMenu');
+    if (burger && menu) {
+      burger.addEventListener('click', () => {
+        burger.classList.toggle('active');
+        menu.classList.toggle('active');
+      });
+      menu.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click', () => {
+        burger.classList.remove('active');
+        menu.classList.remove('active');
+      }));
+    }
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('revealed'); observer.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    document.querySelectorAll('.blog-cat').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.blog-cat').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const cat = btn.dataset.cat;
+        document.querySelectorAll('.blog-card').forEach(card => {
+          const match = cat === 'all' || card.dataset.cat.includes(cat);
+          card.style.display = match ? 'flex' : 'none';
+        });
+      });
+    });
+
+    function handleNewsletter(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('button');
+      btn.textContent = 'Angemeldet ✓';
+      btn.style.background = '#22c55e';
+      btn.disabled = true;
+    }
+  </script>
+</body>
+</html>
