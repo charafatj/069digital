@@ -182,6 +182,22 @@ mobileLinks.forEach(link => {
   });
 });
 
+// ── VIDEO AUTOPLAY (mobile fix) ──────────────
+document.querySelectorAll('video').forEach(video => {
+  video.muted = true;
+  video.playsInline = true;
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        video.play().catch(() => {});
+      } else {
+        video.pause();
+      }
+    });
+  }, { threshold: 0.1 });
+  observer.observe(video);
+});
+
 // ── SCROLL REVEAL ────────────────────────────
 // Lower threshold on mobile for faster reveals
 const isMobile = window.innerWidth <= 768;
