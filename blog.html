@@ -36,103 +36,43 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <style>
-    .page-hero {
-      padding: 10rem 0 5rem;
-      text-align: center;
-      position: relative;
-    }
-    .page-hero::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(0,212,255,0.08) 0%, transparent 70%);
-      pointer-events: none;
-    }
+    .page-hero { padding: 10rem 0 5rem; text-align: center; position: relative; }
+    .page-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(0,212,255,0.08) 0%, transparent 70%); pointer-events: none; }
     .page-hero .label { margin-bottom: 1rem; }
     .page-hero h1 { font-size: clamp(2.4rem, 6vw, 4rem); margin-bottom: 1.25rem; }
     .page-hero h1 span { color: var(--accent); }
     .page-hero > .container > p { color: var(--gray); font-size: 1.05rem; max-width: 540px; margin: 0 auto; }
 
     .blog-section { padding: 4rem 0 6rem; }
-    .blog-cats {
-      display: flex; justify-content: center; gap: 0.5rem; flex-wrap: wrap;
-      margin-bottom: 3rem;
-    }
-    .blog-cat {
-      background: transparent; border: 1px solid var(--border); color: var(--gray);
-      font-family: var(--font-body); font-size: 0.82rem; font-weight: 500;
-      padding: 0.45rem 1.2rem; border-radius: 100px; cursor: pointer;
-      transition: var(--transition);
-    }
+    .blog-cats { display: flex; justify-content: center; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 3rem; }
+    .blog-cat { background: transparent; border: 1px solid var(--border); color: var(--gray); font-family: var(--font-body); font-size: 0.82rem; font-weight: 500; padding: 0.45rem 1.2rem; border-radius: 100px; cursor: pointer; transition: var(--transition); }
     .blog-cat:hover { color: var(--white); border-color: var(--gray); }
     .blog-cat.active { background: var(--accent); color: var(--black); border-color: var(--accent); font-weight: 600; }
 
-    .blog-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
-    }
-    .blog-card {
-      background: var(--dark-2); border: 1px solid var(--border);
-      border-radius: var(--radius-lg); overflow: hidden;
-      transition: transform 0.3s ease, border-color 0.3s ease;
-      display: flex; flex-direction: column;
-    }
+    .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+    .blog-card { background: var(--dark-2); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; transition: transform 0.3s ease, border-color 0.3s ease; display: flex; flex-direction: column; }
     .blog-card:hover { transform: translateY(-5px); border-color: rgba(0,212,255,0.25); }
     .blog-card--featured { grid-column: span 2; }
-    .blog-card__thumb {
-      height: 200px; background: var(--dark-3);
-      display: flex; align-items: center; justify-content: center;
-      font-family: var(--font-head); font-size: 3rem; font-weight: 700;
-      color: rgba(255,255,255,0.1); letter-spacing: -0.05em;
-      position: relative; overflow: hidden;
-    }
+    .blog-card__thumb { height: 200px; background: var(--dark-3); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
     .blog-card--featured .blog-card__thumb { height: 280px; }
-    .blog-card__thumb-bg {
-      position: absolute; inset: 0;
-      transition: transform 0.5s ease;
-    }
+    .blog-card__thumb-bg { position: absolute; inset: 0; transition: transform 0.5s ease; }
     .blog-card:hover .blog-card__thumb-bg { transform: scale(1.04); }
-    .blog-card__cat {
-      position: absolute; top: 1rem; left: 1rem;
-      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
-      background: rgba(0,212,255,0.12); color: var(--accent);
-      border: 1px solid rgba(0,212,255,0.25); border-radius: 100px;
-      padding: 0.3rem 0.8rem;
-    }
+    .blog-card__cat { position: absolute; top: 1rem; left: 1rem; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; background: rgba(0,212,255,0.12); color: var(--accent); border: 1px solid rgba(0,212,255,0.25); border-radius: 100px; padding: 0.3rem 0.8rem; }
     .blog-card__body { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
-    .blog-card__meta {
-      display: flex; gap: 1rem; align-items: center;
-      font-size: 0.75rem; color: var(--muted); margin-bottom: 0.75rem;
-    }
-    .blog-card__title {
-      font-family: var(--font-head); font-size: 1.15rem; font-weight: 700;
-      color: var(--white); line-height: 1.3; margin-bottom: 0.75rem;
-      transition: color 0.2s ease;
-    }
+    .blog-card__meta { display: flex; gap: 1rem; font-size: 0.75rem; color: var(--muted); margin-bottom: 0.75rem; }
+    .blog-card__title { font-family: var(--font-head); font-size: 1.15rem; font-weight: 700; color: var(--white); line-height: 1.3; margin-bottom: 0.75rem; transition: color 0.2s ease; }
     .blog-card:hover .blog-card__title { color: var(--accent); }
     .blog-card--featured .blog-card__title { font-size: 1.4rem; }
     .blog-card__excerpt { font-size: 0.875rem; color: var(--gray); line-height: 1.7; margin-bottom: 1.25rem; flex: 1; }
-    .blog-card__link {
-      font-size: 0.8rem; font-weight: 600; color: var(--accent);
-      display: inline-flex; align-items: center; gap: 0.4rem;
-      transition: gap 0.2s ease;
-    }
+    .blog-card__link { font-size: 0.8rem; font-weight: 600; color: var(--accent); display: inline-flex; align-items: center; gap: 0.4rem; transition: gap 0.2s ease; }
     .blog-card:hover .blog-card__link { gap: 0.7rem; }
 
-    .newsletter {
-      margin: 2rem 0 0;
-      background: linear-gradient(135deg, rgba(0,212,255,0.06) 0%, transparent 60%);
-      border: 1px solid rgba(0,212,255,0.15); border-radius: var(--radius-lg);
-      padding: 3.5rem; text-align: center;
-    }
+    .newsletter { margin: 2rem 0 0; background: linear-gradient(135deg, rgba(0,212,255,0.06) 0%, transparent 60%); border: 1px solid rgba(0,212,255,0.15); border-radius: var(--radius-lg); padding: 3.5rem; text-align: center; }
     .newsletter h3 { font-size: 1.6rem; margin-bottom: 0.5rem; }
     .newsletter h3 span { color: var(--accent); }
     .newsletter p { color: var(--gray); margin-bottom: 1.75rem; }
     .newsletter-form { display: flex; gap: 0.75rem; max-width: 440px; margin: 0 auto; }
-    .newsletter-form input {
-      flex: 1; background: var(--dark-3); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 0.85rem 1.2rem;
-      color: var(--white); font-family: var(--font-body); font-size: 0.9rem;
-      outline: none; transition: border-color 0.2s ease;
-    }
+    .newsletter-form input { flex: 1; background: var(--dark-3); border: 1px solid var(--border); border-radius: var(--radius); padding: 0.85rem 1.2rem; color: var(--white); font-family: var(--font-body); font-size: 0.9rem; outline: none; transition: border-color 0.2s ease; }
     .newsletter-form input:focus { border-color: var(--accent); }
     .newsletter-form input::placeholder { color: var(--muted); }
 
@@ -157,9 +97,7 @@
         <li><a href="index.html#kontakt" class="nav__cta">Projekt starten</a></li>
       </ul>
       <div class="nav__right">
-        <button class="nav__burger" id="burger" aria-label="Menü">
-          <span></span><span></span><span></span>
-        </button>
+        <button class="nav__burger" id="burger" aria-label="Menü"><span></span><span></span><span></span></button>
       </div>
     </div>
   </nav>
@@ -203,13 +141,8 @@
             </div>
           </a>
           <div class="blog-card__body">
-            <div class="blog-card__meta">
-              <span>📅 12. Juni 2025</span>
-              <span>⏱ 7 Min. Lesezeit</span>
-            </div>
-            <a href="blog/lokales-seo-frankfurt.html">
-              <h2 class="blog-card__title">Lokales SEO in Frankfurt: Wie Sie 2025 auf Position 1 bei Google kommen</h2>
-            </a>
+            <div class="blog-card__meta"><span>📅 12. Juni 2025</span><span>⏱ 7 Min. Lesezeit</span></div>
+            <a href="blog/lokales-seo-frankfurt.html"><h2 class="blog-card__title">Lokales SEO in Frankfurt: Wie Sie 2025 auf Position 1 bei Google kommen</h2></a>
             <p class="blog-card__excerpt">Google Business Profile, Local Pack und standortbezogene Keywords — wir zeigen, welche Maßnahmen für Frankfurter Unternehmen den größten Unterschied machen. Mit konkreten Beispielen aus unserer Agenturpraxis.</p>
             <a href="blog/lokales-seo-frankfurt.html" class="blog-card__link">Artikel lesen →</a>
           </div>
@@ -224,13 +157,8 @@
             </div>
           </a>
           <div class="blog-card__body">
-            <div class="blog-card__meta">
-              <span>📅 5. Juni 2025</span>
-              <span>⏱ 5 Min. Lesezeit</span>
-            </div>
-            <a href="blog/website-2025-must-haves.html">
-              <h2 class="blog-card__title">7 Must-Haves für eine moderne Website 2025</h2>
-            </a>
+            <div class="blog-card__meta"><span>📅 5. Juni 2025</span><span>⏱ 5 Min. Lesezeit</span></div>
+            <a href="blog/website-2025-must-haves.html"><h2 class="blog-card__title">7 Must-Haves für eine moderne Website 2025</h2></a>
             <p class="blog-card__excerpt">Core Web Vitals, Mobile-First und Conversion-Optimierung — das sind die Design- und Technik-Standards, die Ihre Website 2025 erfüllen muss.</p>
             <a href="blog/website-2025-must-haves.html" class="blog-card__link">Artikel lesen →</a>
           </div>
@@ -245,13 +173,8 @@
             </div>
           </a>
           <div class="blog-card__body">
-            <div class="blog-card__meta">
-              <span>📅 28. Mai 2025</span>
-              <span>⏱ 6 Min. Lesezeit</span>
-            </div>
-            <a href="blog/google-ads-roas-optimieren.html">
-              <h2 class="blog-card__title">Google Ads 2025: So verdoppeln Sie Ihren ROAS in 90 Tagen</h2>
-            </a>
+            <div class="blog-card__meta"><span>📅 28. Mai 2025</span><span>⏱ 6 Min. Lesezeit</span></div>
+            <a href="blog/google-ads-roas-optimieren.html"><h2 class="blog-card__title">Google Ads 2025: So verdoppeln Sie Ihren ROAS in 90 Tagen</h2></a>
             <p class="blog-card__excerpt">Smart Bidding, Audience Signals und Kampagnenstruktur — die drei Hebel, mit denen unsere Kunden im Durchschnitt einen 4x ROAS erreichen.</p>
             <a href="blog/google-ads-roas-optimieren.html" class="blog-card__link">Artikel lesen →</a>
           </div>
@@ -266,13 +189,8 @@
             </div>
           </a>
           <div class="blog-card__body">
-            <div class="blog-card__meta">
-              <span>📅 20. Mai 2025</span>
-              <span>⏱ 5 Min. Lesezeit</span>
-            </div>
-            <a href="blog/starkes-branding-aufbauen.html">
-              <h2 class="blog-card__title">Starkes Branding aufbauen: Was kleine Unternehmen von Apple lernen können</h2>
-            </a>
+            <div class="blog-card__meta"><span>📅 20. Mai 2025</span><span>⏱ 5 Min. Lesezeit</span></div>
+            <a href="blog/starkes-branding-aufbauen.html"><h2 class="blog-card__title">Starkes Branding aufbauen: Was kleine Unternehmen von Apple lernen können</h2></a>
             <p class="blog-card__excerpt">Konsistenz, Emotionen und ein klares Warum — was wirklich eine Marke ausmacht, die Kunden lieben und weiterempfehlen.</p>
             <a href="blog/starkes-branding-aufbauen.html" class="blog-card__link">Artikel lesen →</a>
           </div>
@@ -287,13 +205,8 @@
             </div>
           </a>
           <div class="blog-card__body">
-            <div class="blog-card__meta">
-              <span>📅 12. Mai 2025</span>
-              <span>⏱ 4 Min. Lesezeit</span>
-            </div>
-            <a href="blog/core-web-vitals-erklaert.html">
-              <h2 class="blog-card__title">Core Web Vitals einfach erklärt — und warum sie 2025 wichtiger denn je sind</h2>
-            </a>
+            <div class="blog-card__meta"><span>📅 12. Mai 2025</span><span>⏱ 4 Min. Lesezeit</span></div>
+            <a href="blog/core-web-vitals-erklaert.html"><h2 class="blog-card__title">Core Web Vitals einfach erklärt — und warum sie 2025 wichtiger denn je sind</h2></a>
             <p class="blog-card__excerpt">LCP, FID, CLS — was diese Metriken bedeuten, wie man sie misst und welche konkreten Maßnahmen Ihr Ranking verbessern.</p>
             <a href="blog/core-web-vitals-erklaert.html" class="blog-card__link">Artikel lesen →</a>
           </div>
@@ -308,13 +221,8 @@
             </div>
           </a>
           <div class="blog-card__body">
-            <div class="blog-card__meta">
-              <span>📅 2. Mai 2025</span>
-              <span>⏱ 6 Min. Lesezeit</span>
-            </div>
-            <a href="blog/landing-page-conversion-optimieren.html">
-              <h2 class="blog-card__title">Landing Page Conversion optimieren: 9 Hebel für mehr Anfragen</h2>
-            </a>
+            <div class="blog-card__meta"><span>📅 2. Mai 2025</span><span>⏱ 6 Min. Lesezeit</span></div>
+            <a href="blog/landing-page-conversion-optimieren.html"><h2 class="blog-card__title">Landing Page Conversion optimieren: 9 Hebel für mehr Anfragen</h2></a>
             <p class="blog-card__excerpt">Headline, Hero, CTA, Social Proof — welche Elemente einer Landing Page den größten Einfluss auf die Conversion Rate haben und wie man sie richtig einsetzt.</p>
             <a href="blog/landing-page-conversion-optimieren.html" class="blog-card__link">Artikel lesen →</a>
           </div>
@@ -340,12 +248,8 @@
         <a href="index.html" class="nav__logo">069<span>Digital</span></a>
         <p>Premium Digitalagentur<br />Frankfurt am Main</p>
         <div class="footer__social">
-          <a href="#" aria-label="Instagram">
-            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-          </a>
-          <a href="#" aria-label="LinkedIn">
-            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-          </a>
+          <a href="#" aria-label="Instagram"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
         </div>
       </div>
       <div>
@@ -374,10 +278,13 @@
         </ul>
       </div>
     </div>
-    <div class="footer__bottom">
-      <p>© 2025 069Digital</p>
-    </div>
+    <div class="footer__bottom"><p>© 2025 069Digital</p></div>
   </footer>
+
+  <a href="https://wa.me/491556609900" target="_blank" rel="noopener" class="wa-fab" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.999 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2.05 21.95l4.896-1.374A9.956 9.956 0 0011.999 22c5.523 0 10-4.477 10-10S17.522 2 11.999 2zm0 18.181a8.17 8.17 0 01-4.169-1.142l-.299-.177-3.094.868.875-3.002-.194-.308A8.178 8.178 0 013.818 12c0-4.518 3.665-8.181 8.181-8.181 4.518 0 8.182 3.663 8.182 8.181 0 4.518-3.664 8.181-8.182 8.181z"/></svg>
+    <span class="wa-fab__label">WhatsApp</span>
+  </a>
 
   <script>
     window.addEventListener('scroll', () => {
@@ -387,25 +294,16 @@
         el.style.width = (p * 100) + '%';
       }
     });
-
     const burger = document.getElementById('burger');
     const menu = document.getElementById('mobileMenu');
     if (burger && menu) {
-      burger.addEventListener('click', () => {
-        burger.classList.toggle('active');
-        menu.classList.toggle('active');
-      });
-      menu.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click', () => {
-        burger.classList.remove('active');
-        menu.classList.remove('active');
-      }));
+      burger.addEventListener('click', () => { burger.classList.toggle('active'); menu.classList.toggle('active'); });
+      menu.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click', () => { burger.classList.remove('active'); menu.classList.remove('active'); }));
     }
-
     const observer = new IntersectionObserver(entries => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('revealed'); observer.unobserve(e.target); } });
     }, { threshold: 0.1 });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
     document.querySelectorAll('.blog-cat').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('.blog-cat').forEach(b => b.classList.remove('active'));
@@ -417,7 +315,6 @@
         });
       });
     });
-
     function handleNewsletter(e) {
       e.preventDefault();
       const btn = e.target.querySelector('button');
