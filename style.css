@@ -1616,6 +1616,17 @@ select option { background: var(--dark-2); }
 }
 .pf-filter:hover { color: var(--white); border-color: var(--gray); }
 .pf-filter.active { background: var(--accent); color: var(--black); border-color: var(--accent); font-weight: 600; }
+.pf-filter--ai { color: var(--accent); border-color: rgba(0,212,255,0.3); background: rgba(0,212,255,0.04); }
+.pf-filter--ai:hover { border-color: var(--accent); background: rgba(0,212,255,0.1); color: var(--accent); }
+.pf-filter--ai.active { background: var(--accent); color: var(--black); border-color: var(--accent); }
+.pf-card--ai { position: relative; }
+.pf-card--ai::after {
+  content: "";
+  position: absolute; inset: 0;
+  border-radius: inherit;
+  border: 1px solid rgba(0,212,255,0.2);
+  pointer-events: none;
+}
 
 .pf-grid {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
