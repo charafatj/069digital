@@ -28,6 +28,8 @@ const translations = {
     'port-pb-desc': 'Von Seite 4 auf Position 1 — lokales SEO-Projekt mit messbarem Wachstum für ein Frankfurter Bauunternehmen seit 1994.',
     'port-mc-desc': 'End-to-End Design und Entwicklung einer B2B-SaaS-Plattform für den Gesundheitssektor.',
     'port-link': 'Projekt ansehen →', 'port-cta-label': 'Projekte', 'port-cta-desc': 'Jedes davon einzigartig. Keines dem Zufall überlassen.', 'port-cta-btn': 'Starte jetzt.',
+    'pf-all': 'Alle', 'pf-web': 'Webdesign', 'pf-brand': 'Branding', 'pf-seo': 'SEO', 'pf-marketing': 'Marketing',
+    'pf-badge-sm': '+300% Wachstum', 'pf-badge-ph': 'Komplette CI', 'pf-badge-pb': 'Position 1 bei Google',
     'test-label': 'Kundenstimmen', 'test-title': 'Was unsere Kunden sagen',
     'test-1': '"069Digital hat Smart Market auf ein neues Level gebracht. Von der ersten Idee bis zur Umsetzung — das Team denkt mit, liefert pünktlich und übertrifft jedes Mal die Erwartungen. Wer echte Ergebnisse will, ist hier genau richtig."',
     'test-1-role': 'Gründer & CEO, Smart Market',
@@ -82,6 +84,8 @@ const translations = {
     'port-pb-desc': 'From page 4 to position 1 — a local SEO project with measurable growth for a Frankfurt construction company since 1994.',
     'port-mc-desc': 'End-to-end design and development of a B2B SaaS platform for the healthcare sector.',
     'port-link': 'View project →', 'port-cta-label': 'Projects', 'port-cta-desc': 'Each one unique. None left to chance.', 'port-cta-btn': 'Start now.',
+    'pf-all': 'All', 'pf-web': 'Web Design', 'pf-brand': 'Branding', 'pf-seo': 'SEO', 'pf-marketing': 'Marketing',
+    'pf-badge-sm': '+300% growth', 'pf-badge-ph': 'Full brand identity', 'pf-badge-pb': '#1 on Google',
     'test-label': 'Client Reviews', 'test-title': 'What our clients say',
     'test-1': '"069Digital took Smart Market to a whole new level. From the first idea to delivery — the team thinks ahead, delivers on time and exceeds expectations every time. If you want real results, this is the place."',
     'test-1-role': 'Founder & CEO, Smart Market',
@@ -417,3 +421,16 @@ if (stickyCta && isMobile) {
     stickyCta.classList.toggle('visible', pastHero && beforeContact);
   }, { passive: true });
 }
+
+// ── PORTFOLIO FILTER (V1) ────────────────────
+document.querySelectorAll('.pf-filter').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.pf-filter').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const f = btn.dataset.filter;
+    document.querySelectorAll('.pf-card').forEach(card => {
+      const match = f === 'all' || card.dataset.cat.includes(f);
+      card.classList.toggle('hidden', !match);
+    });
+  });
+});

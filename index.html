@@ -274,117 +274,70 @@
         <p data-i18n="port-desc">Projekte, auf die wir stolz sind — und Kunden, die noch stolzer sind.</p>
       </div>
 
-      <!-- DESKTOP GRID -->
-      <div class="portfolio__grid">
-
-        <div class="portfolio-item portfolio-item--wide reveal">
-          <div class="portfolio-item__img portfolio-item__img--smartmarket">
-            <video class="portfolio-item__video" src="assets/smartmarket-video.mp4.mp4" autoplay loop muted playsinline webkit-playsinline poster="assets/smartmarket-screenshot.jpg"></video>
-            <div class="portfolio-item__screenshot-overlay"></div>
-            <div class="portfolio-item__overlay portfolio-item__overlay--visible">
-              <span class="portfolio-item__tag">E-Commerce</span>
-              <h3>Smart Market</h3>
-              <p data-i18n="port-sm-desc">Von der Plattform bis zur Community — wir haben Smart Market digital aufgebaut und skaliert.</p>
-              <a href="https://smartmarket.ma/" target="_blank" rel="noopener" class="portfolio-item__link" data-i18n="port-link">Projekt ansehen →</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="portfolio-item reveal">
-          <div class="portfolio-item__img portfolio-item__img--prohilfe" style="background-image: url('assets/prohilfe-mockup-opt.jpg'); background-size: cover; background-position: center;">
-            <div class="portfolio-item__overlay">
-              <span class="portfolio-item__tag">Visual Identity</span>
-              <h3>Pro Hilfe GbR</h3>
-              <p data-i18n="port-ph-desc">Wenn Auftreten alles ist. Wir haben sichergestellt, dass Pro Hilfe auf dem Parkett gesehen — und nicht vergessen wird.</p>
-              <a href="https://pro-hilfe.de/" target="_blank" rel="noopener" class="portfolio-item__link" data-i18n="port-link">Projekt ansehen →</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="portfolio-item reveal">
-          <div class="portfolio-item__img portfolio-item__img--probau">
-            <div class="portfolio-item__probau-logo">
-              <img src="assets/probau-logo.png.webp" alt="Pro Bau Logo" />
-            </div>
-            <div class="portfolio-item__overlay">
-              <span class="portfolio-item__tag">SEO · Local Search</span>
-              <h3>Pro Bau GmbH</h3>
-              <p data-i18n="port-pb-desc">Von Seite 4 auf Position 1 — lokales SEO-Projekt mit messbarem Wachstum für ein Frankfurter Bauunternehmen seit 1994.</p>
-              <a href="#" class="portfolio-item__link" data-i18n="port-link">Projekt ansehen →</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="portfolio-item portfolio-item--wide reveal">
-          <div class="portfolio-item__img" style="background: linear-gradient(135deg, #0a0a0a 0%, #1c1c1c 50%, #2d2d2d 100%);">
-            <div class="portfolio-item__overlay">
-              <span class="portfolio-item__tag">Web-App · UX/UI</span>
-              <h3>MedConnect Platform</h3>
-              <p data-i18n="port-mc-desc">End-to-End Design und Entwicklung einer B2B-SaaS-Plattform für den Gesundheitssektor.</p>
-              <a href="#" class="portfolio-item__link" data-i18n="port-link">Projekt ansehen →</a>
-            </div>
-          </div>
-        </div>
-
+      <!-- FILTER BUTTONS -->
+      <div class="pf-filters reveal">
+        <button class="pf-filter active" data-filter="all" data-i18n="pf-all">Alle</button>
+        <button class="pf-filter" data-filter="web" data-i18n="pf-web">Webdesign</button>
+        <button class="pf-filter" data-filter="brand" data-i18n="pf-brand">Branding</button>
+        <button class="pf-filter" data-filter="seo" data-i18n="pf-seo">SEO</button>
+        <button class="pf-filter" data-filter="marketing" data-i18n="pf-marketing">Marketing</button>
       </div>
 
-      <!-- MOBILE CAROUSEL -->
-      <div class="portfolio-carousel">
-        <div class="portfolio-carousel__track" id="carouselTrack">
+      <!-- FILTER GRID -->
+      <div class="pf-grid">
 
-          <div class="carousel-slide">
-            <div class="carousel-slide__img portfolio-item__img--smartmarket">
-              <video class="portfolio-item__video" src="assets/smartmarket-video.mp4.mp4" autoplay loop muted playsinline webkit-playsinline poster="assets/smartmarket-screenshot.jpg"></video>
-              <div class="portfolio-item__screenshot-overlay"></div>
-            </div>
-            <div class="carousel-slide__info">
-              <span class="carousel-slide__tag">E-Commerce</span>
-              <h3>Smart Market</h3>
-              <p data-i18n="port-sm-desc">Von der Plattform bis zur Community — wir haben Smart Market digital aufgebaut und skaliert.</p>
-              <a href="https://smartmarket.ma/" target="_blank" rel="noopener" class="carousel-slide__link" data-i18n="port-link">Projekt ansehen →</a>
-            </div>
+        <div class="pf-card reveal" data-cat="web marketing">
+          <div class="pf-card__media">
+            <video src="assets/smartmarket-video.mp4.mp4" autoplay loop muted playsinline webkit-playsinline poster="assets/smartmarket-screenshot.jpg"></video>
+            <span class="pf-card__result" data-i18n="pf-badge-sm">+300% Wachstum</span>
           </div>
-
-          <div class="carousel-slide">
-            <div class="carousel-slide__img carousel-slide__img--prohilfe"></div>
-            <div class="carousel-slide__info">
-              <span class="carousel-slide__tag">Visual Identity</span>
-              <h3>Pro Hilfe GbR</h3>
-              <p data-i18n="port-ph-desc">Wenn Auftreten alles ist. Wir haben sichergestellt, dass Pro Hilfe auf dem Parkett gesehen — und nicht vergessen wird.</p>
-              <a href="https://pro-hilfe.de/" target="_blank" rel="noopener" class="carousel-slide__link" data-i18n="port-link">Projekt ansehen →</a>
-            </div>
+          <div class="pf-card__body">
+            <span class="pf-card__tag">E-Commerce</span>
+            <h3>Smart Market</h3>
+            <p data-i18n="port-sm-desc">Von der Plattform bis zur Community — wir haben Smart Market digital aufgebaut und skaliert.</p>
+            <a href="https://smartmarket.ma/" target="_blank" rel="noopener" class="pf-card__link" data-i18n="port-link">Projekt ansehen →</a>
           </div>
-
-          <div class="carousel-slide">
-            <div class="carousel-slide__img portfolio-item__img--probau" style="display:flex; align-items:center; justify-content:center;">
-              <img src="assets/probau-logo.png.webp" alt="Pro Bau" style="width:160px; animation: slowPulse 8s ease-in-out infinite; filter: drop-shadow(0 8px 30px rgba(230,130,0,0.4));" />
-            </div>
-            <div class="carousel-slide__info">
-              <span class="carousel-slide__tag">SEO · Local Search</span>
-              <h3>Pro Bau GmbH</h3>
-              <p data-i18n="port-pb-desc">Von Seite 4 auf Position 1 — lokales SEO-Projekt mit messbarem Wachstum für ein Frankfurter Bauunternehmen seit 1994.</p>
-              <a href="#" class="carousel-slide__link" data-i18n="port-link">Projekt ansehen →</a>
-            </div>
-          </div>
-
-          <div class="carousel-slide carousel-slide--cta">
-            <div class="carousel-slide__cta-inner">
-              <span class="carousel-slide__cta-num">120<sup>+</sup></span>
-              <span class="carousel-slide__cta-label" data-i18n="port-cta-label">Projekte</span>
-              <p data-i18n="port-cta-desc">Jedes davon einzigartig. Keines dem Zufall überlassen.</p>
-              <a href="#kontakt" class="btn btn--primary" data-i18n="port-cta-btn">Starte jetzt.</a>
-            </div>
-          </div>
-
         </div>
 
-        <!-- Dots -->
-        <div class="carousel-dots" id="carouselDots">
-          <button class="carousel-dot active" data-index="0"></button>
-          <button class="carousel-dot" data-index="1"></button>
-          <button class="carousel-dot" data-index="2"></button>
-          <button class="carousel-dot" data-index="3"></button>
+        <div class="pf-card reveal" data-cat="brand">
+          <div class="pf-card__media">
+            <img src="assets/prohilfe-mockup-opt.jpg" alt="Pro Hilfe" loading="lazy" />
+            <span class="pf-card__result" data-i18n="pf-badge-ph">Komplette CI</span>
+          </div>
+          <div class="pf-card__body">
+            <span class="pf-card__tag">Visual Identity</span>
+            <h3>Pro Hilfe GbR</h3>
+            <p data-i18n="port-ph-desc">Wenn Auftreten alles ist. Wir haben sichergestellt, dass Pro Hilfe auf dem Parkett gesehen — und nicht vergessen wird.</p>
+            <a href="https://pro-hilfe.de/" target="_blank" rel="noopener" class="pf-card__link" data-i18n="port-link">Projekt ansehen →</a>
+          </div>
         </div>
+
+        <div class="pf-card reveal" data-cat="seo">
+          <div class="pf-card__media pf-card__media--center">
+            <img src="assets/probau-logo.png.webp" alt="Pro Bau" style="width:150px; height:auto; object-fit:contain; filter: drop-shadow(0 8px 30px rgba(230,130,0,0.4));" />
+            <span class="pf-card__result" data-i18n="pf-badge-pb">Position 1 bei Google</span>
+          </div>
+          <div class="pf-card__body">
+            <span class="pf-card__tag">SEO · Local Search</span>
+            <h3>Pro Bau GmbH</h3>
+            <p data-i18n="port-pb-desc">Von Seite 4 auf Position 1 — lokales SEO-Projekt mit messbarem Wachstum für ein Frankfurter Bauunternehmen seit 1994.</p>
+            <a href="#" class="pf-card__link" data-i18n="port-link">Projekt ansehen →</a>
+          </div>
+        </div>
+
+        <div class="pf-card reveal" data-cat="web">
+          <div class="pf-card__media pf-card__media--center" style="background: linear-gradient(135deg,#0a0a0a,#1c2d3d);">
+            <span style="font-family:var(--font-head); font-size:1.6rem; font-weight:700; color:rgba(255,255,255,0.85);">MedConnect</span>
+            <span class="pf-card__result">B2B SaaS</span>
+          </div>
+          <div class="pf-card__body">
+            <span class="pf-card__tag">Web-App · UX/UI</span>
+            <h3>MedConnect Platform</h3>
+            <p data-i18n="port-mc-desc">End-to-End Design und Entwicklung einer B2B-SaaS-Plattform für den Gesundheitssektor.</p>
+            <a href="#" class="pf-card__link" data-i18n="port-link">Projekt ansehen →</a>
+          </div>
+        </div>
+
       </div>
 
     </div>
