@@ -1670,12 +1670,28 @@ select option { background: var(--dark-2); }
 }
 
 
-/* ── WHATSAPP FLOAT BUTTON ──────────────────── */
-.whatsapp-btn {
-  position: fixed;
-  bottom: 1.5rem;
-  right: 1.5rem;
-  z-index: 980;
+/* ── WHATSAPP FOOTER BANNER ─────────────────── */
+.footer__whatsapp {
+  border-top: 1px solid var(--border);
+  padding: 2rem 0;
+}
+.whatsapp-banner {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  background: linear-gradient(135deg, rgba(37, 211, 102, 0.08) 0%, rgba(37, 211, 102, 0.03) 100%);
+  border: 1px solid rgba(37, 211, 102, 0.25);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem 2rem;
+  transition: var(--transition);
+}
+.whatsapp-banner:hover {
+  border-color: rgba(37, 211, 102, 0.55);
+  background: linear-gradient(135deg, rgba(37, 211, 102, 0.14) 0%, rgba(37, 211, 102, 0.05) 100%);
+  transform: translateY(-2px);
+}
+.whatsapp-banner__icon {
+  flex-shrink: 0;
   width: 52px;
   height: 52px;
   background: #25d366;
@@ -1683,12 +1699,34 @@ select option { background: var(--dark-2); }
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
   color: #fff;
 }
-.whatsapp-btn svg { width: 28px; height: 28px; }
-.whatsapp-btn:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 28px rgba(37, 211, 102, 0.55);
+.whatsapp-banner__icon svg { width: 28px; height: 28px; }
+.whatsapp-banner__text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.whatsapp-banner__text strong {
+  font-family: var(--font-head);
+  font-size: 1.1rem;
+  color: var(--white);
+  letter-spacing: -0.02em;
+}
+.whatsapp-banner__text span {
+  font-size: 0.875rem;
+  color: var(--gray);
+}
+.whatsapp-banner__arrow {
+  margin-left: auto;
+  font-size: 1.5rem;
+  color: #25d366;
+  transition: transform var(--transition);
+}
+.whatsapp-banner:hover .whatsapp-banner__arrow { transform: translateX(6px); }
+
+@media (max-width: 768px) {
+  .whatsapp-banner { padding: 1.25rem 1.25rem; gap: 1rem; }
+  .whatsapp-banner__text strong { font-size: 1rem; }
+  .whatsapp-banner__text span { font-size: 0.8rem; }
 }

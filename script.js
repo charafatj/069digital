@@ -56,6 +56,7 @@ const translations = {
     'footer-col1': 'Leistungen', 'footer-col2': 'Agentur',
     'footer-col2-about': 'Über uns', 'footer-col2-projects': 'Projekte', 'footer-col2-contact': 'Kontakt', 'footer-col2-career': 'Karriere',
     'footer-col3': 'Rechtliches', 'footer-col3-imprint': 'Impressum', 'footer-col3-privacy': 'Datenschutz', 'footer-col3-terms': 'AGB',
+    'wa-title': 'Schreib uns auf WhatsApp', 'wa-desc': 'Schnelle Antwort, direkter Draht — meist innerhalb weniger Minuten.',
   },
   en: {
     'nav-services': 'Services', 'nav-work': 'Work', 'nav-about': 'About', 'nav-cta': 'Start Project',
@@ -109,6 +110,7 @@ const translations = {
     'footer-col1': 'Services', 'footer-col2': 'Agency',
     'footer-col2-about': 'About us', 'footer-col2-projects': 'Projects', 'footer-col2-contact': 'Contact', 'footer-col2-career': 'Careers',
     'footer-col3': 'Legal', 'footer-col3-imprint': 'Imprint', 'footer-col3-privacy': 'Privacy Policy', 'footer-col3-terms': 'Terms & Conditions',
+    'wa-title': 'Message us on WhatsApp', 'wa-desc': 'Quick replies, direct line — usually within minutes.',
   }
 };
 
