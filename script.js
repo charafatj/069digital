@@ -434,3 +434,15 @@ document.querySelectorAll('.pf-filter').forEach(btn => {
     });
   });
 });
+
+// ── CURSOR SPOTLIGHT (Service Cards) ─────────
+const svcCardsWrap = document.querySelector('.svc-cards');
+if (svcCardsWrap && window.matchMedia('(hover: hover)').matches) {
+  svcCardsWrap.addEventListener('mousemove', e => {
+    svcCardsWrap.querySelectorAll('.svc-card').forEach(card => {
+      const r = card.getBoundingClientRect();
+      card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+      card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+    });
+  });
+}
