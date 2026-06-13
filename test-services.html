@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Service Varianten — Test</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #080808; --dark: #0f0f0f; --dark-2: #161616; --dark-3: #1e1e1e;
+      --border: #2a2a2a; --muted: #555; --gray: #888; --light-gray: #b0b0b0;
+      --white: #f5f5f5; --accent: #00d4ff;
+      --font-body: 'DM Sans', sans-serif; --font-head: 'Space Grotesk', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--black); color: var(--light-gray); font-family: var(--font-body); -webkit-font-smoothing: antialiased; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+    /* NAV */
+    .pick-nav { position: sticky; top: 0; z-index: 100; background: rgba(8,8,8,0.92); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 1rem 2rem; display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
+    .pick-nav span { font-family: var(--font-head); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; color: var(--muted); text-transform: uppercase; margin-right: 1rem; }
+    .pick-btn { font-family: var(--font-head); font-size: 0.8rem; font-weight: 600; padding: 0.5rem 1.25rem; border-radius: 100px; border: 1px solid var(--border); background: transparent; color: var(--gray); cursor: pointer; text-decoration: none; transition: all 0.2s; }
+    .pick-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .pick-btn--choose { background: var(--accent); color: #000 !important; border-color: var(--accent) !important; }
+
+    /* SECTION DIVIDER */
+    .variant-block { padding: 6rem 0; border-bottom: 1px solid var(--border); }
+    .variant-block:last-child { border-bottom: none; }
+    .variant-label { display: inline-flex; align-items: center; gap: 0.75rem; font-family: var(--font-head); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-bottom: 3rem; }
+    .variant-label span { font-size: 1.2rem; background: var(--dark-2); border: 1px solid var(--border); border-radius: 8px; width: 32px; height: 32px; display: grid; place-items: center; color: var(--white); font-weight: 800; }
+    .section-title { font-family: var(--font-head); font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: var(--white); line-height: 1.15; letter-spacing: -0.03em; margin-bottom: 0.75rem; }
+    .section-sub { font-size: 0.9rem; color: var(--gray); margin-bottom: 3rem; }
+    .choose-bar { margin-top: 3rem; display: flex; align-items: center; gap: 1rem; }
+    .choose-bar p { font-size: 0.8rem; color: var(--muted); }
+
+    /* ═══ VARIANT A — Glass Cards ══════════════════ */
+    .va-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .va-card {
+      background: var(--dark-2);
+      padding: 2rem 1.75rem;
+      display: flex; flex-direction: column; gap: 0.85rem;
+      text-decoration: none; color: inherit;
+      position: relative; overflow: hidden;
+      transition: background 0.3s;
+      min-height: 230px;
+    }
+    .va-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(0,212,255,0.5), transparent);
+      transform: scaleX(0);
+      transition: transform 0.4s cubic-bezier(0.22,1,0.36,1);
+    }
+    .va-card:hover { background: #1c1c1c; }
+    .va-card:hover::before { transform: scaleX(1); }
+    .va-card__num { font-family: var(--font-head); font-size: 0.65rem; font-weight: 600; letter-spacing: 0.14em; color: var(--muted); }
+    .va-card__icon { color: var(--gray); margin: 0.5rem 0; transition: color 0.3s; }
+    .va-card:hover .va-card__icon { color: var(--accent); }
+    .va-card h3 { font-family: var(--font-head); font-size: 1rem; font-weight: 600; color: var(--white); line-height: 1.3; }
+    .va-card p { font-size: 0.8rem; color: var(--gray); line-height: 1.6; }
+    .va-card__arrow { position: absolute; bottom: 1.75rem; right: 1.75rem; font-size: 1rem; color: var(--muted); transition: color 0.3s, transform 0.3s; }
+    .va-card:hover .va-card__arrow { color: var(--accent); transform: translate(3px,-3px); }
+
+    /* ═══ VARIANT B — Big Number List ══════════════ */
+    .vb-list { display: flex; flex-direction: column; }
+    .vb-item {
+      display: grid;
+      grid-template-columns: 5rem 1fr 1fr auto;
+      align-items: center;
+      gap: 2rem;
+      padding: 2rem 0;
+      border-bottom: 1px solid var(--border);
+      text-decoration: none; color: inherit;
+      transition: padding-left 0.35s cubic-bezier(0.22,1,0.36,1);
+    }
+    .vb-item:first-child { border-top: 1px solid var(--border); }
+    .vb-item:hover { padding-left: 1rem; }
+    .vb-item__num {
+      font-family: var(--font-head);
+      font-size: 2.5rem; font-weight: 800;
+      color: var(--dark-3);
+      line-height: 1;
+      transition: color 0.3s;
+    }
+    .vb-item:hover .vb-item__num { color: var(--border); }
+    .vb-item__name { font-family: var(--font-head); font-size: 1.25rem; font-weight: 700; color: var(--white); transition: color 0.3s; }
+    .vb-item:hover .vb-item__name { color: var(--pure-white, #fff); }
+    .vb-item__desc { font-size: 0.82rem; color: var(--gray); line-height: 1.6; }
+    .vb-item__arrow { font-size: 1.4rem; color: var(--muted); opacity: 0; transform: translateX(-8px); transition: opacity 0.3s, transform 0.3s, color 0.3s; }
+    .vb-item:hover .vb-item__arrow { opacity: 1; transform: none; color: var(--accent); }
+
+    /* ═══ VARIANT C — Hover Color Flood ═══════════ */
+    .vc-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+    }
+    .vc-card {
+      background: var(--dark-2);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem 1.75rem 2rem;
+      display: flex; flex-direction: column; gap: 1.25rem;
+      text-decoration: none; color: inherit;
+      position: relative; overflow: hidden;
+      min-height: 240px;
+      transition: border-color 0.35s, transform 0.35s cubic-bezier(0.22,1,0.36,1);
+    }
+    .vc-card__bg {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(0,212,255,0.12) 0%, rgba(99,102,241,0.08) 100%);
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+    .vc-card:hover { border-color: rgba(0,212,255,0.3); transform: translateY(-4px); }
+    .vc-card:hover .vc-card__bg { opacity: 1; }
+    .vc-card > *:not(.vc-card__bg) { position: relative; z-index: 1; }
+    .vc-card__top { display: flex; justify-content: space-between; align-items: center; }
+    .vc-card__num { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.14em; color: var(--muted); font-family: var(--font-head); }
+    .vc-card__icon { width: 40px; height: 40px; border-radius: 10px; background: var(--dark-3); border: 1px solid var(--border); display: grid; place-items: center; color: var(--gray); transition: background 0.3s, color 0.3s; }
+    .vc-card:hover .vc-card__icon { background: rgba(0,212,255,0.1); color: var(--accent); border-color: rgba(0,212,255,0.25); }
+    .vc-card h3 { font-family: var(--font-head); font-size: 1rem; font-weight: 600; color: var(--white); line-height: 1.3; }
+    .vc-card p { font-size: 0.79rem; color: var(--gray); line-height: 1.65; flex-grow: 1; }
+    .vc-card__link { font-size: 0.75rem; font-weight: 600; color: var(--muted); display: flex; align-items: center; gap: 0.3rem; transition: color 0.3s; }
+    .vc-card:hover .vc-card__link { color: var(--accent); }
+
+    /* ═══ VARIANT D — Magazine / Editorial ══════════ */
+    .vd-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--border); border-radius: 20px; overflow: hidden; }
+    .vd-item {
+      display: grid;
+      grid-template-columns: 3rem 1fr;
+      gap: 1.5rem;
+      align-items: start;
+      padding: 2.25rem;
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      text-decoration: none; color: inherit;
+      position: relative;
+      transition: background 0.3s;
+    }
+    .vd-item:nth-child(even) { border-right: none; }
+    .vd-item:nth-child(7), .vd-item:nth-child(8) { border-bottom: none; }
+    .vd-item:hover { background: var(--dark-2); }
+    .vd-item__num { font-family: var(--font-head); font-size: 0.7rem; font-weight: 700; color: var(--accent); letter-spacing: 0.1em; padding-top: 0.2rem; }
+    .vd-item__body { display: flex; flex-direction: column; gap: 0.6rem; }
+    .vd-item__icon { color: var(--gray); margin-bottom: 0.5rem; transition: color 0.3s; }
+    .vd-item:hover .vd-item__icon { color: var(--accent); }
+    .vd-item h3 { font-family: var(--font-head); font-size: 1.05rem; font-weight: 600; color: var(--white); line-height: 1.3; }
+    .vd-item p { font-size: 0.8rem; color: var(--gray); line-height: 1.6; }
+    .vd-item__tags { display: flex; flex-wrap: wrap; gap: 0.25rem 0.5rem; }
+    .vd-item__tags span { font-size: 0.62rem; color: var(--muted); }
+    .vd-item__tags span:not(:last-child)::after { content: '·'; margin-left: 0.5rem; opacity: 0.4; }
+    .vd-item__arrow { position: absolute; top: 2.25rem; right: 2.25rem; font-size: 0.9rem; color: var(--muted); opacity: 0; transition: opacity 0.3s, color 0.3s; }
+    .vd-item:hover .vd-item__arrow { opacity: 1; color: var(--accent); }
+  </style>
+</head>
+<body>
+
+<div class="pick-nav">
+  <span>Variante wählen →</span>
+  <a class="pick-btn" href="#a">A — Grid + Line</a>
+  <a class="pick-btn" href="#b">B — Große Zahlen</a>
+  <a class="pick-btn" href="#c">C — Glow Cards</a>
+  <a class="pick-btn" href="#d">D — Magazin Grid</a>
+</div>
+
+<!-- ══════════════════════════════════════════
+     VARIANT A — Flat Grid with top-line hover
+════════════════════════════════════════════ -->
+<div class="variant-block" id="a">
+<div class="container">
+  <div class="variant-label"><span>A</span> Grid + Linien · kein Hintergrund</div>
+  <h2 class="section-title">Was wir für Sie tun.</h2>
+  <p class="section-sub">Flat, minimal — Cyan-Linie erscheint beim Hover oben</p>
+
+  <div class="va-grid">
+    <!-- row 1 -->
+    <a href="#" class="va-card">
+      <span class="va-card__num">01</span>
+      <div class="va-card__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8m-4-4v4"/></svg></div>
+      <h3>Webdesign &amp; Entwicklung</h3>
+      <p>Konversionsstark, blitzschnell, maßgeschneidert.</p>
+      <span class="va-card__arrow">↗</span>
+    </a>
+    <a href="#" class="va-card">
+      <span class="va-card__num">02</span>
+      <div class="va-card__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+      <h3>Branding &amp; Corporate Design</h3>
+      <p>Identität, die in Erinnerung bleibt.</p>
+      <span class="va-card__arrow">↗</span>
+    </a>
+    <a href="#" class="va-card">
+      <span class="va-card__num">03</span>
+      <div class="va-card__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div>
+      <h3>SEO &amp; Local SEO</h3>
+      <p>Dauerhaft auf Seite 1.</p>
+      <span class="va-card__arrow">↗</span>
+    </a>
+    <a href="#" class="va-card">
+      <span class="va-card__num">04</span>
+      <div class="va-card__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22,7 13.5,15.5 8.5,10.5 2,17"/></svg></div>
+      <h3>Performance Marketing</h3>
+      <p>Messbar. Skalierbar. Profitabel.</p>
+      <span class="va-card__arrow">↗</span>
+    </a>
+    <!-- row 2 -->
+    <a href="#" class="va-card">
+      <span class="va-card__num">05</span>
+      <div class="va-card__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="23,7 16,12 23,17"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div>
+      <h3>Cinema AI Video Ads</h3>
+      <p>Kinoqualität in 24 Stunden.</p>
+      <span class="va-card__arrow">↗</span>
+    </a>
+    <a href="#" class="va-card">
+      <span class="va-card__num">06</span>
+      <div class="va-card__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
+      <h3>UGC &amp; AI Content</h3>
+      <p>10× Output. 70% weniger Kosten.</p>
+      <span class="va-card__arrow">↗</span>
+    </a>
+    <a href="#" class="va-card">
+      <span class="va-card__num">07</span>
+      <div class="va-card__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+      <h3>Automatisierung &amp; KI</h3>
+      <p>20h Zeitersparnis pro Woche.</p>
+      <span class="va-card__arrow">↗</span>
+    </a>
+    <a href="#" class="va-card">
+      <span class="va-card__num">08</span>
+      <div class="va-card__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+      <h3>Business Scaling</h3>
+      <p>Von 6- zu 7-stellig. Systematisch.</p>
+      <span class="va-card__arrow">↗</span>
+    </a>
+  </div>
+
+  <div class="choose-bar">
+    <p>Gefällt mir diese Variante →</p>
+    <a href="index.html" class="pick-btn pick-btn--choose">A wählen</a>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     VARIANT B — Big Number List
+════════════════════════════════════════════ -->
+<div class="variant-block" id="b">
+<div class="container">
+  <div class="variant-label"><span>B</span> Große Zahlen · Horizontal-Liste</div>
+  <h2 class="section-title">Was wir für Sie tun.</h2>
+  <p class="section-sub">Editorial, typografisch — Zeile verschiebt sich beim Hover</p>
+
+  <div class="vb-list">
+    <a href="#" class="vb-item">
+      <span class="vb-item__num">01</span>
+      <span class="vb-item__name">Webdesign &amp; Entwicklung</span>
+      <span class="vb-item__desc">Konversionsstark, blitzschnell, maßgeschneidert. Corporate, E-Commerce, Landingpage.</span>
+      <span class="vb-item__arrow">→</span>
+    </a>
+    <a href="#" class="vb-item">
+      <span class="vb-item__num">02</span>
+      <span class="vb-item__name">Branding &amp; Corporate Design</span>
+      <span class="vb-item__desc">Identität, die in Erinnerung bleibt — Logo, CI, Visual Identity.</span>
+      <span class="vb-item__arrow">→</span>
+    </a>
+    <a href="#" class="vb-item">
+      <span class="vb-item__num">03</span>
+      <span class="vb-item__name">SEO &amp; Local SEO</span>
+      <span class="vb-item__desc">Dauerhaft auf Seite 1. Ohne Abhängigkeit von Werbebudgets.</span>
+      <span class="vb-item__arrow">→</span>
+    </a>
+    <a href="#" class="vb-item">
+      <span class="vb-item__num">04</span>
+      <span class="vb-item__name">Performance Marketing</span>
+      <span class="vb-item__desc">Meta Ads, Google Ads, TikTok — messbar, skalierbar, profitabel.</span>
+      <span class="vb-item__arrow">→</span>
+    </a>
+    <a href="#" class="vb-item">
+      <span class="vb-item__num">05</span>
+      <span class="vb-item__name">Cinema AI Video Ads</span>
+      <span class="vb-item__desc">Kinoqualität durch KI — in 24 Stunden, −80% Kosten, +3.4× CTR.</span>
+      <span class="vb-item__arrow">→</span>
+    </a>
+    <a href="#" class="vb-item">
+      <span class="vb-item__num">06</span>
+      <span class="vb-item__name">UGC &amp; AI Content</span>
+      <span class="vb-item__desc">10× Output bei 70% weniger Produktionskosten. Social First.</span>
+      <span class="vb-item__arrow">→</span>
+    </a>
+    <a href="#" class="vb-item">
+      <span class="vb-item__num">07</span>
+      <span class="vb-item__name">Automatisierung &amp; KI-Systeme</span>
+      <span class="vb-item__desc">Make, n8n, CRM, KI-Chatbot — 20 Stunden Zeitersparnis pro Woche.</span>
+      <span class="vb-item__arrow">→</span>
+    </a>
+    <a href="#" class="vb-item">
+      <span class="vb-item__num">08</span>
+      <span class="vb-item__name">Business Scaling</span>
+      <span class="vb-item__desc">Von 6- zu 7-stellig — Strategie, Funnel, Skalierung.</span>
+      <span class="vb-item__arrow">→</span>
+    </a>
+  </div>
+
+  <div class="choose-bar">
+    <p>Gefällt mir diese Variante →</p>
+    <a href="index.html" class="pick-btn pick-btn--choose">B wählen</a>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     VARIANT C — Glow Cards with color flood
+════════════════════════════════════════════ -->
+<div class="variant-block" id="c">
+<div class="container">
+  <div class="variant-label"><span>C</span> Glow Cards · Hover-Farbfläche</div>
+  <h2 class="section-title">Was wir für Sie tun.</h2>
+  <p class="section-sub">Cards mit Hintergrund-Glow + Icon-Box — beim Hover flutet Farbe rein</p>
+
+  <div class="vc-grid">
+    <a href="#" class="vc-card">
+      <div class="vc-card__bg"></div>
+      <div class="vc-card__top">
+        <div class="vc-card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8m-4-4v4"/></svg></div>
+        <span class="vc-card__num">01</span>
+      </div>
+      <h3>Webdesign &amp; Entwicklung</h3>
+      <p>Konversionsstark, blitzschnell, maßgeschneidert.</p>
+      <span class="vc-card__link">Mehr → </span>
+    </a>
+    <a href="#" class="vc-card">
+      <div class="vc-card__bg"></div>
+      <div class="vc-card__top">
+        <div class="vc-card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+        <span class="vc-card__num">02</span>
+      </div>
+      <h3>Branding &amp; Corporate Design</h3>
+      <p>Identität, die in Erinnerung bleibt.</p>
+      <span class="vc-card__link">Mehr → </span>
+    </a>
+    <a href="#" class="vc-card">
+      <div class="vc-card__bg"></div>
+      <div class="vc-card__top">
+        <div class="vc-card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div>
+        <span class="vc-card__num">03</span>
+      </div>
+      <h3>SEO &amp; Local SEO</h3>
+      <p>Dauerhaft auf Seite 1. Kein PPC nötig.</p>
+      <span class="vc-card__link">Mehr → </span>
+    </a>
+    <a href="#" class="vc-card">
+      <div class="vc-card__bg"></div>
+      <div class="vc-card__top">
+        <div class="vc-card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22,7 13.5,15.5 8.5,10.5 2,17"/></svg></div>
+        <span class="vc-card__num">04</span>
+      </div>
+      <h3>Performance Marketing</h3>
+      <p>Messbar. Skalierbar. Profitabel.</p>
+      <span class="vc-card__link">Mehr → </span>
+    </a>
+    <a href="#" class="vc-card">
+      <div class="vc-card__bg"></div>
+      <div class="vc-card__top">
+        <div class="vc-card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="23,7 16,12 23,17"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div>
+        <span class="vc-card__num">05</span>
+      </div>
+      <h3>Cinema AI Video Ads</h3>
+      <p>Kinoqualität in 24 Stunden.</p>
+      <span class="vc-card__link">Mehr → </span>
+    </a>
+    <a href="#" class="vc-card">
+      <div class="vc-card__bg"></div>
+      <div class="vc-card__top">
+        <div class="vc-card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
+        <span class="vc-card__num">06</span>
+      </div>
+      <h3>UGC &amp; AI Content</h3>
+      <p>10× Output. 70% weniger Kosten.</p>
+      <span class="vc-card__link">Mehr → </span>
+    </a>
+    <a href="#" class="vc-card">
+      <div class="vc-card__bg"></div>
+      <div class="vc-card__top">
+        <div class="vc-card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+        <span class="vc-card__num">07</span>
+      </div>
+      <h3>Automatisierung &amp; KI</h3>
+      <p>20h Zeitersparnis pro Woche.</p>
+      <span class="vc-card__link">Mehr → </span>
+    </a>
+    <a href="#" class="vc-card">
+      <div class="vc-card__bg"></div>
+      <div class="vc-card__top">
+        <div class="vc-card__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+        <span class="vc-card__num">08</span>
+      </div>
+      <h3>Business Scaling</h3>
+      <p>Von 6- zu 7-stellig. Systematisch.</p>
+      <span class="vc-card__link">Mehr → </span>
+    </a>
+  </div>
+
+  <div class="choose-bar">
+    <p>Gefällt mir diese Variante →</p>
+    <a href="index.html" class="pick-btn pick-btn--choose">C wählen</a>
+  </div>
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     VARIANT D — Magazine 2-col Grid
+════════════════════════════════════════════ -->
+<div class="variant-block" id="d">
+<div class="container">
+  <div class="variant-label"><span>D</span> Magazin Grid · 2 Spalten mit Rahmen</div>
+  <h2 class="section-title">Was wir für Sie tun.</h2>
+  <p class="section-sub">Strukturiert, übersichtlich — Cyan-Nummer links, Icon + Text rechts</p>
+
+  <div class="vd-wrap">
+    <a href="#" class="vd-item">
+      <span class="vd-item__num">01</span>
+      <div class="vd-item__body">
+        <div class="vd-item__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8m-4-4v4"/></svg></div>
+        <h3>Webdesign &amp; Entwicklung</h3>
+        <p>Konversionsstarke Websites — blitzschnell, maßgeschneidert, auf Wachstum ausgelegt.</p>
+        <div class="vd-item__tags"><span>Corporate</span><span>E-Commerce</span><span>Landingpage</span></div>
+      </div>
+      <span class="vd-item__arrow">↗</span>
+    </a>
+    <a href="#" class="vd-item">
+      <span class="vd-item__num">02</span>
+      <div class="vd-item__body">
+        <div class="vd-item__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+        <h3>Branding &amp; Corporate Design</h3>
+        <p>Identität, die in Erinnerung bleibt — vom Logo bis zum kompletten Design-System.</p>
+        <div class="vd-item__tags"><span>Logo</span><span>CI/CD</span><span>Visual Identity</span></div>
+      </div>
+      <span class="vd-item__arrow">↗</span>
+    </a>
+    <a href="#" class="vd-item">
+      <span class="vd-item__num">03</span>
+      <div class="vd-item__body">
+        <div class="vd-item__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div>
+        <h3>SEO &amp; Local SEO</h3>
+        <p>Dauerhaft auf Seite 1 — nachhaltige Sichtbarkeit ohne Abhängigkeit von Werbebudgets.</p>
+        <div class="vd-item__tags"><span>On-Page</span><span>Technisch</span><span>Local</span></div>
+      </div>
+      <span class="vd-item__arrow">↗</span>
+    </a>
+    <a href="#" class="vd-item">
+      <span class="vd-item__num">04</span>
+      <div class="vd-item__body">
+        <div class="vd-item__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22,7 13.5,15.5 8.5,10.5 2,17"/></svg></div>
+        <h3>Performance Marketing</h3>
+        <p>Kampagnen, die sich rechnen — messbar, skalierbar, konsequent auf ROI optimiert.</p>
+        <div class="vd-item__tags"><span>Meta Ads</span><span>Google Ads</span><span>TikTok</span></div>
+      </div>
+      <span class="vd-item__arrow">↗</span>
+    </a>
+    <a href="#" class="vd-item">
+      <span class="vd-item__num">05</span>
+      <div class="vd-item__body">
+        <div class="vd-item__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="23,7 16,12 23,17"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div>
+        <h3>Cinema AI Video Ads</h3>
+        <p>Kinoqualität durch KI — in 24 Stunden statt 4 Wochen, bei −80% Kosten.</p>
+        <div class="vd-item__tags"><span>24h Produktion</span><span>−80% Kosten</span><span>+3.4× CTR</span></div>
+      </div>
+      <span class="vd-item__arrow">↗</span>
+    </a>
+    <a href="#" class="vd-item">
+      <span class="vd-item__num">06</span>
+      <div class="vd-item__body">
+        <div class="vd-item__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
+        <h3>UGC &amp; AI Content</h3>
+        <p>Authentischer Social-Content in Masse — 10× Output bei 70% weniger Kosten.</p>
+        <div class="vd-item__tags"><span>10× Output</span><span>Social First</span><span>−70% Kosten</span></div>
+      </div>
+      <span class="vd-item__arrow">↗</span>
+    </a>
+    <a href="#" class="vd-item">
+      <span class="vd-item__num">07</span>
+      <div class="vd-item__body">
+        <div class="vd-item__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+        <h3>Automatisierung &amp; KI</h3>
+        <p>Prozesse, die sich selbst erledigen — bis zu 20h Zeitersparnis pro Woche.</p>
+        <div class="vd-item__tags"><span>Make / n8n</span><span>CRM</span><span>KI-Chatbot</span></div>
+      </div>
+      <span class="vd-item__arrow">↗</span>
+    </a>
+    <a href="#" class="vd-item">
+      <span class="vd-item__num">08</span>
+      <div class="vd-item__body">
+        <div class="vd-item__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+        <h3>Business Scaling</h3>
+        <p>Von 6- zu 7-stellig — mit System, klarem Funnel und nachhaltiger Strategie.</p>
+        <div class="vd-item__tags"><span>Strategie</span><span>Funnel</span><span>Skalierung</span></div>
+      </div>
+      <span class="vd-item__arrow">↗</span>
+    </a>
+  </div>
+
+  <div class="choose-bar">
+    <p>Gefällt mir diese Variante →</p>
+    <a href="index.html" class="pick-btn pick-btn--choose">D wählen</a>
+  </div>
+</div>
+</div>
+
+</body>
+</html>
