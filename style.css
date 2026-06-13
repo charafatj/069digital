@@ -321,15 +321,18 @@ a { text-decoration: none; color: inherit; }
 
 .hero__glow {
   position: absolute;
-  top: 20%;
+  top: 35%;
   left: 50%;
-  width: 700px;
-  height: 400px;
-  margin-left: -350px;
-  margin-top: -200px;
-  background: radial-gradient(ellipse, rgba(0, 212, 255, 0.09) 0%, transparent 70%);
+  width: 1000px;
+  height: 1000px;
+  margin-left: -500px;
+  margin-top: -500px;
+  background:
+    radial-gradient(circle at 38% 42%, rgba(0, 212, 255, 0.16) 0%, transparent 45%),
+    radial-gradient(circle at 62% 55%, rgba(99, 102, 241, 0.13) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(168, 85, 247, 0.07) 0%, transparent 60%);
+  filter: blur(30px);
   pointer-events: none;
-  transition: transform 0.15s ease-out;
   will-change: transform;
 }
 

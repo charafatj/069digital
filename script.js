@@ -454,8 +454,8 @@ if (heroSection && heroGlow && window.matchMedia('(hover: hover)').matches) {
   let gx = 0, gy = 0, tx = 0, ty = 0, glowRaf = null;
 
   function glowLoop() {
-    gx += (tx - gx) * 0.08;
-    gy += (ty - gy) * 0.08;
+    gx += (tx - gx) * 0.14;
+    gy += (ty - gy) * 0.14;
     heroGlow.style.transform = `translate(${gx}px, ${gy}px)`;
     if (Math.abs(tx - gx) > 0.5 || Math.abs(ty - gy) > 0.5) {
       glowRaf = requestAnimationFrame(glowLoop);
@@ -466,9 +466,9 @@ if (heroSection && heroGlow && window.matchMedia('(hover: hover)').matches) {
 
   heroSection.addEventListener('mousemove', e => {
     const r = heroSection.getBoundingClientRect();
-    // offset relative to the glow's default anchor (50% / 20%)
+    // offset relative to the glow's default anchor (50% / 35%)
     tx = e.clientX - r.left - r.width * 0.5;
-    ty = e.clientY - r.top - r.height * 0.2;
+    ty = e.clientY - r.top - r.height * 0.35;
     if (!glowRaf) glowRaf = requestAnimationFrame(glowLoop);
   });
 
