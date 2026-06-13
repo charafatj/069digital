@@ -323,11 +323,14 @@ a { text-decoration: none; color: inherit; }
   position: absolute;
   top: 20%;
   left: 50%;
-  transform: translateX(-50%);
   width: 700px;
   height: 400px;
-  background: radial-gradient(ellipse, rgba(0, 212, 255, 0.06) 0%, transparent 70%);
+  margin-left: -350px;
+  margin-top: -200px;
+  background: radial-gradient(ellipse, rgba(0, 212, 255, 0.09) 0%, transparent 70%);
   pointer-events: none;
+  transition: transform 0.15s ease-out;
+  will-change: transform;
 }
 
 .hero__content {
