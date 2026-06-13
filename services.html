@@ -36,7 +36,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=7" />
+  <link rel="stylesheet" href="style.css?v=11" />
 
   <style>
     /* ─── Page Layout ─── */
@@ -327,12 +327,12 @@
     }
     /* ─── Pricing ─── */
     .svc-pricing {
-      padding: 5rem 0;
+      padding: 6rem 0;
       border-top: 1px solid var(--border);
     }
     .svc-pricing__head {
       max-width: 560px;
-      margin-bottom: 3.5rem;
+      margin-bottom: 4rem;
     }
     .svc-pricing__head h2 {
       font-size: clamp(1.8rem, 3.5vw, 2.8rem);
@@ -341,86 +341,144 @@
       margin-bottom: 0.75rem;
     }
     .svc-pricing__head p { color: #8a8f98; }
+
     .pricing-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--border);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      overflow: hidden;
+      gap: 1.5rem;
+      align-items: stretch;
     }
+
     .pricing-card {
       background: var(--dark-2);
+      border: 1px solid var(--border);
+      border-radius: 20px;
       padding: 2.5rem;
       position: relative;
-      transition: background 0.3s;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.3s, transform 0.3s;
     }
-    .pricing-card:hover { background: #161820; }
+    .pricing-card:hover {
+      border-color: rgba(255,255,255,0.12);
+      transform: translateY(-4px);
+    }
+
+    /* Featured card */
     .pricing-card--featured {
-      background: #0d1017;
+      background: #080f16;
+      border-color: rgba(0,212,255,0.35);
+      box-shadow: 0 0 0 1px rgba(0,212,255,0.1), 0 24px 80px rgba(0,212,255,0.08);
+      transform: translateY(-8px);
     }
-    .pricing-card--featured::after {
-      content: "Beliebteste Wahl";
+    .pricing-card--featured:hover {
+      border-color: rgba(0,212,255,0.55);
+      transform: translateY(-12px);
+    }
+    /* top glow line on featured */
+    .pricing-card--featured::before {
+      content: "";
       position: absolute;
-      top: 1.5rem; right: 1.5rem;
-      font-size: 0.62rem;
+      top: 0; left: 10%; right: 10%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      border-radius: 1px;
+    }
+
+    .pricing-card__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.6rem;
       font-weight: 700;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--dark);
+      color: #080808;
       background: var(--accent);
       border-radius: 100px;
-      padding: 0.2rem 0.7rem;
+      padding: 0.25rem 0.75rem;
+      margin-bottom: 1.75rem;
+      width: fit-content;
     }
+    .pricing-card__badge::before {
+      content: "";
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: #080808;
+      opacity: 0.5;
+    }
+
     .pricing-card__tier {
-      font-size: 0.65rem;
+      font-size: 0.62rem;
       font-weight: 700;
-      letter-spacing: 0.16em;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: #8a8f98;
-      margin-bottom: 1rem;
+      color: #555;
+      margin-bottom: 1.5rem;
     }
+    .pricing-card--featured .pricing-card__tier { color: var(--accent); opacity: 0.7; }
+
     .pricing-card__price {
-      font-size: 2.4rem;
+      font-family: var(--font-head);
+      font-size: clamp(2rem, 3vw, 2.8rem);
       font-weight: 800;
-      letter-spacing: -0.03em;
-      margin-bottom: 0.25rem;
+      letter-spacing: -0.04em;
+      color: var(--white);
       line-height: 1;
+      margin-bottom: 0.4rem;
     }
-    .pricing-card__price sub {
-      font-size: 0.85rem;
+    .pricing-card__price span {
+      font-size: 1rem;
       font-weight: 400;
-      color: #8a8f98;
+      color: #555;
       letter-spacing: 0;
     }
+    .pricing-card--featured .pricing-card__price { color: #fff; }
+
     .pricing-card__desc {
       font-size: 0.82rem;
-      color: #8a8f98;
+      color: #666;
+      line-height: 1.65;
       margin-bottom: 2rem;
-      margin-top: 0.5rem;
-      line-height: 1.6;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
     }
+    .pricing-card--featured .pricing-card__desc { color: #8a8f98; border-color: rgba(0,212,255,0.1); }
+
     .pricing-card__list {
       list-style: none;
-      margin-bottom: 2rem;
+      margin-bottom: 2.5rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
     }
     .pricing-card__list li {
       font-size: 0.83rem;
-      color: #c0c5cf;
-      padding: 0.45rem 0;
-      border-bottom: 1px solid rgba(255,255,255,0.04);
+      color: #9a9fa8;
       display: flex;
-      align-items: center;
-      gap: 0.6rem;
+      align-items: flex-start;
+      gap: 0.75rem;
+      line-height: 1.5;
     }
-    .pricing-card__list li:last-child { border-bottom: none; }
+    .pricing-card--featured .pricing-card__list li { color: #c0c5cf; }
     .pricing-card__list li::before {
-      content: "✓";
-      color: var(--accent);
-      font-weight: 700;
-      font-size: 0.75rem;
+      content: "";
+      width: 16px;
+      height: 16px;
       flex-shrink: 0;
+      margin-top: 1px;
+      background: var(--accent);
+      opacity: 0.5;
+      -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6L9 17l-5-5'/%3E%3C/svg%3E") center/contain no-repeat;
+      mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6L9 17l-5-5'/%3E%3C/svg%3E") center/contain no-repeat;
+    }
+    .pricing-card--featured .pricing-card__list li::before { opacity: 1; }
+
+    .pricing-card .btn {
+      width: 100%;
+      justify-content: center;
+      margin-top: auto;
     }
     /* ─── FAQ ─── */
     .svc-faq {
@@ -503,6 +561,7 @@
       .svc-process__steps { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
       .svc-process__steps::before { display: none; }
       .pricing-grid { grid-template-columns: 1fr; }
+      .pricing-card--featured { transform: none; }
       .svc-cta__inner { grid-template-columns: 1fr; }
       .svc-cta__btns { align-items: flex-start; flex-direction: row; flex-wrap: wrap; }
     }
@@ -1059,37 +1118,41 @@
       </div>
       <div class="pricing-grid reveal">
 
+        <!-- Starter -->
         <div class="pricing-card">
           <div class="pricing-card__tier">Starter</div>
-          <div class="pricing-card__price">ab 1.500 €<sub> einmalig</sub></div>
+          <div class="pricing-card__price">ab 1.500 €<span> einmalig</span></div>
           <div class="pricing-card__desc">Für Selbstständige und kleine Unternehmen, die professionell auftreten wollen.</div>
           <ul class="pricing-card__list">
             <li>Website bis 5 Seiten</li>
-            <li>Responsive & DSGVO-konform</li>
+            <li>Responsive &amp; DSGVO-konform</li>
             <li>On-Page SEO Grundoptimierung</li>
-            <li>Logo & Farbpalette</li>
-            <li>Kontaktformular & Google Maps</li>
+            <li>Logo &amp; Farbpalette</li>
+            <li>Kontaktformular &amp; Google Maps</li>
             <li>2 Revisionsrunden</li>
           </ul>
-          <a href="index.html#kontakt" class="btn btn--ghost" style="width:100%;text-align:center;display:block;">Anfragen</a>
+          <a href="index.html#kontakt" class="btn btn--ghost">Anfragen</a>
         </div>
 
+        <!-- Professional (featured) -->
         <div class="pricing-card pricing-card--featured">
+          <div class="pricing-card__badge">Beliebteste Wahl</div>
           <div class="pricing-card__tier">Professional</div>
-          <div class="pricing-card__price">ab 4.500 €<sub> einmalig</sub></div>
+          <div class="pricing-card__price">ab 4.500 €<span> einmalig</span></div>
           <div class="pricing-card__desc">Für wachsende Unternehmen, die digital dominieren und auf KI-Content setzen.</div>
           <ul class="pricing-card__list">
             <li>Custom Website bis 15 Seiten</li>
-            <li>Full SEO-Strategie & Umsetzung</li>
+            <li>Full SEO-Strategie &amp; Umsetzung</li>
             <li>Corporate Branding komplett</li>
             <li>3 Cinema AI Video Ads</li>
-            <li>Google & Meta Ads Setup</li>
-            <li>CRM-Integration & Lead-Flow</li>
+            <li>Google &amp; Meta Ads Setup</li>
+            <li>CRM-Integration &amp; Lead-Flow</li>
             <li>3 Monate Support inklusive</li>
           </ul>
-          <a href="index.html#kontakt" class="btn btn--primary" style="width:100%;text-align:center;display:block;">Anfragen</a>
+          <a href="index.html#kontakt" class="btn btn--primary">Anfragen</a>
         </div>
 
+        <!-- Enterprise -->
         <div class="pricing-card">
           <div class="pricing-card__tier">Enterprise / Scale</div>
           <div class="pricing-card__price">Individuell</div>
@@ -1098,12 +1161,12 @@
             <li>Alles aus Professional</li>
             <li>Unbegrenzte AI Video Ads</li>
             <li>Business-Automatisierung komplett</li>
-            <li>KI-Chatbot & Lead-Qualifizierung</li>
+            <li>KI-Chatbot &amp; Lead-Qualifizierung</li>
             <li>Monatliches Strategy-Sparring</li>
             <li>Dedizierter Account Manager</li>
-            <li>SLA & Priority Support</li>
+            <li>SLA &amp; Priority Support</li>
           </ul>
-          <a href="index.html#kontakt" class="btn btn--ghost" style="width:100%;text-align:center;display:block;">Angebot anfragen</a>
+          <a href="index.html#kontakt" class="btn btn--ghost">Angebot anfragen</a>
         </div>
 
       </div>
@@ -1199,8 +1262,8 @@
             <li><a href="index.html#portfolio">Portfolio</a></li>
             <li><a href="blog.html">Blog</a></li>
             <li><a href="index.html#kontakt">Kontakt</a></li>
-            <li><a href="#">Impressum</a></li>
-            <li><a href="#">Datenschutz</a></li>
+            <li><a href="impressum.html">Impressum</a></li>
+            <li><a href="datenschutz.html">Datenschutz</a></li>
           </ul>
         </div>
         <div class="footer__col">
@@ -1213,7 +1276,7 @@
         </div>
       </div>
       <div class="footer__bottom">
-        <p>© 2025 069Digital. Alle Rechte vorbehalten.</p>
+        <p>© 2026 069Digital. Alle Rechte vorbehalten.</p>
         <p>Made with ♥ in Frankfurt</p>
       </div>
     </div>
