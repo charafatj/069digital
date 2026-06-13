@@ -1968,6 +1968,9 @@ select option { background: var(--dark-2); }
 .stagger.visible > *:nth-child(4), .stagger.revealed > *:nth-child(4) { opacity: 1; transform: none; transition-delay: 0.26s; }
 .stagger.visible > *:nth-child(5), .stagger.revealed > *:nth-child(5) { opacity: 1; transform: none; transition-delay: 0.33s; }
 .stagger.visible > *:nth-child(6), .stagger.revealed > *:nth-child(6) { opacity: 1; transform: none; transition-delay: 0.40s; }
+.stagger.visible > *:nth-child(7), .stagger.revealed > *:nth-child(7) { opacity: 1; transform: none; transition-delay: 0.47s; }
+.stagger.visible > *:nth-child(8), .stagger.revealed > *:nth-child(8) { opacity: 1; transform: none; transition-delay: 0.54s; }
+.stagger.visible > *:nth-child(n+9), .stagger.revealed > *:nth-child(n+9) { opacity: 1; transform: none; transition-delay: 0.6s; }
 
 
 /* ── SERVICE ROW LIST (Agency Style) ──────────── */
