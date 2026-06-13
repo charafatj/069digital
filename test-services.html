@@ -250,6 +250,218 @@
     .vh-card p { font-size: 0.82rem; color: var(--gray); line-height: 1.65; }
     .vh-card__link { font-size: 0.75rem; font-weight: 600; color: var(--muted); margin-top: auto; transition: color 0.3s; }
     .vh-card:hover .vh-card__link { color: var(--accent); }
+
+    /* ═══ VARIANT I — Glassmorphism Premium ════════ */
+    .vi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+      position: relative;
+    }
+    .vi-grid::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      width: 600px; height: 600px;
+      transform: translate(-50%, -50%);
+      background: radial-gradient(circle, rgba(0,212,255,0.08) 0%, rgba(99,102,241,0.06) 40%, transparent 70%);
+      filter: blur(60px);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .vi-card {
+      position: relative; z-index: 1;
+      background: rgba(255,255,255,0.03);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 24px;
+      padding: 2.25rem 1.75rem;
+      display: flex; flex-direction: column; gap: 1rem;
+      text-decoration: none; color: inherit;
+      min-height: 250px;
+      transition: transform 0.4s cubic-bezier(0.22,1,0.36,1), border-color 0.35s, box-shadow 0.4s;
+    }
+    .vi-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      border-color: rgba(0,212,255,0.25);
+      box-shadow: 0 30px 80px rgba(0,0,0,0.5), 0 0 40px rgba(0,212,255,0.06);
+    }
+    .vi-card__icon {
+      width: 48px; height: 48px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(0,212,255,0.1), rgba(99,102,241,0.08));
+      border: 1px solid rgba(255,255,255,0.08);
+      display: grid; place-items: center;
+      color: var(--accent);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .vi-card:hover .vi-card__icon {
+      transform: scale(1.1) rotate(-5deg);
+      box-shadow: 0 8px 24px rgba(0,212,255,0.2);
+    }
+    .vi-card h3 { font-family: var(--font-head); font-size: 1.05rem; font-weight: 600; color: var(--white); line-height: 1.3; }
+    .vi-card p { font-size: 0.8rem; color: var(--gray); line-height: 1.6; flex-grow: 1; }
+    .vi-card__bottom { display: flex; justify-content: space-between; align-items: center; margin-top: auto; }
+    .vi-card__num { font-family: var(--font-head); font-size: 0.65rem; font-weight: 600; letter-spacing: 0.12em; color: rgba(255,255,255,0.12); }
+    .vi-card__arrow { font-size: 1rem; color: var(--muted); transition: color 0.3s, transform 0.3s; }
+    .vi-card:hover .vi-card__arrow { color: var(--accent); transform: translate(4px,-4px); }
+
+    /* ═══ VARIANT J — Spotlight Tiles ══════════════ */
+    .vj-grid {
+      --mx: 50%; --my: 50%;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+    }
+    .vj-grid::after {
+      content: '';
+      position: absolute;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(0,212,255,0.1), transparent 60%);
+      left: var(--mx); top: var(--my);
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      transition: left 0.1s, top 0.1s;
+      z-index: 0;
+    }
+    .vj-card {
+      position: relative; z-index: 1;
+      padding: 2.25rem 1.75rem;
+      display: flex; flex-direction: column; gap: 1rem;
+      text-decoration: none; color: inherit;
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      min-height: 260px;
+      transition: background 0.25s;
+    }
+    .vj-card:nth-child(4n) { border-right: none; }
+    .vj-card:nth-child(n+5) { border-bottom: none; }
+    .vj-card:hover { background: rgba(255,255,255,0.02); }
+    .vj-card__icon { color: var(--gray); transition: color 0.3s, transform 0.3s; }
+    .vj-card:hover .vj-card__icon { color: var(--accent); transform: translateY(-3px); }
+    .vj-card h3 { font-family: var(--font-head); font-size: 1.05rem; font-weight: 700; color: var(--white); line-height: 1.25; margin-top: auto; }
+    .vj-card p { font-size: 0.78rem; color: var(--gray); line-height: 1.6; }
+    .vj-card__meta { display: flex; justify-content: space-between; align-items: center; margin-top: auto; }
+    .vj-card__num { font-family: var(--font-head); font-size: 2rem; font-weight: 800; color: rgba(255,255,255,0.04); line-height: 1; }
+    .vj-card__arrow { font-size: 0.9rem; color: transparent; transition: color 0.3s; }
+    .vj-card:hover .vj-card__arrow { color: var(--accent); }
+
+    /* ═══ VARIANT K — Timeline / Vertical ══════════ */
+    .vk-timeline { position: relative; padding-left: 3rem; }
+    .vk-timeline::before {
+      content: '';
+      position: absolute;
+      left: 7px; top: 0; bottom: 0;
+      width: 1px;
+      background: var(--border);
+    }
+    .vk-item {
+      position: relative;
+      padding: 2rem 0 2rem 2.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      text-decoration: none; color: inherit;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: start;
+      transition: padding-left 0.3s;
+    }
+    .vk-item:hover { padding-left: 3rem; }
+    .vk-item::before {
+      content: '';
+      position: absolute;
+      left: -2.5rem; top: 2.65rem;
+      width: 15px; height: 15px;
+      border-radius: 50%;
+      border: 2px solid var(--border);
+      background: var(--black);
+      transition: border-color 0.3s, background 0.3s, box-shadow 0.3s;
+      z-index: 1;
+    }
+    .vk-item:hover::before {
+      border-color: var(--accent);
+      background: var(--accent);
+      box-shadow: 0 0 16px rgba(0,212,255,0.4);
+    }
+    .vk-item__left {}
+    .vk-item__num { font-family: var(--font-head); font-size: 0.65rem; font-weight: 600; letter-spacing: 0.14em; color: var(--muted); margin-bottom: 0.5rem; display: block; }
+    .vk-item h3 { font-family: var(--font-head); font-size: 1.35rem; font-weight: 700; color: var(--white); line-height: 1.25; margin-bottom: 0.5rem; transition: color 0.3s; }
+    .vk-item:hover h3 { color: var(--pure-white, #fff); }
+    .vk-item p { font-size: 0.82rem; color: var(--gray); line-height: 1.65; }
+    .vk-item__tags { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.75rem; }
+    .vk-item__tags span { font-size: 0.6rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; padding: 0.2rem 0.6rem; border-radius: 100px; border: 1px solid var(--border); color: var(--gray); transition: border-color 0.3s; }
+    .vk-item:hover .vk-item__tags span { border-color: rgba(0,212,255,0.25); color: var(--light-gray); }
+
+    /* ═══ VARIANT L — Hover Reveal Image ═══════════ */
+    .vl-list { border-top: 1px solid var(--border); }
+    .vl-item {
+      display: grid;
+      grid-template-columns: 3rem 1fr auto;
+      align-items: center;
+      gap: 2rem;
+      padding: 2.25rem 0;
+      border-bottom: 1px solid var(--border);
+      text-decoration: none; color: inherit;
+      position: relative;
+      overflow: hidden;
+    }
+    .vl-item::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, transparent, rgba(0,212,255,0.03) 30%, rgba(99,102,241,0.02) 70%, transparent);
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+    .vl-item:hover::before { opacity: 1; }
+    .vl-item > * { position: relative; z-index: 1; }
+    .vl-item__num { font-family: var(--font-head); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; color: var(--muted); transition: color 0.3s; }
+    .vl-item:hover .vl-item__num { color: var(--accent); }
+    .vl-item__center { display: flex; flex-direction: column; gap: 0.35rem; }
+    .vl-item__name {
+      font-family: var(--font-head);
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      transition: color 0.3s, transform 0.3s;
+    }
+    .vl-item:hover .vl-item__name {
+      background: linear-gradient(90deg, var(--white), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .vl-item__sub {
+      font-size: 0.78rem;
+      color: var(--muted);
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.35s, opacity 0.3s 0.05s;
+    }
+    .vl-item:hover .vl-item__sub { max-height: 2rem; opacity: 1; }
+    .vl-item__right { display: flex; align-items: center; gap: 1.5rem; }
+    .vl-item__icon {
+      width: 44px; height: 44px;
+      border-radius: 12px;
+      background: var(--dark-2);
+      border: 1px solid var(--border);
+      display: grid; place-items: center;
+      color: var(--gray);
+      transform: scale(0.85);
+      opacity: 0;
+      transition: all 0.35s cubic-bezier(0.22,1,0.36,1);
+    }
+    .vl-item:hover .vl-item__icon { opacity: 1; transform: scale(1); color: var(--accent); border-color: rgba(0,212,255,0.25); }
+    .vl-item__arrow { font-size: 1.4rem; color: var(--muted); transition: color 0.3s, transform 0.3s; }
+    .vl-item:hover .vl-item__arrow { color: var(--accent); transform: translate(4px,-4px); }
   </style>
 </head>
 <body>
@@ -264,6 +476,10 @@
   <a class="pick-btn" href="#f">F — Icon + Große Typo</a>
   <a class="pick-btn" href="#g">G — Hover-Expand</a>
   <a class="pick-btn" href="#h">H — 3-Spalten Minimal</a>
+  <a class="pick-btn" href="#i">I — Glassmorphism</a>
+  <a class="pick-btn" href="#j">J — Spotlight Tiles</a>
+  <a class="pick-btn" href="#k">K — Timeline</a>
+  <a class="pick-btn" href="#l">L — Hover Reveal</a>
 </div>
 
 <!-- ══════════════════════════════════════════
@@ -795,6 +1011,102 @@
     <p>Gefällt mir diese Variante →</p>
     <a href="index.html" class="pick-btn pick-btn--choose">H wählen</a>
   </div>
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     VARIANT I — Glassmorphism Premium
+════════════════════════════════════════════ -->
+<div class="variant-block" id="i">
+<div class="container">
+  <div class="variant-label"><span>I</span> Glassmorphism · Floating Cards</div>
+  <h2 class="section-title">Was wir für Sie tun.</h2>
+  <p class="section-sub">Halbtransparente Glas-Cards, schweben über einem Glow-Hintergrund. Premium-Look à la Apple.</p>
+
+  <div class="vi-grid">
+    <a href="#" class="vi-card"><div class="vi-card__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8m-4-4v4"/></svg></div><h3>Webdesign &amp; Entwicklung</h3><p>Konversionsstark, blitzschnell, maßgeschneidert.</p><div class="vi-card__bottom"><span class="vi-card__num">01</span><span class="vi-card__arrow">↗</span></div></a>
+    <a href="#" class="vi-card"><div class="vi-card__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><h3>Branding &amp; Corporate Design</h3><p>Identität, die in Erinnerung bleibt.</p><div class="vi-card__bottom"><span class="vi-card__num">02</span><span class="vi-card__arrow">↗</span></div></a>
+    <a href="#" class="vi-card"><div class="vi-card__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div><h3>SEO &amp; Local SEO</h3><p>Dauerhaft auf Seite 1. Ohne PPC.</p><div class="vi-card__bottom"><span class="vi-card__num">03</span><span class="vi-card__arrow">↗</span></div></a>
+    <a href="#" class="vi-card"><div class="vi-card__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22,7 13.5,15.5 8.5,10.5 2,17"/></svg></div><h3>Performance Marketing</h3><p>Messbar. Skalierbar. Profitabel.</p><div class="vi-card__bottom"><span class="vi-card__num">04</span><span class="vi-card__arrow">↗</span></div></a>
+    <a href="#" class="vi-card"><div class="vi-card__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="23,7 16,12 23,17"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div><h3>Cinema AI Video Ads</h3><p>Kinoqualität in 24 Stunden.</p><div class="vi-card__bottom"><span class="vi-card__num">05</span><span class="vi-card__arrow">↗</span></div></a>
+    <a href="#" class="vi-card"><div class="vi-card__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div><h3>UGC &amp; AI Content</h3><p>10× Output. 70% weniger Kosten.</p><div class="vi-card__bottom"><span class="vi-card__num">06</span><span class="vi-card__arrow">↗</span></div></a>
+    <a href="#" class="vi-card"><div class="vi-card__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><h3>Automatisierung &amp; KI</h3><p>20h Zeitersparnis pro Woche.</p><div class="vi-card__bottom"><span class="vi-card__num">07</span><span class="vi-card__arrow">↗</span></div></a>
+    <a href="#" class="vi-card"><div class="vi-card__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div><h3>Business Scaling</h3><p>Von 6- zu 7-stellig. Systematisch.</p><div class="vi-card__bottom"><span class="vi-card__num">08</span><span class="vi-card__arrow">↗</span></div></a>
+  </div>
+
+  <div class="choose-bar"><p>Gefällt mir →</p><a href="index.html" class="pick-btn pick-btn--choose">I wählen</a></div>
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     VARIANT J — Spotlight Tiles
+════════════════════════════════════════════ -->
+<div class="variant-block" id="j">
+<div class="container">
+  <div class="variant-label"><span>J</span> Spotlight Tiles · Maus-Glow über Grid</div>
+  <h2 class="section-title">Was wir für Sie tun.</h2>
+  <p class="section-sub">Flat Grid mit einem Lichtkreis, der der Maus folgt — wie bei Linear oder Raycast.</p>
+
+  <div class="vj-grid" onmousemove="this.style.setProperty('--mx',event.offsetX+'px');this.style.setProperty('--my',event.offsetY+'px')">
+    <a href="#" class="vj-card"><div class="vj-card__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8m-4-4v4"/></svg></div><h3>Webdesign &amp; Entwicklung</h3><p>Konversionsstark, blitzschnell, maßgeschneidert.</p><div class="vj-card__meta"><span class="vj-card__num">01</span><span class="vj-card__arrow">↗</span></div></a>
+    <a href="#" class="vj-card"><div class="vj-card__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><h3>Branding &amp; Corporate Design</h3><p>Identität, die bleibt.</p><div class="vj-card__meta"><span class="vj-card__num">02</span><span class="vj-card__arrow">↗</span></div></a>
+    <a href="#" class="vj-card"><div class="vj-card__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div><h3>SEO &amp; Local SEO</h3><p>Dauerhaft auf Seite 1.</p><div class="vj-card__meta"><span class="vj-card__num">03</span><span class="vj-card__arrow">↗</span></div></a>
+    <a href="#" class="vj-card"><div class="vj-card__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22,7 13.5,15.5 8.5,10.5 2,17"/></svg></div><h3>Performance Marketing</h3><p>Messbar. Profitabel.</p><div class="vj-card__meta"><span class="vj-card__num">04</span><span class="vj-card__arrow">↗</span></div></a>
+    <a href="#" class="vj-card"><div class="vj-card__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="23,7 16,12 23,17"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div><h3>Cinema AI Video Ads</h3><p>Kinoqualität in 24h.</p><div class="vj-card__meta"><span class="vj-card__num">05</span><span class="vj-card__arrow">↗</span></div></a>
+    <a href="#" class="vj-card"><div class="vj-card__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div><h3>UGC &amp; AI Content</h3><p>10× Output, −70% Kosten.</p><div class="vj-card__meta"><span class="vj-card__num">06</span><span class="vj-card__arrow">↗</span></div></a>
+    <a href="#" class="vj-card"><div class="vj-card__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><h3>Automatisierung &amp; KI</h3><p>20h/Woche gespart.</p><div class="vj-card__meta"><span class="vj-card__num">07</span><span class="vj-card__arrow">↗</span></div></a>
+    <a href="#" class="vj-card"><div class="vj-card__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div><h3>Business Scaling</h3><p>6- zu 7-stellig.</p><div class="vj-card__meta"><span class="vj-card__num">08</span><span class="vj-card__arrow">↗</span></div></a>
+  </div>
+
+  <div class="choose-bar"><p>Gefällt mir →</p><a href="index.html" class="pick-btn pick-btn--choose">J wählen</a></div>
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     VARIANT K — Timeline Vertical
+════════════════════════════════════════════ -->
+<div class="variant-block" id="k">
+<div class="container">
+  <div class="variant-label"><span>K</span> Timeline · Vertikale Linie mit Dots</div>
+  <h2 class="section-title">Was wir für Sie tun.</h2>
+  <p class="section-sub">Vertikale Timeline — Punkt leuchtet cyan auf beim Hover. Großer Titel links, Tags rechts.</p>
+
+  <div class="vk-timeline">
+    <a href="#" class="vk-item"><div class="vk-item__left"><span class="vk-item__num">01</span><h3>Webdesign &amp; Entwicklung</h3><p>Konversionsstarke Websites — blitzschnell, maßgeschneidert, auf Wachstum ausgelegt.</p></div><div><div class="vk-item__tags"><span>Corporate</span><span>E-Commerce</span><span>Landingpage</span></div></div></a>
+    <a href="#" class="vk-item"><div class="vk-item__left"><span class="vk-item__num">02</span><h3>Branding &amp; Corporate Design</h3><p>Markenidentität, die in Erinnerung bleibt — vom Logo bis zum Design-System.</p></div><div><div class="vk-item__tags"><span>Logo</span><span>CI/CD</span><span>Visual Identity</span></div></div></a>
+    <a href="#" class="vk-item"><div class="vk-item__left"><span class="vk-item__num">03</span><h3>SEO &amp; Local SEO</h3><p>Dauerhaft auf Seite 1 — nachhaltige Sichtbarkeit ohne Werbebudgets.</p></div><div><div class="vk-item__tags"><span>On-Page</span><span>Technisch</span><span>Local</span></div></div></a>
+    <a href="#" class="vk-item"><div class="vk-item__left"><span class="vk-item__num">04</span><h3>Performance Marketing</h3><p>Kampagnen, die sich rechnen — messbar und skalierbar.</p></div><div><div class="vk-item__tags"><span>Meta Ads</span><span>Google Ads</span><span>TikTok</span></div></div></a>
+    <a href="#" class="vk-item"><div class="vk-item__left"><span class="vk-item__num">05</span><h3>Cinema AI Video Ads</h3><p>Kinoqualität durch KI — in 24 Stunden statt 4 Wochen.</p></div><div><div class="vk-item__tags"><span>24h Produktion</span><span>−80% Kosten</span><span>+3.4× CTR</span></div></div></a>
+    <a href="#" class="vk-item"><div class="vk-item__left"><span class="vk-item__num">06</span><h3>UGC &amp; AI Content</h3><p>Authentischer Social-Content in Masse — 10× Output.</p></div><div><div class="vk-item__tags"><span>10× Output</span><span>Social First</span><span>−70% Kosten</span></div></div></a>
+    <a href="#" class="vk-item"><div class="vk-item__left"><span class="vk-item__num">07</span><h3>Automatisierung &amp; KI-Systeme</h3><p>Prozesse, die sich selbst erledigen — 20h Zeitersparnis.</p></div><div><div class="vk-item__tags"><span>Make / n8n</span><span>CRM</span><span>KI-Chatbot</span></div></div></a>
+    <a href="#" class="vk-item"><div class="vk-item__left"><span class="vk-item__num">08</span><h3>Business Scaling</h3><p>Von 6- zu 7-stellig — mit System und Strategie.</p></div><div><div class="vk-item__tags"><span>Strategie</span><span>Funnel</span><span>Skalierung</span></div></div></a>
+  </div>
+
+  <div class="choose-bar"><p>Gefällt mir →</p><a href="index.html" class="pick-btn pick-btn--choose">K wählen</a></div>
+</div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     VARIANT L — Hover Reveal (Gradient Text)
+════════════════════════════════════════════ -->
+<div class="variant-block" id="l">
+<div class="container">
+  <div class="variant-label"><span>L</span> Hover Reveal · Gradient-Text + Icon</div>
+  <h2 class="section-title">Was wir für Sie tun.</h2>
+  <p class="section-sub">Riesiger Titel — beim Hover wird er zum Cyan-Gradient, Icon + Beschreibung blenden ein.</p>
+
+  <div class="vl-list">
+    <a href="#" class="vl-item"><span class="vl-item__num">01</span><div class="vl-item__center"><span class="vl-item__name">Webdesign &amp; Entwicklung</span><span class="vl-item__sub">Corporate · E-Commerce · Landingpage</span></div><div class="vl-item__right"><div class="vl-item__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8m-4-4v4"/></svg></div><span class="vl-item__arrow">↗</span></div></a>
+    <a href="#" class="vl-item"><span class="vl-item__num">02</span><div class="vl-item__center"><span class="vl-item__name">Branding &amp; Corporate Design</span><span class="vl-item__sub">Logo · CI/CD · Visual Identity</span></div><div class="vl-item__right"><div class="vl-item__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div><span class="vl-item__arrow">↗</span></div></a>
+    <a href="#" class="vl-item"><span class="vl-item__num">03</span><div class="vl-item__center"><span class="vl-item__name">SEO &amp; Local SEO</span><span class="vl-item__sub">On-Page · Technisch · Local</span></div><div class="vl-item__right"><div class="vl-item__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div><span class="vl-item__arrow">↗</span></div></a>
+    <a href="#" class="vl-item"><span class="vl-item__num">04</span><div class="vl-item__center"><span class="vl-item__name">Performance Marketing</span><span class="vl-item__sub">Meta Ads · Google Ads · TikTok</span></div><div class="vl-item__right"><div class="vl-item__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22,7 13.5,15.5 8.5,10.5 2,17"/></svg></div><span class="vl-item__arrow">↗</span></div></a>
+    <a href="#" class="vl-item"><span class="vl-item__num">05</span><div class="vl-item__center"><span class="vl-item__name">Cinema AI Video Ads</span><span class="vl-item__sub">24h Produktion · −80% Kosten · +3.4× CTR</span></div><div class="vl-item__right"><div class="vl-item__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="23,7 16,12 23,17"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div><span class="vl-item__arrow">↗</span></div></a>
+    <a href="#" class="vl-item"><span class="vl-item__num">06</span><div class="vl-item__center"><span class="vl-item__name">UGC &amp; AI Content</span><span class="vl-item__sub">10× Output · Social First · −70% Kosten</span></div><div class="vl-item__right"><div class="vl-item__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div><span class="vl-item__arrow">↗</span></div></a>
+    <a href="#" class="vl-item"><span class="vl-item__num">07</span><div class="vl-item__center"><span class="vl-item__name">Automatisierung &amp; KI</span><span class="vl-item__sub">Make / n8n · CRM · KI-Chatbot</span></div><div class="vl-item__right"><div class="vl-item__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><span class="vl-item__arrow">↗</span></div></a>
+    <a href="#" class="vl-item"><span class="vl-item__num">08</span><div class="vl-item__center"><span class="vl-item__name">Business Scaling</span><span class="vl-item__sub">Strategie · Funnel · Skalierung</span></div><div class="vl-item__right"><div class="vl-item__icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div><span class="vl-item__arrow">↗</span></div></a>
+  </div>
+
+  <div class="choose-bar"><p>Gefällt mir →</p><a href="index.html" class="pick-btn pick-btn--choose">L wählen</a></div>
 </div>
 </div>
 
