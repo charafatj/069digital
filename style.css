@@ -2142,11 +2142,13 @@ select option { background: var(--dark-2); }
   justify-content: center;
   flex-shrink: 0;
   background: rgba(0, 212, 255, 0.1);
+  border: 1px solid rgba(0, 212, 255, 0.2);
 }
 .svc-card__icon-wrap svg {
   width: 22px;
   height: 22px;
   color: var(--accent);
+  stroke: currentColor;
 }
 
 .svc-card h3 {
