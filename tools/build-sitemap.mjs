@@ -21,28 +21,17 @@ const BASE = 'https://charafatj.github.io/069digital/';
 const EXCLUDE = new Set(['test-services.html', '404.html']);
 
 // Relative crawl priority. Anything not listed defaults to 0.5.
-const PRIORITY = {
-  '': '1.0',
-  'services.html': '0.9',
-  'leistungen/web-shop.html': '0.8',
-  'leistungen/marke-design.html': '0.8',
-  'leistungen/sichtbarkeit.html': '0.8',
-  'leistungen/kontakt-buchung.html': '0.8',
-  'blog.html': '0.7',
-  'impressum.html': '0.3',
-  'datenschutz.html': '0.3',
-};
+const PRIORITY = { '': '1.0', 'services.html': '0.9', 'blog.html': '0.7', 'impressum.html': '0.3', 'datenschutz.html': '0.3' };
 
 function htmlFiles() {
   const out = [];
   for (const f of readdirSync(ROOT)) {
     if (f.endsWith('.html') && !EXCLUDE.has(f)) out.push(f);
   }
-  for (const dir of ['blog', 'leistungen']) {
-    const d = join(ROOT, dir);
-    if (!existsSync(d)) continue;
-    for (const f of readdirSync(d)) {
-      if (f.endsWith('.html') && !EXCLUDE.has(f)) out.push(dir + '/' + f);
+  const blogDir = join(ROOT, 'blog');
+  if (existsSync(blogDir)) {
+    for (const f of readdirSync(blogDir)) {
+      if (f.endsWith('.html') && !EXCLUDE.has(f)) out.push('blog/' + f);
     }
   }
   return out.sort();

@@ -207,17 +207,10 @@
     ).observe(contact);
   }
 
-  /* -- Mark the current page in the navigation -----------------------------
-     Any page under /leistungen/ also marks the "Leistungen" hub link, since
-     visitors landing on a category detail page are still within that
-     section of the site. */
+  /* -- Mark the current page in the navigation ---------------------------- */
   const here = location.pathname.split('/').pop() || 'index.html';
-  const inLeistungen = /\/leistungen\//.test(location.pathname);
   document.querySelectorAll('[data-nav] a[href]').forEach((a) => {
-    const href = a.getAttribute('href');
-    const target = href.split('#')[0].split('/').pop();
-    if ((target && target === here) || (inLeistungen && target === 'services.html')) {
-      a.setAttribute('aria-current', 'page');
-    }
+    const target = a.getAttribute('href').split('#')[0].split('/').pop();
+    if (target && target === here) a.setAttribute('aria-current', 'page');
   });
 })();

@@ -53,11 +53,9 @@ function discoverPages() {
   for (const f of fs.readdirSync(repoDir)) {
     if (f.endsWith('.html') && f !== 'test-services.html') pages.push('/' + f);
   }
-  for (const dir of ['blog', 'leistungen']) {
-    const d = path.join(repoDir, dir);
-    if (fs.existsSync(d)) {
-      for (const f of fs.readdirSync(d)) if (f.endsWith('.html')) pages.push(`/${dir}/` + f);
-    }
+  const blogDir = path.join(repoDir, 'blog');
+  if (fs.existsSync(blogDir)) {
+    for (const f of fs.readdirSync(blogDir)) if (f.endsWith('.html')) pages.push('/blog/' + f);
   }
   return pages.sort();
 }
