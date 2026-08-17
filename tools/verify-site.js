@@ -122,12 +122,36 @@ async function measure(browser, url, vp) {
   // Scroll through to trigger lazy content / reveal animations, then settle
   await page.evaluate(async () => {
     const H = document.documentElement.scrollHeight;
-    for (let y = 0; y < H; y += window.innerHeight * 0.8) {
+    for (let y = 0; y < H; y += window.innerHeight * 0.6) {
       window.scrollTo(0, y);
-      await new Promise((r) => setTimeout(r, 90));
+      // Two rAFs plus a pause, so IntersectionObserver callbacks actually flush
+      await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
+      await new Promise((r) => setTimeout(r, 140));
     }
     window.scrollTo(0, 0);
-    await new Promise((r) => setTimeout(r, 250));
+    await new Promise((r) => setTimeout(r, 400));
+  });
+
+  // The site's reveal failsafe fires 4s after load; wait past it so the
+  // invisible-content check reflects the guaranteed final state.
+  await page.waitForTimeout(4800);
+
+  // After a full scroll-through, nothing with real text should still be
+  // transparent. This catches reveal animations that hide content permanently
+  // when the observer never fires.
+  const invisible = await page.evaluate(() => {
+    const out = [];
+    for (const el of document.querySelectorAll('.reveal, .reveal-group > *, [class]')) {
+      const text = (el.textContent || '').trim();
+      if (text.length < 12) continue;
+      const cs = getComputedStyle(el);
+      if (parseFloat(cs.opacity) < 0.5 || cs.visibility === 'hidden') {
+        const cls = typeof el.className === 'string' ? el.className.trim().split(/\s+/).slice(0, 2).join('.') : '';
+        out.push(`${el.tagName.toLowerCase()}${cls ? '.' + cls : ''} "${text.slice(0, 40)}"`);
+        if (out.length >= 8) break;
+      }
+    }
+    return out;
   });
 
   const vitals = await page.evaluate(() => ({ lcp: Math.round(window.__lcp), cls: +window.__cls.toFixed(4) }));
@@ -191,6 +215,7 @@ async function measure(browser, url, vp) {
     ...vitals,
     overflow,
     smallTargets,
+    invisible,
     links: [...new Set(links)],
     docHeight,
     shot,
@@ -200,7 +225,7 @@ async function measure(browser, url, vp) {
 (async () => {
   fs.mkdirSync(outDir, { recursive: true });
   const srv = await serve();
-  const browser = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium/chrome-linux/chrome' }).catch(() => chromium.launch());
+  const browser = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium-1194/chrome-linux/chrome' }).catch(() => chromium.launch());
   const pages = discoverPages();
   const report = { label, pages: {} };
 
@@ -249,6 +274,7 @@ async function measure(browser, url, vp) {
       if (r.failed.length) iss.push(`${r.failed.length} req-fail`);
       if (r.overflow.offenders.length) iss.push(`H-OVERFLOW ${r.overflow.scrollWidth}>${r.overflow.clientWidth}`);
       if (r.smallTargets.length) iss.push(`${r.smallTargets.length} small-tap`);
+      if (r.invisible && r.invisible.length) iss.push(`INVISIBLE x${r.invisible.length}`);
       if (r.cls > 0.1) iss.push(`CLS!`);
       console.log(
         `${p.padEnd(34)}${vn.padEnd(9)}${String(r.kb).padStart(6)}${String(r.requests).padStart(5)}${String(r.lcp).padStart(7)}${String(r.cls).padStart(8)}${String(r.docHeight).padStart(8)}  ${iss.join(', ')}`
@@ -264,7 +290,7 @@ async function measure(browser, url, vp) {
   for (const [p, vps] of Object.entries(report.pages)) {
     for (const [vn, r] of Object.entries(vps)) {
       if (r.error) continue;
-      const has = r.consoleErrors.length || r.pageErrors.length || r.failed.length || r.overflow.offenders.length || r.smallTargets.length;
+      const has = r.consoleErrors.length || r.pageErrors.length || r.failed.length || r.overflow.offenders.length || r.smallTargets.length || (r.invisible && r.invisible.length);
       if (!has) continue;
       console.log(`\n--- ${p} [${vn}] ---`);
       r.pageErrors.forEach((e) => console.log('  JS ERROR: ' + e));
@@ -272,6 +298,7 @@ async function measure(browser, url, vp) {
       r.failed.forEach((e) => console.log('  REQ: ' + e));
       r.overflow.offenders.forEach((e) => console.log('  OVERFLOW: ' + e));
       r.smallTargets.forEach((e) => console.log('  SMALL TAP TARGET: ' + e));
+      (r.invisible || []).forEach((e) => console.log('  STILL INVISIBLE AFTER SCROLL: ' + e));
     }
   }
   console.log(`\nReport: ${path.join(outDir, `${label}-report.json`)}`);

@@ -1,66 +1,192 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Impressum — 069Digital</title>
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    .legal-page { max-width: 760px; margin: 0 auto; padding: 8rem 2rem 5rem; }
-    .legal-page h1 { font-size: 2.5rem; margin-bottom: 2rem; }
-    .legal-page h2 { font-size: 1.15rem; margin: 2.5rem 0 0.5rem; color: var(--white); }
-    .legal-page p, .legal-page a { color: var(--gray); line-height: 1.8; }
-    .legal-page a { color: var(--accent); }
-    .legal-back { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--accent); font-size: 0.875rem; margin-bottom: 3rem; }
-    .legal-back:hover { opacity: 0.8; }
-  </style>
-</head>
-<body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Impressum — 069Digital</title>
+    <meta name="description" content="Impressum und Anbieterkennzeichnung der Digitalagentur 069Digital aus Frankfurt am Main." />
+    <link rel="canonical" href="https://charafatj.github.io/069digital/impressum.html" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0a0a0b" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="preload" href="assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="assets/fonts/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="style.css" />
+    <!-- Set before paint: the reveal animation styles are gated on .js, so if
+         scripting is unavailable the content is simply visible. -->
+    <script>document.documentElement.classList.add('js');</script>
+  </head>
 
-  <nav class="nav scrolled" style="position:relative; backdrop-filter:none; background: var(--dark); border-bottom: 1px solid var(--border);">
-    <div class="nav__inner">
-      <a href="index.html" class="nav__logo">069<span>Digital</span></a>
-    </div>
-  </nav>
+  <body>
+    <a class="skip" href="#main">Zum Inhalt springen</a>
 
-  <div class="legal-page">
-    <a href="index.html" class="legal-back">← Zurück zur Website</a>
+    <header class="header grid" data-header>
+      <div class="header__inner">
+        <a class="logo" href="index.html" aria-label="069Digital — zur Startseite">069<b>Digital</b></a>
+        <nav class="nav" aria-label="Hauptnavigation" data-nav>
+          <a href="services.html">Leistungen</a>
+          <a href="index.html#arbeiten">Arbeiten</a>
+          <a href="blog.html">Blog</a>
+          <a href="index.html#kontakt" class="btn" style="min-block-size: 42px; padding-inline: var(--space-5)">Projekt anfragen</a>
+        </nav>
+        <button class="nav-toggle" type="button" data-menu-open aria-controls="menu" aria-expanded="false">
+          <span class="visually-hidden">Menü öffnen</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+            <path d="M3 6h18M3 12h18M3 18h18" />
+          </svg>
+        </button>
+      </div>
+    </header>
 
-    <h1>Impressum</h1>
+    <dialog class="menu" id="menu" data-menu aria-label="Menü">
+      <div class="menu__inner">
+        <div class="menu__top">
+          <span class="logo">069<b>Digital</b></span>
+          <button class="nav-toggle" type="button" data-menu-close>
+            <span class="visually-hidden">Menü schließen</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <path d="M18 6 6 18M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <nav class="menu__links" aria-label="Menü">
+          <a href="services.html">Leistungen</a>
+          <a href="index.html#arbeiten">Arbeiten</a>
+          <a href="blog.html">Blog</a>
+          <a href="index.html#kontakt">Kontakt</a>
+        </nav>
+        <div class="menu__foot">
+          <a href="tel:+491556609900">+49 155 660 99 00</a>
+          <a href="mailto:info@069digital.de">info@069digital.de</a>
+          <span class="text-dim">Frankfurt am Main · Mo–Fr 9–18 Uhr</span>
+        </div>
+      </div>
+    </dialog>
 
-    <h2>Angaben gemäß § 5 TMG</h2>
-    <p>
-      069Digital<br />
-      Charaf Eddin Attaaouij<br />
-      60313 Frankfurt am Main<br />
-      Deutschland
-    </p>
+    <main id="main" class="section grid" style="padding-block-start: calc(var(--header-h) + var(--space-8))">
+      <div class="lane-text">
+        <p class="eyebrow">Rechtliches</p>
+        <h1 style="font-size: var(--step-4)">Impressum</h1>
 
-    <h2>Kontakt</h2>
-    <p>
-      Telefon: +49 155 660 9900<br />
-      E-Mail: <a href="mailto:info@069digital.de">info@069digital.de</a>
-    </p>
+        <!--
+          ACHTUNG VOR DEM LIVEGANG:
+          Die unten mit .needs-input markierten Felder sind gesetzlich
+          vorgeschrieben (§ 5 TMG) und müssen ausgefüllt werden. Eine fehlende
+          ladungsfähige Anschrift ist der mit Abstand häufigste Abmahngrund.
+        -->
+        <div class="prose" style="margin-top: var(--space-7)">
+          <h2 style="margin-top: 0; border-top: none; padding-top: 0">Angaben gemäß § 5 TMG</h2>
+          <address>
+            069Digital<br />
+            Inhaber: Charaf Eddin Attaaouij<br />
+            <span class="needs-input">Straße und Hausnummer eintragen</span><br />
+            60313 Frankfurt am Main<br />
+            Deutschland
+          </address>
 
-    <h2>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
-    <p>
-      Charaf Eddin Attaaouij<br />
-      60313 Frankfurt am Main
-</p>
+          <h2>Kontakt</h2>
+          <p>
+            Telefon: <a href="tel:+491556609900">+49 155 660 99 00</a><br />
+            E-Mail: <a href="mailto:info@069digital.de">info@069digital.de</a>
+          </p>
 
-    <h2>Haftung für Inhalte</h2>
-    <p>Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.</p>
+          <h2>Umsatzsteuer-Identifikationsnummer</h2>
+          <p>
+            Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br />
+            <span class="needs-input">USt-IdNr. eintragen — oder diesen Abschnitt streichen</span>
+          </p>
+          <p class="text-dim" style="font-size: var(--step--1)">
+            Hinweis: Wird das Unternehmen als Kleinunternehmer nach § 19 UStG geführt und liegt keine USt-IdNr. vor,
+            entfällt dieser Abschnitt ersatzlos.
+          </p>
 
-    <h2>Haftung für Links</h2>
-    <p>Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.</p>
+          <h2>Redaktionell verantwortlich</h2>
+          <address>
+            Charaf Eddin Attaaouij<br />
+            Anschrift wie oben
+          </address>
 
-    <h2>Urheberrecht</h2>
-    <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechts bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.</p>
-  </div>
+          <h2>Streitbeilegung</h2>
+          <p>
+            Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung bereit:
+            <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer">ec.europa.eu/consumers/odr</a>.
+          </p>
+          <p>
+            Wir sind nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer
+            Verbraucherschlichtungsstelle teilzunehmen.
+          </p>
 
-</body>
+          <h2>Haftung für Inhalte</h2>
+          <p>
+            Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den
+            allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht
+            verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu
+            forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
+          </p>
+
+          <h2>Haftung für Links</h2>
+          <p>
+            Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben.
+            Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten
+            Seiten ist stets der jeweilige Anbieter oder Betreiber verantwortlich.
+          </p>
+
+          <h2>Urheberrecht</h2>
+          <p>
+            Die durch uns erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht.
+            Beiträge Dritter sind als solche gekennzeichnet.
+          </p>
+        </div>
+
+        <p style="margin-top: var(--space-8)">
+          <a class="link-arrow" href="index.html">Zurück zur Startseite</a>
+        </p>
+      </div>
+    </main>
+
+    <footer class="footer grid">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <span class="logo">069<b>Digital</b></span>
+          <p>Digitalagentur aus Frankfurt am Main. Web, Marke, Sichtbarkeit und KI-gestützte Produktion aus einer Hand.</p>
+        </div>
+        <div>
+          <h2>Leistungen</h2>
+          <ul>
+            <li><a href="services.html#web">Web &amp; Anwendungen</a></li>
+            <li><a href="services.html#marke">Marke &amp; Gestaltung</a></li>
+            <li><a href="services.html#sichtbarkeit">Sichtbarkeit &amp; Kampagnen</a></li>
+            <li><a href="services.html#ki">KI &amp; Automatisierung</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Agentur</h2>
+          <ul>
+            <li><a href="index.html#arbeiten">Arbeiten</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="index.html#kontakt">Kontakt</a></li>
+            <li><a href="impressum.html">Impressum</a></li>
+            <li><a href="datenschutz.html">Datenschutz</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>Kontakt</h2>
+          <address>
+            069Digital<br />
+            60313 Frankfurt am Main<br />
+            <a href="tel:+491556609900">+49 155 660 99 00</a><br />
+            <a href="mailto:info@069digital.de">info@069digital.de</a>
+          </address>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 069Digital</p>
+        <ul>
+          <li>Einsatzgebiet: Frankfurt · Offenbach · Wiesbaden · Mainz · Darmstadt · Rhein-Main</li>
+        </ul>
+      </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
 </html>

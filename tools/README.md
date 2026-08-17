@@ -34,3 +34,15 @@ Requires the globally installed `playwright` and `http-server` packages present
 in this container. Google Fonts is stubbed with an empty stylesheet, because it
 is unreachable in the sandbox and its timeout otherwise dominates LCP — so
 screenshots render in fallback fonts and font-swap CLS is not measured.
+
+## test-interaction.js
+
+Drives the site in a real browser and asserts the behaviour that regressed
+before: the mobile menu opens, reports `aria-expanded` correctly, moves focus
+into the dialog and closes on Escape on *every* page; no page throws a
+JavaScript error; and with scripting disabled the content is still visible and
+the service index still expands.
+
+```sh
+node tools/test-interaction.js   # exits non-zero on any failure
+```
