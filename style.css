@@ -745,36 +745,149 @@
     z-index: -1;
   }
 
-  /* -- Proof band --------------------------------------------------------- */
-  .proof {
+  /* -- Marquee ticker -------------------------------------------------------
+     Decorative reinforcement of the category names, which are the real
+     content elsewhere on the page — so the whole band is aria-hidden. The
+     track is duplicated for a seamless loop; under reduced motion the
+     animation is simply not declared, which freezes the first copy in place
+     (the duplicate spills outside the clipped width, so nothing reads twice). */
+  .marquee {
+    overflow: hidden;
+    border-block: 1px solid var(--line);
+    background: var(--ink-900);
+  }
+  .marquee__track {
+    display: flex;
+    gap: var(--space-8);
+    width: max-content;
+    padding-block: var(--space-4);
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .marquee__track {
+      animation: marquee 32s linear infinite;
+    }
+  }
+  @keyframes marquee {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  .marquee__track span {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-8);
+    font-family: var(--font-mono);
+    font-size: var(--step-0);
+    letter-spacing: var(--track-wide);
+    text-transform: uppercase;
+    color: var(--text-lo);
+    white-space: nowrap;
+  }
+  .marquee__track span::after {
+    content: '';
+    inline-size: 5px;
+    block-size: 5px;
+    border-radius: 50%;
+    background: var(--accent);
+    opacity: 0.6;
+  }
+
+  /* -- Category cards -------------------------------------------------------
+     The homepage/hub summary of the (larger) real service catalogue. Groups
+     ~16 concrete offerings into a small number of premium-sounding umbrellas
+     so the breadth doesn't read as an unstructured list — each links through
+     to its own page with the granular services and pricing. */
+  .categories {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-    gap: 1px;
-    background: var(--line);
+    gap: var(--space-5);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  }
+  .category {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    padding: var(--space-6);
+    background: var(--ink-850);
     border: 1px solid var(--line);
     border-radius: var(--radius-lg);
-    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color var(--dur) var(--ease), background var(--dur) var(--ease), transform var(--dur) var(--ease);
   }
-  .proof__item {
+  @media (hover: hover) {
+    .category:hover {
+      border-color: var(--accent-line);
+      background: var(--ink-800);
+      transform: translateY(-3px);
+    }
+    .category:hover .category__icon {
+      border-color: var(--accent-line);
+      color: var(--accent);
+    }
+    .category:hover .category__arrow {
+      translate: 3px 0;
+    }
+  }
+  .category__icon {
+    inline-size: 48px;
+    block-size: 48px;
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: var(--ink-900);
-    padding: var(--space-6);
+    border: 1px solid var(--line);
+    color: var(--text-lo);
+    transition: border-color var(--dur) var(--ease), color var(--dur) var(--ease);
   }
-  .proof__num {
-    font-family: var(--font-display);
-    font-size: var(--step-3);
-    font-weight: 700;
-    letter-spacing: var(--track-snug);
-    color: var(--text-hi);
-    line-height: 1;
+  .category__icon svg {
+    inline-size: 24px;
+    block-size: 24px;
   }
-  .proof__num span {
+  .category h3 {
+    font-size: var(--step-1);
+  }
+  .category p {
+    color: var(--text-lo);
+    font-size: var(--step-0);
+    font-weight: 300;
+    flex: 1;
+  }
+  .category__foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--line);
+    font-size: var(--step--1);
+  }
+  .category__price {
+    font-family: var(--font-mono);
+    color: var(--text-dim);
+    letter-spacing: var(--track-wide);
+  }
+  .category__price b {
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .category__arrow {
+    color: var(--text-dim);
+    transition: translate var(--dur) var(--ease), color var(--dur) var(--ease);
+  }
+  .category:hover .category__arrow {
     color: var(--accent);
   }
-  .proof__label {
-    margin-top: var(--space-3);
-    font-size: var(--step--1);
+  /* The trailing "und mehr" tile is visually lighter — an invitation, not a
+     fifth equal-weight offering. */
+  .category--more {
+    justify-content: center;
+    align-items: flex-start;
+    background: transparent;
+    border-style: dashed;
+  }
+  .category--more h3 {
     color: var(--text-lo);
-    line-height: 1.5;
   }
 
   /* -- Leistungsindex ----------------------------------------------------
@@ -1096,24 +1209,59 @@
     display: none;
   }
 
-  /* -- Process ------------------------------------------------------------ */
+  /* -- Process --------------------------------------------------------------
+     A connecting line threads behind the numbered badges (desktop only — on
+     a single stacked column a horizontal line has no meaning, so it's
+     dropped, not rotated). The badge background must match the section's own
+     background for the line to appear to pass behind it. */
   .steps {
+    position: relative;
     display: grid;
-    gap: 1px;
-    background: var(--line);
-    border-block: 1px solid var(--line);
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
+    gap: var(--space-6);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  }
+  .steps::before {
+    content: '';
+    position: absolute;
+    inset-block-start: 27px;
+    inset-inline: 12%;
+    block-size: 1px;
+    background: linear-gradient(90deg, transparent, var(--line-strong) 15%, var(--line-strong) 85%, transparent);
+  }
+  @media (max-width: 899px) {
+    .steps::before {
+      display: none;
+    }
   }
   .step {
-    background: var(--ink-950);
-    padding: var(--space-6) var(--space-5) var(--space-7);
+    position: relative;
+    transition: transform var(--dur) var(--ease);
   }
   .step__num {
-    font-family: var(--font-mono);
-    font-size: var(--step--1);
-    color: var(--accent);
-    letter-spacing: var(--track-wide);
-    margin-bottom: var(--space-4);
+    inline-size: 56px;
+    block-size: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--ink-900);
+    border: 1px solid var(--line-strong);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: var(--step-1);
+    color: var(--text-hi);
+    margin-bottom: var(--space-5);
+    transition: border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease), color var(--dur) var(--ease);
+  }
+  @media (hover: hover) {
+    .step:hover .step__num {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 5px var(--accent-dim);
+      color: var(--accent);
+    }
+    .step:hover {
+      transform: translateY(-2px);
+    }
   }
   .step h3 {
     font-size: var(--step-1);
@@ -1125,10 +1273,43 @@
     font-weight: 300;
   }
 
-  /* -- Quote -------------------------------------------------------------- */
+  /* -- Quote / testimonial ---------------------------------------------------
+     A proper card rather than a bare border-left: a decorative quotation
+     glyph behind the text and a star row above it, since a plain block read
+     as an afterthought. */
   .quote {
-    border-inline-start: 2px solid var(--accent);
-    padding-inline-start: var(--space-6);
+    position: relative;
+    background: var(--ink-850);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    padding: var(--space-7);
+    overflow: hidden;
+  }
+  .quote::before {
+    content: '\201C';
+    position: absolute;
+    inset-block-start: -0.35em;
+    inset-inline-start: var(--space-6);
+    font-family: var(--font-display);
+    font-size: 8rem;
+    line-height: 1;
+    color: var(--line-strong);
+    z-index: 0;
+    pointer-events: none;
+  }
+  .quote > * {
+    position: relative;
+    z-index: 1;
+  }
+  .rating {
+    display: flex;
+    gap: 3px;
+    color: var(--accent);
+    margin-bottom: var(--space-5);
+  }
+  .rating svg {
+    inline-size: 18px;
+    block-size: 18px;
   }
   .quote blockquote {
     font-family: var(--font-display);
@@ -1140,23 +1321,93 @@
     text-wrap: pretty;
   }
   .quote figcaption {
-    margin-top: var(--space-5);
+    margin-top: var(--space-6);
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
     font-size: var(--step--1);
     color: var(--text-lo);
+  }
+  .quote__avatar {
+    inline-size: 44px;
+    block-size: 44px;
+    border-radius: 50%;
+    background: var(--ink-900);
+    border: 1px solid var(--line-strong);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--accent);
+    flex: none;
   }
   .quote figcaption b {
     color: var(--text-hi);
     display: block;
     font-weight: 600;
+    font-size: var(--step-0);
   }
   /* Related-party disclosure. Omitting this on a testimonial from a relative
      is exactly the kind of thing § 5a UWG treats as a misleading omission. */
   .quote__disclosure {
-    margin-top: var(--space-4);
+    margin-top: var(--space-5);
+    padding-top: var(--space-5);
+    border-top: 1px solid var(--line);
     font-size: var(--step--1);
     color: var(--text-dim);
     font-style: italic;
     max-width: 52ch;
+  }
+
+  /* -- Content showcase (UGC / AI demo placeholders) -------------------------
+     Honest placeholders for real video work the client has produced for other
+     customers and for AI-image capability demos — never fabricated content.
+     Swap the placeholder markup for a real <picture>/<video> per card as
+     material becomes available; the label then changes accordingly. */
+  .showcase {
+    display: grid;
+    gap: var(--space-4);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr));
+  }
+  .showcase__card {
+    position: relative;
+    aspect-ratio: 9 / 16;
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background:
+      repeating-linear-gradient(135deg, var(--ink-850) 0 10px, var(--ink-800) 10px 20px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-3);
+  }
+  .showcase__play {
+    inline-size: 48px;
+    block-size: 48px;
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--ink-950) 45%, transparent);
+    border: 1px solid var(--line-strong);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-hi);
+  }
+  .showcase__play svg {
+    inline-size: 18px;
+    block-size: 18px;
+    translate: 1px 0;
+  }
+  .showcase__label {
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    letter-spacing: var(--track-wide);
+    text-transform: uppercase;
+    color: var(--text-dim);
+    text-align: center;
+    padding-inline: var(--space-3);
   }
 
   /* -- Form --------------------------------------------------------------- */
