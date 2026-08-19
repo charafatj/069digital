@@ -110,20 +110,30 @@
       <!-- HERO -->
       <section class="hero grid">
         <div class="hero__field" aria-hidden="true"></div>
-        <div class="hero__content-in">
-          <p class="eyebrow">Digitalagentur für Unternehmen</p>
-          <h1 class="hero__claim">Alles Digitale.<br /><em>Ein Partner.</em></h1>
-          <p class="hero__lead">
-            Website, Onlineshop, App, Markenauftritt, Sichtbarkeit bei Google, Werbekampagnen und KI-gestützte
-            Produktion — bei uns aus einer Hand, statt verteilt auf fünf Dienstleister.
-          </p>
-          <div class="hero__actions">
-            <a href="#kontakt" class="btn btn--primary btn--lg">Projekt anfragen</a>
-            <a href="services.html" class="btn btn--lg">Leistungen ansehen</a>
+        <div class="hero__row">
+          <div class="hero__content-in">
+            <p class="eyebrow">Digitalagentur für Unternehmen</p>
+            <h1 class="hero__claim">Alles Digitale.<br /><em>Ein Partner.</em></h1>
+            <p class="hero__lead">
+              Website, Onlineshop, App, Markenauftritt, Sichtbarkeit bei Google, Werbekampagnen und KI-gestützte
+              Produktion — bei uns aus einer Hand, statt verteilt auf fünf Dienstleister.
+            </p>
+            <div class="hero__actions">
+              <a href="#kontakt" class="btn btn--primary btn--lg">Projekt anfragen</a>
+              <a href="services.html" class="btn btn--lg">Leistungen ansehen</a>
+            </div>
+            <p class="hero__meta">
+              <span>Web &amp; Apps</span><span>Marke &amp; Design</span><span>SEO &amp; Kampagnen</span><span>KI &amp; Automatisierung</span>
+            </p>
           </div>
-          <p class="hero__meta">
-            <span>Web &amp; Apps</span><span>Marke &amp; Design</span><span>SEO &amp; Kampagnen</span><span>KI &amp; Automatisierung</span>
-          </p>
+          <div class="hero__visual" aria-hidden="true">
+            <span class="hero__visual-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="2" /><circle cx="8.5" cy="8.5" r="1.5" /><path d="m21 15-5-5L5 21" />
+              </svg>
+            </span>
+            <span class="hero__visual-label">Projekt-Einblick folgt</span>
+          </div>
         </div>
       </section>
 
@@ -167,120 +177,83 @@
           </p>
         </div>
 
-        <div class="index reveal">
-          <details class="index__row" name="leistung">
-            <summary>
-              <span class="index__num">01</span>
-              <span class="index__name">Web &amp; Anwendungen</span>
-              <span class="index__sign" aria-hidden="true"></span>
-            </summary>
-            <div class="index__body">
-              <div></div>
-              <div>
-                <p>
-                  Websites, die schnell laden und Anfragen bringen. Onlineshops, die verkaufen. Und wenn ein Formular
-                  nicht mehr reicht: eine echte Anwendung oder App — nativ für iOS und Android oder plattformübergreifend,
-                  je nachdem was Ihr Budget und Ihre Nutzer wirklich brauchen.
-                </p>
-                <ul class="index__tags">
-                  <li>Unternehmenswebsites</li>
-                  <li>Landingpages</li>
-                  <li>E-Commerce &amp; Shops</li>
-                  <li>Web-Apps</li>
-                  <li>iOS- &amp; Android-Apps</li>
-                  <li>UI/UX-Design</li>
-                  <li>Barrierefreiheit</li>
-                  <li>Wartung &amp; Betrieb</li>
-                </ul>
-                <p class="index__cta"><a class="link-arrow" href="leistungen/web-anwendungen.html">Details zu Web &amp; Anwendungen</a></p>
+        <div class="categories reveal-group">
+          <a class="category" href="leistungen/web-anwendungen.html">
+            <div class="category__media">
+              <span class="category__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+                  <rect x="2" y="4" width="20" height="14" rx="2" /><path d="M8 21h8M12 18v3" />
+                </svg>
+              </span>
+            </div>
+            <div class="category__body">
+              <h3>Web &amp; Anwendungen</h3>
+              <p>Websites, Onlineshops, Apps und alles rund um UI/UX und Barrierefreiheit.</p>
+              <div class="category__foot">
+                <span class="category__price">ab <b>1.900 €</b></span>
+                <span class="category__arrow" aria-hidden="true">→</span>
               </div>
             </div>
-          </details>
+          </a>
 
-          <details class="index__row" name="leistung">
-            <summary>
-              <span class="index__num">02</span>
-              <span class="index__name">Marke &amp; Gestaltung</span>
-              <span class="index__sign" aria-hidden="true"></span>
-            </summary>
-            <div class="index__body">
-              <div></div>
-              <div>
-                <p>
-                  Eine Marke ist mehr als ein Logo — sie ist die Summe aller Berührungspunkte. Wir entwickeln
-                  Erscheinungsbilder, die auf dem Bildschirm genauso funktionieren wie auf dem Messestand, und geben
-                  Ihnen ein System an die Hand, mit dem Ihr Team selbst weiterarbeiten kann.
-                </p>
-                <ul class="index__tags">
-                  <li>Logo &amp; Wortmarke</li>
-                  <li>Corporate Design</li>
-                  <li>Designsysteme</li>
-                  <li>Geschäftsausstattung</li>
-                  <li>Print &amp; Verpackung</li>
-                  <li>Präsentationen</li>
-                  <li>Bildsprache</li>
-                </ul>
-                <p class="index__cta"><a class="link-arrow" href="leistungen/marke-gestaltung.html">Details zu Marke &amp; Gestaltung</a></p>
+          <a class="category" href="leistungen/marke-gestaltung.html">
+            <div class="category__media">
+              <span class="category__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+                  <path d="M12 2a10 10 0 1 0 0 20c1.1 0 2-.9 2-2 0-.5-.2-1-.5-1.3-.3-.4-.5-.8-.5-1.2 0-1.1.9-2 2-2h2.3c2.1 0 3.7-1.6 3.7-3.7C21 6.8 17 2 12 2z" />
+                  <circle cx="7" cy="10" r="1" fill="currentColor" stroke="none" />
+                  <circle cx="9" cy="7" r="1" fill="currentColor" stroke="none" />
+                  <circle cx="14" cy="6.5" r="1" fill="currentColor" stroke="none" />
+                  <circle cx="17" cy="9" r="1" fill="currentColor" stroke="none" />
+                </svg>
+              </span>
+            </div>
+            <div class="category__body">
+              <h3>Marke &amp; Gestaltung</h3>
+              <p>Logo, Designsystem, Geschäftsausstattung und die Unterlagen, mit denen Sie verkaufen.</p>
+              <div class="category__foot">
+                <span class="category__price">ab <b>2.400 €</b></span>
+                <span class="category__arrow" aria-hidden="true">→</span>
               </div>
             </div>
-          </details>
+          </a>
 
-          <details class="index__row" name="leistung">
-            <summary>
-              <span class="index__num">03</span>
-              <span class="index__name">Sichtbarkeit &amp; Kampagnen</span>
-              <span class="index__sign" aria-hidden="true"></span>
-            </summary>
-            <div class="index__body">
-              <div></div>
-              <div>
-                <p>
-                  Die beste Website nützt nichts, wenn niemand sie findet. Wir arbeiten an der organischen Sichtbarkeit
-                  — technisch und inhaltlich — und schalten dort Werbung, wo sie sich rechnet. Was nicht funktioniert,
-                  sagen wir Ihnen, statt das Budget still weiterlaufen zu lassen.
-                </p>
-                <ul class="index__tags">
-                  <li>SEO-Audit</li>
-                  <li>Local SEO</li>
-                  <li>Google Business</li>
-                  <li>Inhaltsstrategie</li>
-                  <li>Google Ads</li>
-                  <li>Meta Ads</li>
-                  <li>TikTok Ads</li>
-                  <li>Social Media</li>
-                </ul>
-                <p class="index__cta"><a class="link-arrow" href="leistungen/sichtbarkeit-kampagnen.html">Details zu Sichtbarkeit &amp; Kampagnen</a></p>
+          <a class="category" href="leistungen/sichtbarkeit-kampagnen.html">
+            <div class="category__media">
+              <span class="category__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+                  <path d="M3 11v2a1 1 0 0 0 1 1h2l4 4V6L6 10H4a1 1 0 0 0-1 1z" />
+                  <path d="M14 8a3 3 0 0 1 0 8" /><path d="M17 5a7 7 0 0 1 0 14" />
+                </svg>
+              </span>
+            </div>
+            <div class="category__body">
+              <h3>Sichtbarkeit &amp; Kampagnen</h3>
+              <p>SEO, Local SEO, Inhaltsstrategie sowie Google-, Meta- und TikTok-Ads.</p>
+              <div class="category__foot">
+                <span class="category__price">ab <b>900 €</b>/Mon.</span>
+                <span class="category__arrow" aria-hidden="true">→</span>
               </div>
             </div>
-          </details>
+          </a>
 
-          <details class="index__row" name="leistung">
-            <summary>
-              <span class="index__num">04</span>
-              <span class="index__name">KI &amp; Automatisierung</span>
-              <span class="index__sign" aria-hidden="true"></span>
-            </summary>
-            <div class="index__body">
-              <div></div>
-              <div>
-                <p>
-                  KI ersetzt kein Handwerk, aber sie verkürzt die Wege: Bildmaterial und Videoclips, für die früher ein
-                  Drehtag nötig war, entstehen in Stunden. Und wiederkehrende Abläufe — Anfragen erfassen, Angebote
-                  vorbereiten, Daten übertragen — laufen danach ohne Sie weiter.
-                </p>
-                <ul class="index__tags">
-                  <li>KI-Bildproduktion</li>
-                  <li>KI-Videoclips</li>
-                  <li>Social-Content</li>
-                  <li>Prozessautomatisierung</li>
-                  <li>CRM-Anbindung</li>
-                  <li>Chatbots</li>
-                  <li>Schnittstellen &amp; APIs</li>
-                </ul>
-                <p class="index__cta"><a class="link-arrow" href="leistungen/ki-automatisierung.html">Details zu KI &amp; Automatisierung</a></p>
+          <a class="category" href="leistungen/ki-automatisierung.html">
+            <div class="category__media">
+              <span class="category__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+                  <path d="M12 2 2 7l10 5 10-5-10-5Z" /><path d="M2 17l10 5 10-5M2 12l10 5 10-5" />
+                </svg>
+              </span>
+            </div>
+            <div class="category__body">
+              <h3>KI &amp; Automatisierung</h3>
+              <p>KI-Bilder und -Videoclips, Prozessautomatisierung und Chatbots.</p>
+              <div class="category__foot">
+                <span class="category__price">nach Aufwand</span>
+                <span class="category__arrow" aria-hidden="true">→</span>
               </div>
             </div>
-          </details>
+          </a>
         </div>
       </section>
 

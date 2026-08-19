@@ -8,7 +8,7 @@ const PORT=8096;
  let fail=0;
  const ok=(c,m)=>{console.log((c?'  PASS  ':'  FAIL  ')+m); if(!c)fail++;};
 
- for(const page of ['index.html','services.html','blog.html','impressum.html','404.html']){
+ for(const page of ['index.html','services.html','blog.html','impressum.html','404.html','leistungen/web-anwendungen.html']){
   const c=await b.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true,deviceScaleFactor:2});
   const p=await c.newPage();
   const errs=[]; p.on('pageerror',e=>errs.push(e.message));
@@ -30,16 +30,27 @@ const PORT=8096;
   await c.close();
  }
 
- // details/summary service index works without JS
+ // Homepage category cards are plain links (no JS needed) and content must
+ // never depend on the reveal animation having run.
  const c=await b.newContext({viewport:{width:1440,height:900},javaScriptEnabled:false});
  const p=await c.newPage();
  await p.goto(`http://127.0.0.1:${PORT}/index.html`,{waitUntil:'load'});
  console.log('\n[index.html, JavaScript DISABLED]');
  const op=await p.evaluate(()=>getComputedStyle(document.querySelector('.section-head.reveal')).opacity);
  ok(op==='1',`content visible without JS (opacity=${op})`);
- await p.click('.index__row summary'); await p.waitForTimeout(200);
- ok(await p.$eval('.index__row',e=>e.open),'service index expands without JS');
+ const catHref=await p.$eval('.category',e=>e.getAttribute('href'));
+ ok(!!catHref && catHref.includes('leistungen/'),`category cards link out without JS (href=${catHref})`);
  await c.close();
+
+ // details/summary pricing accordion works without JS (moved to the
+ // dedicated Leistung pages along with the rest of the pillar detail)
+ const c2=await b.newContext({viewport:{width:1440,height:900},javaScriptEnabled:false});
+ const p2=await c2.newPage();
+ await p2.goto(`http://127.0.0.1:${PORT}/leistungen/web-anwendungen.html`,{waitUntil:'load'});
+ console.log('\n[leistungen/web-anwendungen.html, JavaScript DISABLED]');
+ await p2.click('#preise .index__row:nth-child(2) summary'); await p2.waitForTimeout(200);
+ ok(await p2.$eval('#preise .index__row:nth-child(2)',e=>e.open),'pricing row expands without JS');
+ await c2.close();
 
  await b.close();srv.kill();
  console.log(fail?`\n${fail} FAILURES`:'\nAll interaction checks passed.');

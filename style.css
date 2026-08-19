@@ -757,6 +757,85 @@
     }
   }
 
+  /* Two-column hero on wide screens: claim on the left, a media placeholder
+     on the right — ready for a real project screenshot or a short reel once
+     one exists. Stacks on narrow screens, where the visual drops after the
+     text so it never competes with the LCP-critical headline. */
+  .hero__row {
+    display: grid;
+    gap: var(--space-8);
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 1024px) {
+    .hero__row {
+      /* Only centre the two columns against each other once there are two —
+         on a single stacked column this would default grid items to
+         content-box sizing instead of stretch, collapsing .hero__visual to
+         the width its aspect-ratio derives from its (tiny) content height. */
+      align-items: center;
+      grid-template-columns: 1.1fr 0.9fr;
+    }
+  }
+  .hero__visual {
+    position: relative;
+    inline-size: 100%;
+    aspect-ratio: 4 / 5;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: repeating-linear-gradient(135deg, var(--ink-900) 0 12px, var(--ink-850) 12px 24px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  @media (max-width: 1023px) {
+    .hero__visual {
+      /* inline-size is explicit rather than left to stretch: a block box
+         with only aspect-ratio and no definite width can end up sized from
+         its (small) content height instead of filling the row. */
+      inline-size: 100%;
+      max-inline-size: 480px;
+      aspect-ratio: 16 / 9;
+      margin-inline: auto;
+    }
+  }
+  .hero__visual::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 25% 15%, var(--accent-dim), transparent 55%);
+  }
+  .hero__visual-icon {
+    position: relative;
+    z-index: 1;
+    inline-size: 56px;
+    block-size: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: color-mix(in srgb, var(--ink-950) 55%, transparent);
+    border: 1px solid var(--line-strong);
+    color: var(--text-hi);
+    backdrop-filter: blur(4px);
+  }
+  .hero__visual-icon svg {
+    inline-size: 24px;
+    block-size: 24px;
+  }
+  .hero__visual-label {
+    position: absolute;
+    z-index: 1;
+    inset-block-end: var(--space-5);
+    inset-inline: var(--space-5);
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    letter-spacing: var(--track-wide);
+    text-transform: uppercase;
+    color: var(--text-dim);
+    text-align: center;
+  }
+
   /* A single soft field, not a neon glow. Sits behind content and is inert.
      Three layers of motion, each independently gated:
        1. A slow ambient drift, always running (pure CSS, ~26s loop).
@@ -1092,8 +1171,11 @@
   }
 
   /* -- Category cards -------------------------------------------------------
-     The services.html hub: one card per Leistung, linking through to its own
-     page rather than expanding inline. */
+     Used on both the homepage and the services.html hub — previously the
+     homepage used a text-only accordion while the hub used cards, two
+     different patterns for the same information. One visual language now,
+     everywhere: a media placeholder up top (ready for real work-in-progress
+     photos/screenshots as they arrive), content below. */
   .categories {
     display: grid;
     gap: var(--space-5);
@@ -1102,44 +1184,72 @@
   .category {
     display: flex;
     flex-direction: column;
-    gap: var(--space-4);
-    padding: var(--space-6);
     background: var(--ink-850);
     border: 1px solid var(--line);
     border-radius: var(--radius-lg);
     text-decoration: none;
     color: inherit;
-    transition: border-color var(--dur) var(--ease), background var(--dur) var(--ease);
+    overflow: hidden;
+    transition: border-color var(--dur) var(--ease), background var(--dur) var(--ease), transform var(--dur) var(--ease);
   }
   @media (hover: hover) {
     .category:hover {
       border-color: var(--accent-line);
       background: var(--ink-800);
-    }
-    .category:hover .category__icon {
-      border-color: var(--accent-line);
-      color: var(--accent);
+      transform: translateY(-3px);
     }
     .category:hover .category__arrow {
       translate: 3px 0;
       color: var(--accent);
     }
+    .category:hover .category__media::after {
+      opacity: 0.85;
+    }
   }
-  .category__icon {
-    inline-size: 48px;
-    block-size: 48px;
-    border-radius: var(--radius);
+  /* The placeholder itself: a quiet diagonal pattern with a centred icon —
+     reads as an intentional, designed empty state rather than a missing
+     image, and the label makes the intent explicit. Swap for a real
+     <picture> (keep the aspect-ratio) once photos of finished work exist. */
+  .category__media {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    background: repeating-linear-gradient(135deg, var(--ink-900) 0 10px, var(--ink-850) 10px 20px);
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--ink-900);
-    border: 1px solid var(--line);
-    color: var(--text-lo);
-    transition: border-color var(--dur) var(--ease), color var(--dur) var(--ease);
+  }
+  .category__media::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 30% 20%, var(--accent-dim), transparent 60%);
+    opacity: 0.5;
+    transition: opacity var(--dur) var(--ease);
+  }
+  .category__icon {
+    position: relative;
+    z-index: 1;
+    inline-size: 44px;
+    block-size: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: color-mix(in srgb, var(--ink-950) 55%, transparent);
+    border: 1px solid var(--line-strong);
+    color: var(--text-hi);
+    backdrop-filter: blur(4px);
   }
   .category__icon svg {
-    inline-size: 24px;
-    block-size: 24px;
+    inline-size: 20px;
+    block-size: 20px;
+  }
+  .category__body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    padding: var(--space-6);
+    flex: 1;
   }
   .category h3 {
     font-size: var(--step-1);
@@ -1218,6 +1328,61 @@
     color: var(--text-dim);
     text-align: center;
     padding-inline: var(--space-3);
+  }
+
+  /* -- Wide banner placeholder ------------------------------------------------
+     One per Leistung page, breaking out of the text column for visual
+     weight — the slot for a real project screenshot or short clip once one
+     exists for that discipline. */
+  .banner {
+    position: relative;
+    aspect-ratio: 21 / 9;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: repeating-linear-gradient(135deg, var(--ink-900) 0 12px, var(--ink-850) 12px 24px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-4);
+    flex-direction: column;
+  }
+  @media (max-width: 640px) {
+    .banner {
+      aspect-ratio: 4 / 3;
+    }
+  }
+  .banner::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 20%, var(--accent-dim), transparent 55%);
+  }
+  .banner__icon {
+    position: relative;
+    z-index: 1;
+    inline-size: 52px;
+    block-size: 52px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: color-mix(in srgb, var(--ink-950) 55%, transparent);
+    border: 1px solid var(--line-strong);
+    color: var(--text-hi);
+  }
+  .banner__icon svg {
+    inline-size: 22px;
+    block-size: 22px;
+  }
+  .banner__label {
+    position: relative;
+    z-index: 1;
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    letter-spacing: var(--track-wide);
+    text-transform: uppercase;
+    color: var(--text-dim);
   }
 
   /* -- Work --------------------------------------------------------------- */
