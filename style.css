@@ -1091,6 +1091,135 @@
     font-family: var(--font-mono);
   }
 
+  /* -- Category cards -------------------------------------------------------
+     The services.html hub: one card per Leistung, linking through to its own
+     page rather than expanding inline. */
+  .categories {
+    display: grid;
+    gap: var(--space-5);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  }
+  .category {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    padding: var(--space-6);
+    background: var(--ink-850);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    color: inherit;
+    transition: border-color var(--dur) var(--ease), background var(--dur) var(--ease);
+  }
+  @media (hover: hover) {
+    .category:hover {
+      border-color: var(--accent-line);
+      background: var(--ink-800);
+    }
+    .category:hover .category__icon {
+      border-color: var(--accent-line);
+      color: var(--accent);
+    }
+    .category:hover .category__arrow {
+      translate: 3px 0;
+      color: var(--accent);
+    }
+  }
+  .category__icon {
+    inline-size: 48px;
+    block-size: 48px;
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--ink-900);
+    border: 1px solid var(--line);
+    color: var(--text-lo);
+    transition: border-color var(--dur) var(--ease), color var(--dur) var(--ease);
+  }
+  .category__icon svg {
+    inline-size: 24px;
+    block-size: 24px;
+  }
+  .category h3 {
+    font-size: var(--step-1);
+  }
+  .category p {
+    color: var(--text-lo);
+    font-size: var(--step-0);
+    font-weight: 300;
+    flex: 1;
+  }
+  .category__foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--line);
+    font-size: var(--step--1);
+  }
+  .category__price {
+    font-family: var(--font-mono);
+    color: var(--text-dim);
+    letter-spacing: var(--track-wide);
+  }
+  .category__price b {
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .category__arrow {
+    color: var(--text-dim);
+    transition: translate var(--dur) var(--ease), color var(--dur) var(--ease);
+  }
+
+  /* -- Content showcase (UGC / photo placeholders) ---------------------------
+     Honest placeholders for real video and photo work produced for other
+     clients. Swap the placeholder markup for a real <picture>/<video> per
+     card as material becomes available; the label then changes accordingly. */
+  .showcase {
+    display: grid;
+    gap: var(--space-4);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr));
+  }
+  .showcase__card {
+    position: relative;
+    aspect-ratio: 9 / 16;
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: repeating-linear-gradient(135deg, var(--ink-850) 0 10px, var(--ink-800) 10px 20px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-3);
+  }
+  .showcase__icon {
+    inline-size: 48px;
+    block-size: 48px;
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--ink-950) 45%, transparent);
+    border: 1px solid var(--line-strong);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-hi);
+  }
+  .showcase__icon svg {
+    inline-size: 18px;
+    block-size: 18px;
+  }
+  .showcase__label {
+    font-family: var(--font-mono);
+    font-size: var(--step--1);
+    letter-spacing: var(--track-wide);
+    text-transform: uppercase;
+    color: var(--text-dim);
+    text-align: center;
+    padding-inline: var(--space-3);
+  }
+
   /* -- Work --------------------------------------------------------------- */
   .work {
     display: grid;
@@ -1176,6 +1305,37 @@
     margin-top: var(--space-5);
   }
 
+  /* A client quote attached to its own case, rather than standing alone in a
+     dedicated "reviews" section — honest about there being one quote for one
+     project, not a review collection. */
+  .case__quote {
+    margin-top: var(--space-5);
+    padding-top: var(--space-5);
+    border-top: 1px solid var(--line);
+  }
+  .case__quote blockquote {
+    font-size: var(--step-0);
+    color: var(--text);
+    font-style: italic;
+    line-height: 1.6;
+  }
+  .case__quote figcaption {
+    margin-top: var(--space-3);
+    font-size: var(--step--1);
+    color: var(--text-dim);
+  }
+  .case__quote figcaption b {
+    color: var(--text-lo);
+    font-style: normal;
+  }
+  .case__quote small {
+    display: block;
+    margin-top: var(--space-2);
+    font-style: normal;
+    color: var(--text-dim);
+    line-height: 1.5;
+  }
+
   .play {
     position: absolute;
     inset-block-end: var(--space-3);
@@ -1225,40 +1385,6 @@
     color: var(--text-lo);
     font-size: var(--step-0);
     font-weight: 300;
-  }
-
-  /* -- Quote -------------------------------------------------------------- */
-  .quote {
-    border-inline-start: 2px solid var(--accent);
-    padding-inline-start: var(--space-6);
-  }
-  .quote blockquote {
-    font-family: var(--font-display);
-    font-size: var(--step-2);
-    font-weight: 500;
-    line-height: 1.35;
-    letter-spacing: var(--track-normal);
-    color: var(--text-hi);
-    text-wrap: pretty;
-  }
-  .quote figcaption {
-    margin-top: var(--space-5);
-    font-size: var(--step--1);
-    color: var(--text-lo);
-  }
-  .quote figcaption b {
-    color: var(--text-hi);
-    display: block;
-    font-weight: 600;
-  }
-  /* Related-party disclosure. Omitting this on a testimonial from a relative
-     is exactly the kind of thing § 5a UWG treats as a misleading omission. */
-  .quote__disclosure {
-    margin-top: var(--space-4);
-    font-size: var(--step--1);
-    color: var(--text-dim);
-    font-style: italic;
-    max-width: 52ch;
   }
 
   /* -- Form --------------------------------------------------------------- */
