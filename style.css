@@ -1261,30 +1261,44 @@
   /* A client quote attached to its own case, rather than standing alone in a
      dedicated "reviews" section — honest about there being one quote for one
      project, not a review collection. */
-  .case__quote {
-    margin-top: var(--space-5);
-    padding-top: var(--space-5);
+  /* -- Featured testimonial -------------------------------------------------
+     Standalone rather than tucked inside a case card, so the one genuine
+     testimonial we have reads as a considered feature, not filler. */
+  .quote {
+    margin-top: var(--space-9);
+    padding-top: var(--space-8);
     border-top: 1px solid var(--line);
+    text-align: center;
   }
-  .case__quote blockquote {
-    font-size: var(--step-0);
-    color: var(--text);
-    font-style: italic;
-    line-height: 1.6;
+  .quote__mark {
+    display: block;
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 2rem + 4vw, 5rem);
+    line-height: 1;
+    color: var(--accent);
   }
-  .case__quote figcaption {
-    margin-top: var(--space-3);
+  .quote blockquote {
+    margin-top: var(--space-2);
+    font-size: var(--step-2);
+    font-weight: 300;
+    color: var(--text-hi);
+    line-height: 1.45;
+    max-width: 44ch;
+    margin-inline: auto;
+  }
+  .quote figcaption {
+    margin-top: var(--space-6);
     font-size: var(--step--1);
     color: var(--text-dim);
   }
-  .case__quote figcaption b {
+  .quote figcaption b {
     color: var(--text-lo);
-    font-style: normal;
   }
-  .case__quote small {
+  .quote small {
     display: block;
-    margin-top: var(--space-2);
-    font-style: normal;
+    margin-top: var(--space-3);
+    max-width: 52ch;
+    margin-inline: auto;
     color: var(--text-dim);
     line-height: 1.5;
   }
