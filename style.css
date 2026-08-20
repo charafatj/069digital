@@ -774,7 +774,11 @@
     border-radius: var(--radius-lg);
     overflow: hidden;
     border: 1px solid var(--line);
-    background: repeating-linear-gradient(135deg, var(--ink-900) 0 12px, var(--ink-850) 12px 24px);
+    background:
+      radial-gradient(circle at 30% 20%, var(--accent-dim), transparent 55%),
+      linear-gradient(var(--ink-900), var(--ink-900)),
+      repeating-linear-gradient(90deg, var(--line) 0 1px, transparent 1px 48px),
+      repeating-linear-gradient(0deg, var(--line) 0 1px, transparent 1px 48px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -790,41 +794,94 @@
       margin-inline: auto;
     }
   }
-  .hero__visual::before {
-    content: '';
+
+  /* An abstract "orbit" standing in for a photo: the four real service
+     areas as satellites around a single hub, echoing the "ein Partner"
+     claim instead of a generic empty-state box. Purely decorative
+     (aria-hidden), so it carries no content of its own. */
+  .orbit {
+    position: relative;
+    inline-size: min(210px, 60%);
+    aspect-ratio: 1;
+    --orbit-r: 90px;
+  }
+  @media (min-width: 1024px) {
+    .orbit {
+      inline-size: min(280px, 65%);
+      --orbit-r: 120px;
+    }
+  }
+  .orbit__ring {
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at 25% 15%, var(--accent-dim), transparent 55%);
+    border-radius: 50%;
+    border: 1px dashed var(--line-strong);
   }
-  .hero__visual-icon {
-    position: relative;
-    z-index: 1;
-    inline-size: 56px;
-    block-size: 56px;
+  .orbit__ring--inner {
+    inset: 22%;
+    border-style: solid;
+    border-color: var(--line);
+  }
+  .orbit__hub {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    inline-size: 25%;
+    block-size: 25%;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: color-mix(in srgb, var(--ink-950) 55%, transparent);
+    background: var(--accent);
+    color: var(--accent-ink);
+    box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 14%, transparent);
+  }
+  .orbit__hub svg {
+    inline-size: 45%;
+    block-size: 45%;
+  }
+  .orbit__spoke {
+    position: absolute;
+    inset-block-start: 50%;
+    inset-inline-start: 50%;
+    inline-size: var(--orbit-r);
+    block-size: 1px;
+    background: linear-gradient(90deg, var(--line-strong), transparent);
+    transform-origin: 0 50%;
+    rotate: var(--a);
+  }
+  .orbit__node {
+    position: absolute;
+    inset-block-start: 50%;
+    inset-inline-start: 50%;
+    inline-size: 42px;
+    block-size: 42px;
+    margin-block-start: -21px;
+    margin-inline-start: -21px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--ink-850);
     border: 1px solid var(--line-strong);
     color: var(--text-hi);
-    backdrop-filter: blur(4px);
+    translate: calc(cos(var(--a)) * var(--orbit-r)) calc(sin(var(--a)) * var(--orbit-r));
   }
-  .hero__visual-icon svg {
-    inline-size: 24px;
-    block-size: 24px;
+  .orbit__node svg {
+    inline-size: 18px;
+    block-size: 18px;
   }
-  .hero__visual-label {
-    position: absolute;
-    z-index: 1;
-    inset-block-end: var(--space-5);
-    inset-inline: var(--space-5);
-    font-family: var(--font-mono);
-    font-size: var(--step--1);
-    letter-spacing: var(--track-wide);
-    text-transform: uppercase;
-    color: var(--text-dim);
-    text-align: center;
+  @media (prefers-reduced-motion: no-preference) {
+    .orbit__ring {
+      animation: orbitSpin 90s linear infinite;
+    }
+    .orbit__ring--inner {
+      animation-duration: 60s;
+      animation-direction: reverse;
+    }
+    @keyframes orbitSpin {
+      to { rotate: 360deg; }
+    }
   }
 
   /* A single soft field, not a neon glow. Sits behind content and is inert;
