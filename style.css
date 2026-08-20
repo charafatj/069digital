@@ -748,142 +748,6 @@
     }
   }
 
-  /* Two-column hero on wide screens: claim on the left, a media placeholder
-     on the right — ready for a real project screenshot or a short reel once
-     one exists. Stacks on narrow screens, where the visual drops after the
-     text so it never competes with the LCP-critical headline. */
-  .hero__row {
-    display: grid;
-    gap: var(--space-8);
-    grid-template-columns: 1fr;
-  }
-  @media (min-width: 1024px) {
-    .hero__row {
-      /* Only centre the two columns against each other once there are two —
-         on a single stacked column this would default grid items to
-         content-box sizing instead of stretch, collapsing .hero__visual to
-         the width its aspect-ratio derives from its (tiny) content height. */
-      align-items: center;
-      grid-template-columns: 1.1fr 0.9fr;
-    }
-  }
-  .hero__visual {
-    position: relative;
-    inline-size: 100%;
-    aspect-ratio: 4 / 5;
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    border: 1px solid var(--line);
-    background:
-      radial-gradient(circle at 30% 20%, var(--accent-dim), transparent 55%),
-      linear-gradient(var(--ink-900), var(--ink-900)),
-      repeating-linear-gradient(90deg, var(--line) 0 1px, transparent 1px 48px),
-      repeating-linear-gradient(0deg, var(--line) 0 1px, transparent 1px 48px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  @media (max-width: 1023px) {
-    .hero__visual {
-      /* inline-size is explicit rather than left to stretch: a block box
-         with only aspect-ratio and no definite width can end up sized from
-         its (small) content height instead of filling the row. */
-      inline-size: 100%;
-      max-inline-size: 480px;
-      aspect-ratio: 16 / 9;
-      margin-inline: auto;
-    }
-  }
-
-  /* An abstract "orbit" standing in for a photo: the four real service
-     areas as satellites around a single hub, echoing the "ein Partner"
-     claim instead of a generic empty-state box. Purely decorative
-     (aria-hidden), so it carries no content of its own. */
-  .orbit {
-    position: relative;
-    inline-size: min(210px, 60%);
-    aspect-ratio: 1;
-    --orbit-r: 90px;
-  }
-  @media (min-width: 1024px) {
-    .orbit {
-      inline-size: min(280px, 65%);
-      --orbit-r: 120px;
-    }
-  }
-  .orbit__ring {
-    position: absolute;
-    inset: 0;
-    border-radius: 50%;
-    border: 1px dashed var(--line-strong);
-  }
-  .orbit__ring--inner {
-    inset: 22%;
-    border-style: solid;
-    border-color: var(--line);
-  }
-  .orbit__hub {
-    position: absolute;
-    inset: 0;
-    margin: auto;
-    inline-size: 25%;
-    block-size: 25%;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--accent);
-    color: var(--accent-ink);
-    box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 14%, transparent);
-  }
-  .orbit__hub svg {
-    inline-size: 45%;
-    block-size: 45%;
-  }
-  .orbit__spoke {
-    position: absolute;
-    inset-block-start: 50%;
-    inset-inline-start: 50%;
-    inline-size: var(--orbit-r);
-    block-size: 1px;
-    background: linear-gradient(90deg, var(--line-strong), transparent);
-    transform-origin: 0 50%;
-    rotate: var(--a);
-  }
-  .orbit__node {
-    position: absolute;
-    inset-block-start: 50%;
-    inset-inline-start: 50%;
-    inline-size: 42px;
-    block-size: 42px;
-    margin-block-start: -21px;
-    margin-inline-start: -21px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--ink-850);
-    border: 1px solid var(--line-strong);
-    color: var(--text-hi);
-    translate: calc(cos(var(--a)) * var(--orbit-r)) calc(sin(var(--a)) * var(--orbit-r));
-  }
-  .orbit__node svg {
-    inline-size: 18px;
-    block-size: 18px;
-  }
-  @media (prefers-reduced-motion: no-preference) {
-    .orbit__ring {
-      animation: orbitSpin 90s linear infinite;
-    }
-    .orbit__ring--inner {
-      animation-duration: 60s;
-      animation-direction: reverse;
-    }
-    @keyframes orbitSpin {
-      to { rotate: 360deg; }
-    }
-  }
-
   /* A single soft field, not a neon glow. Sits behind content and is inert;
      a slow ambient drift is the only motion, and only when motion is
      welcome at all. */
@@ -1202,47 +1066,26 @@
       translate: 3px 0;
       color: var(--accent);
     }
-    .category:hover .category__media::after {
-      opacity: 0.85;
+    .category:hover .category__icon {
+      color: var(--accent);
+      border-color: var(--accent-line);
     }
   }
-  /* The placeholder itself: a quiet diagonal pattern with a centred icon —
-     reads as an intentional, designed empty state rather than a missing
-     image, and the label makes the intent explicit. Swap for a real
-     <picture> (keep the aspect-ratio) once photos of finished work exist. */
-  .category__media {
-    position: relative;
-    aspect-ratio: 4 / 3;
-    background: repeating-linear-gradient(135deg, var(--ink-900) 0 10px, var(--ink-850) 10px 20px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .category__media::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at 30% 20%, var(--accent-dim), transparent 60%);
-    opacity: 0.5;
-    transition: opacity var(--dur) var(--ease);
-  }
   .category__icon {
-    position: relative;
-    z-index: 1;
-    inline-size: 56px;
-    block-size: 56px;
+    inline-size: 44px;
+    block-size: 44px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: color-mix(in srgb, var(--ink-950) 55%, transparent);
+    background: var(--ink-900);
     border: 1px solid var(--line-strong);
     color: var(--text-hi);
-    backdrop-filter: blur(4px);
+    transition: color var(--dur) var(--ease), border-color var(--dur) var(--ease);
   }
   .category__icon svg {
-    inline-size: 26px;
-    block-size: 26px;
+    inline-size: 20px;
+    block-size: 20px;
   }
   .category__body {
     display: flex;
@@ -1328,61 +1171,6 @@
     color: var(--text-dim);
     text-align: center;
     padding-inline: var(--space-3);
-  }
-
-  /* -- Wide banner placeholder ------------------------------------------------
-     One per Leistung page, breaking out of the text column for visual
-     weight — the slot for a real project screenshot or short clip once one
-     exists for that discipline. */
-  .banner {
-    position: relative;
-    aspect-ratio: 21 / 9;
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    border: 1px solid var(--line);
-    background: repeating-linear-gradient(135deg, var(--ink-900) 0 12px, var(--ink-850) 12px 24px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--space-4);
-    flex-direction: column;
-  }
-  @media (max-width: 640px) {
-    .banner {
-      aspect-ratio: 4 / 3;
-    }
-  }
-  .banner::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at 20% 20%, var(--accent-dim), transparent 55%);
-  }
-  .banner__icon {
-    position: relative;
-    z-index: 1;
-    inline-size: 64px;
-    block-size: 64px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: color-mix(in srgb, var(--ink-950) 55%, transparent);
-    border: 1px solid var(--line-strong);
-    color: var(--text-hi);
-  }
-  .banner__icon svg {
-    inline-size: 28px;
-    block-size: 28px;
-  }
-  .banner__label {
-    position: relative;
-    z-index: 1;
-    font-family: var(--font-mono);
-    font-size: var(--step--1);
-    letter-spacing: var(--track-wide);
-    text-transform: uppercase;
-    color: var(--text-dim);
   }
 
   /* -- Work --------------------------------------------------------------- */
