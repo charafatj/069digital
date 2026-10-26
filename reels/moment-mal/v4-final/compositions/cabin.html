@@ -1,0 +1,126 @@
+<template>
+  <style>
+@font-face { font-family: "MM"; src: url("assets/fonts/mm-600.woff2") format("woff2"); font-weight: 600; }
+@font-face { font-family: "MM"; src: url("assets/fonts/mm-800.woff2") format("woff2"); font-weight: 800; }
+@font-face { font-family: "MM"; src: url("assets/fonts/mm-900.woff2") format("woff2"); font-weight: 900; }
+#root { position: absolute; inset: 0; font-family: "MM", sans-serif; overflow: hidden; }
+.full { position: absolute; inset: 0; }
+.big { position: absolute; left: 0; width: 100%; text-align: center; font-weight: 900; letter-spacing: -.02em; line-height: 1.02; }
+.big span { display: inline-block; }
+.lbl { position: absolute; background: #fff; border-radius: 10px; padding: 20px 28px 22px; box-shadow: 0 10px 28px rgba(10,16,34,.16); display: grid; }
+.lbl .sm { font-weight: 800; font-size: 28px; letter-spacing: .1em; text-transform: uppercase; }
+.lbl .vals { display: grid; }
+.lbl .val { grid-area: 1 / 1; font-weight: 800; font-size: 52px; color: #13203F; line-height: 1.12; white-space: nowrap; }
+svg { overflow: visible; }
+</style>
+  <div id="root" data-composition-id="cabin" data-width="1080" data-height="1920">
+    <svg id="cabin-bgsvg" class="full" width="1080" height="1920" viewBox="0 0 1080 1920">
+      <rect id="cabin-bg" width="1080" height="1920" fill="#F6F1E8"/>
+      <g id="cabin-cam">
+<rect x="0" y="0" width="1080" height="150" fill="#EDE5D8"/><rect x="0" y="150" width="1080" height="14" fill="#E2D8C8"/>
+<rect x="0" y="1640" width="1080" height="280" fill="#24365F"/>
+<rect x="362" y="416" width="380" height="590" rx="190" fill="#E6DDCF"/>
+<rect x="350" y="400" width="380" height="590" rx="190" fill="#fff"/>
+<clipPath id="ca-wc"><rect x="396" y="446" width="288" height="498" rx="144"/></clipPath>
+<g clip-path="url(#ca-wc)"><rect x="396" y="446" width="288" height="498" fill="#9CCBFF"/><rect x="396" y="780" width="288" height="164" fill="#CFE6FF"/><g id="ca-cl"><g fill="#FFFFFF" opacity="1.0"><circle cx="404.0" cy="611.0" r="46.2"/><circle cx="448.0" cy="580.2" r="61.6"/><circle cx="507.4" cy="591.2" r="52.8"/><circle cx="549.2" cy="615.4" r="39.6"/><circle cx="470.0" cy="622.0" r="48.4"/><rect x="360.0" y="611.0" width="220.0" height="44.0" rx="22.0"/></g><g fill="#FFFFFF" opacity="0.9"><circle cx="652.0" cy="768.0" r="33.6"/><circle cx="684.0" cy="745.6" r="44.8"/><circle cx="727.2" cy="753.6" r="38.4"/><circle cx="757.6" cy="771.2" r="28.8"/><circle cx="700.0" cy="776.0" r="35.2"/><rect x="620.0" y="768.0" width="160.0" height="32.0" rx="16.0"/></g><g fill="#FFFFFF" opacity="1.0"><circle cx="442.0" cy="933.0" r="54.6"/><circle cx="494.0" cy="896.6" r="72.8"/><circle cx="564.2" cy="909.6" r="62.4"/><circle cx="613.6" cy="938.2" r="46.8"/><circle cx="520.0" cy="946.0" r="57.2"/><rect x="390.0" y="933.0" width="260.0" height="52.0" rx="26.0"/></g><g fill="#FFFFFF" opacity="1.0"><circle cx="840.0" cy="670.0" r="42.0"/><circle cx="880.0" cy="642.0" r="56.0"/><circle cx="934.0" cy="652.0" r="48.0"/><circle cx="972.0" cy="674.0" r="36.0"/><circle cx="900.0" cy="680.0" r="44.0"/><rect x="800.0" y="670.0" width="200.0" height="40.0" rx="20.0"/></g></g></g>
+<rect x="396" y="446" width="288" height="64" rx="32" fill="#F2EDE4"/>
+<circle id="ca-ring" cx="540" cy="912" r="34" fill="none" stroke="#FF6A3D" stroke-width="7" opacity="0"/><circle cx="540" cy="912" r="9" fill="#13203F"/>
+<rect x="30" y="1300" width="340" height="640" rx="60" fill="#24365F"/>
+<g id="co"><g transform="translate(210 1915) scale(0.8)">
+  <ellipse cx="0" cy="4" rx="150" ry="18" fill="#13203F" opacity=".13"/>
+  <g id="co-body">
+    <rect x="-66" y="-118" width="44" height="100" rx="20" fill="#E2552B"/><rect x="22" y="-118" width="44" height="100" rx="20" fill="#E2552B"/>
+    <rect x="-96" y="-34" width="80" height="36" rx="16" fill="#2EE6B6"/><rect x="16" y="-34" width="80" height="36" rx="16" fill="#2EE6B6"/>
+    <g transform="translate(-104 -280)"><g id="co-armL"><rect x="-24" y="-10" width="46" height="150" rx="23" fill="#E2552B"/><circle cx="-1" cy="146" r="30" fill="#2EE6B6"/></g></g>
+    <g transform="translate(104 -280)"><g id="co-armR"><rect x="-22" y="-10" width="46" height="150" rx="23" fill="#E2552B"/><circle cx="1" cy="146" r="30" fill="#2EE6B6"/></g></g>
+    <rect x="-100" y="-306" width="200" height="200" rx="54" fill="#FF6A3D"/>
+    <path d="M40 -306 L46 -306 Q100 -306 100 -252 L100 -160 Q100 -106 46 -106 L40 -106 Z" fill="#E2552B" opacity=".45"/>
+    <rect x="-100" y="-168" width="200" height="24" fill="#2EE6B6"/>
+    <rect x="-30" y="-338" width="60" height="40" rx="12" fill="#1FB892"/>
+  </g>
+  <g transform="translate(0 -330)"><g id="co-head">
+    <path d="M-200 -90 Q-200 -330 0 -330 Q200 -330 200 -90 L200 -50 Q200 0 150 0 L-150 0 Q-200 0 -200 -50 Z" fill="#FF6A3D"/>
+    <path d="M70 -318 Q200 -280 200 -90 L200 -50 Q200 0 150 0 L70 0 Z" fill="#E2552B" opacity=".4"/>
+    <rect x="-204" y="-262" width="408" height="28" rx="14" fill="#2EE6B6"/>
+    <rect x="-202" y="-34" width="404" height="36" rx="18" fill="#1FB892"/>
+    <g id="co-brows"><rect id="co-browL" x="-150" y="-212" width="112" height="22" rx="11" fill="#13203F"/><rect id="co-browR" x="38" y="-212" width="112" height="22" rx="11" fill="#13203F"/></g>
+    <g id="co-eyes"><circle cx="-82" cy="-128" r="60" fill="#13203F"/><circle cx="82" cy="-128" r="60" fill="#13203F"/>
+      <circle cx="-100" cy="-152" r="18" fill="#fff"/><circle cx="64" cy="-152" r="18" fill="#fff"/><circle cx="-64" cy="-108" r="7" fill="#fff" opacity=".7"/><circle cx="100" cy="-108" r="7" fill="#fff" opacity=".7"/></g>
+    <rect id="co-mouth" x="-30" y="-62" width="60" height="14" rx="7" fill="#13203F"/>
+  </g></g>
+</g></g>
+      </g>
+    </svg>
+<div id="cabin-q1" class="clip full" data-start="3.15" data-duration="1.50"><div id="cabin-q1-c" style="position:absolute;left:600px;top:860px;width:76px;height:76px;border-radius:38px;background:#FF6A3D;color:#fff;font-weight:900;font-size:52px;display:grid;place-items:center">?</div></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#ca-cl", {x: 0}, {x: -200, duration: 5.0, ease: "none"}, 0);tl.set("#co-eyes", {x: 22, y: -10}, 0); tl.fromTo("#co-head", {rotation: 0, transformOrigin: "50% 100%"}, {rotation: 6, transformOrigin: "50% 100%", duration: 0.5, ease: "power2.inOut"}, 0.3);tl.fromTo("#cabin-cam", {scale: 1.15, transformOrigin: "540px 700px"}, {scale: 1, transformOrigin: "540px 700px", duration: 0.6, ease: "expo.out"}, 0);tl.fromTo("#ca-ring", {opacity: 0, scale: 0.5, transformOrigin: "50% 50%"}, {opacity: 1, scale: 1, transformOrigin: "50% 50%", duration: 0.35, ease: "back.out(2)"}, 3.00);tl.to("#cabin-cam", {scale: 7, transformOrigin: "540px 700px", duration: 0.42, ease: "power3.in"}, 4.58);
+    tl.to("#co-eyes", {scaleY: 0.12, transformOrigin: "50% 50%", duration: 0.06, ease: "power2.in"}, 1.40); tl.to("#co-eyes", {scaleY: 1, transformOrigin: "50% 50%", duration: 0.09, ease: "power2.out"}, 1.47);
+    tl.to("#co-eyes", {scaleY: 0.12, transformOrigin: "50% 50%", duration: 0.06, ease: "power2.in"}, 3.60); tl.to("#co-eyes", {scaleY: 1, transformOrigin: "50% 50%", duration: 0.09, ease: "power2.out"}, 3.67);
+    tl.to("#co-mouth", {scaleY: 3.13, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 0.00);
+    tl.to("#co-mouth", {scaleY: 1.96, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 0.08);
+    tl.to("#co-mouth", {scaleY: 2.46, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 0.16);
+    tl.to("#co-mouth", {scaleY: 1.73, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 0.24);
+    tl.to("#co-mouth", {scaleY: 3.44, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 0.32);
+    tl.to("#co-mouth", {scaleY: 2.95, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 0.40);
+    tl.to("#co-mouth", {scaleY: 3.00, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 0.48);
+    tl.to("#co-mouth", {scaleY: 1.65, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 0.56);
+    tl.to("#co-mouth", {scaleY: 1.75, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 0.64);
+    tl.to("#co-mouth", {scaleY: 1.47, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 0.72);
+    tl.to("#co-mouth", {scaleY: 1.44, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 0.80);
+    tl.to("#co-mouth", {scaleY: 2.04, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 0.88);
+    tl.to("#co-mouth", {scaleY: 1.18, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 0.96);
+    tl.to("#co-mouth", {scaleY: 2.12, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 1.04);
+    tl.to("#co-mouth", {scaleY: 1.86, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 1.12);
+    tl.to("#co-mouth", {scaleY: 1.65, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 1.20);
+    tl.to("#co-mouth", {scaleY: 3.60, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 1.28);
+    tl.to("#co-mouth", {scaleY: 2.20, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 1.36);
+    tl.to("#co-mouth", {scaleY: 1.47, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 1.44);
+    tl.to("#co-mouth", {scaleY: 1.60, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 1.52);
+    tl.to("#co-mouth", {scaleY: 2.22, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 1.60);
+    tl.to("#co-mouth", {scaleY: 1.21, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 1.68);
+    tl.to("#co-mouth", {scaleY: 2.92, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 1.76);
+    tl.to("#co-mouth", {scaleY: 1.91, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 1.84);
+    tl.to("#co-mouth", {scaleY: 1.39, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 1.92);
+    tl.to("#co-mouth", {scaleY: 3.44, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 2.00);
+    tl.to("#co-mouth", {scaleY: 3.60, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 2.08);
+    tl.to("#co-mouth", {scaleY: 1.60, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 2.16);
+    tl.to("#co-mouth", {scaleY: 2.74, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 2.24);
+    tl.to("#co-mouth", {scaleY: 1.62, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 2.32);
+    tl.to("#co-mouth", {scaleY: 2.09, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 2.40);
+    tl.to("#co-mouth", {scaleY: 2.01, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 2.48);
+    tl.to("#co-mouth", {scaleY: 1.31, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 2.56);
+    tl.to("#co-mouth", {scaleY: 1.42, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 2.64);
+    tl.to("#co-mouth", {scaleY: 3.31, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 2.72);
+    tl.to("#co-mouth", {scaleY: 2.92, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 2.80);
+    tl.to("#co-mouth", {scaleY: 2.69, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 2.88);
+    tl.to("#co-mouth", {scaleY: 1.49, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 2.96);
+    tl.to("#co-mouth", {scaleY: 1.08, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 3.04);
+    tl.to("#co-mouth", {scaleY: 1.08, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 3.12);
+    tl.to("#co-mouth", {scaleY: 1.03, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 3.20);
+    tl.to("#co-mouth", {scaleY: 1.03, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 3.28);
+    tl.to("#co-mouth", {scaleY: 2.46, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 3.36);
+    tl.to("#co-mouth", {scaleY: 1.68, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 3.44);
+    tl.to("#co-mouth", {scaleY: 1.55, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 3.52);
+    tl.to("#co-mouth", {scaleY: 2.22, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 3.60);
+    tl.to("#co-mouth", {scaleY: 1.34, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 3.68);
+    tl.to("#co-mouth", {scaleY: 1.60, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 3.76);
+    tl.to("#co-mouth", {scaleY: 2.98, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 3.84);
+    tl.to("#co-mouth", {scaleY: 1.34, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 3.92);
+    tl.to("#co-mouth", {scaleY: 1.52, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 4.00);
+    tl.to("#co-mouth", {scaleY: 1.16, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 4.08);
+    tl.to("#co-mouth", {scaleY: 1.13, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 4.16);
+    tl.to("#co-mouth", {scaleY: 1.03, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 4.24);
+    tl.to("#co-mouth", {scaleY: 1.03, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 4.32);
+    tl.to("#co-mouth", {scaleY: 1.05, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 4.40);
+    tl.to("#co-mouth", {scaleY: 1.05, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 4.48);
+    tl.to("#co-mouth", {scaleY: 1.08, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 4.56);
+    tl.to("#co-mouth", {scaleY: 1.08, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 4.64);
+    tl.to("#co-mouth", {scaleY: 1.03, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 4.72);
+    tl.to("#co-mouth", {scaleY: 1.00, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 4.80);
+    tl.to("#co-mouth", {scaleY: 1.00, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 4.88);
+    tl.fromTo("#cabin-q1-c", {scale: 0}, {scale: 1, duration: 0.35, ease: "back.out(2)"}, 3.15);
+    window.__timelines["cabin"] = tl;
+  </script>
+</template>
