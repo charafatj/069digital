@@ -1,0 +1,79 @@
+<template>
+  <style>
+@font-face { font-family: "MM"; src: url("assets/fonts/mm-600.woff2") format("woff2"); font-weight: 600; }
+@font-face { font-family: "MM"; src: url("assets/fonts/mm-800.woff2") format("woff2"); font-weight: 800; }
+@font-face { font-family: "MM"; src: url("assets/fonts/mm-900.woff2") format("woff2"); font-weight: 900; }
+#root { position: absolute; inset: 0; font-family: "MM", sans-serif; overflow: hidden; }
+.full { position: absolute; inset: 0; }
+.big { position: absolute; left: 0; width: 100%; text-align: center; font-weight: 900; letter-spacing: -.02em; line-height: 1.02; }
+.big span { display: inline-block; }
+.lbl { position: absolute; background: #fff; border-radius: 10px; padding: 20px 28px 22px; box-shadow: 0 10px 28px rgba(10,16,34,.16); display: grid; }
+.lbl .sm { font-weight: 800; font-size: 28px; letter-spacing: .1em; text-transform: uppercase; }
+.lbl .vals { display: grid; }
+.lbl .val { grid-area: 1 / 1; font-weight: 800; font-size: 52px; color: #13203F; line-height: 1.12; white-space: nowrap; }
+svg { overflow: visible; }
+.stage { position: absolute; inset: 0; perspective: 1800px; perspective-origin: 540px 960px; overflow: hidden; }
+.p3 { position: absolute; inset: 0; transform-style: preserve-3d; }
+.lay { position: absolute; left: 0; top: 0; }
+</style>
+  <div id="root" data-composition-id="tube" data-width="1080" data-height="1920">
+    <div id="tube-bgsvg" class="stage" style="background:#EAF4FF">
+      <div id="tube-cam" class="p3"><div id="tube-orbit" class="p3">
+<svg id="tube-L0" class="lay" width="1080" height="1920" viewBox="0 0 1080 1920" style="transform:translateZ(-800px) scale(1.4444);"><rect id="tube-bg" x="-700" y="-700" width="2480" height="3320" fill="#EAF4FF"/>
+<g fill="#fff" opacity="0.8"><circle cx="60.0" cy="1535.0" r="63.0"/><circle cx="120.0" cy="1493.0" r="84.0"/><circle cx="201.0" cy="1508.0" r="72.0"/><circle cx="258.0" cy="1541.0" r="54.0"/><circle cx="150.0" cy="1550.0" r="66.0"/><rect x="0.0" y="1535.0" width="300.0" height="60.0" rx="30.0"/></g><g fill="#fff" opacity="0.8"><circle cx="858.0" cy="1712.0" r="50.4"/><circle cx="906.0" cy="1678.4" r="67.2"/><circle cx="970.8" cy="1690.4" r="57.6"/><circle cx="1016.4" cy="1716.8" r="43.2"/><circle cx="930.0" cy="1724.0" r="52.8"/><rect x="810.0" y="1712.0" width="240.0" height="48.0" rx="24.0"/></g><g fill="#fff" opacity="0.8"><circle cx="66.0" cy="829.0" r="37.8"/><circle cx="102.0" cy="803.8" r="50.4"/><circle cx="150.6" cy="812.8" r="43.2"/><circle cx="184.8" cy="832.6" r="32.4"/><circle cx="120.0" cy="838.0" r="39.6"/><rect x="30.0" y="829.0" width="180.0" height="36.0" rx="18.0"/></g><g fill="#fff" opacity="0.8"><circle cx="920.0" cy="910.0" r="42.0"/><circle cx="960.0" cy="882.0" r="56.0"/><circle cx="1014.0" cy="892.0" r="48.0"/><circle cx="1052.0" cy="914.0" r="36.0"/><circle cx="980.0" cy="920.0" r="44.0"/><rect x="880.0" y="910.0" width="200.0" height="40.0" rx="20.0"/></g>
+</svg>
+<svg id="tube-L1" class="lay" width="1080" height="1920" viewBox="0 0 1080 1920" style="transform:translateZ(0px) scale(1.0000);filter:drop-shadow(0 16px 14px rgba(19,32,63,.20)) drop-shadow(0 3px 3px rgba(19,32,63,.16));">
+<g id="tb-ring"><circle cx="540" cy="1000" r="300" fill="#FFF1E4"/><circle cx="540" cy="1000" r="300" fill="none" stroke="#fff" stroke-width="44"/><circle cx="540" cy="1000" r="324" fill="none" stroke="#FF6A3D" stroke-width="6"/>
+<rect x="300" y="1112" width="480" height="14" rx="7" fill="#A9B4C4"/><rect x="410" y="1060" width="44" height="54" rx="10" fill="#24365F"/><rect x="410" y="1030" width="14" height="70" rx="7" fill="#24365F"/><rect x="470" y="1060" width="44" height="54" rx="10" fill="#24365F"/><rect x="470" y="1030" width="14" height="70" rx="7" fill="#24365F"/><rect x="590" y="1060" width="44" height="54" rx="10" fill="#24365F"/><rect x="590" y="1030" width="14" height="70" rx="7" fill="#24365F"/><rect x="650" y="1060" width="44" height="54" rx="10" fill="#24365F"/><rect x="650" y="1030" width="14" height="70" rx="7" fill="#24365F"/><g id="tbo"><g transform="translate(540 1112) scale(0.17)">
+  <ellipse cx="0" cy="4" rx="150" ry="18" fill="#13203F" opacity=".13"/>
+  <g id="tbo-body">
+    <rect x="-66" y="-118" width="44" height="100" rx="20" fill="#E2552B"/><rect x="22" y="-118" width="44" height="100" rx="20" fill="#E2552B"/>
+    <rect x="-96" y="-34" width="80" height="36" rx="16" fill="#2EE6B6"/><rect x="16" y="-34" width="80" height="36" rx="16" fill="#2EE6B6"/>
+    <g transform="translate(-104 -280)"><g id="tbo-armL"><rect x="-24" y="-10" width="46" height="150" rx="23" fill="#E2552B"/><circle cx="-1" cy="146" r="30" fill="#2EE6B6"/></g></g>
+    <g transform="translate(104 -280)"><g id="tbo-armR"><rect x="-22" y="-10" width="46" height="150" rx="23" fill="#E2552B"/><circle cx="1" cy="146" r="30" fill="#2EE6B6"/></g></g>
+    <rect x="-100" y="-306" width="200" height="200" rx="54" fill="#FF6A3D"/>
+    <path d="M40 -306 L46 -306 Q100 -306 100 -252 L100 -160 Q100 -106 46 -106 L40 -106 Z" fill="#E2552B" opacity=".45"/>
+    <rect x="-100" y="-168" width="200" height="24" fill="#2EE6B6"/>
+    <rect x="-30" y="-338" width="60" height="40" rx="12" fill="#1FB892"/>
+  </g>
+  <g transform="translate(0 -330)"><g id="tbo-head">
+    <path d="M-200 -90 Q-200 -330 0 -330 Q200 -330 200 -90 L200 -50 Q200 0 150 0 L-150 0 Q-200 0 -200 -50 Z" fill="#FF6A3D"/>
+    <path d="M70 -318 Q200 -280 200 -90 L200 -50 Q200 0 150 0 L70 0 Z" fill="#E2552B" opacity=".4"/>
+    <rect x="-204" y="-262" width="408" height="28" rx="14" fill="#2EE6B6"/>
+    <rect x="-202" y="-34" width="404" height="36" rx="18" fill="#1FB892"/>
+    <g id="tbo-brows"><rect id="tbo-browL" x="-150" y="-212" width="112" height="22" rx="11" fill="#13203F"/><rect id="tbo-browR" x="38" y="-212" width="112" height="22" rx="11" fill="#13203F"/></g>
+    <g id="tbo-eyes"><circle cx="-82" cy="-128" r="60" fill="#13203F"/><circle cx="82" cy="-128" r="60" fill="#13203F"/>
+      <circle cx="-100" cy="-152" r="18" fill="#fff"/><circle cx="64" cy="-152" r="18" fill="#fff"/><circle cx="-64" cy="-108" r="7" fill="#fff" opacity=".7"/><circle cx="100" cy="-108" r="7" fill="#fff" opacity=".7"/></g>
+    
+  </g></g>
+</g></g><g transform="rotate(0 540 1000)"><g class="tb-arl"><rect x="536" y="760" width="8" height="70" fill="#FF6A3D"/><path d="M526 760 L540 732 L554 760 Z" fill="#FF6A3D"/></g></g><g transform="rotate(30 540 1000)"><g class="tb-arl"><rect x="536" y="760" width="8" height="70" fill="#FF6A3D"/><path d="M526 760 L540 732 L554 760 Z" fill="#FF6A3D"/></g></g><g transform="rotate(60 540 1000)"><g class="tb-arl"><rect x="536" y="760" width="8" height="70" fill="#FF6A3D"/><path d="M526 760 L540 732 L554 760 Z" fill="#FF6A3D"/></g></g><g transform="rotate(90 540 1000)"><g class="tb-arl"><rect x="536" y="760" width="8" height="70" fill="#FF6A3D"/><path d="M526 760 L540 732 L554 760 Z" fill="#FF6A3D"/></g></g><g transform="rotate(120 540 1000)"><g class="tb-arl"><rect x="536" y="760" width="8" height="70" fill="#FF6A3D"/><path d="M526 760 L540 732 L554 760 Z" fill="#FF6A3D"/></g></g><g transform="rotate(150 540 1000)"><g class="tb-arl"><rect x="536" y="760" width="8" height="70" fill="#FF6A3D"/><path d="M526 760 L540 732 L554 760 Z" fill="#FF6A3D"/></g></g><g transform="rotate(180 540 1000)"><g class="tb-arl"><rect x="536" y="760" width="8" height="70" fill="#FF6A3D"/><path d="M526 760 L540 732 L554 760 Z" fill="#FF6A3D"/></g></g><g transform="rotate(210 540 1000)"><g class="tb-arl"><rect x="536" y="760" width="8" height="70" fill="#FF6A3D"/><path d="M526 760 L540 732 L554 760 Z" fill="#FF6A3D"/></g></g><g transform="rotate(240 540 1000)"><g class="tb-arl"><rect x="536" y="760" width="8" height="70" fill="#FF6A3D"/><path d="M526 760 L540 732 L554 760 Z" fill="#FF6A3D"/></g></g><g transform="rotate(270 540 1000)"><g class="tb-arl"><rect x="536" y="760" width="8" height="70" fill="#FF6A3D"/><path d="M526 760 L540 732 L554 760 Z" fill="#FF6A3D"/></g></g><g transform="rotate(300 540 1000)"><g class="tb-arl"><rect x="536" y="760" width="8" height="70" fill="#FF6A3D"/><path d="M526 760 L540 732 L554 760 Z" fill="#FF6A3D"/></g></g><g transform="rotate(330 540 1000)"><g class="tb-arl"><rect x="536" y="760" width="8" height="70" fill="#FF6A3D"/><path d="M526 760 L540 732 L554 760 Z" fill="#FF6A3D"/></g></g></g>
+</svg>
+<svg id="tube-L2" class="lay" width="1080" height="1920" viewBox="0 0 1080 1920" style="transform:translateZ(90px) scale(0.9500);filter:drop-shadow(0 16px 14px rgba(19,32,63,.20)) drop-shadow(0 3px 3px rgba(19,32,63,.16));">
+<g id="tb-card"><rect x="72" y="250" width="936" height="440" rx="14" fill="#fff"/><text x="112" y="310" font-family="MM" font-weight="800" font-size="30" letter-spacing="2.8" fill="#FF6A3D">KABINENDRUCK</text>
+<text id="tb-cyc" x="968" y="310" text-anchor="end" font-family="MM" font-weight="800" font-size="30" letter-spacing="2.8" fill="#13203F">FLUG 1</text>
+<line x1="112" y1="650" x2="968" y2="650" stroke="#C9D0DA" stroke-width="3"/><path id="tb-path" d="M112 650" fill="none" stroke="#FF6A3D" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/><circle id="tb-dot" cx="968" cy="650" r="12" fill="#13203F"/></g>
+</svg>
+      </div></div>
+    </div>
+<div id="tb-st" class="clip full" data-start="0" data-duration="6.285"><div style="position:absolute;left:112px;top:326px;display:grid">
+<div id="tb-s0" style="grid-area:1/1;font-weight:800;font-size:52px;color:#13203F">Start: aufpumpen</div><div id="tb-s1" style="grid-area:1/1;font-weight:800;font-size:52px;color:#13203F;opacity:0">Landung: Druck raus</div></div></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#tube-orbit", {rotationY: 3.2, rotationX: 2.4, x: 26, z: -30, transformOrigin: "540px 960px 0px"}, {rotationY: -3.2, rotationX: -1.6, x: -26, z: 30, transformOrigin: "540px 960px 0px", duration: 6.285, ease: "sine.inOut"}, 0);
+    const U0 = 21.001, U1 = 24.522, D0 = 24.714, D1 = 26.41;
+    const io = (x) => x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2, cl = (x) => Math.min(1, Math.max(0, x));
+    function pr(t) { if (t < D0) return io(cl((t - U0) / (U1 - U0))); return 1 - io(cl((t - D0) / (D1 - D0))); }
+    const path = document.getElementById("tb-path"), dot = document.getElementById("tb-dot"), ring = document.getElementById("tb-ring"), arl = Array.from(document.querySelectorAll(".tb-arl"));
+    const clock = { t: 0 };
+    function draw() { const t = 20.286 + clock.t; let d = ""; for (let i = 0; i <= 90; i++) { const p = pr(t - (90 - i) * 0.05); d += (i ? " L" : "M") + (112 + 856 * i / 90).toFixed(1) + " " + (650 - 190 * p).toFixed(1); }
+      path.setAttribute("d", d); const p = pr(t); dot.setAttribute("cy", (650 - 190 * p).toFixed(1));
+      ring.setAttribute("transform", `translate(540 1060) scale(${(1 + 0.07 * p).toFixed(4)}) translate(-540 -1000)`);
+      arl.forEach((a) => { a.setAttribute("transform", `translate(0 ${(-40 * p).toFixed(1)})`); a.setAttribute("opacity", (0.15 + 0.85 * p).toFixed(3)); }); }
+    tl.fromTo(clock, { t: 0 }, { t: 6.285, duration: 6.285, ease: "none", onUpdate: draw, immediateRender: true }, 0);
+    tl.to("#tb-s0", { opacity: 0, filter: "blur(6px)", duration: 0.13 }, 4.298); tl.fromTo("#tb-s1", { opacity: 0 }, { opacity: 1, duration: 0.16 }, 4.428);
+    tl.fromTo("#tube-cam", { scale: 0.7, transformOrigin: "540px 1000px" }, { scale: 1, transformOrigin: "540px 1000px", duration: 0.5, ease: "expo.out" }, 0);
+    tl.fromTo(["#tb-ring", "#tb-card"], { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "power2.out" }, 0);
+    window.__timelines["tube"] = tl;
+  </script>
+</template>

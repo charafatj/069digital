@@ -1,0 +1,49 @@
+<template>
+  <style>
+@font-face { font-family: "MM"; src: url("assets/fonts/mm-600.woff2") format("woff2"); font-weight: 600; }
+@font-face { font-family: "MM"; src: url("assets/fonts/mm-800.woff2") format("woff2"); font-weight: 800; }
+@font-face { font-family: "MM"; src: url("assets/fonts/mm-900.woff2") format("woff2"); font-weight: 900; }
+#root { position: absolute; inset: 0; font-family: "MM", sans-serif; overflow: hidden; }
+.full { position: absolute; inset: 0; }
+.big { position: absolute; left: 0; width: 100%; text-align: center; font-weight: 900; letter-spacing: -.02em; line-height: 1.02; }
+.big span { display: inline-block; }
+.lbl { position: absolute; background: #fff; border-radius: 10px; padding: 20px 28px 22px; box-shadow: 0 10px 28px rgba(10,16,34,.16); display: grid; }
+.lbl .sm { font-weight: 800; font-size: 28px; letter-spacing: .1em; text-transform: uppercase; }
+.lbl .vals { display: grid; }
+.lbl .val { grid-area: 1 / 1; font-weight: 800; font-size: 52px; color: #13203F; line-height: 1.12; white-space: nowrap; }
+svg { overflow: visible; }
+.stage { position: absolute; inset: 0; perspective: 1800px; perspective-origin: 540px 960px; overflow: hidden; }
+.p3 { position: absolute; inset: 0; transform-style: preserve-3d; }
+.lay { position: absolute; left: 0; top: 0; }
+</style>
+  <div id="root" data-composition-id="hook" data-width="1080" data-height="1920">
+    <div id="hook-bgsvg" class="stage" style="background:#DDE3EC">
+      <div id="hook-cam" class="p3"><div id="hook-orbit" class="p3">
+<svg id="hook-L0" class="lay" width="1080" height="1920" viewBox="0 0 1080 1920" style="transform:translateZ(-800px) scale(1.4444);"><rect id="hook-bg" x="-700" y="-700" width="2480" height="3320" fill="#DDE3EC"/>
+<rect x="-700" y="-700" width="2480" height="1700" fill="#9CCBFF"/><rect x="-700" y="1000" width="2480" height="1620" fill="#CFE6FF"/><g id="hk-cl"><g fill="#FFFFFF" opacity="1.0"><circle cx="408.0" cy="952.0" r="50.4"/><circle cx="456.0" cy="918.4" r="67.2"/><circle cx="520.8" cy="930.4" r="57.6"/><circle cx="566.4" cy="956.8" r="43.2"/><circle cx="480.0" cy="964.0" r="52.8"/><rect x="360.0" y="952.0" width="240.0" height="48.0" rx="24.0"/></g><g fill="#FFFFFF" opacity="1.0"><circle cx="706.0" cy="849.0" r="37.8"/><circle cx="742.0" cy="823.8" r="50.4"/><circle cx="790.6" cy="832.8" r="43.2"/><circle cx="824.8" cy="852.6" r="32.4"/><circle cx="760.0" cy="858.0" r="39.6"/><rect x="670.0" y="849.0" width="180.0" height="36.0" rx="18.0"/></g><g fill="#FFFFFF" opacity="1.0"><circle cx="150.0" cy="740.0" r="42.0"/><circle cx="190.0" cy="712.0" r="56.0"/><circle cx="244.0" cy="722.0" r="48.0"/><circle cx="282.0" cy="744.0" r="36.0"/><circle cx="210.0" cy="750.0" r="44.0"/><rect x="110.0" y="740.0" width="200.0" height="40.0" rx="20.0"/></g></g>
+</svg>
+<svg id="hook-L1" class="lay" width="1080" height="1920" viewBox="0 0 1080 1920" style="transform:translateZ(0px) scale(1.0000);filter:drop-shadow(0 16px 14px rgba(19,32,63,.20)) drop-shadow(0 3px 3px rgba(19,32,63,.16));">
+<path d="M-700 -700 H1780 V2620 H-700 Z M298 650 H782 A8 8 0 0 1 790 658 V1142 A8 8 0 0 1 782 1150 H298 A8 8 0 0 1 290 1142 V658 A8 8 0 0 1 298 650 Z" fill="#DDE3EC" fill-rule="evenodd"/><rect x="-700" y="1150" width="2480" height="22" fill="#FF6A3D"/><rect x="-700" y="1172" width="2480" height="12" fill="#13203F"/><rect x="-700" y="1184" width="2480" height="1436" fill="#C3CCD9"/><circle cx="90" cy="260" r="9" fill="#A9B4C4"/><circle cx="90" cy="1560" r="9" fill="#A9B4C4"/><circle cx="172" cy="260" r="9" fill="#A9B4C4"/><circle cx="172" cy="1560" r="9" fill="#A9B4C4"/><circle cx="254" cy="260" r="9" fill="#A9B4C4"/><circle cx="254" cy="1560" r="9" fill="#A9B4C4"/><circle cx="336" cy="260" r="9" fill="#A9B4C4"/><circle cx="336" cy="1560" r="9" fill="#A9B4C4"/><circle cx="418" cy="260" r="9" fill="#A9B4C4"/><circle cx="418" cy="1560" r="9" fill="#A9B4C4"/><circle cx="500" cy="260" r="9" fill="#A9B4C4"/><circle cx="500" cy="1560" r="9" fill="#A9B4C4"/><circle cx="582" cy="260" r="9" fill="#A9B4C4"/><circle cx="582" cy="1560" r="9" fill="#A9B4C4"/><circle cx="664" cy="260" r="9" fill="#A9B4C4"/><circle cx="664" cy="1560" r="9" fill="#A9B4C4"/><circle cx="746" cy="260" r="9" fill="#A9B4C4"/><circle cx="746" cy="1560" r="9" fill="#A9B4C4"/><circle cx="828" cy="260" r="9" fill="#A9B4C4"/><circle cx="828" cy="1560" r="9" fill="#A9B4C4"/><circle cx="910" cy="260" r="9" fill="#A9B4C4"/><circle cx="910" cy="1560" r="9" fill="#A9B4C4"/><circle cx="992" cy="260" r="9" fill="#A9B4C4"/><circle cx="992" cy="1560" r="9" fill="#A9B4C4"/><circle cx="90" cy="342" r="9" fill="#A9B4C4"/><circle cx="990" cy="342" r="9" fill="#A9B4C4"/><circle cx="90" cy="424" r="9" fill="#A9B4C4"/><circle cx="990" cy="424" r="9" fill="#A9B4C4"/><circle cx="90" cy="506" r="9" fill="#A9B4C4"/><circle cx="990" cy="506" r="9" fill="#A9B4C4"/><circle cx="90" cy="588" r="9" fill="#A9B4C4"/><circle cx="990" cy="588" r="9" fill="#A9B4C4"/><circle cx="90" cy="670" r="9" fill="#A9B4C4"/><circle cx="990" cy="670" r="9" fill="#A9B4C4"/><circle cx="90" cy="752" r="9" fill="#A9B4C4"/><circle cx="990" cy="752" r="9" fill="#A9B4C4"/><circle cx="90" cy="834" r="9" fill="#A9B4C4"/><circle cx="990" cy="834" r="9" fill="#A9B4C4"/><circle cx="90" cy="916" r="9" fill="#A9B4C4"/><circle cx="990" cy="916" r="9" fill="#A9B4C4"/><circle cx="90" cy="998" r="9" fill="#A9B4C4"/><circle cx="990" cy="998" r="9" fill="#A9B4C4"/><circle cx="90" cy="1080" r="9" fill="#A9B4C4"/><circle cx="990" cy="1080" r="9" fill="#A9B4C4"/><circle cx="90" cy="1162" r="9" fill="#A9B4C4"/><circle cx="990" cy="1162" r="9" fill="#A9B4C4"/><circle cx="90" cy="1244" r="9" fill="#A9B4C4"/><circle cx="990" cy="1244" r="9" fill="#A9B4C4"/><circle cx="90" cy="1326" r="9" fill="#A9B4C4"/><circle cx="990" cy="1326" r="9" fill="#A9B4C4"/><circle cx="90" cy="1408" r="9" fill="#A9B4C4"/><circle cx="990" cy="1408" r="9" fill="#A9B4C4"/><circle cx="90" cy="1490" r="9" fill="#A9B4C4"/><circle cx="990" cy="1490" r="9" fill="#A9B4C4"/>
+</svg>
+<svg id="hook-L2" class="lay" width="1080" height="1920" viewBox="0 0 1080 1920" style="transform:translateZ(40px) scale(0.9778);filter:drop-shadow(0 16px 14px rgba(19,32,63,.20)) drop-shadow(0 3px 3px rgba(19,32,63,.16));">
+<path d="M292 634 H788 A18 18 0 0 1 806 652 V1148 A18 18 0 0 1 788 1166 H292 A18 18 0 0 1 274 1148 V652 A18 18 0 0 1 292 634 Z M298 650 H782 A8 8 0 0 1 790 658 V1142 A8 8 0 0 1 782 1150 H298 A8 8 0 0 1 290 1142 V658 A8 8 0 0 1 298 650 Z" fill="#A9B4C4" fill-rule="evenodd"/>
+<circle id="hk-hot" cx="790" cy="650" r="86" fill="#E8333F" opacity=".85"/>
+<path id="hk-crack" d="M790 650 L826 606 L848 588 L882 538 L926 514 L952 458 L988 430 L1020 380 L1080 320" fill="none" stroke="#13203F" stroke-width="11" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="467" style="stroke-dashoffset:467"/>
+</svg>
+<svg id="hook-L3" class="lay" width="1080" height="1920" viewBox="0 0 1080 1920" style="transform:translateZ(300px) scale(0.8333);filter:drop-shadow(0 16px 14px rgba(19,32,63,.20)) drop-shadow(0 3px 3px rgba(19,32,63,.16));">
+<rect id="hk-flash" x="-1400" y="-1400" width="3880" height="4720" fill="#fff" opacity="0"/>
+</svg>
+      </div></div>
+    </div>
+<div id="hook-bw1" class="clip full" data-start="0.0" data-duration="4.98"><div id="hook-bw1-in" class="full"><div class="big" style="top:230px;font-size:70px;color:#13203F"><span id="hook-bw1-w0">Warum</span>&nbsp;<span id="hook-bw1-w1">Flugzeugfenster</span></div><div class="big" style="top:305px;font-size:140px;color:#D9481F"><span id="hook-bw1-w2">rund</span>&nbsp;<span id="hook-bw1-w3">sind</span></div></div></div>
+<div id="hook-chip2" class="clip full" data-start="1.71" data-duration="3.27"><div id="hook-chip2-c" style="position:absolute;left:290px;top:540px;background:#13203F;color:#fff;font-weight:900;font-size:56px;padding:10px 24px;border-radius:10px">1954</div></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#hook-orbit", {rotationY: -3.2, rotationX: 2.4, x: -26, z: -30, transformOrigin: "540px 960px 0px"}, {rotationY: 3.2, rotationX: -1.6, x: 26, z: 30, transformOrigin: "540px 960px 0px", duration: 5.0, ease: "sine.inOut"}, 0);
+    tl.fromTo("#hk-cl", {x: 0}, {x: -200, duration: 5.0, ease: "none"}, 0);tl.fromTo("#hook-cam", {scale: 1.0, transformOrigin: "540px 900px"}, {scale: 1.1, transformOrigin: "540px 900px", duration: 3.96, ease: "power1.inOut"}, 0);tl.fromTo("#hk-hot", {scale: 0, transformOrigin: "50% 50%"}, {scale: 1, transformOrigin: "50% 50%", duration: 0.5, ease: "back.out(1.8)"}, 2.11);tl.to("#hk-crack", {strokeDashoffset: 0, duration: 0.28, ease: "expo.out"}, 3.91); tl.fromTo("#hk-flash", {opacity: 0.7}, {opacity: 0, duration: 0.4, ease: "power2.out", immediateRender: false}, 3.93);tl.to("#hook-cam", {x: 21, y: -13, duration: 0.05, ease: "none"}, 3.94);tl.to("#hook-cam", {x: -18, y: 16, duration: 0.05, ease: "none"}, 3.99);tl.to("#hook-cam", {x: 13, y: 10, duration: 0.05, ease: "none"}, 4.04);tl.to("#hook-cam", {x: -10, y: -8, duration: 0.05, ease: "none"}, 4.09);tl.to("#hook-cam", {x: 5, y: 3, duration: 0.05, ease: "none"}, 4.14);tl.to("#hook-cam", {x: 0, y: 0, duration: 0.05, ease: "none"}, 4.19);
+    tl.to("#hook-bw1-in", {opacity: 0, filter: "blur(8px)", duration: 0.18, ease: "power3.in"}, 4.78);
+    tl.fromTo("#hook-chip2-c", {opacity: 0, y: 16}, {opacity: 1, y: 0, duration: 0.3, ease: "expo.out"}, 1.71);
+    window.__timelines["hook"] = tl;
+  </script>
+</template>

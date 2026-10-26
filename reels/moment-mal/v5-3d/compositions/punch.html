@@ -1,0 +1,101 @@
+<template>
+  <style>
+@font-face { font-family: "MM"; src: url("assets/fonts/mm-600.woff2") format("woff2"); font-weight: 600; }
+@font-face { font-family: "MM"; src: url("assets/fonts/mm-800.woff2") format("woff2"); font-weight: 800; }
+@font-face { font-family: "MM"; src: url("assets/fonts/mm-900.woff2") format("woff2"); font-weight: 900; }
+#root { position: absolute; inset: 0; font-family: "MM", sans-serif; overflow: hidden; }
+.full { position: absolute; inset: 0; }
+.big { position: absolute; left: 0; width: 100%; text-align: center; font-weight: 900; letter-spacing: -.02em; line-height: 1.02; }
+.big span { display: inline-block; }
+.lbl { position: absolute; background: #fff; border-radius: 10px; padding: 20px 28px 22px; box-shadow: 0 10px 28px rgba(10,16,34,.16); display: grid; }
+.lbl .sm { font-weight: 800; font-size: 28px; letter-spacing: .1em; text-transform: uppercase; }
+.lbl .vals { display: grid; }
+.lbl .val { grid-area: 1 / 1; font-weight: 800; font-size: 52px; color: #13203F; line-height: 1.12; white-space: nowrap; }
+svg { overflow: visible; }
+.stage { position: absolute; inset: 0; perspective: 1800px; perspective-origin: 540px 960px; overflow: hidden; }
+.p3 { position: absolute; inset: 0; transform-style: preserve-3d; }
+.lay { position: absolute; left: 0; top: 0; }
+</style>
+  <div id="root" data-composition-id="punch" data-width="1080" data-height="1920">
+    <div id="punch-bgsvg" class="stage" style="background:#2EE6B6">
+      <div id="punch-cam" class="p3"><div id="punch-orbit" class="p3">
+<svg id="punch-L0" class="lay" width="1080" height="1920" viewBox="0 0 1080 1920" style="transform:translateZ(-800px) scale(1.4444);"><rect id="punch-bg" x="-700" y="-700" width="2480" height="3320" fill="#2EE6B6"/>
+<g fill="#62EFC9" opacity="1.0"><circle cx="82.0" cy="1263.0" r="54.6"/><circle cx="134.0" cy="1226.6" r="72.8"/><circle cx="204.2" cy="1239.6" r="62.4"/><circle cx="253.6" cy="1268.2" r="46.8"/><circle cx="160.0" cy="1276.0" r="57.2"/><rect x="30.0" y="1263.0" width="260.0" height="52.0" rx="26.0"/></g><g fill="#62EFC9" opacity="1.0"><circle cx="854.0" cy="1191.0" r="46.2"/><circle cx="898.0" cy="1160.2" r="61.6"/><circle cx="957.4" cy="1171.2" r="52.8"/><circle cx="999.2" cy="1195.4" r="39.6"/><circle cx="920.0" cy="1202.0" r="48.4"/><rect x="810.0" y="1191.0" width="220.0" height="44.0" rx="22.0"/></g>
+</svg>
+<svg id="punch-L1" class="lay" width="1080" height="1920" viewBox="0 0 1080 1920" style="transform:translateZ(-200px) scale(1.1111);filter:drop-shadow(0 16px 14px rgba(19,32,63,.20)) drop-shadow(0 3px 3px rgba(19,32,63,.16));">
+<rect x="-700" y="1500" width="2480" height="1120" fill="#1FB892"/>
+</svg>
+<svg id="punch-L2" class="lay" width="1080" height="1920" viewBox="0 0 1080 1920" style="transform:translateZ(110px) scale(0.9389);filter:drop-shadow(0 16px 14px rgba(19,32,63,.20)) drop-shadow(0 3px 3px rgba(19,32,63,.16));">
+<g id="po"><g transform="translate(540 1580) scale(1.1)">
+  <ellipse cx="0" cy="4" rx="150" ry="18" fill="#13203F" opacity=".13"/>
+  <g id="po-body">
+    <rect x="-66" y="-118" width="44" height="100" rx="20" fill="#E2552B"/><rect x="22" y="-118" width="44" height="100" rx="20" fill="#E2552B"/>
+    <rect x="-96" y="-34" width="80" height="36" rx="16" fill="#2EE6B6"/><rect x="16" y="-34" width="80" height="36" rx="16" fill="#2EE6B6"/>
+    <g transform="translate(-104 -280)"><g id="po-armL"><rect x="-24" y="-10" width="46" height="150" rx="23" fill="#E2552B"/><circle cx="-1" cy="146" r="30" fill="#2EE6B6"/></g></g>
+    <g transform="translate(104 -280)"><g id="po-armR"><rect x="-22" y="-10" width="46" height="150" rx="23" fill="#E2552B"/><circle cx="1" cy="146" r="30" fill="#2EE6B6"/></g></g>
+    <rect x="-100" y="-306" width="200" height="200" rx="54" fill="#FF6A3D"/>
+    <path d="M40 -306 L46 -306 Q100 -306 100 -252 L100 -160 Q100 -106 46 -106 L40 -106 Z" fill="#E2552B" opacity=".45"/>
+    <rect x="-100" y="-168" width="200" height="24" fill="#2EE6B6"/>
+    <rect x="-30" y="-338" width="60" height="40" rx="12" fill="#1FB892"/>
+  </g>
+  <g transform="translate(0 -330)"><g id="po-head">
+    <path d="M-200 -90 Q-200 -330 0 -330 Q200 -330 200 -90 L200 -50 Q200 0 150 0 L-150 0 Q-200 0 -200 -50 Z" fill="#FF6A3D"/>
+    <path d="M70 -318 Q200 -280 200 -90 L200 -50 Q200 0 150 0 L70 0 Z" fill="#E2552B" opacity=".4"/>
+    <rect x="-204" y="-262" width="408" height="28" rx="14" fill="#2EE6B6"/>
+    <rect x="-202" y="-34" width="404" height="36" rx="18" fill="#1FB892"/>
+    <g id="po-brows"><rect id="po-browL" x="-150" y="-212" width="112" height="22" rx="11" fill="#13203F"/><rect id="po-browR" x="38" y="-212" width="112" height="22" rx="11" fill="#13203F"/></g>
+    <g id="po-eyes"><circle cx="-82" cy="-128" r="60" fill="#13203F"/><circle cx="82" cy="-128" r="60" fill="#13203F"/>
+      <circle cx="-100" cy="-152" r="18" fill="#fff"/><circle cx="64" cy="-152" r="18" fill="#fff"/><circle cx="-64" cy="-108" r="7" fill="#fff" opacity=".7"/><circle cx="100" cy="-108" r="7" fill="#fff" opacity=".7"/></g>
+    <rect id="po-mouth" x="-30" y="-62" width="60" height="14" rx="7" fill="#13203F"/>
+  </g></g>
+</g></g>
+</svg>
+      </div></div>
+    </div>
+<div id="punch-bw1" class="clip full" data-start="0.2" data-duration="2.351"><div id="punch-bw1-in" class="full"><div class="big" style="top:250px;font-size:96px;color:#13203F"><span id="punch-bw1-w0">Du</span>&nbsp;<span id="punch-bw1-w1">kommst</span></div><div class="big" style="top:353px;font-size:150px;color:#FFFFFF"><span id="punch-bw1-w2">heil</span>&nbsp;<span id="punch-bw1-w3">an</span></div></div></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#punch-orbit", {rotationY: 3.2, rotationX: 2.4, x: 26, z: -30, transformOrigin: "540px 960px 0px"}, {rotationY: -3.2, rotationX: -1.6, x: -26, z: 30, transformOrigin: "540px 960px 0px", duration: 2.571, ease: "sine.inOut"}, 0);
+    tl.fromTo("#po-armR", {rotation: 0, transformOrigin: "50% 4%"}, {rotation: -160, transformOrigin: "50% 4%", duration: 0.4, ease: "back.out(1.6)"}, 0.5); tl.fromTo("#po-head", {rotation: 0, transformOrigin: "50% 100%"}, {rotation: -4, transformOrigin: "50% 100%", duration: 0.4, ease: "power2.out"}, 0.5);tl.fromTo("#punch-cam", {scale: 1.12, transformOrigin: "540px 1200px"}, {scale: 1, transformOrigin: "540px 1200px", duration: 0.6, ease: "expo.out"}, 0);
+    tl.to("#po-eyes", {scaleY: 0.12, transformOrigin: "50% 50%", duration: 0.06, ease: "power2.in"}, 0.90); tl.to("#po-eyes", {scaleY: 1, transformOrigin: "50% 50%", duration: 0.09, ease: "power2.out"}, 0.97);
+    tl.to("#po-mouth", {scaleY: 1.18, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, -0.00);
+    tl.to("#po-mouth", {scaleY: 2.56, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 0.08);
+    tl.to("#po-mouth", {scaleY: 3.31, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 0.16);
+    tl.to("#po-mouth", {scaleY: 1.73, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 0.24);
+    tl.to("#po-mouth", {scaleY: 2.82, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 0.32);
+    tl.to("#po-mouth", {scaleY: 1.31, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 0.40);
+    tl.to("#po-mouth", {scaleY: 2.40, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 0.48);
+    tl.to("#po-mouth", {scaleY: 3.08, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 0.56);
+    tl.to("#po-mouth", {scaleY: 2.27, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 0.64);
+    tl.to("#po-mouth", {scaleY: 1.44, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 0.72);
+    tl.to("#po-mouth", {scaleY: 1.10, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 0.80);
+    tl.to("#po-mouth", {scaleY: 3.13, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 0.88);
+    tl.to("#po-mouth", {scaleY: 2.07, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 0.96);
+    tl.to("#po-mouth", {scaleY: 2.40, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 1.04);
+    tl.to("#po-mouth", {scaleY: 2.51, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 1.12);
+    tl.to("#po-mouth", {scaleY: 1.42, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 1.20);
+    tl.to("#po-mouth", {scaleY: 1.73, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 1.28);
+    tl.to("#po-mouth", {scaleY: 2.64, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 1.36);
+    tl.to("#po-mouth", {scaleY: 2.79, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 1.44);
+    tl.to("#po-mouth", {scaleY: 3.05, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 1.52);
+    tl.to("#po-mouth", {scaleY: 1.83, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 1.60);
+    tl.to("#po-mouth", {scaleY: 1.70, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 1.68);
+    tl.to("#po-mouth", {scaleY: 1.42, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 1.76);
+    tl.to("#po-mouth", {scaleY: 1.57, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 1.84);
+    tl.to("#po-mouth", {scaleY: 1.34, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 1.92);
+    tl.to("#po-mouth", {scaleY: 1.21, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 2.00);
+    tl.to("#po-mouth", {scaleY: 1.31, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 2.08);
+    tl.to("#po-mouth", {scaleY: 1.10, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 2.16);
+    tl.to("#po-mouth", {scaleY: 1.08, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 2.24);
+    tl.to("#po-mouth", {scaleY: 1.03, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 2.32);
+    tl.to("#po-mouth", {scaleY: 1.00, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 2.40);
+    tl.to("#po-mouth", {scaleY: 1.00, transformOrigin: "50% 50%", duration: 0.078, ease: "none"}, 2.48);
+    tl.fromTo("#punch-bw1-w0", {opacity: 0, filter: "blur(6px)"}, {opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power4.out"}, 0.250);
+    tl.fromTo("#punch-bw1-w1", {opacity: 0, filter: "blur(6px)"}, {opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power4.out"}, 0.550);
+    tl.fromTo("#punch-bw1-w2", {opacity: 0, filter: "blur(6px)"}, {opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power4.out"}, 0.850);
+    tl.fromTo("#punch-bw1-w3", {opacity: 0, filter: "blur(6px)"}, {opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power4.out"}, 1.150);
+    tl.to("#punch-bw1-in", {opacity: 0, filter: "blur(8px)", duration: 0.18, ease: "power3.in"}, 2.351);
+    window.__timelines["punch"] = tl;
+  </script>
+</template>
