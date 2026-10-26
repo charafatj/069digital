@@ -1,0 +1,42 @@
+<template>
+  <style>
+@font-face { font-family: "MM"; src: url("assets/fonts/mm-600.woff2") format("woff2"); font-weight: 600; }
+@font-face { font-family: "MM"; src: url("assets/fonts/mm-800.woff2") format("woff2"); font-weight: 800; }
+@font-face { font-family: "MM"; src: url("assets/fonts/mm-900.woff2") format("woff2"); font-weight: 900; }
+#root { position: absolute; inset: 0; font-family: "MM", sans-serif; overflow: hidden; }
+.full { position: absolute; inset: 0; }
+.big { position: absolute; left: 0; width: 100%; text-align: center; font-weight: 900; letter-spacing: -.02em; line-height: 1.02; }
+.big span { display: inline-block; }
+.lbl { position: absolute; background: #fff; border-radius: 10px; padding: 20px 28px 22px; box-shadow: 0 10px 28px rgba(10,16,34,.16); display: grid; }
+.lbl .sm { font-weight: 800; font-size: 28px; letter-spacing: .1em; text-transform: uppercase; }
+.lbl .vals { display: grid; }
+.lbl .val { grid-area: 1 / 1; font-weight: 800; font-size: 52px; color: #13203F; line-height: 1.12; white-space: nowrap; }
+svg { overflow: visible; }
+</style>
+  <div id="root" data-composition-id="wreck" data-width="1080" data-height="1920">
+    <svg id="wreck-bgsvg" class="full" width="1080" height="1920" viewBox="0 0 1080 1920">
+      <rect id="wreck-bg" width="1080" height="1920" fill="#3D4677"/>
+      <g id="wreck-cam">
+<rect y="1250" width="1080" height="670" fill="#2E3560"/>
+<g id="wr-lens"><clipPath id="wr-cl"><circle cx="540" cy="960" r="250"/></clipPath>
+<g clip-path="url(#wr-cl)"><rect x="280" y="700" width="520" height="520" fill="#E9EDF2"/><rect x="280" y="1080" width="520" height="140" fill="#D6DDE6"/><rect x="280" y="1040" width="520" height="16" fill="#2C5AA0"/>
+<rect x="400" y="820" width="240" height="240" rx="8" fill="#13203F"/><path id="wr-crack" d="M640 820 L668 788 L684 778 L704 748 L730 736 L748 704" fill="none" stroke="#E8333F" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="200" style="stroke-dashoffset:200"/>
+<circle id="wr-hot" cx="640" cy="820" r="70" fill="#E8333F" opacity=".35"/></g>
+<circle cx="540" cy="960" r="262" fill="none" stroke="#13203F" stroke-width="34"/><circle cx="540" cy="960" r="240" fill="none" stroke="#FF6A3D" stroke-width="10"/>
+<rect x="700" y="1150" width="70" height="300" rx="35" fill="#13203F" transform="rotate(-45 735 1300)"/></g>
+      </g>
+    </svg>
+<div id="wreck-lb1" class="clip full" data-start="0.55" data-duration="1.144" data-layout-allow-overlap><div id="wreck-lb1-in" class="full">
+<svg class="full" width="1080" height="1920" viewBox="0 0 1080 1920"><line id="wreck-lb1-ln" x1="118" y1="436" x2="748" y2="704" stroke="#E8333F" stroke-width="4" stroke-linecap="round" stroke-dasharray="2400" style="stroke-dashoffset:2400"/><circle id="wreck-lb1-dot" cx="748" cy="704" r="10" fill="#E8333F" stroke="#fff" stroke-width="4" style="transform-box:fill-box;transform-origin:center"/></svg>
+<div id="wreck-lb1-box" class="lbl" style="left:72px;top:300px"><div class="sm" style="color:#E8333F">Ursache</div><div class="vals"><div class="val" id="wreck-lb1-v0" style="opacity:1">Metallermüdung</div></div></div></div></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#wr-lens", {scale: 0.5, opacity: 0, transformOrigin: "540px 960px"}, {scale: 1, opacity: 1, transformOrigin: "540px 960px", duration: 0.45, ease: "back.out(1.4)"}, 0.05);tl.to("#wr-crack", {strokeDashoffset: 0, duration: 0.5, ease: "power2.out"}, 0.5); tl.fromTo("#wr-hot", {scale: 0, transformOrigin: "50% 50%"}, {scale: 1, transformOrigin: "50% 50%", duration: 0.4, ease: "back.out(2)"}, 0.45);
+    tl.fromTo("#wreck-lb1-ln", {strokeDashoffset: 2400}, {strokeDashoffset: 0, duration: 0.32, ease: "power2.inOut"}, 0.55);
+    tl.fromTo("#wreck-lb1-dot", {scale: 0}, {scale: 1, duration: 0.3, ease: "back.out(2)"}, 0.75);
+    tl.fromTo("#wreck-lb1-box", {clipPath: "inset(0% 100% 0% 0%)", x: -14}, {clipPath: "inset(0% 0% 0% 0%)", x: 0, duration: 0.42, ease: "expo.out"}, 0.67);
+    tl.to("#wreck-lb1-in", {opacity: 0, filter: "blur(8px)", duration: 0.18, ease: "power3.in"}, 1.494);
+    window.__timelines["wreck"] = tl;
+  </script>
+</template>

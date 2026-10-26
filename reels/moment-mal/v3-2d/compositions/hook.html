@@ -1,0 +1,112 @@
+<template>
+  <style>
+@font-face { font-family: "MM"; src: url("assets/fonts/mm-600.woff2") format("woff2"); font-weight: 600; }
+@font-face { font-family: "MM"; src: url("assets/fonts/mm-800.woff2") format("woff2"); font-weight: 800; }
+@font-face { font-family: "MM"; src: url("assets/fonts/mm-900.woff2") format("woff2"); font-weight: 900; }
+#root { position: absolute; inset: 0; font-family: "MM", sans-serif; overflow: hidden; }
+.full { position: absolute; inset: 0; }
+.big { position: absolute; left: 0; width: 100%; text-align: center; font-weight: 900; letter-spacing: -.02em; line-height: 1.02; }
+.big span { display: inline-block; }
+.lbl { position: absolute; background: #fff; border-radius: 10px; padding: 20px 28px 22px; box-shadow: 0 10px 28px rgba(10,16,34,.16); display: grid; }
+.lbl .sm { font-weight: 800; font-size: 28px; letter-spacing: .1em; text-transform: uppercase; }
+.lbl .vals { display: grid; }
+.lbl .val { grid-area: 1 / 1; font-weight: 800; font-size: 52px; color: #13203F; line-height: 1.12; white-space: nowrap; }
+svg { overflow: visible; }
+</style>
+  <div id="root" data-composition-id="hook" data-width="1080" data-height="1920">
+    <svg id="hook-bgsvg" class="full" width="1080" height="1920" viewBox="0 0 1080 1920">
+      <rect id="hook-bg" width="1080" height="1920" fill="#F6F1E8"/>
+      <g id="hook-cam">
+<rect x="0" y="0" width="1080" height="150" fill="#EDE5D8"/><rect x="0" y="150" width="1080" height="14" fill="#E2D8C8"/>
+<rect x="0" y="1640" width="1080" height="280" fill="#24365F"/>
+<rect x="362" y="616" width="380" height="590" rx="190" fill="#E6DDCF"/>
+<g id="hook-win"><rect x="350" y="600" width="380" height="590" rx="190" fill="#fff"/>
+<clipPath id="hook-wc"><rect x="396" y="646" width="288" height="498" rx="144"/></clipPath>
+<g clip-path="url(#hook-wc)"><rect x="396" y="646" width="288" height="498" fill="#9CCBFF"/><rect x="396" y="980" width="288" height="164" fill="#CFE6FF"/><g id="hook-cl"><g fill="#FFFFFF" opacity="1.0"><circle cx="404.0" cy="811.0" r="46.2"/><circle cx="448.0" cy="780.2" r="61.6"/><circle cx="507.4" cy="791.2" r="52.8"/><circle cx="549.2" cy="815.4" r="39.6"/><circle cx="470.0" cy="822.0" r="48.4"/><rect x="360.0" y="811.0" width="220.0" height="44.0" rx="22.0"/></g><g fill="#FFFFFF" opacity="0.9"><circle cx="652.0" cy="968.0" r="33.6"/><circle cx="684.0" cy="945.6" r="44.8"/><circle cx="727.2" cy="953.6" r="38.4"/><circle cx="757.6" cy="971.2" r="28.8"/><circle cx="700.0" cy="976.0" r="35.2"/><rect x="620.0" y="968.0" width="160.0" height="32.0" rx="16.0"/></g><g fill="#FFFFFF" opacity="1.0"><circle cx="442.0" cy="1133.0" r="54.6"/><circle cx="494.0" cy="1096.6" r="72.8"/><circle cx="564.2" cy="1109.6" r="62.4"/><circle cx="613.6" cy="1138.2" r="46.8"/><circle cx="520.0" cy="1146.0" r="57.2"/><rect x="390.0" y="1133.0" width="260.0" height="52.0" rx="26.0"/></g><g fill="#FFFFFF" opacity="1.0"><circle cx="840.0" cy="870.0" r="42.0"/><circle cx="880.0" cy="842.0" r="56.0"/><circle cx="934.0" cy="852.0" r="48.0"/><circle cx="972.0" cy="874.0" r="36.0"/><circle cx="900.0" cy="880.0" r="44.0"/><rect x="800.0" y="870.0" width="200.0" height="40.0" rx="20.0"/></g></g></g>
+<rect x="396" y="646" width="288" height="64" rx="32" fill="#F2EDE4"/></g>
+<rect x="30" y="1300" width="340" height="640" rx="60" fill="#24365F"/>
+<g id="ho"><g transform="translate(210 1915) scale(0.8)">
+  <ellipse cx="0" cy="4" rx="150" ry="18" fill="#13203F" opacity=".13"/>
+  <g id="ho-body">
+    <rect x="-66" y="-118" width="44" height="100" rx="20" fill="#E2552B"/><rect x="22" y="-118" width="44" height="100" rx="20" fill="#E2552B"/>
+    <rect x="-96" y="-34" width="80" height="36" rx="16" fill="#2EE6B6"/><rect x="16" y="-34" width="80" height="36" rx="16" fill="#2EE6B6"/>
+    <g transform="translate(-104 -280)"><g id="ho-armL"><rect x="-24" y="-10" width="46" height="150" rx="23" fill="#E2552B"/><circle cx="-1" cy="146" r="30" fill="#2EE6B6"/></g></g>
+    <g transform="translate(104 -280)"><g id="ho-armR"><rect x="-22" y="-10" width="46" height="150" rx="23" fill="#E2552B"/><circle cx="1" cy="146" r="30" fill="#2EE6B6"/></g></g>
+    <rect x="-100" y="-306" width="200" height="200" rx="54" fill="#FF6A3D"/>
+    <path d="M40 -306 L46 -306 Q100 -306 100 -252 L100 -160 Q100 -106 46 -106 L40 -106 Z" fill="#E2552B" opacity=".45"/>
+    <rect x="-100" y="-168" width="200" height="24" fill="#2EE6B6"/>
+    <rect x="-30" y="-338" width="60" height="40" rx="12" fill="#1FB892"/>
+  </g>
+  <g transform="translate(0 -330)"><g id="ho-head">
+    <path d="M-200 -90 Q-200 -330 0 -330 Q200 -330 200 -90 L200 -50 Q200 0 150 0 L-150 0 Q-200 0 -200 -50 Z" fill="#FF6A3D"/>
+    <path d="M70 -318 Q200 -280 200 -90 L200 -50 Q200 0 150 0 L70 0 Z" fill="#E2552B" opacity=".4"/>
+    <rect x="-204" y="-262" width="408" height="28" rx="14" fill="#2EE6B6"/>
+    <rect x="-202" y="-34" width="404" height="36" rx="18" fill="#1FB892"/>
+    <g id="ho-brows"><rect id="ho-browL" x="-150" y="-212" width="112" height="22" rx="11" fill="#13203F"/><rect id="ho-browR" x="38" y="-212" width="112" height="22" rx="11" fill="#13203F"/></g>
+    <g id="ho-eyes"><circle cx="-82" cy="-128" r="60" fill="#13203F"/><circle cx="82" cy="-128" r="60" fill="#13203F"/>
+      <circle cx="-100" cy="-152" r="18" fill="#fff"/><circle cx="64" cy="-152" r="18" fill="#fff"/><circle cx="-64" cy="-108" r="7" fill="#fff" opacity=".7"/><circle cx="100" cy="-108" r="7" fill="#fff" opacity=".7"/></g>
+    <rect id="ho-mouth" x="-30" y="-62" width="60" height="14" rx="7" fill="#13203F"/>
+  </g></g>
+</g></g>
+<g id="hook-sq" opacity="0"><rect x="770" y="700" width="250" height="250" rx="16" fill="#fff"/><rect x="796" y="726" width="198" height="198" rx="4" fill="#9CCBFF"/>
+<line id="hook-x1" x1="776" y1="706" x2="1014" y2="944" stroke="#E8333F" stroke-width="28" stroke-linecap="round" stroke-dasharray="400" style="stroke-dashoffset:400"/>
+<line id="hook-x2" x1="1014" y1="706" x2="776" y2="944" stroke="#E8333F" stroke-width="28" stroke-linecap="round" stroke-dasharray="400" style="stroke-dashoffset:400"/></g>
+      </g>
+    </svg>
+<div id="hook-bw1" class="clip full" data-start="0.0" data-duration="2.521"><div id="hook-bw1-in" class="full"><div class="big" style="top:250px;font-size:64px;color:#13203F"><span id="hook-bw1-w0">Warum</span>&nbsp;<span id="hook-bw1-w1">sind</span></div><div class="big" style="top:319px;font-size:104px;color:#13203F"><span id="hook-bw1-w2">Flugzeugfenster</span></div><div class="big" style="top:431px;font-size:150px;color:#FF6A3D"><span id="hook-bw1-w3">rund?</span></div></div></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#hook-cl", {x: 0}, {x: -260, duration: 3.286, ease: "none"}, 0);
+    tl.set("#ho-eyes", {x: 22, y: -6}, 0); tl.fromTo("#ho-head", {rotation: 0, transformOrigin: "50% 100%"}, {rotation: 5, transformOrigin: "50% 100%", duration: 0.5, ease: "power2.inOut"}, 0.4);
+    tl.fromTo("#hook-bw1-w0", {opacity: 0, filter: "blur(6px)"}, {opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power4.out"}, 0.050);
+    tl.fromTo("#hook-bw1-w1", {opacity: 0, filter: "blur(6px)"}, {opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power4.out"}, 0.170);
+    tl.fromTo("#hook-bw1-w2", {opacity: 0, filter: "blur(6px)"}, {opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power4.out"}, 0.290);
+    tl.fromTo("#hook-bw1-w3", {opacity: 0, filter: "blur(6px)"}, {opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power4.out"}, 0.410);
+    tl.to("#hook-bw1-in", {opacity: 0, filter: "blur(8px)", duration: 0.18, ease: "power3.in"}, 2.3209999999999997);
+    tl.fromTo("#hook-sq", {opacity: 0, scale: 0.8, transformOrigin: "50% 50%"}, {opacity: 1, scale: 1, transformOrigin: "50% 50%", duration: 0.28, ease: "back.out(1.6)"}, 2.451); tl.to("#hook-x1", {strokeDashoffset: 0, duration: 0.15, ease: "power3.out"}, 2.571); tl.to("#hook-x2", {strokeDashoffset: 0, duration: 0.15, ease: "power3.out"}, 2.7110000000000003); tl.to("#ho-head", {rotation: -7, transformOrigin: "50% 100%", duration: 0.11, ease: "sine.inOut"}, 2.62); tl.to("#ho-head", {rotation: 7, transformOrigin: "50% 100%", duration: 0.11, ease: "sine.inOut"}, 2.73); tl.to("#ho-head", {rotation: -6, transformOrigin: "50% 100%", duration: 0.11, ease: "sine.inOut"}, 2.84); tl.to("#ho-head", {rotation: 5, transformOrigin: "50% 100%", duration: 0.11, ease: "sine.inOut"}, 2.95); tl.to("#ho-head", {rotation: 0, transformOrigin: "50% 100%", duration: 0.11, ease: "sine.inOut"}, 3.06);
+    tl.to("#hook-cam", {scale: 7, transformOrigin: "540px 895px", duration: 0.42, ease: "power3.in"}, 2.866); tl.to("#hook-sq", {opacity: 0, duration: 0.15}, 2.866);
+    tl.to("#ho-eyes", {scaleY: 0.12, transformOrigin: "50% 50%", duration: 0.06, ease: "power2.in"}, 1.60); tl.to("#ho-eyes", {scaleY: 1, transformOrigin: "50% 50%", duration: 0.09, ease: "power2.out"}, 1.67);
+    tl.to("#ho-mouth", {scaleY: 1.00, transformOrigin: "50% 50%", duration: 0.08, ease: "none"}, 0.00);
+    tl.to("#ho-mouth", {scaleY: 1.08, transformOrigin: "50% 50%", duration: 0.08, ease: "none"}, 0.08);
+    tl.to("#ho-mouth", {scaleY: 1.78, transformOrigin: "50% 50%", duration: 0.08, ease: "none"}, 0.16);
+    tl.to("#ho-mouth", {scaleY: 2.64, transformOrigin: "50% 50%", duration: 0.08, ease: "none"}, 0.24);
+    tl.to("#ho-mouth", {scaleY: 2.69, transformOrigin: "50% 50%", duration: 0.08, ease: "none"}, 0.32);
+    tl.to("#ho-mouth", {scaleY: 1.65, transformOrigin: "50% 50%", duration: 0.08, ease: "none"}, 0.40);
+    tl.to("#ho-mouth", {scaleY: 3.24, transformOrigin: "50% 50%", duration: 0.08, ease: "none"}, 0.48);
+    tl.to("#ho-mouth", {scaleY: 2.59, transformOrigin: "50% 50%", duration: 0.08, ease: "none"}, 0.56);
+    tl.to("#ho-mouth", {scaleY: 3.24, transformOrigin: "50% 50%", duration: 0.08, ease: "none"}, 0.64);
+    tl.to("#ho-mouth", {scaleY: 1.49, transformOrigin: "50% 50%", duration: 0.08, ease: "none"}, 0.72);
+    tl.to("#ho-mouth", {scaleY: 2.95, transformOrigin: "50% 50%", duration: 0.08, ease: "none"}, 0.80);
+    tl.to("#ho-mouth", {scaleY: 3.24, transformOrigin: "50% 50%", duration: 0.08, ease: "none"}, 0.88);
+    tl.to("#ho-mouth", {scaleY: 1.57, transformOrigin: "50% 50%", duration: 0.08, ease: "none"}, 0.96);
+    tl.to("#ho-mouth", {scaleY: 1.70, transformOrigin: "50% 50%", duration: 0.08, ease: "none"}, 1.04);
+    tl.to("#ho-mouth", {scaleY: 2.66, transformOrigin: "50% 50%", duration: 0.08, ease: "none"}, 1.12);
+    tl.to("#ho-mouth", {scaleY: 3.37, transformOrigin: "50% 50%", duration: 0.08, ease: "none"}, 1.20);
+    tl.to("#ho-mouth", {scaleY: 3.18, transformOrigin: "50% 50%", duration: 0.08, ease: "none"}, 1.28);
+    tl.to("#ho-mouth", {scaleY: 1.52, transformOrigin: "50% 50%", duration: 0.08, ease: "none"}, 1.36);
+    tl.to("#ho-mouth", {scaleY: 1.10, transformOrigin: "50% 50%", duration: 0.08, ease: "none"}, 1.44);
+    tl.to("#ho-mouth", {scaleY: 1.03, transformOrigin: "50% 50%", duration: 0.08, ease: "none"}, 1.52);
+    tl.to("#ho-mouth", {scaleY: 1.52, transformOrigin: "50% 50%", duration: 0.08, ease: "none"}, 1.60);
+    tl.to("#ho-mouth", {scaleY: 3.60, transformOrigin: "50% 50%", duration: 0.08, ease: "none"}, 1.68);
+    tl.to("#ho-mouth", {scaleY: 1.83, transformOrigin: "50% 50%", duration: 0.08, ease: "none"}, 1.76);
+    tl.to("#ho-mouth", {scaleY: 1.16, transformOrigin: "50% 50%", duration: 0.08, ease: "none"}, 1.84);
+    tl.to("#ho-mouth", {scaleY: 2.95, transformOrigin: "50% 50%", duration: 0.08, ease: "none"}, 1.92);
+    tl.to("#ho-mouth", {scaleY: 3.55, transformOrigin: "50% 50%", duration: 0.08, ease: "none"}, 2.00);
+    tl.to("#ho-mouth", {scaleY: 3.16, transformOrigin: "50% 50%", duration: 0.08, ease: "none"}, 2.08);
+    tl.to("#ho-mouth", {scaleY: 2.64, transformOrigin: "50% 50%", duration: 0.08, ease: "none"}, 2.16);
+    tl.to("#ho-mouth", {scaleY: 1.52, transformOrigin: "50% 50%", duration: 0.08, ease: "none"}, 2.24);
+    tl.to("#ho-mouth", {scaleY: 1.08, transformOrigin: "50% 50%", duration: 0.08, ease: "none"}, 2.32);
+    tl.to("#ho-mouth", {scaleY: 1.03, transformOrigin: "50% 50%", duration: 0.08, ease: "none"}, 2.40);
+    tl.to("#ho-mouth", {scaleY: 1.00, transformOrigin: "50% 50%", duration: 0.08, ease: "none"}, 2.48);
+    tl.to("#ho-mouth", {scaleY: 3.26, transformOrigin: "50% 50%", duration: 0.08, ease: "none"}, 2.56);
+    tl.to("#ho-mouth", {scaleY: 1.60, transformOrigin: "50% 50%", duration: 0.08, ease: "none"}, 2.64);
+    tl.to("#ho-mouth", {scaleY: 1.31, transformOrigin: "50% 50%", duration: 0.08, ease: "none"}, 2.72);
+    tl.to("#ho-mouth", {scaleY: 1.23, transformOrigin: "50% 50%", duration: 0.08, ease: "none"}, 2.80);
+    tl.to("#ho-mouth", {scaleY: 1.18, transformOrigin: "50% 50%", duration: 0.08, ease: "none"}, 2.88);
+    tl.to("#ho-mouth", {scaleY: 1.05, transformOrigin: "50% 50%", duration: 0.08, ease: "none"}, 2.96);
+    tl.to("#ho-mouth", {scaleY: 1.00, transformOrigin: "50% 50%", duration: 0.08, ease: "none"}, 3.04);
+    tl.to("#ho-mouth", {scaleY: 1.00, transformOrigin: "50% 50%", duration: 0.08, ease: "none"}, 3.12);
+    window.__timelines["hook"] = tl;
+  </script>
+</template>

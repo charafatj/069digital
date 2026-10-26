@@ -1,0 +1,35 @@
+<template>
+  <style>
+@font-face { font-family: "MM"; src: url("assets/fonts/mm-600.woff2") format("woff2"); font-weight: 600; }
+@font-face { font-family: "MM"; src: url("assets/fonts/mm-800.woff2") format("woff2"); font-weight: 800; }
+@font-face { font-family: "MM"; src: url("assets/fonts/mm-900.woff2") format("woff2"); font-weight: 900; }
+#root { position: absolute; inset: 0; font-family: "MM", sans-serif; overflow: hidden; }
+.full { position: absolute; inset: 0; }
+.big { position: absolute; left: 0; width: 100%; text-align: center; font-weight: 900; letter-spacing: -.02em; line-height: 1.02; }
+.big span { display: inline-block; }
+.lbl { position: absolute; background: #fff; border-radius: 10px; padding: 20px 28px 22px; box-shadow: 0 10px 28px rgba(10,16,34,.16); display: grid; }
+.lbl .sm { font-weight: 800; font-size: 28px; letter-spacing: .1em; text-transform: uppercase; }
+.lbl .vals { display: grid; }
+.lbl .val { grid-area: 1 / 1; font-weight: 800; font-size: 52px; color: #13203F; line-height: 1.12; white-space: nowrap; }
+svg { overflow: visible; }
+</style>
+  <div id="root" data-composition-id="y54" data-width="1080" data-height="1920">
+    <svg id="y54-bgsvg" class="full" width="1080" height="1920" viewBox="0 0 1080 1920">
+      <rect id="y54-bg" width="1080" height="1920" fill="#F3E3C6"/>
+      <g id="y54-cam">
+<rect y="1250" width="1080" height="670" fill="#E9D2A8"/><g fill="#F8EEDD" opacity="1.0"><circle cx="154.0" cy="1276.0" r="67.2"/><circle cx="218.0" cy="1231.2" r="89.6"/><circle cx="304.4" cy="1247.2" r="76.8"/><circle cx="365.2" cy="1282.4" r="57.6"/><circle cx="250.0" cy="1292.0" r="70.4"/><rect x="90.0" y="1276.0" width="320.0" height="64.0" rx="32.0"/></g><g fill="#F8EEDD" opacity="1.0"><circle cx="742.0" cy="1243.0" r="54.6"/><circle cx="794.0" cy="1206.6" r="72.8"/><circle cx="864.2" cy="1219.6" r="62.4"/><circle cx="913.6" cy="1248.2" r="46.8"/><circle cx="820.0" cy="1256.0" r="57.2"/><rect x="690.0" y="1243.0" width="260.0" height="52.0" rx="26.0"/></g>
+      </g>
+    </svg>
+<div id="y54-bw1" class="clip full" data-start="-0.05" data-duration="2.05"><div id="y54-bw1-in" class="full"><div class="big" style="top:560px;font-size:320px;color:#13203F"><span id="y54-bw1-w0">1</span><span id="y54-bw1-w1">9</span><span id="y54-bw1-w2">5</span><span id="y54-bw1-w3">4</span></div></div></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#y54-bw1-w0", {opacity: 0, filter: "blur(6px)"}, {opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power4.out"}, 0.000);
+    tl.fromTo("#y54-bw1-w1", {opacity: 0, filter: "blur(6px)"}, {opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power4.out"}, 0.100);
+    tl.fromTo("#y54-bw1-w2", {opacity: 0, filter: "blur(6px)"}, {opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power4.out"}, 0.200);
+    tl.fromTo("#y54-bw1-w3", {opacity: 0, filter: "blur(6px)"}, {opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power4.out"}, 0.300);
+    gsap.set("#y54-bw1-in .big", {letterSpacing: "-0.04em"}); tl.fromTo("#y54-cam", {y: 0}, {y: 0, duration: 0.01}, 0); tl.to("#y54-bw1-in", {y: -900, duration: 0.4, ease: "power3.in"}, 1.6);
+    tl.fromTo("#y54-bg", {attr: {fill: "#3D4677"}}, {attr: {fill: "#F3E3C6"}, duration: 0.35, ease: "power2.inOut"}, 0);
+    window.__timelines["y54"] = tl;
+  </script>
+</template>

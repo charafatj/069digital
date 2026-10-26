@@ -1,0 +1,123 @@
+[
+{
+"file": "whoosh-short.mp3",
+"t": 3.166,
+"dur": 0.57,
+"vol": 0.5
+},
+{
+"file": "impact-bass-1.mp3",
+"t": 6.827,
+"dur": 2.12,
+"vol": 0.5
+},
+{
+"file": "whoosh.mp3",
+"t": 8.657,
+"dur": 0.57,
+"vol": 0.4
+},
+{
+"file": "pop.mp3",
+"t": 9.327,
+"dur": 0.72,
+"vol": 0.4
+},
+{
+"file": "impact-bass-2.mp3",
+"t": 19.447,
+"dur": 2.59,
+"vol": 0.6
+},
+{
+"file": "whoosh-short.mp3",
+"t": 20.737,
+"dur": 0.57,
+"vol": 0.45
+},
+{
+"file": "pop.mp3",
+"t": 21.427,
+"dur": 0.72,
+"vol": 0.4
+},
+{
+"file": "whoosh.mp3",
+"t": 22.451,
+"dur": 0.57,
+"vol": 0.4
+},
+{
+"file": "whoosh-short.mp3",
+"t": 30.309,
+"dur": 0.57,
+"vol": 0.45
+},
+{
+"file": "pop.mp3",
+"t": 31.249,
+"dur": 0.72,
+"vol": 0.4
+},
+{
+"file": "pop.mp3",
+"t": 36.877,
+"dur": 0.72,
+"vol": 0.4
+},
+{
+"file": "impact-bass-1.mp3",
+"t": 41.122,
+"dur": 2.12,
+"vol": 0.6
+},
+{
+"file": "pop.mp3",
+"t": 42.984,
+"dur": 0.72,
+"vol": 0.4
+},
+{
+"file": "whoosh.mp3",
+"t": 48.88,
+"dur": 0.57,
+"vol": 0.45
+},
+{
+"file": "pop.mp3",
+"t": 52.184,
+"dur": 0.72,
+"vol": 0.4
+},
+{
+"file": "pop.mp3",
+"t": 55.591,
+"dur": 0.72,
+"vol": 0.35
+},
+{
+"file": "whoosh-short.mp3",
+"t": 60.451,
+"dur": 0.57,
+"vol": 0.45
+},
+{
+"file": "pop.mp3",
+"t": 64.652,
+"dur": 0.72,
+"vol": 0.4
+},
+{
+"file": "click.mp3",
+"t": 67.73,
+"dur": 0.37,
+"vol": 0.6
+},
+{
+"file": "riser.mp3",
+"t": 44.929,
+"dur": 2.6,
+"vol": 0.4,
+"mstart": 0.9
+}
+]

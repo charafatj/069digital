@@ -1,0 +1,51 @@
+<template>
+  <style>
+@font-face { font-family: "MM"; src: url("assets/fonts/mm-600.woff2") format("woff2"); font-weight: 600; }
+@font-face { font-family: "MM"; src: url("assets/fonts/mm-800.woff2") format("woff2"); font-weight: 800; }
+@font-face { font-family: "MM"; src: url("assets/fonts/mm-900.woff2") format("woff2"); font-weight: 900; }
+#root { position: absolute; inset: 0; font-family: "MM", sans-serif; overflow: hidden; }
+.full { position: absolute; inset: 0; }
+.big { position: absolute; left: 0; width: 100%; text-align: center; font-weight: 900; letter-spacing: -.02em; line-height: 1.02; }
+.big span { display: inline-block; }
+.lbl { position: absolute; background: #fff; border-radius: 10px; padding: 20px 28px 22px; box-shadow: 0 10px 28px rgba(10,16,34,.16); display: grid; }
+.lbl .sm { font-weight: 800; font-size: 28px; letter-spacing: .1em; text-transform: uppercase; }
+.lbl .vals { display: grid; }
+.lbl .val { grid-area: 1 / 1; font-weight: 800; font-size: 52px; color: #13203F; line-height: 1.12; white-space: nowrap; }
+svg { overflow: visible; }
+</style>
+  <div id="root" data-composition-id="jet" data-width="1080" data-height="1920">
+    <svg id="jet-bgsvg" class="full" width="1080" height="1920" viewBox="0 0 1080 1920">
+      <rect id="jet-bg" width="1080" height="1920" fill="#9CCBFF"/>
+      <g id="jet-cam">
+<rect id="jet-b2" y="760" width="1080" height="1160" fill="#CFE6FF"/><rect id="jet-b3" y="1180" width="1080" height="740" fill="#EAF4FF"/>
+<circle id="jet-sun" cx="830" cy="430" r="90" fill="#FFF3D6"/>
+<g id="jet-far"><g fill="#FFFFFF" opacity="0.9"><circle cx="90.0" cy="610.0" r="42.0"/><circle cx="130.0" cy="582.0" r="56.0"/><circle cx="184.0" cy="592.0" r="48.0"/><circle cx="222.0" cy="614.0" r="36.0"/><circle cx="150.0" cy="620.0" r="44.0"/><rect x="50.0" y="610.0" width="200.0" height="40.0" rx="20.0"/></g><g fill="#FFFFFF" opacity="0.8"><circle cx="852.0" cy="708.0" r="33.6"/><circle cx="884.0" cy="685.6" r="44.8"/><circle cx="927.2" cy="693.6" r="38.4"/><circle cx="957.6" cy="711.2" r="28.8"/><circle cx="900.0" cy="716.0" r="35.2"/><rect x="820.0" y="708.0" width="160.0" height="32.0" rx="16.0"/></g><g fill="#FFFFFF" opacity="0.85"><circle cx="1246.0" cy="569.0" r="37.8"/><circle cx="1282.0" cy="543.8" r="50.4"/><circle cx="1330.6" cy="552.8" r="43.2"/><circle cx="1364.8" cy="572.6" r="32.4"/><circle cx="1300.0" cy="578.0" r="39.6"/><rect x="1210.0" y="569.0" width="180.0" height="36.0" rx="18.0"/></g></g>
+<g id="jet-pl" transform="translate(40 820)"><g id="jp">
+  <g id="jp-rear">
+    <path d="M120 110 L64 18 L132 18 L214 108 Z" fill="#FF6A3D"/><text x="112" y="88" font-family="MM" font-weight="900" font-size="52" fill="#fff" transform="skewX(-14)">?!</text>
+    <path d="M86 156 L18 186 L128 182 Z" fill="#C3CCD9"/>
+    <clipPath id="jp-cr"><rect x="0" y="0" width="470" height="300"/></clipPath>
+    <g clip-path="url(#jp-cr)"><path d="M70 150 Q70 112 130 108 L800 102 Q905 102 962 142 Q978 156 958 170 Q930 188 860 190 L150 192 Q86 192 70 172 Z" fill="#FFFFFF"/><path d="M70 160 L962 160 Q950 176 900 184 Q880 190 860 190 L150 192 Q86 192 70 172 Z" fill="#E4EAF2"/><rect x="140" y="148" width="770" height="7" fill="#FF6A3D"/><rect x="140" y="155" width="770" height="5" fill="#13203F"/></g>
+    <rect x="184" y="120" width="12" height="20" rx="6" fill="#13203F"/><rect x="209" y="120" width="12" height="20" rx="6" fill="#13203F"/><rect x="234" y="120" width="12" height="20" rx="6" fill="#13203F"/><rect x="259" y="120" width="12" height="20" rx="6" fill="#13203F"/><rect x="284" y="120" width="12" height="20" rx="6" fill="#13203F"/><rect x="309" y="120" width="12" height="20" rx="6" fill="#13203F"/><rect x="334" y="120" width="12" height="20" rx="6" fill="#13203F"/><rect x="359" y="120" width="12" height="20" rx="6" fill="#13203F"/><rect x="384" y="120" width="12" height="20" rx="6" fill="#13203F"/><rect x="409" y="120" width="12" height="20" rx="6" fill="#13203F"/><rect x="434" y="120" width="12" height="20" rx="6" fill="#13203F"/><rect x="459" y="120" width="12" height="20" rx="6" fill="#13203F"/>
+  </g>
+  <g id="jp-front">
+    <path d="M440 178 L350 262 L420 266 L590 180 Z" fill="#C3CCD9"/>
+    <clipPath id="jp-cf"><rect x="470" y="0" width="600" height="300"/></clipPath>
+    <g clip-path="url(#jp-cf)"><path d="M70 150 Q70 112 130 108 L800 102 Q905 102 962 142 Q978 156 958 170 Q930 188 860 190 L150 192 Q86 192 70 172 Z" fill="#FFFFFF"/><path d="M70 160 L962 160 Q950 176 900 184 Q880 190 860 190 L150 192 Q86 192 70 172 Z" fill="#E4EAF2"/><rect x="140" y="148" width="770" height="7" fill="#FF6A3D"/><rect x="140" y="155" width="770" height="5" fill="#13203F"/></g>
+    <rect x="484" y="120" width="12" height="20" rx="6" fill="#13203F"/><rect x="509" y="120" width="12" height="20" rx="6" fill="#13203F"/><rect x="534" y="120" width="12" height="20" rx="6" fill="#13203F"/><rect x="559" y="120" width="12" height="20" rx="6" fill="#13203F"/><rect x="584" y="120" width="12" height="20" rx="6" fill="#13203F"/><rect x="609" y="120" width="12" height="20" rx="6" fill="#13203F"/><rect x="634" y="120" width="12" height="20" rx="6" fill="#13203F"/><rect x="659" y="120" width="12" height="20" rx="6" fill="#13203F"/><rect x="684" y="120" width="12" height="20" rx="6" fill="#13203F"/><rect x="709" y="120" width="12" height="20" rx="6" fill="#13203F"/><rect x="734" y="120" width="12" height="20" rx="6" fill="#13203F"/><rect x="759" y="120" width="12" height="20" rx="6" fill="#13203F"/>
+    <path d="M905 122 Q935 126 952 142 L922 142 Q912 130 905 122 Z" fill="#13203F"/>
+    <rect x="420" y="196" width="150" height="50" rx="25" fill="#DDE3EC"/><rect x="420" y="196" width="150" height="20" rx="10" fill="#fff" opacity=".6"/><ellipse cx="568" cy="221" rx="10" ry="22" fill="#24365F"/>
+    <path d="M470 172 L560 172 L620 300 L560 300 Z" fill="none"/>
+  </g>
+</g></g>
+<g id="jet-near"><g fill="#FFFFFF" opacity="1.0"><circle cx="80.0" cy="1350.0" r="84.0"/><circle cx="160.0" cy="1294.0" r="112.0"/><circle cx="268.0" cy="1314.0" r="96.0"/><circle cx="344.0" cy="1358.0" r="72.0"/><circle cx="200.0" cy="1370.0" r="88.0"/><rect x="0.0" y="1350.0" width="400.0" height="80.0" rx="40.0"/></g><g fill="#FFFFFF" opacity="1.0"><circle cx="476.0" cy="1424.0" r="100.8"/><circle cx="572.0" cy="1356.8" r="134.4"/><circle cx="701.6" cy="1380.8" r="115.2"/><circle cx="792.8" cy="1433.6" r="86.4"/><circle cx="620.0" cy="1448.0" r="105.6"/><rect x="380.0" y="1424.0" width="480.0" height="96.0" rx="48.0"/></g><g fill="#FFFFFF" opacity="1.0"><circle cx="872.0" cy="1338.0" r="75.6"/><circle cx="944.0" cy="1287.6" r="100.8"/><circle cx="1041.2" cy="1305.6" r="86.4"/><circle cx="1109.6" cy="1345.2" r="64.8"/><circle cx="980.0" cy="1356.0" r="79.2"/><rect x="800.0" y="1338.0" width="360.0" height="72.0" rx="36.0"/></g><g fill="#FFFFFF" opacity="1.0"><circle cx="1268.0" cy="1382.0" r="92.4"/><circle cx="1356.0" cy="1320.4" r="123.2"/><circle cx="1474.8" cy="1342.4" r="105.6"/><circle cx="1558.4" cy="1390.8" r="79.2"/><circle cx="1400.0" cy="1404.0" r="96.8"/><rect x="1180.0" y="1382.0" width="440.0" height="88.0" rx="44.0"/></g><rect x="-200" y="1420" width="1900" height="500" fill="#fff"/></g>
+      </g>
+    </svg>
+
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#jet-far", {x: 0}, {x: -160, duration: 3.571, ease: "none"}, 0);tl.fromTo("#jet-near", {x: 0}, {x: -420, duration: 3.571, ease: "none"}, 0);tl.fromTo("#jet-pl", {x: 40, y: 820}, {x: 70, y: 800, duration: 3.571, ease: "sine.inOut"}, 0);tl.fromTo("#jet-cam", {scale: 1.6, transformOrigin: "540px 900px"}, {scale: 1, transformOrigin: "540px 900px", duration: 0.5, ease: "expo.out"}, 0);tl.to("#jet-bg", {attr: {fill: "#3D4677"}, duration: 1.6, ease: "power2.inOut"}, 1.4); tl.to("#jet-b2", {attr: {fill: "#6E6F9E"}, duration: 1.6, ease: "power2.inOut"}, 1.4); tl.to("#jet-b3", {attr: {fill: "#A9A7C9"}, duration: 1.6, ease: "power2.inOut"}, 1.4); tl.to("#jet-sun", {attr: {cy: 820, fill: "#F7C9A8"}, duration: 2.0, ease: "power2.in"}, 1.2);
+    window.__timelines["jet"] = tl;
+  </script>
+</template>

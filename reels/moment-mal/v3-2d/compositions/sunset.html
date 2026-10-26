@@ -1,0 +1,56 @@
+<template>
+  <style>
+@font-face { font-family: "MM"; src: url("assets/fonts/mm-600.woff2") format("woff2"); font-weight: 600; }
+@font-face { font-family: "MM"; src: url("assets/fonts/mm-800.woff2") format("woff2"); font-weight: 800; }
+@font-face { font-family: "MM"; src: url("assets/fonts/mm-900.woff2") format("woff2"); font-weight: 900; }
+#root { position: absolute; inset: 0; font-family: "MM", sans-serif; overflow: hidden; }
+.full { position: absolute; inset: 0; }
+.big { position: absolute; left: 0; width: 100%; text-align: center; font-weight: 900; letter-spacing: -.02em; line-height: 1.02; }
+.big span { display: inline-block; }
+.lbl { position: absolute; background: #fff; border-radius: 10px; padding: 20px 28px 22px; box-shadow: 0 10px 28px rgba(10,16,34,.16); display: grid; }
+.lbl .sm { font-weight: 800; font-size: 28px; letter-spacing: .1em; text-transform: uppercase; }
+.lbl .vals { display: grid; }
+.lbl .val { grid-area: 1 / 1; font-weight: 800; font-size: 52px; color: #13203F; line-height: 1.12; white-space: nowrap; }
+svg { overflow: visible; }
+</style>
+  <div id="root" data-composition-id="sunset" data-width="1080" data-height="1920">
+    <svg id="sunset-bgsvg" class="full" width="1080" height="1920" viewBox="0 0 1080 1920">
+      <rect id="sunset-bg" width="1080" height="1920" fill="#FFB28A"/>
+      <g id="sunset-cam">
+<rect y="820" width="1080" height="1100" fill="#FFE0C2"/><circle cx="760" cy="900" r="150" fill="#FFF1D8"/>
+<g id="su-pl" transform="translate(40 860)"><g id="sp">
+  <g id="sp-rear">
+    <path d="M120 110 L64 18 L132 18 L214 108 Z" fill="#FF6A3D"/><text x="112" y="88" font-family="MM" font-weight="900" font-size="52" fill="#fff" transform="skewX(-14)">?!</text>
+    <path d="M86 156 L18 186 L128 182 Z" fill="#C3CCD9"/>
+    <clipPath id="sp-cr"><rect x="0" y="0" width="470" height="300"/></clipPath>
+    <g clip-path="url(#sp-cr)"><path d="M70 150 Q70 112 130 108 L800 102 Q905 102 962 142 Q978 156 958 170 Q930 188 860 190 L150 192 Q86 192 70 172 Z" fill="#FFFFFF"/><path d="M70 160 L962 160 Q950 176 900 184 Q880 190 860 190 L150 192 Q86 192 70 172 Z" fill="#E4EAF2"/><rect x="140" y="148" width="770" height="7" fill="#FF6A3D"/><rect x="140" y="155" width="770" height="5" fill="#13203F"/></g>
+    <rect x="184" y="120" width="12" height="20" rx="6" fill="#13203F"/><rect x="209" y="120" width="12" height="20" rx="6" fill="#13203F"/><rect x="234" y="120" width="12" height="20" rx="6" fill="#13203F"/><rect x="259" y="120" width="12" height="20" rx="6" fill="#13203F"/><rect x="284" y="120" width="12" height="20" rx="6" fill="#13203F"/><rect x="309" y="120" width="12" height="20" rx="6" fill="#13203F"/><rect x="334" y="120" width="12" height="20" rx="6" fill="#13203F"/><rect x="359" y="120" width="12" height="20" rx="6" fill="#13203F"/><rect x="384" y="120" width="12" height="20" rx="6" fill="#13203F"/><rect x="409" y="120" width="12" height="20" rx="6" fill="#13203F"/><rect x="434" y="120" width="12" height="20" rx="6" fill="#13203F"/><rect x="459" y="120" width="12" height="20" rx="6" fill="#13203F"/>
+  </g>
+  <g id="sp-front">
+    <path d="M440 178 L350 262 L420 266 L590 180 Z" fill="#C3CCD9"/>
+    <clipPath id="sp-cf"><rect x="470" y="0" width="600" height="300"/></clipPath>
+    <g clip-path="url(#sp-cf)"><path d="M70 150 Q70 112 130 108 L800 102 Q905 102 962 142 Q978 156 958 170 Q930 188 860 190 L150 192 Q86 192 70 172 Z" fill="#FFFFFF"/><path d="M70 160 L962 160 Q950 176 900 184 Q880 190 860 190 L150 192 Q86 192 70 172 Z" fill="#E4EAF2"/><rect x="140" y="148" width="770" height="7" fill="#FF6A3D"/><rect x="140" y="155" width="770" height="5" fill="#13203F"/></g>
+    <rect x="484" y="120" width="12" height="20" rx="6" fill="#13203F"/><rect x="509" y="120" width="12" height="20" rx="6" fill="#13203F"/><rect x="534" y="120" width="12" height="20" rx="6" fill="#13203F"/><rect x="559" y="120" width="12" height="20" rx="6" fill="#13203F"/><rect x="584" y="120" width="12" height="20" rx="6" fill="#13203F"/><rect x="609" y="120" width="12" height="20" rx="6" fill="#13203F"/><rect x="634" y="120" width="12" height="20" rx="6" fill="#13203F"/><rect x="659" y="120" width="12" height="20" rx="6" fill="#13203F"/><rect x="684" y="120" width="12" height="20" rx="6" fill="#13203F"/><rect x="709" y="120" width="12" height="20" rx="6" fill="#13203F"/><rect x="734" y="120" width="12" height="20" rx="6" fill="#13203F"/><rect x="759" y="120" width="12" height="20" rx="6" fill="#13203F"/>
+    <path d="M905 122 Q935 126 952 142 L922 142 Q912 130 905 122 Z" fill="#13203F"/>
+    <rect x="420" y="196" width="150" height="50" rx="25" fill="#DDE3EC"/><rect x="420" y="196" width="150" height="20" rx="10" fill="#fff" opacity=".6"/><ellipse cx="568" cy="221" rx="10" ry="22" fill="#24365F"/>
+    <path d="M470 172 L560 172 L620 300 L560 300 Z" fill="none"/>
+  </g>
+</g></g>
+<g id="su-near"><g fill="#FFF4E8" opacity="1.0"><circle cx="100.0" cy="1360.0" r="84.0"/><circle cx="180.0" cy="1304.0" r="112.0"/><circle cx="288.0" cy="1324.0" r="96.0"/><circle cx="364.0" cy="1368.0" r="72.0"/><circle cx="220.0" cy="1380.0" r="88.0"/><rect x="20.0" y="1360.0" width="400.0" height="80.0" rx="40.0"/></g><g fill="#FFF4E8" opacity="1.0"><circle cx="496.0" cy="1424.0" r="100.8"/><circle cx="592.0" cy="1356.8" r="134.4"/><circle cx="721.6" cy="1380.8" r="115.2"/><circle cx="812.8" cy="1433.6" r="86.4"/><circle cx="640.0" cy="1448.0" r="105.6"/><rect x="400.0" y="1424.0" width="480.0" height="96.0" rx="48.0"/></g><g fill="#FFF4E8" opacity="1.0"><circle cx="936.0" cy="1349.0" r="79.8"/><circle cx="1012.0" cy="1295.8" r="106.4"/><circle cx="1114.6" cy="1314.8" r="91.2"/><circle cx="1186.8" cy="1356.6" r="68.4"/><circle cx="1050.0" cy="1368.0" r="83.6"/><rect x="860.0" y="1349.0" width="380.0" height="76.0" rx="38.0"/></g><rect x="-200" y="1420" width="1900" height="500" fill="#FFF4E8"/></g>
+      </g>
+    </svg>
+<div id="sunset-bw1" class="clip full" data-start="0.3" data-duration="2.222"><div id="sunset-bw1-in" class="full"><div class="big" style="top:300px;font-size:72px;color:#13203F"><span id="sunset-bw1-w0">Rund</span>&nbsp;<span id="sunset-bw1-w1">ist</span>&nbsp;<span id="sunset-bw1-w2">kein</span></div><div class="big" style="top:377px;font-size:150px;color:#13203F"><span id="sunset-bw1-w3">Design</span></div></div></div>
+<div id="su-strike" class="clip full" data-start="2.085" data-duration="0.437"><svg class="full" width="1080" height="1920" viewBox="0 0 1080 1920"><line id="su-l" x1="300" y1="460" x2="780" y2="460" stroke="#E8333F" stroke-width="18" stroke-linecap="round" stroke-dasharray="500" style="stroke-dashoffset:500"/></svg></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#su-near", {x: 0}, {x: -380, duration: 2.572, ease: "none"}, 0);tl.fromTo("#su-pl", {x: -60}, {x: 80, duration: 2.572, ease: "none"}, 0); tl.to("#sp rect[fill='#13203F']", {attr: {fill: "#FFC94A"}, duration: 0.5, stagger: 0.01}, 0.3);
+    tl.fromTo("#sunset-bw1-w0", {opacity: 0, filter: "blur(6px)"}, {opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power4.out"}, 0.350);
+    tl.fromTo("#sunset-bw1-w1", {opacity: 0, filter: "blur(6px)"}, {opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power4.out"}, 0.450);
+    tl.fromTo("#sunset-bw1-w2", {opacity: 0, filter: "blur(6px)"}, {opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power4.out"}, 0.550);
+    tl.fromTo("#sunset-bw1-w3", {opacity: 0, filter: "blur(6px)"}, {opacity: 1, filter: "blur(0px)", duration: 0.14, ease: "power4.out"}, 0.650);
+    tl.to("#sunset-bw1-in", {opacity: 0, filter: "blur(8px)", duration: 0.18, ease: "power3.in"}, 2.3219999999999996);
+    tl.to("#su-l", {strokeDashoffset: 0, duration: 0.22, ease: "power3.out"}, 2.085);
+    window.__timelines["sunset"] = tl;
+  </script>
+</template>
