@@ -1,0 +1,34 @@
+<!doctype html><html><head><meta charset="utf-8">
+<style>@font-face{font-family:Display;src:url(fonts/display.woff2)}@font-face{font-family:UI;src:url(fonts/ui.woff2)}body{margin:0;background:#000}</style>
+<script type="importmap">{"imports":{"three":"/node_modules/three/build/three.module.js","three/addons/":"/node_modules/three/examples/jsm/"}}</script>
+</head><body><canvas id="c" width="1080" height="1080"></canvas>
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+const CW = 1080, CH = 1170;
+const R = new THREE.WebGLRenderer({ antialias: true, alpha: true, preserveDrawingBuffer: true });
+R.setSize(CW, CH, false); R.outputColorSpace = THREE.SRGBColorSpace; R.toneMapping = THREE.ACESFilmicToneMapping;
+R.shadowMap.enabled = true;
+const scene = new THREE.Scene();
+scene.environment = new THREE.PMREMGenerator(R).fromScene(new RoomEnvironment(), 0.04).texture;
+const key = new THREE.DirectionalLight(0xfff4ea, 2.2); key.position.set(-4, 8, 6); key.castShadow = true; scene.add(key);
+const rim = new THREE.DirectionalLight(0x9fe8ff, 2.0); rim.position.set(5, 4, -6); scene.add(rim);
+scene.add(new THREE.HemisphereLight(0xffffff, 0x223355, 0.5));
+const floor = new THREE.Mesh(new THREE.CircleGeometry(2.2, 48), new THREE.ShadowMaterial({ opacity: .35 })); floor.rotation.x = -Math.PI / 2; floor.receiveShadow = true; scene.add(floor);
+const gltf = await new GLTFLoader().loadAsync('assets/ole.glb');
+const ole = gltf.scene; scene.add(ole);
+const COL = { Main: 0xff6a3d, Grey: 0x2ee6b6, Black: 0x13203f };
+let head = null;
+ole.traverse(o => { if (o.isMesh) { o.castShadow = true; const n = o.material.name; o.material = new THREE.MeshStandardMaterial({ color: COL[n] ?? 0xffffff, roughness: n === 'Black' ? .25 : .5, metalness: 0, envMapIntensity: .8, name: n }); if (o.morphTargetDictionary) head = o; } });
+const mixer = new THREE.AnimationMixer(ole);
+const clip = n => gltf.animations.find(a => a.name === n);
+const cam = new THREE.PerspectiveCamera(30, CW / CH, .1, 100); cam.position.set(1.2, 3.4, 15.5); cam.lookAt(0, 2.5, 0);
+const out = document.getElementById('c').getContext('2d');
+const g = out.createRadialGradient(540, 470, 60, 540, 540, 760); g.addColorStop(0, '#2B4385'); g.addColorStop(1, '#0B1226'); out.fillStyle = g; out.fillRect(0, 0, 1080, 1080);
+mixer.stopAllAction(); const act = mixer.clipAction(clip('Wave')); act.reset().play(); mixer.setTime(0.35 * clip('Wave').duration);
+head.morphTargetInfluences.fill(0); head.morphTargetInfluences[head.morphTargetDictionary['Surprised']] = 0.35;
+ole.rotation.y = 0.15; cam.position.set(0.5, 3.6, 9.6); cam.lookAt(-0.25, 3.05, 0); cam.fov = 40; cam.updateProjectionMatrix();
+R.render(scene, cam); out.drawImage(R.domElement, 0, -20);
+window.DONE = true;
+</script></body></html>

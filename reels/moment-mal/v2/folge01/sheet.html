@@ -1,0 +1,48 @@
+<!doctype html><html><head><meta charset="utf-8">
+<style>@font-face{font-family:Display;src:url(fonts/display.woff2)}@font-face{font-family:UI;src:url(fonts/ui.woff2)}body{margin:0;background:#000}</style>
+<script type="importmap">{"imports":{"three":"/node_modules/three/build/three.module.js","three/addons/":"/node_modules/three/examples/jsm/"}}</script>
+</head><body><canvas id="c" width="2160" height="1920"></canvas>
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+const CW = 540, CH = 820;
+const R = new THREE.WebGLRenderer({ antialias: true, alpha: true, preserveDrawingBuffer: true });
+R.setSize(CW, CH - 90, false); R.outputColorSpace = THREE.SRGBColorSpace; R.toneMapping = THREE.ACESFilmicToneMapping;
+R.shadowMap.enabled = true;
+const scene = new THREE.Scene();
+scene.environment = new THREE.PMREMGenerator(R).fromScene(new RoomEnvironment(), 0.04).texture;
+const key = new THREE.DirectionalLight(0xfff4ea, 2.2); key.position.set(-4, 8, 6); key.castShadow = true; scene.add(key);
+const rim = new THREE.DirectionalLight(0x9fe8ff, 2.0); rim.position.set(5, 4, -6); scene.add(rim);
+scene.add(new THREE.HemisphereLight(0xffffff, 0x223355, 0.5));
+const floor = new THREE.Mesh(new THREE.CircleGeometry(2.2, 48), new THREE.ShadowMaterial({ opacity: .35 })); floor.rotation.x = -Math.PI / 2; floor.receiveShadow = true; scene.add(floor);
+const gltf = await new GLTFLoader().loadAsync('assets/ole.glb');
+const ole = gltf.scene; scene.add(ole);
+const COL = { Main: 0xff6a3d, Grey: 0x2ee6b6, Black: 0x13203f };
+let head = null;
+ole.traverse(o => { if (o.isMesh) { o.castShadow = true; const n = o.material.name; o.material = new THREE.MeshStandardMaterial({ color: COL[n] ?? 0xffffff, roughness: n === 'Black' ? .25 : .5, metalness: 0, envMapIntensity: .8, name: n }); if (o.morphTargetDictionary) head = o; } });
+const mixer = new THREE.AnimationMixer(ole);
+const clip = n => gltf.animations.find(a => a.name === n);
+const cam = new THREE.PerspectiveCamera(30, CW / (CH - 90), .1, 100); cam.position.set(1.2, 3.4, 15.5); cam.lookAt(0, 2.5, 0);
+const out = document.getElementById('c').getContext('2d');
+const g = out.createLinearGradient(0, 0, 0, 1920); g.addColorStop(0, '#1e2f5c'); g.addColorStop(1, '#0b1226'); out.fillStyle = g; out.fillRect(0, 0, 2160, 1920);
+await document.fonts.load('900 60px Display'); await document.fonts.load('600 30px UI');
+out.fillStyle = '#fff'; out.font = '900 80px Display'; out.fillText('Ole', 60, 120);
+out.fillStyle = '#FF6A3D'; out.fillText('?!', 60 + out.measureText('Ole').width + 10, 120);
+out.fillStyle = 'rgba(255,255,255,.75)'; out.font = '600 34px UI'; out.fillText('Model Sheet · Moment mal?! · Posen & Ausdrücke', 60, 175);
+const cells = [
+  ['Idle', .5, null, 'Neutral'], ['Wave', .35, null, 'Winken (Hook/Outro)'], ['ThumbsUp', .5, null, 'Daumen hoch (Pointe)'], ['Yes', .3, null, 'Nicken'],
+  ['Idle', .5, 'Surprised', 'Verblüfft (Twist)'], ['Idle', .5, 'Sad', 'Betroffen (Absturz)'], ['No', .5, null, 'Kopfschütteln („Niemals“)'], ['Running', .3, null, 'Laufen (Übergang)'],
+];
+cells.forEach(([a, tt, exp, label], i) => {
+  mixer.stopAllAction(); const act = mixer.clipAction(clip(a)); act.reset().play(); mixer.setTime(tt * clip(a).duration);
+  if (head) head.morphTargetInfluences.fill(0); if (exp && head) head.morphTargetInfluences[head.morphTargetDictionary[exp]] = 1;
+  ole.rotation.y = .12;
+  R.render(scene, cam);
+  const x = (i % 4) * CW, y = 240 + Math.floor(i / 4) * CH;
+  out.fillStyle = 'rgba(255,255,255,.05)'; out.beginPath(); out.roundRect(x + 14, y + 10, CW - 28, CH - 20, 28); out.fill();
+  out.drawImage(R.domElement, x, y);
+  out.fillStyle = '#fff'; out.font = '600 30px UI'; out.textAlign = 'center'; out.fillText(label, x + CW / 2, y + CH - 40); out.textAlign = 'left';
+});
+window.DONE = true;
+</script></body></html>

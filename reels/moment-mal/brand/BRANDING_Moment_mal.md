@@ -11,12 +11,12 @@ Instagram-Reels/TikTok/Shorts im Stil von „Warum eigentlich…?“: 3D-Low-Pol
 | **Name** | Moment mal?! |
 | **Handle** | @momentmal.erklaert (Alternativen: @momentmal.wissen, @moment.mal.ole) |
 | **Kategorie** | Bildung / Wissenschaft & Technik |
-| **Profilbild** | Ole-Kopf frontal auf Navy-Hintergrund (`profilbild_ole.png`) |
+| **Profilbild** | Ole winkend auf Navy-Verlauf (`profilbild_ole_v2.png`) |
 
 **Bio (max. 150 Zeichen):**
 ```
 Alltag. In 60 Sekunden erklärt. 🧠
-Ich bin Ole & stelle die Fragen, die du dir nie gestellt hast.
+Ich bin Ole 🤖 & stelle die Fragen, die du dir nie gestellt hast.
 Neue Folge jeden Tag ↓
 ```
 
@@ -26,14 +26,17 @@ Neue Folge jeden Tag ↓
 
 ## 2. Der Charakter: Ole
 
-Ole ist in **jedem** Video zu sehen und **er ist die Stimme**. Der Erzähler ist also kein anonymer Sprecher, sondern Ole selbst (Lippen bewegen sich synchron zur Stimme).
+Ole ist in **jedem** Video zu sehen und **er ist die Stimme**: Beim Sprechen nickt er im Rhythmus der Stimme mit.
 
-- **Look:** Low-Poly-3D, orange Beanie mit cremefarbenem Bommel, runde Navy-Brille, mintgrüner Hoodie mit Bändeln, braune Haarspitzen, große runde Augen
-- **Persönlichkeit:** neugierig, leicht nerdig, ehrlich verblüfft. Er weiß es nicht besser als du, er hat nur nachgeschaut.
-- **Feste Gesten:** zeigt auf das Thema (Hook), Finger hoch („Achtung, jetzt kommt's“), Daumen hoch (Pointe), Winken (Outro)
-- **Regeln:** Beanie und Hoodie ändern sich nie. Nur Hintergrund und Requisiten wechseln je Thema.
+- **Look:** freundlicher Low-Poly-Roboter mit großem Kuppelkopf, großen Navy-Augen und Augenbrauen. Körper in Signal-Orange, Gelenke und Ringe in Mint (Markenfarben).
+- **Modell:** „RobotExpressive“ von Tomás Laulhé (CC0, frei nutzbar, auch kommerziell), umgefärbt. Datei: `assets/ole.glb`
+- **Fertige Bewegungen:** winken, Daumen hoch, nicken, Kopf schütteln, sitzen, laufen, springen, tanzen
+- **Ausdrücke:** neutral, verblüfft, betroffen, wütend
+- **Persönlichkeit:** neugierig, ehrlich verblüfft. Er weiß es nicht besser als du, er hat nur nachgeschaut.
+- **Feste Momente:** schaut im Hook auf das Thema, springt verblüfft bei „Achtung, jetzt kommt's“, Daumen hoch bei der Pointe, winkt im Outro
+- **Regel:** Farben und Proportionen ändern sich nie, nur Ort und Requisiten wechseln je Thema.
 
-Das Modell ist im Code definiert (`render/reel.js` → `makeOle()`) und sieht deshalb in jedem Video exakt gleich aus.
+Model Sheet: `model_sheet.png`
 
 ---
 
@@ -141,10 +144,9 @@ Jedes Thema vor dem Dreh kurz gegenchecken. Eine einzige falsche Zahl kostet in 
 
 ## 9. Produktion der nächsten Folgen
 
-Alles liegt im Ordner `render/`:
-- `reel.js`: Szenen, Charakter, Untertitel, Karten (Three.js)
-- `render.js`: rendert die Bilder in Chromium und erzeugt das MP4
-- `tools/align.py`: kürzt Pausen der Stimme und berechnet die Wort-Zeitpunkte für die Untertitel
-- `tools/music.py`: Musikbett + Soundeffekte
-
-Ablauf pro Folge: Skript schreiben → Stimme mit Voice-ID generieren → `align.py` → Szenen in `reel.js` anpassen (Ole, Farben, Untertitel bleiben gleich) → rendern → mischen.
+Produziert mit dem kostenlosen Claude-Plugin **Motion Reel** (plus Social Media Skills, Remotion, SoundWeaver, video-shotcraft):
+1. Skript schreiben (Formel aus Abschnitt 5), Stimme mit der festen Voice-ID erzeugen
+2. Stimme auf den Beat-Grid legen (`tools/vo_grid.py`), Musik mit `beats.py --synth --flavor lofi --bpm 105`
+3. Shot-Liste + Model Sheet freigeben
+4. Szenen in `film.js` / `sets/` bauen (Ole, Farben und Untertitel bleiben gleich)
+5. Mindestens 3 Prüfrunden mit Kontaktbögen, dann Render, Soundeffekte, Mischung auf −14 LUFS
